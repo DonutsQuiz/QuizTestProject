@@ -1,0 +1,362 @@
+{
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Scene.meta": {
+    "time": 1672206841251.8267
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Scene": {
+    "time": 1672206856470.5698,
+    "uuid": "0221ecf7-83f5-43d7-91a4-3037a4321faa",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Scene/GameScene.scene.meta": {
+    "time": 1672206851759.2236
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Scene/GameScene.scene": {
+    "time": 1672817763978.657,
+    "uuid": "6d9866d9-a192-4526-a2a7-a9e7b61f341b",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Prefab.meta": {
+    "time": 1672206906752.301
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Prefab": {
+    "time": 1672207520866.8767,
+    "uuid": "23bf12bd-e6af-49da-b6c8-b9c4de7f7db5",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Script.meta": {
+    "time": 1672206914451.8591
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Script": {
+    "time": 1672208822301.7021,
+    "uuid": "7d4accac-d36f-4de2-995c-017a2f9bcf1f",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Texture.meta": {
+    "time": 1672206921375.1555
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Texture": {
+    "time": 1672207045147.9436,
+    "uuid": "ed281ba2-4aab-406b-b135-a686277376fd",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Texture/Quiz.meta": {
+    "time": 1672207045148.528
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Texture/UI.meta": {
+    "time": 1672207045148.7717
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Texture/Quiz": {
+    "time": 1672207071665.4224,
+    "uuid": "3406f4dc-03cc-4497-a126-534181a8ec24",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Texture/UI": {
+    "time": 1672810114738.7249,
+    "uuid": "6e92dd2a-2434-44be-a103-e89d029fc5f7",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Texture/Quiz/Ges0.png.meta": {
+    "time": 1672211403715.9321
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Texture/Quiz/Ges1.png.meta": {
+    "time": 1672211403717.4106
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Texture/Quiz/Ges2.png.meta": {
+    "time": 1672211403719.1326
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Texture/Quiz/Ges3.png.meta": {
+    "time": 1672211403723.826
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Texture/Quiz/Ges4.png.meta": {
+    "time": 1672211403718.628
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Texture/Quiz/Ges5.png.meta": {
+    "time": 1672211403739.6885
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Texture/UI/BackFrame.png.meta": {
+    "time": 1672207328134.1653
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Texture/UI/ButtonFrame.png.meta": {
+    "time": 1672207328158.471
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Texture/UI/CircleButtonFrame.png.meta": {
+    "time": 1672207328161.5413
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Texture/UI/ModalFrane.png.meta": {
+    "time": 1672207328167.4375
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Texture/UI/pixel.png.meta": {
+    "time": 1672207328124.2163
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Texture/Quiz/Ges1.png": {
+    "time": 1672115805833.5886,
+    "uuid": "fb4fbec3-93f7-47e0-9277-4711334b0b41",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Texture/Quiz/Ges0.png": {
+    "time": 1672115805833.5088,
+    "uuid": "a31c13eb-4563-4140-8b00-66eb02f6e15a",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Texture/Quiz/Ges2.png": {
+    "time": 1672115805833.581,
+    "uuid": "c2a2c2c0-1259-4ced-9027-e04be2f46f7e",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Texture/Quiz/Ges3.png": {
+    "time": 1672115805833.6724,
+    "uuid": "fb63a019-9c62-433b-820f-b2d6b66471e0",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Texture/Quiz/Ges4.png": {
+    "time": 1672115805833.8542,
+    "uuid": "da9ac356-52a4-4dd3-ba4f-fd56b6471b74",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Texture/UI/BackFrame.png": {
+    "time": 1671768730005.7466,
+    "uuid": "1b07d5fd-c693-477a-9c93-90f3848601f7",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Texture/Quiz/Ges5.png": {
+    "time": 1672115805834.0789,
+    "uuid": "09338cf4-f0cb-4b5c-8481-6a323b2fae75",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Texture/UI/pixel.png": {
+    "time": 1671765206551.4377,
+    "uuid": "f0511ae3-160a-4653-a0cf-2f3fb9e5f02b",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Texture/UI/ButtonFrame.png": {
+    "time": 1671768294585.1948,
+    "uuid": "0f3f39e0-7f07-43dd-97ec-32c02879f2b6",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Texture/UI/CircleButtonFrame.png": {
+    "time": 1672019363134.3894,
+    "uuid": "d1904ac7-66dd-415b-9ace-e7f817e77a89",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Texture/UI/ModalFrane.png": {
+    "time": 1671766800946.3936,
+    "uuid": "315f0da0-3db8-4e2d-a302-1fef0c9bd067",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Script/Game.meta": {
+    "time": 1672207207230.4211
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Script/UI.meta": {
+    "time": 1672207207230.6865
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Script/Game/Manager.meta": {
+    "time": 1672207207230.93
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Script/Game/Modal.meta": {
+    "time": 1672207207231.168
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Script/Game/Quiz.meta": {
+    "time": 1672207207231.4229
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Script/UI/TestMenu.ts.meta": {
+    "time": 1672207207233.64
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Script/Game/Manager/QuizManager.ts.meta": {
+    "time": 1672207207234.4595
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Script/Game/Manager/QuizModalManager.ts.meta": {
+    "time": 1672207207234.947
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Script/Game/Modal/ChoicesModal.ts.meta": {
+    "time": 1672207207235.3647
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Script/Game/Modal/QuestionModal.ts.meta": {
+    "time": 1672207207235.7512
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Script/Game/Modal/ResultModal.ts.meta": {
+    "time": 1672207207237.7852
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Script/Game/Quiz/GestureQuiz.ts.meta": {
+    "time": 1672207207238.8918
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Script/Game/Quiz/QuizComponent.ts.meta": {
+    "time": 1672207207239.434
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Script/Game": {
+    "time": 1672208922841.2246,
+    "uuid": "8a51b193-6fbb-4637-b5cc-38f1d3943cc9",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Script/UI": {
+    "time": 1672207207227.6785,
+    "uuid": "d4b978ce-92f9-40de-b694-5bfd9de5f5bf",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Script/Game/Manager": {
+    "time": 1672208830539.6738,
+    "uuid": "b5c47407-1dd9-4753-b02b-616c3c2799ef",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Script/Game/Modal": {
+    "time": 1672357127751.1672,
+    "uuid": "1b83e75f-b843-43bf-b981-208098e13810",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Script/Game/Quiz": {
+    "time": 1672208942748.1414,
+    "uuid": "f7545cb6-80ca-42fb-a27a-afcd787ac222",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Script/UI/TestMenu.ts": {
+    "time": 1672211315711.511,
+    "uuid": "fe959ade-f763-4ce3-8221-50ace0c875d4",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Script/Game/Manager/QuizManager.ts": {
+    "time": 1672361324969.5112,
+    "uuid": "de4c0fca-e7ce-4d86-a1ab-d03ce477a1a6",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Script/Game/Manager/QuizModalManager.ts": {
+    "time": 1672814037092.3574,
+    "uuid": "e8e61a10-df40-4d8e-b308-cceef04de892",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Script/Game/Modal/ChoicesModal.ts": {
+    "time": 1672813387207.6555,
+    "uuid": "2477077d-2400-442e-a5c8-67206febb2f7",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Script/Game/Modal/QuestionModal.ts": {
+    "time": 1672816425437.5625,
+    "uuid": "8f505756-d3be-4106-b8ab-5866d1bbb35b",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Script/Game/Modal/ResultModal.ts": {
+    "time": 1672817556449.0278,
+    "uuid": "6169e59e-1b7c-4843-a160-6129e0a24d7b",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Script/Game/Quiz/GestureQuiz.ts": {
+    "time": 1672815377827.8943,
+    "uuid": "97fb8f70-a8fa-4e52-aaff-727b505c27b6",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Script/Game/Quiz/QuizComponent.ts": {
+    "time": 1672277568906.3198,
+    "uuid": "236df82c-57bc-47ad-b417-7005185e6c7c",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Prefab/Menu.prefab.meta": {
+    "time": 1672207299064.2048
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Prefab/Menu.prefab": {
+    "time": 1672815436846.223,
+    "uuid": "922537de-4568-4519-85f9-be5ac4746df4",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Prefab/Modal.meta": {
+    "time": 1672207515805.9849
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Prefab/Modal": {
+    "time": 1672361053072.055,
+    "uuid": "b2d4f7f4-91af-495f-a4ab-8a4f293964c5",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Prefab/Modal/ChoicesModal.prefab.meta": {
+    "time": 1672207045161.5051
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Prefab/Modal/ChoicesModal.prefab": {
+    "time": 1672811876389.8208,
+    "uuid": "3375720f-b256-4d50-a23b-9df7bb10ea09",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Prefab/Modal/QuestionModal.prefab.meta": {
+    "time": 1672207045163.4434
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Prefab/Modal/QuestionModal.prefab": {
+    "time": 1672816147083.1711,
+    "uuid": "c03d3bc9-8c03-4f81-ae38-705c55570072",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Prefab/Modal/ResultModal.prefab.meta": {
+    "time": 1672207045164.1152
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Prefab/Modal/ResultModal.prefab": {
+    "time": 1672813617804.346,
+    "uuid": "1e01ef77-6349-407d-9593-faea67c2b7bb",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Script/Game/Manager/GameManager.ts.meta": {
+    "time": 1672208830540.554
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Script/Game/Manager/GameManager.ts": {
+    "time": 1672814660851.103,
+    "uuid": "be307a6d-9f7a-4cc8-8282-15987f8f996c",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Script/Game/Quiz/Data.meta": {
+    "time": 1672208928106.2612
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Script/Game/Quiz/Data": {
+    "time": 1672280594995.3655,
+    "uuid": "ba7c0c5d-d097-4cf4-acfc-4197317bda49",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Script/Game/Quiz/Data/QuizDataBase.ts.meta": {
+    "time": 1672211598526.4058
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Script/Game/Quiz/Data/QuizDataBase.ts": {
+    "time": 1672356307088.5293,
+    "uuid": "91ce4ab9-9d0d-406f-8f25-066f3085c668",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Script/Game/Quiz/Data/QuizData.ts.meta": {
+    "time": 1672276214277.3486
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Script/Game/Quiz/Data/QuizData.ts": {
+    "time": 1672277613183.3052,
+    "uuid": "9d856897-1fe4-4803-ac7a-ea1f0d6e525f",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Script/Game/Modal/OverallResultModal.ts.meta": {
+    "time": 1672357127752.4585
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Script/Game/Modal/OverallResultModal.ts": {
+    "time": 1672361265642.8035,
+    "uuid": "60303970-f3a2-4142-88fd-b771d6f92402",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Texture/UI/transparent.png.meta": {
+    "time": 1672357876240.0913
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Texture/UI/transparent.png": {
+    "time": 1672357869392.436,
+    "uuid": "404cf2f7-b06d-4e0b-b5fb-911a6fd12af4",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Texture/UI/ResultFrame.png.meta": {
+    "time": 1672358194903.9734
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Texture/UI/ResultFrame.png": {
+    "time": 1672358188089.015,
+    "uuid": "46382f71-d726-40f4-a91a-b3fdbfd6481f",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Prefab/Modal/OverallResultModal.prefab.meta": {
+    "time": 1672361053076.3638
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Prefab/Modal/OverallResultModal.prefab": {
+    "time": 1672361473603.0144,
+    "uuid": "daf8414a-5490-4197-81fa-5c82b35f7e1e",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Texture/UI/questionFrame.png.meta": {
+    "time": 1672810120096.8242
+  },
+  "/Users/takeda.naomichi/TestQuizSecond/assets/Texture/UI/questionFrame.png": {
+    "time": 1672810114737.6956,
+    "uuid": "c7fe436c-770d-40a2-9782-d240155b8bf3",
+    "missing": false
+  }
+}

@@ -1,0 +1,614 @@
+{
+  "0221ecf7-83f5-43d7-91a4-3037a4321faa": {
+    "url": "db://assets/Scene",
+    "value": {}
+  },
+  "6d9866d9-a192-4526-a2a7-a9e7b61f341b": {
+    "url": "db://assets/Scene/GameScene.scene",
+    "value": {
+      "depends": [
+        "6d9866d9-a192-4526-a2a7-a9e7b61f341b",
+        "922537de-4568-4519-85f9-be5ac4746df4",
+        "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+        "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+        "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+        "544e49d6-3f05-4fa8-9a9e-091f98fc2ce8@f9941",
+        "951249e0-9f16-456d-8b85-a6ca954da16b@f9941",
+        "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+        "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+        "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+        "544e49d6-3f05-4fa8-9a9e-091f98fc2ce8@f9941",
+        "951249e0-9f16-456d-8b85-a6ca954da16b@f9941",
+        "c03d3bc9-8c03-4f81-ae38-705c55570072",
+        "3375720f-b256-4d50-a23b-9df7bb10ea09",
+        "1e01ef77-6349-407d-9593-faea67c2b7bb",
+        "daf8414a-5490-4197-81fa-5c82b35f7e1e",
+        "a31c13eb-4563-4140-8b00-66eb02f6e15a@f9941",
+        "fb4fbec3-93f7-47e0-9277-4711334b0b41@f9941",
+        "c2a2c2c0-1259-4ced-9027-e04be2f46f7e@f9941",
+        "fb63a019-9c62-433b-820f-b2d6b66471e0@f9941",
+        "da9ac356-52a4-4dd3-ba4f-fd56b6471b74@f9941",
+        "09338cf4-f0cb-4b5c-8481-6a323b2fae75@f9941",
+        "6d9866d9-a192-4526-a2a7-a9e7b61f341b",
+        "d032ac98-05e1-4090-88bb-eb640dcb5fc1@b47c0",
+        "d032ac98-05e1-4090-88bb-eb640dcb5fc1@b47c0",
+        "6f01cf7f-81bf-4a7e-bd5d-0afc19696480@b47c0"
+      ]
+    }
+  },
+  "23bf12bd-e6af-49da-b6c8-b9c4de7f7db5": {
+    "url": "db://assets/Prefab",
+    "value": {}
+  },
+  "7d4accac-d36f-4de2-995c-017a2f9bcf1f": {
+    "url": "db://assets/Script",
+    "value": {}
+  },
+  "ed281ba2-4aab-406b-b135-a686277376fd": {
+    "url": "db://assets/Texture",
+    "value": {}
+  },
+  "3406f4dc-03cc-4497-a126-534181a8ec24": {
+    "url": "db://assets/Texture/Quiz",
+    "value": {}
+  },
+  "6e92dd2a-2434-44be-a103-e89d029fc5f7": {
+    "url": "db://assets/Texture/UI",
+    "value": {}
+  },
+  "3375720f-b256-4d50-a23b-9df7bb10ea09": {
+    "url": "db://assets/Prefab/Modal/ChoicesModal.prefab",
+    "value": {
+      "depends": [
+        "57520716-48c8-4a19-8acf-41c9f8777fb0@f9941",
+        "0f3f39e0-7f07-43dd-97ec-32c02879f2b6@f9941",
+        "0f3f39e0-7f07-43dd-97ec-32c02879f2b6@f9941",
+        "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+        "544e49d6-3f05-4fa8-9a9e-091f98fc2ce8@f9941",
+        "951249e0-9f16-456d-8b85-a6ca954da16b@f9941",
+        "57520716-48c8-4a19-8acf-41c9f8777fb0@f9941",
+        "0f3f39e0-7f07-43dd-97ec-32c02879f2b6@f9941",
+        "0f3f39e0-7f07-43dd-97ec-32c02879f2b6@f9941",
+        "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+        "544e49d6-3f05-4fa8-9a9e-091f98fc2ce8@f9941",
+        "951249e0-9f16-456d-8b85-a6ca954da16b@f9941",
+        "57520716-48c8-4a19-8acf-41c9f8777fb0@f9941",
+        "0f3f39e0-7f07-43dd-97ec-32c02879f2b6@f9941",
+        "0f3f39e0-7f07-43dd-97ec-32c02879f2b6@f9941",
+        "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+        "544e49d6-3f05-4fa8-9a9e-091f98fc2ce8@f9941",
+        "951249e0-9f16-456d-8b85-a6ca954da16b@f9941",
+        "57520716-48c8-4a19-8acf-41c9f8777fb0@f9941",
+        "0f3f39e0-7f07-43dd-97ec-32c02879f2b6@f9941",
+        "0f3f39e0-7f07-43dd-97ec-32c02879f2b6@f9941",
+        "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+        "544e49d6-3f05-4fa8-9a9e-091f98fc2ce8@f9941",
+        "951249e0-9f16-456d-8b85-a6ca954da16b@f9941",
+        "57520716-48c8-4a19-8acf-41c9f8777fb0@f9941",
+        "0f3f39e0-7f07-43dd-97ec-32c02879f2b6@f9941",
+        "0f3f39e0-7f07-43dd-97ec-32c02879f2b6@f9941",
+        "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+        "544e49d6-3f05-4fa8-9a9e-091f98fc2ce8@f9941",
+        "951249e0-9f16-456d-8b85-a6ca954da16b@f9941",
+        "57520716-48c8-4a19-8acf-41c9f8777fb0@f9941",
+        "0f3f39e0-7f07-43dd-97ec-32c02879f2b6@f9941",
+        "0f3f39e0-7f07-43dd-97ec-32c02879f2b6@f9941",
+        "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+        "544e49d6-3f05-4fa8-9a9e-091f98fc2ce8@f9941",
+        "951249e0-9f16-456d-8b85-a6ca954da16b@f9941",
+        "c7fe436c-770d-40a2-9782-d240155b8bf3@f9941"
+      ]
+    }
+  },
+  "c03d3bc9-8c03-4f81-ae38-705c55570072": {
+    "url": "db://assets/Prefab/Modal/QuestionModal.prefab",
+    "value": {
+      "depends": [
+        "57520716-48c8-4a19-8acf-41c9f8777fb0@f9941",
+        "1b07d5fd-c693-477a-9c93-90f3848601f7@f9941",
+        "0f3f39e0-7f07-43dd-97ec-32c02879f2b6@f9941",
+        "0f3f39e0-7f07-43dd-97ec-32c02879f2b6@f9941",
+        "0f3f39e0-7f07-43dd-97ec-32c02879f2b6@f9941",
+        "544e49d6-3f05-4fa8-9a9e-091f98fc2ce8@f9941",
+        "951249e0-9f16-456d-8b85-a6ca954da16b@f9941",
+        "d1904ac7-66dd-415b-9ace-e7f817e77a89@f9941",
+        "d1904ac7-66dd-415b-9ace-e7f817e77a89@f9941",
+        "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+        "544e49d6-3f05-4fa8-9a9e-091f98fc2ce8@f9941",
+        "951249e0-9f16-456d-8b85-a6ca954da16b@f9941",
+        "d1904ac7-66dd-415b-9ace-e7f817e77a89@f9941",
+        "d1904ac7-66dd-415b-9ace-e7f817e77a89@f9941",
+        "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+        "544e49d6-3f05-4fa8-9a9e-091f98fc2ce8@f9941",
+        "951249e0-9f16-456d-8b85-a6ca954da16b@f9941",
+        "d1904ac7-66dd-415b-9ace-e7f817e77a89@f9941",
+        "d1904ac7-66dd-415b-9ace-e7f817e77a89@f9941",
+        "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+        "544e49d6-3f05-4fa8-9a9e-091f98fc2ce8@f9941",
+        "951249e0-9f16-456d-8b85-a6ca954da16b@f9941",
+        "d1904ac7-66dd-415b-9ace-e7f817e77a89@f9941",
+        "d1904ac7-66dd-415b-9ace-e7f817e77a89@f9941",
+        "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+        "544e49d6-3f05-4fa8-9a9e-091f98fc2ce8@f9941",
+        "951249e0-9f16-456d-8b85-a6ca954da16b@f9941",
+        "d1904ac7-66dd-415b-9ace-e7f817e77a89@f9941",
+        "d1904ac7-66dd-415b-9ace-e7f817e77a89@f9941",
+        "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+        "544e49d6-3f05-4fa8-9a9e-091f98fc2ce8@f9941",
+        "951249e0-9f16-456d-8b85-a6ca954da16b@f9941",
+        "d1904ac7-66dd-415b-9ace-e7f817e77a89@f9941",
+        "d1904ac7-66dd-415b-9ace-e7f817e77a89@f9941",
+        "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+        "544e49d6-3f05-4fa8-9a9e-091f98fc2ce8@f9941",
+        "951249e0-9f16-456d-8b85-a6ca954da16b@f9941",
+        "315f0da0-3db8-4e2d-a302-1fef0c9bd067@f9941"
+      ]
+    }
+  },
+  "1e01ef77-6349-407d-9593-faea67c2b7bb": {
+    "url": "db://assets/Prefab/Modal/ResultModal.prefab",
+    "value": {
+      "depends": [
+        "57520716-48c8-4a19-8acf-41c9f8777fb0@f9941",
+        "0f3f39e0-7f07-43dd-97ec-32c02879f2b6@f9941",
+        "0f3f39e0-7f07-43dd-97ec-32c02879f2b6@f9941",
+        "0f3f39e0-7f07-43dd-97ec-32c02879f2b6@f9941",
+        "544e49d6-3f05-4fa8-9a9e-091f98fc2ce8@f9941",
+        "951249e0-9f16-456d-8b85-a6ca954da16b@f9941",
+        "315f0da0-3db8-4e2d-a302-1fef0c9bd067@f9941"
+      ]
+    }
+  },
+  "a31c13eb-4563-4140-8b00-66eb02f6e15a": {
+    "url": "db://assets/Texture/Quiz/Ges0.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "fb4fbec3-93f7-47e0-9277-4711334b0b41": {
+    "url": "db://assets/Texture/Quiz/Ges1.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "c2a2c2c0-1259-4ced-9027-e04be2f46f7e": {
+    "url": "db://assets/Texture/Quiz/Ges2.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "fb63a019-9c62-433b-820f-b2d6b66471e0": {
+    "url": "db://assets/Texture/Quiz/Ges3.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "da9ac356-52a4-4dd3-ba4f-fd56b6471b74": {
+    "url": "db://assets/Texture/Quiz/Ges4.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "fb4fbec3-93f7-47e0-9277-4711334b0b41@6c48a": {
+    "url": "db://assets/Texture/Quiz/Ges1.png@6c48a",
+    "value": {
+      "depends": [
+        "fb4fbec3-93f7-47e0-9277-4711334b0b41"
+      ]
+    }
+  },
+  "a31c13eb-4563-4140-8b00-66eb02f6e15a@6c48a": {
+    "url": "db://assets/Texture/Quiz/Ges0.png@6c48a",
+    "value": {
+      "depends": [
+        "a31c13eb-4563-4140-8b00-66eb02f6e15a"
+      ]
+    }
+  },
+  "09338cf4-f0cb-4b5c-8481-6a323b2fae75": {
+    "url": "db://assets/Texture/Quiz/Ges5.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "1b07d5fd-c693-477a-9c93-90f3848601f7": {
+    "url": "db://assets/Texture/UI/BackFrame.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "c2a2c2c0-1259-4ced-9027-e04be2f46f7e@6c48a": {
+    "url": "db://assets/Texture/Quiz/Ges2.png@6c48a",
+    "value": {
+      "depends": [
+        "c2a2c2c0-1259-4ced-9027-e04be2f46f7e"
+      ]
+    }
+  },
+  "0f3f39e0-7f07-43dd-97ec-32c02879f2b6": {
+    "url": "db://assets/Texture/UI/ButtonFrame.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "fb63a019-9c62-433b-820f-b2d6b66471e0@6c48a": {
+    "url": "db://assets/Texture/Quiz/Ges3.png@6c48a",
+    "value": {
+      "depends": [
+        "fb63a019-9c62-433b-820f-b2d6b66471e0"
+      ]
+    }
+  },
+  "da9ac356-52a4-4dd3-ba4f-fd56b6471b74@6c48a": {
+    "url": "db://assets/Texture/Quiz/Ges4.png@6c48a",
+    "value": {
+      "depends": [
+        "da9ac356-52a4-4dd3-ba4f-fd56b6471b74"
+      ]
+    }
+  },
+  "d1904ac7-66dd-415b-9ace-e7f817e77a89": {
+    "url": "db://assets/Texture/UI/CircleButtonFrame.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "315f0da0-3db8-4e2d-a302-1fef0c9bd067": {
+    "url": "db://assets/Texture/UI/ModalFrane.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "1b07d5fd-c693-477a-9c93-90f3848601f7@6c48a": {
+    "url": "db://assets/Texture/UI/BackFrame.png@6c48a",
+    "value": {
+      "depends": [
+        "1b07d5fd-c693-477a-9c93-90f3848601f7"
+      ]
+    }
+  },
+  "f0511ae3-160a-4653-a0cf-2f3fb9e5f02b": {
+    "url": "db://assets/Texture/UI/pixel.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "09338cf4-f0cb-4b5c-8481-6a323b2fae75@6c48a": {
+    "url": "db://assets/Texture/Quiz/Ges5.png@6c48a",
+    "value": {
+      "depends": [
+        "09338cf4-f0cb-4b5c-8481-6a323b2fae75"
+      ]
+    }
+  },
+  "f0511ae3-160a-4653-a0cf-2f3fb9e5f02b@6c48a": {
+    "url": "db://assets/Texture/UI/pixel.png@6c48a",
+    "value": {
+      "depends": [
+        "f0511ae3-160a-4653-a0cf-2f3fb9e5f02b"
+      ]
+    }
+  },
+  "0f3f39e0-7f07-43dd-97ec-32c02879f2b6@6c48a": {
+    "url": "db://assets/Texture/UI/ButtonFrame.png@6c48a",
+    "value": {
+      "depends": [
+        "0f3f39e0-7f07-43dd-97ec-32c02879f2b6"
+      ]
+    }
+  },
+  "d1904ac7-66dd-415b-9ace-e7f817e77a89@6c48a": {
+    "url": "db://assets/Texture/UI/CircleButtonFrame.png@6c48a",
+    "value": {
+      "depends": [
+        "d1904ac7-66dd-415b-9ace-e7f817e77a89"
+      ]
+    }
+  },
+  "315f0da0-3db8-4e2d-a302-1fef0c9bd067@6c48a": {
+    "url": "db://assets/Texture/UI/ModalFrane.png@6c48a",
+    "value": {
+      "depends": [
+        "315f0da0-3db8-4e2d-a302-1fef0c9bd067"
+      ]
+    }
+  },
+  "8a51b193-6fbb-4637-b5cc-38f1d3943cc9": {
+    "url": "db://assets/Script/Game",
+    "value": {}
+  },
+  "d4b978ce-92f9-40de-b694-5bfd9de5f5bf": {
+    "url": "db://assets/Script/UI",
+    "value": {}
+  },
+  "b5c47407-1dd9-4753-b02b-616c3c2799ef": {
+    "url": "db://assets/Script/Game/Manager",
+    "value": {}
+  },
+  "1b83e75f-b843-43bf-b981-208098e13810": {
+    "url": "db://assets/Script/Game/Modal",
+    "value": {}
+  },
+  "f7545cb6-80ca-42fb-a27a-afcd787ac222": {
+    "url": "db://assets/Script/Game/Quiz",
+    "value": {}
+  },
+  "fe959ade-f763-4ce3-8221-50ace0c875d4": {
+    "url": "db://assets/Script/UI/TestMenu.ts",
+    "value": {}
+  },
+  "de4c0fca-e7ce-4d86-a1ab-d03ce477a1a6": {
+    "url": "db://assets/Script/Game/Manager/QuizManager.ts",
+    "value": {}
+  },
+  "e8e61a10-df40-4d8e-b308-cceef04de892": {
+    "url": "db://assets/Script/Game/Manager/QuizModalManager.ts",
+    "value": {}
+  },
+  "2477077d-2400-442e-a5c8-67206febb2f7": {
+    "url": "db://assets/Script/Game/Modal/ChoicesModal.ts",
+    "value": {}
+  },
+  "8f505756-d3be-4106-b8ab-5866d1bbb35b": {
+    "url": "db://assets/Script/Game/Modal/QuestionModal.ts",
+    "value": {}
+  },
+  "6169e59e-1b7c-4843-a160-6129e0a24d7b": {
+    "url": "db://assets/Script/Game/Modal/ResultModal.ts",
+    "value": {}
+  },
+  "97fb8f70-a8fa-4e52-aaff-727b505c27b6": {
+    "url": "db://assets/Script/Game/Quiz/GestureQuiz.ts",
+    "value": {}
+  },
+  "236df82c-57bc-47ad-b417-7005185e6c7c": {
+    "url": "db://assets/Script/Game/Quiz/QuizComponent.ts",
+    "value": {}
+  },
+  "922537de-4568-4519-85f9-be5ac4746df4": {
+    "url": "db://assets/Prefab/Menu.prefab",
+    "value": {
+      "depends": [
+        "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+        "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+        "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+        "544e49d6-3f05-4fa8-9a9e-091f98fc2ce8@f9941",
+        "951249e0-9f16-456d-8b85-a6ca954da16b@f9941",
+        "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+        "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+        "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+        "544e49d6-3f05-4fa8-9a9e-091f98fc2ce8@f9941",
+        "951249e0-9f16-456d-8b85-a6ca954da16b@f9941",
+        "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+        "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+        "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+        "544e49d6-3f05-4fa8-9a9e-091f98fc2ce8@f9941",
+        "951249e0-9f16-456d-8b85-a6ca954da16b@f9941",
+        "f0511ae3-160a-4653-a0cf-2f3fb9e5f02b@f9941"
+      ]
+    }
+  },
+  "f0511ae3-160a-4653-a0cf-2f3fb9e5f02b@f9941": {
+    "url": "db://assets/Texture/UI/pixel.png@f9941",
+    "value": {
+      "depends": [
+        "f0511ae3-160a-4653-a0cf-2f3fb9e5f02b@6c48a"
+      ]
+    }
+  },
+  "1b07d5fd-c693-477a-9c93-90f3848601f7@f9941": {
+    "url": "db://assets/Texture/UI/BackFrame.png@f9941",
+    "value": {
+      "depends": [
+        "1b07d5fd-c693-477a-9c93-90f3848601f7@6c48a"
+      ]
+    }
+  },
+  "0f3f39e0-7f07-43dd-97ec-32c02879f2b6@f9941": {
+    "url": "db://assets/Texture/UI/ButtonFrame.png@f9941",
+    "value": {
+      "depends": [
+        "0f3f39e0-7f07-43dd-97ec-32c02879f2b6@6c48a"
+      ]
+    }
+  },
+  "d1904ac7-66dd-415b-9ace-e7f817e77a89@f9941": {
+    "url": "db://assets/Texture/UI/CircleButtonFrame.png@f9941",
+    "value": {
+      "depends": [
+        "d1904ac7-66dd-415b-9ace-e7f817e77a89@6c48a"
+      ]
+    }
+  },
+  "315f0da0-3db8-4e2d-a302-1fef0c9bd067@f9941": {
+    "url": "db://assets/Texture/UI/ModalFrane.png@f9941",
+    "value": {
+      "depends": [
+        "315f0da0-3db8-4e2d-a302-1fef0c9bd067@6c48a"
+      ]
+    }
+  },
+  "b2d4f7f4-91af-495f-a4ab-8a4f293964c5": {
+    "url": "db://assets/Prefab/Modal",
+    "value": {}
+  },
+  "76b0c47a-3c04-441e-887e-8b5234b2217b": {
+    "url": "db://assets/Script/Scene",
+    "value": {}
+  },
+  "be307a6d-9f7a-4cc8-8282-15987f8f996c": {
+    "url": "db://assets/Script/Game/Manager/GameManager.ts",
+    "value": {}
+  },
+  "a081c28d-31c7-4290-9abe-9014ffcbf623": {
+    "url": "db://assets/Script/Game/Data",
+    "value": {}
+  },
+  "ba7c0c5d-d097-4cf4-acfc-4197317bda49": {
+    "url": "db://assets/Script/Game/Quiz/Data",
+    "value": {}
+  },
+  "a67896a0-eee1-4e09-b194-0ece77de8d2c": {
+    "url": "db://assets/Script/Game/Quiz/Data/GestureData.ts",
+    "value": {}
+  },
+  "6325fe89-7149-4e8e-8c9b-2763006fee8b": {
+    "url": "db://assets/Script/Game/Quiz/Data/GestureDataBase.ts",
+    "value": {}
+  },
+  "a31c13eb-4563-4140-8b00-66eb02f6e15a@f9941": {
+    "url": "db://assets/Texture/Quiz/Ges0.png@f9941",
+    "value": {
+      "depends": [
+        "a31c13eb-4563-4140-8b00-66eb02f6e15a@6c48a"
+      ]
+    }
+  },
+  "fb4fbec3-93f7-47e0-9277-4711334b0b41@f9941": {
+    "url": "db://assets/Texture/Quiz/Ges1.png@f9941",
+    "value": {
+      "depends": [
+        "fb4fbec3-93f7-47e0-9277-4711334b0b41@6c48a"
+      ]
+    }
+  },
+  "da9ac356-52a4-4dd3-ba4f-fd56b6471b74@f9941": {
+    "url": "db://assets/Texture/Quiz/Ges4.png@f9941",
+    "value": {
+      "depends": [
+        "da9ac356-52a4-4dd3-ba4f-fd56b6471b74@6c48a"
+      ]
+    }
+  },
+  "c2a2c2c0-1259-4ced-9027-e04be2f46f7e@f9941": {
+    "url": "db://assets/Texture/Quiz/Ges2.png@f9941",
+    "value": {
+      "depends": [
+        "c2a2c2c0-1259-4ced-9027-e04be2f46f7e@6c48a"
+      ]
+    }
+  },
+  "fb63a019-9c62-433b-820f-b2d6b66471e0@f9941": {
+    "url": "db://assets/Texture/Quiz/Ges3.png@f9941",
+    "value": {
+      "depends": [
+        "fb63a019-9c62-433b-820f-b2d6b66471e0@6c48a"
+      ]
+    }
+  },
+  "09338cf4-f0cb-4b5c-8481-6a323b2fae75@f9941": {
+    "url": "db://assets/Texture/Quiz/Ges5.png@f9941",
+    "value": {
+      "depends": [
+        "09338cf4-f0cb-4b5c-8481-6a323b2fae75@6c48a"
+      ]
+    }
+  },
+  "f99bab0a-3154-4a89-a10c-f27d2667d58f": {
+    "url": "db://assets/Script/Game/Quiz/Data/DataBase.ts",
+    "value": {}
+  },
+  "91ce4ab9-9d0d-406f-8f25-066f3085c668": {
+    "url": "db://assets/Script/Game/Quiz/Data/QuizDataBase.ts",
+    "value": {}
+  },
+  "9d856897-1fe4-4803-ac7a-ea1f0d6e525f": {
+    "url": "db://assets/Script/Game/Quiz/Data/QuizData.ts",
+    "value": {}
+  },
+  "60303970-f3a2-4142-88fd-b771d6f92402": {
+    "url": "db://assets/Script/Game/Modal/OverallResultModal.ts",
+    "value": {}
+  },
+  "404cf2f7-b06d-4e0b-b5fb-911a6fd12af4": {
+    "url": "db://assets/Texture/UI/transparent.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "404cf2f7-b06d-4e0b-b5fb-911a6fd12af4@6c48a": {
+    "url": "db://assets/Texture/UI/transparent.png@6c48a",
+    "value": {
+      "depends": [
+        "404cf2f7-b06d-4e0b-b5fb-911a6fd12af4"
+      ]
+    }
+  },
+  "404cf2f7-b06d-4e0b-b5fb-911a6fd12af4@f9941": {
+    "url": "db://assets/Texture/UI/transparent.png@f9941",
+    "value": {
+      "depends": [
+        "404cf2f7-b06d-4e0b-b5fb-911a6fd12af4@6c48a"
+      ]
+    }
+  },
+  "46382f71-d726-40f4-a91a-b3fdbfd6481f": {
+    "url": "db://assets/Texture/UI/ResultFrame.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "46382f71-d726-40f4-a91a-b3fdbfd6481f@6c48a": {
+    "url": "db://assets/Texture/UI/ResultFrame.png@6c48a",
+    "value": {
+      "depends": [
+        "46382f71-d726-40f4-a91a-b3fdbfd6481f"
+      ]
+    }
+  },
+  "46382f71-d726-40f4-a91a-b3fdbfd6481f@f9941": {
+    "url": "db://assets/Texture/UI/ResultFrame.png@f9941",
+    "value": {
+      "depends": [
+        "46382f71-d726-40f4-a91a-b3fdbfd6481f@6c48a"
+      ]
+    }
+  },
+  "daf8414a-5490-4197-81fa-5c82b35f7e1e": {
+    "url": "db://assets/Prefab/Modal/OverallResultModal.prefab",
+    "value": {
+      "depends": [
+        "afc47931-f066-46b0-90be-9fe61f213428@f9941",
+        "ffb88a8f-af62-48f4-8f1d-3cb606443a43@f9941",
+        "46382f71-d726-40f4-a91a-b3fdbfd6481f@f9941",
+        "46382f71-d726-40f4-a91a-b3fdbfd6481f@f9941",
+        "46382f71-d726-40f4-a91a-b3fdbfd6481f@f9941",
+        "46382f71-d726-40f4-a91a-b3fdbfd6481f@f9941",
+        "46382f71-d726-40f4-a91a-b3fdbfd6481f@f9941",
+        "46382f71-d726-40f4-a91a-b3fdbfd6481f@f9941",
+        "46382f71-d726-40f4-a91a-b3fdbfd6481f@f9941",
+        "46382f71-d726-40f4-a91a-b3fdbfd6481f@f9941",
+        "46382f71-d726-40f4-a91a-b3fdbfd6481f@f9941",
+        "46382f71-d726-40f4-a91a-b3fdbfd6481f@f9941",
+        "404cf2f7-b06d-4e0b-b5fb-911a6fd12af4@f9941",
+        "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+        "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+        "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+        "544e49d6-3f05-4fa8-9a9e-091f98fc2ce8@f9941",
+        "951249e0-9f16-456d-8b85-a6ca954da16b@f9941"
+      ]
+    }
+  },
+  "c7fe436c-770d-40a2-9782-d240155b8bf3": {
+    "url": "db://assets/Texture/UI/questionFrame.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "c7fe436c-770d-40a2-9782-d240155b8bf3@6c48a": {
+    "url": "db://assets/Texture/UI/questionFrame.png@6c48a",
+    "value": {
+      "depends": [
+        "c7fe436c-770d-40a2-9782-d240155b8bf3"
+      ]
+    }
+  },
+  "c7fe436c-770d-40a2-9782-d240155b8bf3@f9941": {
+    "url": "db://assets/Texture/UI/questionFrame.png@f9941",
+    "value": {
+      "depends": [
+        "c7fe436c-770d-40a2-9782-d240155b8bf3@6c48a"
+      ]
+    }
+  }
+}
