@@ -3,6 +3,8 @@ import { ChoicesModal } from '../Modal/ChoicesModal';
 import { OverallResultModal } from '../Modal/OverallResultModal';
 import { QuestionModal } from '../Modal/QuestionModal';
 import { ResultModal } from '../Modal/ResultModal';
+import { WaitModal } from '../Modal/WaitModal';
+import { ClientMode, GameManager } from './GameManager';
 const { ccclass, property } = _decorator;
 
 const ModalType = {
@@ -44,6 +46,9 @@ export class QuizModalManager extends Component {
     private result : ResultModal = null;
     private overall : OverallResultModal = null;
 
+    private debugClientMode : ClientMode = 'Liver';
+    private debugNowType : ModalType = 'Question';
+
     start() {
         QuizModalManager.instance = this;
 
@@ -69,15 +74,16 @@ export class QuizModalManager extends Component {
     }
 
     update(deltaTime: number) {
-        
+        //this.DebugClientMode();
     }
 
     public OnUpdate(deltaTime : number){
-        
+
     }
 
     public ChangeModal(nextType : ModalType){
         if(nextType === 'Question'){
+            this.choices.node.active = false;
             this.result.node.active = false;
             this.overall.node.active = false;
             this.question.node.active = true;
@@ -86,15 +92,13 @@ export class QuizModalManager extends Component {
             this.question.node.active = false;
             this.choices.node.active = true;
         }
-        else if(nextType === 'Result'){
-            this.choices.node.active = false;
-            this.result.node.active = true;
-        }
         else if(nextType === 'Overall'){
             this.question.node.active = false;
             this.choices.node.active = false;
             this.overall.node.active = true;
         }
+
+        this.debugNowType = nextType;
     }
 
     public GetQuestionModal() : QuestionModal{

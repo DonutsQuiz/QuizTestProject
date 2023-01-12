@@ -410,6 +410,346 @@
       },
       "timestamp": 1672817569416
     },
+    "b3e7ad52870c89046716b643397a6ec19e580fdb": {
+      "imports": {
+        "__unresolved_0": {
+          "resolved": {
+            "type": "chunk",
+            "id": "84741ad843cea9a440c5d8c2d379669b6551400d"
+          },
+          "messages": []
+        },
+        "__unresolved_1": {
+          "resolved": {
+            "type": "chunk",
+            "id": "17a0f929f56f0b4289dd996e63d2a4aa7a53fdf4"
+          },
+          "messages": []
+        },
+        "cc": {
+          "resolved": {
+            "type": "chunk",
+            "id": "d0b282b9748ef7fc7d2e7bd647d71b0f7e84da53"
+          },
+          "messages": []
+        }
+      },
+      "timestamp": 1672899332690
+    },
+    "17a0f929f56f0b4289dd996e63d2a4aa7a53fdf4": {
+      "imports": {
+        "__unresolved_0": {
+          "resolved": {
+            "type": "chunk",
+            "id": "84741ad843cea9a440c5d8c2d379669b6551400d"
+          },
+          "messages": []
+        },
+        "cc": {
+          "resolved": {
+            "type": "chunk",
+            "id": "d0b282b9748ef7fc7d2e7bd647d71b0f7e84da53"
+          },
+          "messages": []
+        }
+      },
+      "timestamp": 1672899332707
+    },
+    "f14c52a9add1794d69391e29969cc4221e163ed9": {
+      "imports": {
+        "__unresolved_0": {
+          "resolved": {
+            "type": "chunk",
+            "id": "84741ad843cea9a440c5d8c2d379669b6551400d"
+          },
+          "messages": []
+        },
+        "__unresolved_1": {
+          "resolved": {
+            "type": "chunk",
+            "id": "4f6929f44db6bacac8c44e8af3d49bef055fe805"
+          },
+          "messages": []
+        },
+        "__unresolved_2": {
+          "resolved": {
+            "type": "chunk",
+            "id": "52cf525ac17464717f1cef5c44771062091fafe3"
+          },
+          "messages": []
+        },
+        "cc": {
+          "resolved": {
+            "type": "chunk",
+            "id": "d0b282b9748ef7fc7d2e7bd647d71b0f7e84da53"
+          },
+          "messages": []
+        }
+      },
+      "timestamp": 1672899332751
+    },
+    "4ee7db4a555a986384d589746cc3d8e0ed283825": {
+      "imports": {
+        "__unresolved_0": {
+          "resolved": {
+            "type": "chunk",
+            "id": "84741ad843cea9a440c5d8c2d379669b6551400d"
+          },
+          "messages": []
+        },
+        "__unresolved_1": {
+          "resolved": {
+            "type": "chunk",
+            "id": "52cf525ac17464717f1cef5c44771062091fafe3"
+          },
+          "messages": []
+        },
+        "cc": {
+          "resolved": {
+            "type": "chunk",
+            "id": "d0b282b9748ef7fc7d2e7bd647d71b0f7e84da53"
+          },
+          "messages": []
+        }
+      },
+      "timestamp": 1672901923614
+    },
+    "55e205177ee8bb6ed4ae4bd962eccd27aad1cee0": {
+      "imports": {
+        "cc": {
+          "resolved": {
+            "type": "chunk",
+            "id": "d0b282b9748ef7fc7d2e7bd647d71b0f7e84da53"
+          },
+          "messages": []
+        }
+      },
+      "timestamp": 1672906098891
+    },
+    "20e6255d0b19fe25301ca04823ed087d1b0cbab8": {
+      "imports": {
+        "__unresolved_0": {
+          "resolved": {
+            "type": "chunk",
+            "id": "84741ad843cea9a440c5d8c2d379669b6551400d"
+          },
+          "messages": []
+        },
+        "__unresolved_1": {
+          "resolved": {
+            "type": "error",
+            "text": "Error: Module \"../Manager/QuizModalManager\" not found for file:///Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/Game/Modal/User/ChoicesModal.ts"
+          },
+          "messages": [
+            {
+              "level": "warn",
+              "text": "Did you forget the extension? Please note that you can not omit extension in module specifier."
+            }
+          ]
+        },
+        "cc": {
+          "resolved": {
+            "type": "chunk",
+            "id": "d0b282b9748ef7fc7d2e7bd647d71b0f7e84da53"
+          },
+          "messages": []
+        }
+      },
+      "timestamp": 1673158883695
+    },
+    "bf5b301e012961c059557f0a0a10079edebbe2a8": {
+      "imports": {},
+      "timestamp": 1673158919865
+    },
+    "43d3a9b1e50553e618e4682b89c65c28fc23a1e9": {
+      "imports": {
+        "__unresolved_0": {
+          "resolved": {
+            "type": "chunk",
+            "id": "84741ad843cea9a440c5d8c2d379669b6551400d"
+          },
+          "messages": []
+        },
+        "__unresolved_1": {
+          "resolved": {
+            "type": "chunk",
+            "id": "c3bfca557d6b2194772672a8f168b12f219d3a74"
+          },
+          "messages": []
+        },
+        "__unresolved_2": {
+          "resolved": {
+            "type": "chunk",
+            "id": "52cf525ac17464717f1cef5c44771062091fafe3"
+          },
+          "messages": []
+        },
+        "cc": {
+          "resolved": {
+            "type": "chunk",
+            "id": "d0b282b9748ef7fc7d2e7bd647d71b0f7e84da53"
+          },
+          "messages": []
+        }
+      },
+      "timestamp": 1673160126431
+    },
+    "378f2d4a4d53e071dfc7b52f6996a573dd0888fc": {
+      "imports": {
+        "cc": {
+          "resolved": {
+            "type": "chunk",
+            "id": "d0b282b9748ef7fc7d2e7bd647d71b0f7e84da53"
+          },
+          "messages": []
+        }
+      },
+      "timestamp": 1673165610190
+    },
+    "c5f63f34a6d1ae14c200d0f26a28c7e0696aece7": {
+      "imports": {},
+      "timestamp": 1673166208617
+    },
+    "7d8f7f7d4fad61b66519001ac8e50c2e17a6cdc3": {
+      "imports": {
+        "__unresolved_0": {
+          "resolved": {
+            "type": "chunk",
+            "id": "84741ad843cea9a440c5d8c2d379669b6551400d"
+          },
+          "messages": []
+        },
+        "__unresolved_1": {
+          "resolved": {
+            "type": "chunk",
+            "id": "c3bfca557d6b2194772672a8f168b12f219d3a74"
+          },
+          "messages": []
+        },
+        "cc": {
+          "resolved": {
+            "type": "chunk",
+            "id": "d0b282b9748ef7fc7d2e7bd647d71b0f7e84da53"
+          },
+          "messages": []
+        }
+      },
+      "timestamp": 1673236788700
+    },
+    "e7e387365783f4d637df3b326d45004f664b7e3f": {
+      "imports": {
+        "cc": {
+          "resolved": {
+            "type": "chunk",
+            "id": "d0b282b9748ef7fc7d2e7bd647d71b0f7e84da53"
+          },
+          "messages": []
+        }
+      },
+      "timestamp": 1673237451644
+    },
+    "65324b231d1cd49d6c0658e80cc5014008e7d116": {
+      "imports": {
+        "cc": {
+          "resolved": {
+            "type": "chunk",
+            "id": "d0b282b9748ef7fc7d2e7bd647d71b0f7e84da53"
+          },
+          "messages": []
+        }
+      },
+      "timestamp": 1673237462883
+    },
+    "b85b4f569e96a8e0475003dfa3ca4c126ce60f92": {
+      "imports": {
+        "cc": {
+          "resolved": {
+            "type": "chunk",
+            "id": "d0b282b9748ef7fc7d2e7bd647d71b0f7e84da53"
+          },
+          "messages": []
+        }
+      },
+      "timestamp": 1673238077151
+    },
+    "72b87ed0322db4ecfeaca72210bf19501071b42b": {
+      "imports": {
+        "cc": {
+          "resolved": {
+            "type": "chunk",
+            "id": "d0b282b9748ef7fc7d2e7bd647d71b0f7e84da53"
+          },
+          "messages": []
+        }
+      },
+      "timestamp": 1673238728694
+    },
+    "f2ee32274c65b104f85407527b956efac2e73eec": {
+      "imports": {
+        "__unresolved_0": {
+          "resolved": {
+            "type": "chunk",
+            "id": "84741ad843cea9a440c5d8c2d379669b6551400d"
+          },
+          "messages": []
+        },
+        "__unresolved_1": {
+          "resolved": {
+            "type": "chunk",
+            "id": "c3bfca557d6b2194772672a8f168b12f219d3a74"
+          },
+          "messages": []
+        },
+        "__unresolved_2": {
+          "resolved": {
+            "type": "chunk",
+            "id": "52cf525ac17464717f1cef5c44771062091fafe3"
+          },
+          "messages": []
+        },
+        "__unresolved_3": {
+          "resolved": {
+            "type": "chunk",
+            "id": "b3e7ad52870c89046716b643397a6ec19e580fdb"
+          },
+          "messages": []
+        },
+        "__unresolved_4": {
+          "resolved": {
+            "type": "chunk",
+            "id": "a2763e5b618e8a3f76515b191d1a779dbbf254bb"
+          },
+          "messages": []
+        },
+        "cc": {
+          "resolved": {
+            "type": "chunk",
+            "id": "d0b282b9748ef7fc7d2e7bd647d71b0f7e84da53"
+          },
+          "messages": []
+        }
+      },
+      "timestamp": 1673238880881
+    },
+    "a2763e5b618e8a3f76515b191d1a779dbbf254bb": {
+      "imports": {
+        "__unresolved_0": {
+          "resolved": {
+            "type": "chunk",
+            "id": "84741ad843cea9a440c5d8c2d379669b6551400d"
+          },
+          "messages": []
+        },
+        "cc": {
+          "resolved": {
+            "type": "chunk",
+            "id": "d0b282b9748ef7fc7d2e7bd647d71b0f7e84da53"
+          },
+          "messages": []
+        }
+      },
+      "timestamp": 1673238880904
+    },
     "d0b282b9748ef7fc7d2e7bd647d71b0f7e84da53": {
       "imports": {
         "__unresolved_0": {
@@ -595,116 +935,383 @@
           "messages": []
         }
       },
-      "timestamp": 1672898981587
+      "timestamp": 1673409986360
     },
     "84741ad843cea9a440c5d8c2d379669b6551400d": {
       "imports": {},
-      "timestamp": 1672898981619
+      "timestamp": 1673409986403
     },
-    "8dd0c11f9264beb4a10294224d354d9a00b12b33": {
+    "c3bfca557d6b2194772672a8f168b12f219d3a74": {
       "imports": {
         "__unresolved_0": {
           "resolved": {
             "type": "chunk",
-            "id": "090d8ab0622e743a3af0fc98652fe22793526f6c"
+            "id": "84741ad843cea9a440c5d8c2d379669b6551400d"
           },
           "messages": []
         },
         "__unresolved_1": {
           "resolved": {
             "type": "chunk",
-            "id": "b0570e56a2481e93a26d8618e96fc45ed10ad4da"
-          },
-          "messages": []
-        },
-        "__unresolved_10": {
-          "resolved": {
-            "type": "chunk",
-            "id": "8843b2f9fb220db3cf507c6128a8a19ab729e46b"
-          },
-          "messages": []
-        },
-        "__unresolved_11": {
-          "resolved": {
-            "type": "chunk",
-            "id": "c5bb4c94e46b0441649b66784e66a738b73a8bfc"
+            "id": "b85b4f569e96a8e0475003dfa3ca4c126ce60f92"
           },
           "messages": []
         },
         "__unresolved_2": {
           "resolved": {
             "type": "chunk",
-            "id": "726f2046d2737f1262483451a2342154188d00ad"
+            "id": "72b751fa8c8513262e11e25d5061b7d9908879b6"
           },
           "messages": []
         },
         "__unresolved_3": {
           "resolved": {
             "type": "chunk",
-            "id": "98d748febbcb9752cdbf5a18de0d3b325b7215ed"
+            "id": "4f6929f44db6bacac8c44e8af3d49bef055fe805"
+          },
+          "messages": []
+        },
+        "cc": {
+          "resolved": {
+            "type": "chunk",
+            "id": "d0b282b9748ef7fc7d2e7bd647d71b0f7e84da53"
+          },
+          "messages": []
+        }
+      },
+      "timestamp": 1673411327256
+    },
+    "72b751fa8c8513262e11e25d5061b7d9908879b6": {
+      "imports": {
+        "cc": {
+          "resolved": {
+            "type": "chunk",
+            "id": "d0b282b9748ef7fc7d2e7bd647d71b0f7e84da53"
+          },
+          "messages": []
+        }
+      },
+      "timestamp": 1673413749910
+    },
+    "4f6929f44db6bacac8c44e8af3d49bef055fe805": {
+      "imports": {
+        "__unresolved_0": {
+          "resolved": {
+            "type": "chunk",
+            "id": "84741ad843cea9a440c5d8c2d379669b6551400d"
+          },
+          "messages": []
+        },
+        "__unresolved_1": {
+          "resolved": {
+            "type": "chunk",
+            "id": "f2ee32274c65b104f85407527b956efac2e73eec"
+          },
+          "messages": []
+        },
+        "__unresolved_2": {
+          "resolved": {
+            "type": "chunk",
+            "id": "52cf525ac17464717f1cef5c44771062091fafe3"
+          },
+          "messages": []
+        },
+        "cc": {
+          "resolved": {
+            "type": "chunk",
+            "id": "d0b282b9748ef7fc7d2e7bd647d71b0f7e84da53"
+          },
+          "messages": []
+        }
+      },
+      "timestamp": 1673414346395
+    },
+    "69f4ca7ae864efb0f489aa58fde2206c4e24c032": {
+      "imports": {
+        "__unresolved_0": {
+          "resolved": {
+            "type": "chunk",
+            "id": "84741ad843cea9a440c5d8c2d379669b6551400d"
+          },
+          "messages": []
+        },
+        "__unresolved_1": {
+          "resolved": {
+            "type": "chunk",
+            "id": "c3bfca557d6b2194772672a8f168b12f219d3a74"
+          },
+          "messages": []
+        },
+        "__unresolved_2": {
+          "resolved": {
+            "type": "chunk",
+            "id": "52cf525ac17464717f1cef5c44771062091fafe3"
+          },
+          "messages": []
+        },
+        "cc": {
+          "resolved": {
+            "type": "chunk",
+            "id": "d0b282b9748ef7fc7d2e7bd647d71b0f7e84da53"
+          },
+          "messages": []
+        }
+      },
+      "timestamp": 1673414346436
+    },
+    "52cf525ac17464717f1cef5c44771062091fafe3": {
+      "imports": {
+        "__unresolved_0": {
+          "resolved": {
+            "type": "chunk",
+            "id": "84741ad843cea9a440c5d8c2d379669b6551400d"
+          },
+          "messages": []
+        },
+        "__unresolved_1": {
+          "resolved": {
+            "type": "chunk",
+            "id": "1cb4398beeeb86c532a13b694315c4afa6ae8fc6"
+          },
+          "messages": []
+        },
+        "__unresolved_2": {
+          "resolved": {
+            "type": "chunk",
+            "id": "4ee7db4a555a986384d589746cc3d8e0ed283825"
+          },
+          "messages": []
+        },
+        "__unresolved_3": {
+          "resolved": {
+            "type": "chunk",
+            "id": "43d3a9b1e50553e618e4682b89c65c28fc23a1e9"
           },
           "messages": []
         },
         "__unresolved_4": {
           "resolved": {
             "type": "chunk",
-            "id": "0e4800ad01828cff557304c1b7061cbed247d6a6"
+            "id": "69f4ca7ae864efb0f489aa58fde2206c4e24c032"
+          },
+          "messages": []
+        },
+        "cc": {
+          "resolved": {
+            "type": "chunk",
+            "id": "d0b282b9748ef7fc7d2e7bd647d71b0f7e84da53"
+          },
+          "messages": []
+        }
+      },
+      "timestamp": 1673417308136
+    },
+    "9b3897730c12b372132a3c203f2f22c69208f515": {
+      "imports": {
+        "__unresolved_0": {
+          "resolved": {
+            "type": "chunk",
+            "id": "e7e387365783f4d637df3b326d45004f664b7e3f"
+          },
+          "messages": []
+        },
+        "__unresolved_1": {
+          "resolved": {
+            "type": "chunk",
+            "id": "72b751fa8c8513262e11e25d5061b7d9908879b6"
+          },
+          "messages": []
+        },
+        "__unresolved_10": {
+          "resolved": {
+            "type": "chunk",
+            "id": "55e205177ee8bb6ed4ae4bd962eccd27aad1cee0"
+          },
+          "messages": []
+        },
+        "__unresolved_11": {
+          "resolved": {
+            "type": "chunk",
+            "id": "b85b4f569e96a8e0475003dfa3ca4c126ce60f92"
+          },
+          "messages": []
+        },
+        "__unresolved_12": {
+          "resolved": {
+            "type": "chunk",
+            "id": "17a0f929f56f0b4289dd996e63d2a4aa7a53fdf4"
+          },
+          "messages": []
+        },
+        "__unresolved_13": {
+          "resolved": {
+            "type": "chunk",
+            "id": "b3e7ad52870c89046716b643397a6ec19e580fdb"
+          },
+          "messages": []
+        },
+        "__unresolved_14": {
+          "resolved": {
+            "type": "chunk",
+            "id": "f2ee32274c65b104f85407527b956efac2e73eec"
+          },
+          "messages": []
+        },
+        "__unresolved_15": {
+          "resolved": {
+            "type": "chunk",
+            "id": "a2763e5b618e8a3f76515b191d1a779dbbf254bb"
+          },
+          "messages": []
+        },
+        "__unresolved_16": {
+          "resolved": {
+            "type": "chunk",
+            "id": "f14c52a9add1794d69391e29969cc4221e163ed9"
+          },
+          "messages": []
+        },
+        "__unresolved_17": {
+          "resolved": {
+            "type": "chunk",
+            "id": "65324b231d1cd49d6c0658e80cc5014008e7d116"
+          },
+          "messages": []
+        },
+        "__unresolved_2": {
+          "resolved": {
+            "type": "chunk",
+            "id": "c3bfca557d6b2194772672a8f168b12f219d3a74"
+          },
+          "messages": []
+        },
+        "__unresolved_3": {
+          "resolved": {
+            "type": "chunk",
+            "id": "4f6929f44db6bacac8c44e8af3d49bef055fe805"
+          },
+          "messages": []
+        },
+        "__unresolved_4": {
+          "resolved": {
+            "type": "chunk",
+            "id": "52cf525ac17464717f1cef5c44771062091fafe3"
           },
           "messages": []
         },
         "__unresolved_5": {
           "resolved": {
             "type": "chunk",
-            "id": "f6f1e6b7cd3a494f8c27e9f90de1e3781b398f6c"
+            "id": "7d8f7f7d4fad61b66519001ac8e50c2e17a6cdc3"
           },
           "messages": []
         },
         "__unresolved_6": {
           "resolved": {
             "type": "chunk",
-            "id": "eb36167ca5e3990ffc3cd3ea191dbf0c5232eb1c"
+            "id": "1cb4398beeeb86c532a13b694315c4afa6ae8fc6"
           },
           "messages": []
         },
         "__unresolved_7": {
           "resolved": {
             "type": "chunk",
-            "id": "16c8c0acaf42e521ffafb291c598c4c41c092d84"
+            "id": "4ee7db4a555a986384d589746cc3d8e0ed283825"
           },
           "messages": []
         },
         "__unresolved_8": {
           "resolved": {
             "type": "chunk",
-            "id": "bfe84ca162866519bb4ee531c6d1eb020223aecc"
+            "id": "43d3a9b1e50553e618e4682b89c65c28fc23a1e9"
           },
           "messages": []
         },
         "__unresolved_9": {
           "resolved": {
             "type": "chunk",
-            "id": "eb0340081fc83d728621d1eabe56d24d2776713f"
+            "id": "69f4ca7ae864efb0f489aa58fde2206c4e24c032"
           },
           "messages": []
         }
       },
-      "timestamp": 1672898981871
+      "timestamp": 1673417485548
+    },
+    "1cb4398beeeb86c532a13b694315c4afa6ae8fc6": {
+      "imports": {
+        "__unresolved_0": {
+          "resolved": {
+            "type": "chunk",
+            "id": "84741ad843cea9a440c5d8c2d379669b6551400d"
+          },
+          "messages": []
+        },
+        "__unresolved_1": {
+          "resolved": {
+            "type": "chunk",
+            "id": "e7e387365783f4d637df3b326d45004f664b7e3f"
+          },
+          "messages": []
+        },
+        "__unresolved_2": {
+          "resolved": {
+            "type": "chunk",
+            "id": "65324b231d1cd49d6c0658e80cc5014008e7d116"
+          },
+          "messages": []
+        },
+        "__unresolved_3": {
+          "resolved": {
+            "type": "chunk",
+            "id": "c3bfca557d6b2194772672a8f168b12f219d3a74"
+          },
+          "messages": []
+        },
+        "__unresolved_4": {
+          "resolved": {
+            "type": "chunk",
+            "id": "52cf525ac17464717f1cef5c44771062091fafe3"
+          },
+          "messages": []
+        },
+        "__unresolved_5": {
+          "resolved": {
+            "type": "chunk",
+            "id": "7d8f7f7d4fad61b66519001ac8e50c2e17a6cdc3"
+          },
+          "messages": []
+        },
+        "cc": {
+          "resolved": {
+            "type": "chunk",
+            "id": "d0b282b9748ef7fc7d2e7bd647d71b0f7e84da53"
+          },
+          "messages": []
+        }
+      },
+      "timestamp": 1673417485613
     }
   },
   "entries": {
     "cce:/internal/x/cc": "d0b282b9748ef7fc7d2e7bd647d71b0f7e84da53",
-    "cce:/internal/x/prerequisite-imports": "8dd0c11f9264beb4a10294224d354d9a00b12b33",
-    "file:///Users/takeda.naomichi/TestQuizSecond/assets/Script/UI/TestMenu.ts": "c5bb4c94e46b0441649b66784e66a738b73a8bfc",
-    "file:///Users/takeda.naomichi/TestQuizSecond/assets/Script/Game/Manager/GameManager.ts": "090d8ab0622e743a3af0fc98652fe22793526f6c",
-    "file:///Users/takeda.naomichi/TestQuizSecond/assets/Script/Game/Manager/QuizManager.ts": "b0570e56a2481e93a26d8618e96fc45ed10ad4da",
-    "file:///Users/takeda.naomichi/TestQuizSecond/assets/Script/Game/Manager/QuizModalManager.ts": "726f2046d2737f1262483451a2342154188d00ad",
-    "file:///Users/takeda.naomichi/TestQuizSecond/assets/Script/Game/Modal/ChoicesModal.ts": "98d748febbcb9752cdbf5a18de0d3b325b7215ed",
-    "file:///Users/takeda.naomichi/TestQuizSecond/assets/Script/Game/Modal/OverallResultModal.ts": "0e4800ad01828cff557304c1b7061cbed247d6a6",
-    "file:///Users/takeda.naomichi/TestQuizSecond/assets/Script/Game/Modal/QuestionModal.ts": "f6f1e6b7cd3a494f8c27e9f90de1e3781b398f6c",
-    "file:///Users/takeda.naomichi/TestQuizSecond/assets/Script/Game/Modal/ResultModal.ts": "eb36167ca5e3990ffc3cd3ea191dbf0c5232eb1c",
-    "file:///Users/takeda.naomichi/TestQuizSecond/assets/Script/Game/Quiz/GestureQuiz.ts": "eb0340081fc83d728621d1eabe56d24d2776713f",
-    "file:///Users/takeda.naomichi/TestQuizSecond/assets/Script/Game/Quiz/QuizComponent.ts": "8843b2f9fb220db3cf507c6128a8a19ab729e46b",
-    "file:///Users/takeda.naomichi/TestQuizSecond/assets/Script/Game/Quiz/Data/QuizData.ts": "16c8c0acaf42e521ffafb291c598c4c41c092d84",
-    "file:///Users/takeda.naomichi/TestQuizSecond/assets/Script/Game/Quiz/Data/QuizDataBase.ts": "bfe84ca162866519bb4ee531c6d1eb020223aecc"
+    "cce:/internal/x/prerequisite-imports": "9b3897730c12b372132a3c203f2f22c69208f515",
+    "file:///Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/Chip/ChipControll.ts": "e7e387365783f4d637df3b326d45004f664b7e3f",
+    "file:///Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/Game/PlayerInfomation.ts": "b85b4f569e96a8e0475003dfa3ca4c126ce60f92",
+    "file:///Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/UI/TestMenu.ts": "f14c52a9add1794d69391e29969cc4221e163ed9",
+    "file:///Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/UI/Timer.ts": "65324b231d1cd49d6c0658e80cc5014008e7d116",
+    "file:///Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/Game/Modal/BetModal.ts": "7d8f7f7d4fad61b66519001ac8e50c2e17a6cdc3",
+    "file:///Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/Game/Modal/OverallResultModal.ts": "4ee7db4a555a986384d589746cc3d8e0ed283825",
+    "file:///Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/Game/Modal/QuestionModal.ts": "43d3a9b1e50553e618e4682b89c65c28fc23a1e9",
+    "file:///Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/Game/Modal/WaitModal.ts": "55e205177ee8bb6ed4ae4bd962eccd27aad1cee0",
+    "file:///Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts": "f2ee32274c65b104f85407527b956efac2e73eec",
+    "file:///Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/Game/Quiz/QuizComponent.ts": "a2763e5b618e8a3f76515b191d1a779dbbf254bb",
+    "file:///Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/Game/Quiz/Data/QuizData.ts": "17a0f929f56f0b4289dd996e63d2a4aa7a53fdf4",
+    "file:///Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/Game/Quiz/Data/QuizDataBase.ts": "b3e7ad52870c89046716b643397a6ec19e580fdb",
+    "file:///Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/Game/Manager/GameManager.ts": "c3bfca557d6b2194772672a8f168b12f219d3a74",
+    "file:///Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/Game/Manager/GameInformation.ts": "72b751fa8c8513262e11e25d5061b7d9908879b6",
+    "file:///Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts": "4f6929f44db6bacac8c44e8af3d49bef055fe805",
+    "file:///Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts": "69f4ca7ae864efb0f489aa58fde2206c4e24c032",
+    "file:///Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts": "52cf525ac17464717f1cef5c44771062091fafe3",
+    "file:///Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts": "1cb4398beeeb86c532a13b694315c4afa6ae8fc6"
   }
 }

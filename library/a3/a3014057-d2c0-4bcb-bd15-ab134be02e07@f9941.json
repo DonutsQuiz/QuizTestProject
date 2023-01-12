@@ -1,0 +1,90 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "AnswerFrameLiver",
+    "atlas": "",
+    "rect": {
+      "x": 10,
+      "y": 30,
+      "width": 375,
+      "height": 30
+    },
+    "offset": {
+      "x": -2.5,
+      "y": 5
+    },
+    "originalSize": {
+      "width": 400,
+      "height": 100
+    },
+    "rotated": false,
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "vertices": {
+      "rawPosition": [
+        -187.5,
+        -15,
+        0,
+        187.5,
+        -15,
+        0,
+        -187.5,
+        15,
+        0,
+        187.5,
+        15,
+        0
+      ],
+      "indexes": [
+        0,
+        1,
+        2,
+        2,
+        1,
+        3
+      ],
+      "uv": [
+        10,
+        70,
+        385,
+        70,
+        10,
+        40,
+        385,
+        40
+      ],
+      "nuv": [
+        0.025,
+        0.4,
+        0.9625,
+        0.4,
+        0.025,
+        0.7,
+        0.9625,
+        0.7
+      ],
+      "minPos": {
+        "x": -187.5,
+        "y": -15,
+        "z": 0
+      },
+      "maxPos": {
+        "x": 187.5,
+        "y": 15,
+        "z": 0
+      }
+    },
+    "texture": "a3014057-d2c0-4bcb-bd15-ab134be02e07@6c48a",
+    "packable": true,
+    "pixelsToUnit": 100,
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "meshType": 0
+  }
+}

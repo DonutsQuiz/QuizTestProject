@@ -1,6 +1,15 @@
 import { _decorator, Component, Node, Button, Label, Game } from 'cc';
+import { PlayerInfomation } from '../PlayerInfomation';
+import { GameInformation } from './GameInformation';
 import { QuizManager } from './QuizManager';
 const { ccclass, property } = _decorator;
+
+const ClientMode = {
+    Liver : 'Liver',
+    User : 'User',
+} as const;
+
+export type ClientMode = typeof ClientMode[keyof typeof ClientMode];
 
 @ccclass('GameManager')
 export class GameManager extends Component {
@@ -23,7 +32,9 @@ export class GameManager extends Component {
     @property(Label)
     private clientLabel : Label = null;
 
-    private clientMode : number = 0;
+    private clientMode : ClientMode = 'Liver';
+    private playerInfo : PlayerInfomation = new PlayerInfomation();
+    private gameInformation : GameInformation = new GameInformation();
 
     start() {
         GameManager.instance = this;
@@ -36,18 +47,26 @@ export class GameManager extends Component {
 
     // ライバーとユーザーの切り替え(デバッグ用)
     private ChangeClientMode(){
-        if(this.clientMode === 0){
-            this.clientMode = 1;
+        if(this.clientMode === 'Liver'){
+            this.clientMode = 'User';
             this.clientLabel.string = "ユーザー";
         }
-        else if(this.clientMode === 1){
-            this.clientMode = 0;
+        else if(this.clientMode === 'User'){
+            this.clientMode = 'Liver';
             this.clientLabel.string = "ライバー";
         }
     }
 
-    public GetClientMode() : number{
+    public GetClientMode() : ClientMode{
         return this.clientMode;
+    }
+
+    public GetPlayerInfo() : PlayerInfomation{
+        return this.playerInfo;
+    }
+
+    public GetGameInfo() : GameInformation{
+        return this.gameInformation;
     }
 }
 

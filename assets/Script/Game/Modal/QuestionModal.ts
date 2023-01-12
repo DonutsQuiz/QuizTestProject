@@ -1,5 +1,5 @@
 import { _decorator, Component, Node, Label, Button, Vec2, Vec3, SpriteFrame, Sprite } from 'cc';
-import { GameManager } from '../Manager/GameManager';
+import { ClientMode, GameManager } from '../Manager/GameManager';
 import { QuizModalManager } from '../Manager/QuizModalManager';
 import { QuizType } from '../Quiz/QuizComponent';
 const { ccclass, property } = _decorator;
@@ -7,6 +7,8 @@ const { ccclass, property } = _decorator;
 @ccclass('QuestionModal')
 export class QuestionModal extends Component {
 
+    @property(Node)
+    private liverNode : Node = null;
     @property(Label)
     qNumber : Label = null;
     @property(Label)
@@ -21,10 +23,11 @@ export class QuestionModal extends Component {
     qStartB : Button = null;
     @property(Button)
     qSelectB : Array<Button> = new Array<Button>();
-    @property(Label)
-    qWaitLabel : Label = null;
+    @property(Node)
+    private userNode : Node = null;
 
-    private debugClientMode : number = 0;
+    private debugClientMode : ClientMode = 'Liver';
+    private debugQuizMode : QuizType = 'None';
 
     start() {
         this.qStartB.node.on(Button.EventType.CLICK, function(){
@@ -56,7 +59,10 @@ export class QuestionModal extends Component {
 
     public Initialize(qtype : QuizType){
 
+        this.debugQuizMode = qtype;
+
         this.node.active = true;
+        this.liverNode.active = true;
         this.qNumber.node.active = true;
         this.qSentence.node.active = true;
 
@@ -65,21 +71,21 @@ export class QuestionModal extends Component {
         this.qSpriteFrame.node.active = false;
         this.qStartB.node.active = false;
         this.qSelectB.forEach(element => {element.node.active = false;});
-        this.qWaitLabel.node.active = false;
+        this.userNode.active = false;
 
         if(qtype === 'Gesture'){    // ジェスチャー
-            if(GameManager.Instance().GetClientMode() === 0){
+            if(GameManager.Instance().GetClientMode() === 'Liver'){
                 this.qSentence.node.setPosition(new Vec3(0,75,0));
+                this.qSentence.fontSize = 23;
                 this.qImageFrame.active = true;
                 this.qSpriteFrame.node.active = true;
                 this.qStartB.node.active = true;
-                this.debugClientMode = 0;
+                this.debugClientMode = 'Liver';
             }
             else{
-                this.qSentence.node.setPosition(new Vec3(0,0,0));
-                this.qWaitLabel.node.active = true;
-                this.qWaitLabel.fontSize = 19;
-                this.debugClientMode = 1;
+                this.liverNode.active = false;
+                this.userNode.active = true;
+                this.debugClientMode = 'User';
             }
         }
         else if(qtype === 'Act'){   // アクト
@@ -97,6 +103,7 @@ export class QuestionModal extends Component {
         if(GameManager.Instance().GetClientMode() != this.debugClientMode){
 
             this.node.active = true;
+            this.liverNode.active = true;
             this.qNumber.node.active = true;
             this.qSentence.node.active = true;
     
@@ -105,20 +112,31 @@ export class QuestionModal extends Component {
             this.qSpriteFrame.node.active = false;
             this.qStartB.node.active = false;
             this.qSelectB.forEach(element => {element.node.active = false;});
-            this.qWaitLabel.node.active = false;
+            this.userNode.active = false;
 
-            if(GameManager.Instance().GetClientMode() === 0){
-                this.qSentence.node.setPosition(new Vec3(0,75,0));
-                this.qImageFrame.active = true;
-                this.qSpriteFrame.node.active = true;
-                this.qStartB.node.active = true;
-                this.debugClientMode = 0;
+            if(this.debugQuizMode === 'Gesture'){    // ジェスチャー
+                if(GameManager.Instance().GetClientMode() === 'Liver'){
+                    this.qSentence.node.setPosition(new Vec3(0,75,0));
+                    this.qSentence.fontSize = 23;
+                    this.qImageFrame.active = true;
+                    this.qSpriteFrame.node.active = true;
+                    this.qStartB.node.active = true;
+                    this.debugClientMode = 'Liver';
+                }
+                else{
+                    this.liverNode.active = false;
+                    this.userNode.active = true;
+                    this.debugClientMode = 'User';
+                }
             }
-            else{
-                this.qSentence.node.setPosition(new Vec3(0,0,0));
-                this.qWaitLabel.node.active = true;
-                this.qWaitLabel.fontSize = 19;
-                this.debugClientMode = 1;
+            else if(this.debugQuizMode === 'Act'){   // アクト
+                this.qSentence.node.setPosition(new Vec3(0,50,0));
+                this.qStartB.node.active = true;
+            }
+            else if(this.debugQuizMode === 'Quiz'){   // クイズ
+                this.qSentence.node.setPosition(new Vec3(0,75,0));
+                this.qSelect.node.active = true;
+                this.qSelectB.forEach(element => {element.node.active = true;});
             }
         }
 

@@ -1,5 +1,5 @@
 import { _decorator, Component, Node, Button, labelAssembler, Label, SpriteFrame, Color, Sprite } from 'cc';
-import { GameManager } from '../Manager/GameManager';
+import { ClientMode, GameManager } from '../Manager/GameManager';
 import { QuizModalManager } from '../Manager/QuizModalManager';
 import { QuizData } from '../Quiz/Data/QuizData';
 import { QuestionModal } from './QuestionModal';
@@ -21,8 +21,7 @@ export class ResultModal extends Component {
 
     public isNext = false;
 
-    private debugClientMode : number = 0;
-
+    private debugClientMode : ClientMode = 'Liver';
 
     start() {
         this.nextButton.node.on(Button.EventType.CLICK, function(){
@@ -36,7 +35,7 @@ export class ResultModal extends Component {
     }
 
     public SetInfo(choice : number, data : QuizData){
-        if(choice === data.mAnswer){
+        if(choice === GameManager.Instance().GetGameInfo().qAnswer){
             this.resultLabel.string = "正解";
             this.resultLabel.color = new Color(0,255,0,255);
             this.coinLabel.node.active = true;
@@ -47,15 +46,15 @@ export class ResultModal extends Component {
             this.coinLabel.node.active = false;
         }
         
-        if(GameManager.Instance().GetClientMode() === 0){
+        if(GameManager.Instance().GetClientMode() === 'Liver'){
             this.nextButton.node.active = true;
             this.coinLabel.node.active = false;
-            this.debugClientMode = 0;
+            this.debugClientMode = 'Liver';
         }
         else{
             this.nextButton.node.active = false;
             this.coinLabel.node.active = true;
-            this.debugClientMode = 1;
+            this.debugClientMode = 'User';
         }
     }
 
@@ -92,15 +91,15 @@ export class ResultModal extends Component {
     private DebugModalUpdate(){
         if(GameManager.Instance().GetClientMode() != this.debugClientMode){
 
-            if(GameManager.Instance().GetClientMode() === 0){
+            if(GameManager.Instance().GetClientMode() === 'Liver'){
                 this.nextButton.node.active = true;
                 this.coinLabel.node.active = false;
-                this.debugClientMode = 0;
+                this.debugClientMode = 'Liver';
             }
             else{
                 this.nextButton.node.active = false;
                 this.coinLabel.node.active = true;
-                this.debugClientMode = 1;
+                this.debugClientMode = 'User';
             }
         }
     }

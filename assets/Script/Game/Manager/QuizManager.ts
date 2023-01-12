@@ -39,8 +39,9 @@ export class QuizManager extends Component {
     }
 
     public OnUpdate(){
-        this.AnswerPhase();
+        //this.AnswerPhase();
 
+        // 全問題が終了したら総合結果に移行する
         if(QuizModalManager.Instance().GetResultModal().isNext){
             if(this.quizComponent.mNumber >= this.raundMax){
                 QuizModalManager.Instance().ChangeModal('Overall');

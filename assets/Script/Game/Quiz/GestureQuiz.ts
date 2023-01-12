@@ -1,5 +1,5 @@
 import { _decorator, Component, Node, SpriteFrame, math, SphereColliderComponent } from 'cc';
-import { GameManager } from '../Manager/GameManager';
+import { ClientMode, GameManager } from '../Manager/GameManager';
 import { QuizModalManager } from '../Manager/QuizModalManager';
 import { GestureData } from './Data/QuizData';
 import { QuizDataBase } from './Data/QuizDataBase';
@@ -14,26 +14,27 @@ export class GestureQuiz extends QuizComponent {
     mSprite : SpriteFrame;  // 問題の画像
     mData : GestureData;
 
+    private debugClientMode : ClientMode = 'Liver';
+
     start() {
 
     }
 
     update(deltaTime: number) {
-        
+        this.DebugClientMode();
     }
 
     public SetQuiz(){
         // 問題文
         this.mData = QuizDataBase.Instance().GetData<GestureData>('Gesture', this.DecisionAnswer());
         QuizModalManager.Instance().GetQuestionModal().SetNumber(++this.mNumber);
-        if(GameManager.Instance().GetClientMode() === 0){
+        if(GameManager.Instance().GetClientMode() === 'Liver'){
             QuizModalManager.Instance().GetQuestionModal().SetSentence(this.mSentence = "この顔を演じてください");
-            QuizModalManager.Instance().GetQuestionModal().SetSprite(this.mSprite = this.mData.mSprite);
         }
         else{
             QuizModalManager.Instance().GetQuestionModal().SetSentence(this.mSentence = "どの顔文字を演じているでしょう");
-            QuizModalManager.Instance().GetQuestionModal().SetSprite(this.mSprite = null);
         }
+        QuizModalManager.Instance().GetQuestionModal().SetSprite(this.mSprite = this.mData.mSprite);
 
 
 
@@ -91,6 +92,24 @@ export class GestureQuiz extends QuizComponent {
     private DecisionAnswer() : number{
         var count = QuizDataBase.Instance().GetDataList<GestureData>('Gesture').length;
         return math.randomRangeInt(0, count);
+    }
+
+    // public GetData() : GestureData{
+    //     return this.mData;
+    // }
+
+    private DebugClientMode(){
+        if(GameManager.Instance().GetClientMode() != this.debugClientMode){
+            if(GameManager.Instance().GetClientMode() === 'Liver'){
+                this.mSentence = "この顔を演じてください";
+                this.debugClientMode = 'Liver';
+            }
+            else{
+                this.mSentence = "どの顔を演じているでしょう";
+                this.debugClientMode = 'User';
+            }
+            QuizModalManager.Instance().GetQuestionModal().SetSentence(this.mSentence);
+        }
     }
 }
 
