@@ -16,6 +16,8 @@ export class ChoicesModal extends Component {
     private userNode : Node = null;
     @property(Button) // 選択肢（ボタン）
     buttonList : Array<Button> = new Array<Button>();
+    @property(Node) // 選択肢（枠）
+    frameList : Array<Node> = new Array<Node>();
     @property(Label) // 選択肢（文字）
     labelList : Array<Label> = new Array<Label>();
     @property(Sprite)// 選択肢（画像）
@@ -32,13 +34,15 @@ export class ChoicesModal extends Component {
     private betModal : BetModal = null; 
     @property(Button)// 次に進むボタン
     private nextButton : Button = null;
+    @property(Button)// 結果表示ボタン
+    private resultButton : Button = null;
     @property(Node)// 答えの枠
     private liverAnswerFrameSprite : Node = null;
     @property(Node)// 選択した枠
     private userAnswerFrameSprite : Node = null;
 
-    @property(Node) // リザルトモーダル
-    private resultModa : Node = null;
+    @property(ResultModal) // リザルトモーダル
+    private resultModal : ResultModal = null;
 
     @property(Timer)
     timer : Timer = null;
@@ -49,9 +53,9 @@ export class ChoicesModal extends Component {
     private tempNumber : number = 0;
     private debugClientMode : ClientMode = 'Liver';
 
+    isNext : boolean = false;
+
     start() {
-        this.timer.SetTimeLimit(GameManager.Instance().GetGameInfo().thinkTime);   // タイマーのセット
-        this.questionLabel.string = GameManager.Instance().GetGameInfo().qSentence;
         this.buttonList[0].node.on(Button.EventType.CLICK, function(){this.Choice(0);}, this);
         this.buttonList[1].node.on(Button.EventType.CLICK, function(){this.Choice(1);}, this);
         this.buttonList[2].node.on(Button.EventType.CLICK, function(){this.Choice(2);}, this);
@@ -59,10 +63,7 @@ export class ChoicesModal extends Component {
         this.buttonList[4].node.on(Button.EventType.CLICK, function(){this.Choice(4);}, this);
         this.buttonList[5].node.on(Button.EventType.CLICK, function(){this.Choice(5);}, this);
         this.nextButton.node.on( Button.EventType.CLICK, this.Next, this);
-        this.nextButton.node.active = false;
-        this.coinsLabel.string = GameManager.Instance().GetGameInfo().coins.toString();
-        this.betModal.node.active = false;
-        this.liverAnswerFrameSprite.position = new Vec3(this.buttonList[GameManager.Instance().GetGameInfo().qAnswer].node.position);
+        this.resultButton.node.on( Button.EventType.CLICK, this.ShowResult, this);
     }
 
     update(deltaTime: number) {
@@ -71,16 +72,19 @@ export class ChoicesModal extends Component {
         this.timer.Display();
 
         // 時間切れの処理
-        if(this.timer.GetTimeLeft() <= 0){
-            this.nextButton.node.active = true;
+        if(this.timer.GetIsFinish()){
+            this.resultButton.node.active = true;
             for(const odds of this.oddsLabelList){
                 odds.node.active = true;
             }
         }
 
         // ベットモーダルが出ている時は選択肢を押せないようにする
-        if(this.betModal.node.active){
-            this.DontClickButton();
+        if(this.betModal.node.active || this.timer.GetIsEnd()){
+            this.DontClickButton(false);
+        }
+        else{
+            this.DontClickButton(true);
         }
 
         if(this.betModal.GetIsDecide()){
@@ -109,7 +113,13 @@ export class ChoicesModal extends Component {
         this.questionLabel.string = sent;
     }
 
-    private Initialize(){
+    public Initialize(){
+        this.timer.SetTimeLimit(GameManager.Instance().GetGameInfo().thinkTime);   // タイマーのセット
+        this.questionLabel.string = GameManager.Instance().GetGameInfo().qSentence;
+        this.betModal.node.active = false;
+        this.resultModal.node.active = false;
+        this.liverAnswerFrameSprite.position = new Vec3(this.buttonList[GameManager.Instance().GetGameInfo().qAnswer].node.position);
+
         if(GameManager.Instance().GetClientMode() === 'Liver'){
             this.liverNode.active = true;
             this.userNode.active = false;
@@ -117,7 +127,8 @@ export class ChoicesModal extends Component {
                 odds.node.active = true;
             }
             this.liverAnswerFrameSprite.active = true;
-            this.userAnswerFrameSprite.active = false;
+            this.nextButton.node.active = false;
+            this.resultButton.node.active = false;
             this.debugClientMode = 'Liver';
 
         }
@@ -127,8 +138,14 @@ export class ChoicesModal extends Component {
             for(const odds of this.oddsLabelList){
                 odds.node.active = false;
             }
-            this.liverAnswerFrameSprite.active = false;
+            if(this.resultModal.node.active){
+                this.liverAnswerFrameSprite.active = true;
+            }
+            else{
+                this.liverAnswerFrameSprite.active = false;
+            }
             this.userAnswerFrameSprite.active = false;
+            this.coinsLabel.string = GameManager.Instance().GetGameInfo().coins.toString();
             this.debugClientMode = 'User';
         }
     }
@@ -140,24 +157,52 @@ export class ChoicesModal extends Component {
         this.chipAnim.Play();
     }
 
+    // 正解表示
+    private ShowResult(){
+        this.resultButton.node.active = false;
+        this.nextButton.node.active = true;
+        this.resultModal.node.active = true;
+        this.liverAnswerFrameSprite.active = true;
+    }
+
     private Next(){
-        QuizModalManager.Instance().ChangeModal('Result');
+        this.isNext = true;
+        this.resultModal.node.active = false;
+        this.betModal.SetIsDecide(false);
+        QuizModalManager.Instance().ChangeModal('Question');
         QuizModalManager.Instance().GetResultModal().SetCoinLabel("400");
     }
 
-    private DontClickButton(){
-        this.liverNode.active = true;
-        this.userNode.active = false;
-        for(const odds of this.oddsLabelList){
-            odds.node.active = true;
+    // ボタンを押せないようにする
+    private DontClickButton(is : boolean){
+        for(const buttons of this.buttonList){
+            buttons.node.active = is;
         }
-        this.debugClientMode = 'Liver';
     }
 
     private DebugModalUpdate(){
         if(GameManager.Instance().GetClientMode() != this.debugClientMode){
+            var isResult : boolean = false;
+            if(this.resultModal.node.active) isResult = true;
+
             this.Initialize();
+
+            if(this.timer.GetIsEnd()){
+                this.resultButton.node.active = true;
+                for(const odds of this.oddsLabelList){
+                    odds.node.active = true;
+                }
+            }
+
+            if(isResult){
+                this.resultModal.node.active = true;
+                this.liverAnswerFrameSprite.active = true;
+            }
         }
+    }
+
+    public GetResultModal() : ResultModal{
+        return this.resultModal;
     }
 }
 

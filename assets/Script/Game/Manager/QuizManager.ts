@@ -42,14 +42,14 @@ export class QuizManager extends Component {
         //this.AnswerPhase();
 
         // 全問題が終了したら総合結果に移行する
-        if(QuizModalManager.Instance().GetResultModal().isNext){
+        if(QuizModalManager.Instance().GetChoicesModal().isNext){
             if(this.quizComponent.mNumber >= this.raundMax){
                 QuizModalManager.Instance().ChangeModal('Overall');
             }
             else{
                 this.quizComponent.SetQuiz();
             }
-            QuizModalManager.Instance().GetResultModal().isNext = false;
+            QuizModalManager.Instance().GetChoicesModal().isNext = false;
         }
     }
 

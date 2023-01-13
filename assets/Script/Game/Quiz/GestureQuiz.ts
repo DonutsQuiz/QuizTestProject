@@ -25,15 +25,23 @@ export class GestureQuiz extends QuizComponent {
     }
 
     public SetQuiz(){
-        // 問題文
+
+        // デバッグ用(本当はサーバーからもらってくる)
         this.mData = QuizDataBase.Instance().GetData<GestureData>('Gesture', this.DecisionAnswer());
-        QuizModalManager.Instance().GetQuestionModal().SetNumber(++this.mNumber);
-        if(GameManager.Instance().GetClientMode() === 'Liver'){
-            QuizModalManager.Instance().GetQuestionModal().SetSentence(this.mSentence = "この顔を演じてください");
-        }
-        else{
-            QuizModalManager.Instance().GetQuestionModal().SetSentence(this.mSentence = "どの顔文字を演じているでしょう");
-        }
+        GameManager.Instance().GetGameInfo().qType = this.mType;
+        GameManager.Instance().GetGameInfo().qNumber = this.mNumber;
+        if(GameManager.Instance().GetClientMode() === 'Liver'){this.mSentence = "この顔を演じてください";}
+        else{this.mSentence = "どの顔文字を演じているでしょう";}
+        GameManager.Instance().GetGameInfo().qSentence = this.mSentence;
+        GameManager.Instance().GetGameInfo().qAnswer = this.mData.mAnswer;
+        GameManager.Instance().GetGameInfo().qSprite = this.mData.mSprite;
+
+        this.mData.mAnswer = GameManager.Instance().GetGameInfo().qAnswer;
+        this.mData.mSprite = GameManager.Instance().GetGameInfo().qSprite;
+
+        // 問題文
+        QuizModalManager.Instance().GetQuestionModal().SetNumber(++GameManager.Instance().GetGameInfo().qNumber);
+        QuizModalManager.Instance().GetQuestionModal().SetSentence(GameManager.Instance().GetGameInfo().qSentence);
         QuizModalManager.Instance().GetQuestionModal().SetSprite(this.mSprite = this.mData.mSprite);
 
 
@@ -78,8 +86,8 @@ export class GestureQuiz extends QuizComponent {
         }
 
         // 結果
-        QuizModalManager.Instance().GetResultModal().SetAnswerLabel(this.mData.mAnswer ,"");
-        QuizModalManager.Instance().GetResultModal().SetAnswerSprite(this.mSprite);
+        QuizModalManager.Instance().GetChoicesModal().GetResultModal().SetAnswerLabel(this.mData.mAnswer ,"");
+        QuizModalManager.Instance().GetChoicesModal().GetResultModal().SetAnswerSprite(this.mSprite);        
     }
 
     public Initialize(){

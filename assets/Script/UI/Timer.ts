@@ -13,6 +13,9 @@ export class Timer extends Component {
 
     private time_limit : number = 1800.0;
 
+    private isFinish : boolean = false;
+    private isEnd : boolean = false;
+
     start() {
     }
 
@@ -31,8 +34,18 @@ export class Timer extends Component {
         return (this.time_limit - this.elapsed_time);
     }
 
+    public GetIsFinish() : boolean{
+        return this.isFinish;
+    }
+
+    public GetIsEnd() : boolean{
+        return this.isEnd;
+    }
+
     public Display()
     {
+        if(this.isFinish)this.isFinish = false;
+
         let second = Math.ceil((this.time_limit - this.elapsed_time) / 60.0);
         let minutes = Math.floor(second / 60.0);
         second %= 60;
@@ -53,7 +66,15 @@ export class Timer extends Component {
         this.time_circle.close();
         this.time_circle.stroke();
         this.time_circle.fill();
-        if(this.elapsed_time < this.time_limit) this.elapsed_time += 1;
+        if(this.elapsed_time < this.time_limit){
+            this.elapsed_time += 1;
+        }
+        else{
+            if(!this.isEnd){
+                this.isEnd = true;
+                this.isFinish = true;
+            }
+        }
     }
 
     update(deltaTime: number) {

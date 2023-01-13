@@ -435,12 +435,12 @@
     "missing": false
   },
   "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts": {
-    "time": 1673414318791.2363,
+    "time": 1673523151750.5405,
     "uuid": "de4c0fca-e7ce-4d86-a1ab-d03ce477a1a6",
     "missing": false
   },
   "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts": {
-    "time": 1673417304451.0562,
+    "time": 1673577693480.0452,
     "uuid": "e8e61a10-df40-4d8e-b308-cceef04de892",
     "missing": false
   },
@@ -455,12 +455,12 @@
     "missing": false
   },
   "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts": {
-    "time": 1673414282958.929,
+    "time": 1673578356354.1733,
     "uuid": "6169e59e-1b7c-4843-a160-6129e0a24d7b",
     "missing": false
   },
   "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts": {
-    "time": 1673238862375.3743,
+    "time": 1673579773926.5503,
     "uuid": "97fb8f70-a8fa-4e52-aaff-727b505c27b6",
     "missing": false
   },
@@ -552,7 +552,7 @@
     "time": 1672211598526.4058
   },
   "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Scene/GameScene.scene": {
-    "time": 1673318886295.1675,
+    "time": 1673417485842.1157,
     "uuid": "6d9866d9-a192-4526-a2a7-a9e7b61f341b",
     "missing": false
   },
@@ -691,7 +691,7 @@
     "time": 1672207207235.3647
   },
   "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts": {
-    "time": 1673415849046.661,
+    "time": 1673580012022.1184,
     "uuid": "2477077d-2400-442e-a5c8-67206febb2f7",
     "missing": false
   },
@@ -707,7 +707,7 @@
     "time": 1672207045161.5051
   },
   "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Prefab/Modal/ChoicesModal.prefab": {
-    "time": 1673413892302.0635,
+    "time": 1673579637908.1643,
     "uuid": "3375720f-b256-4d50-a23b-9df7bb10ea09",
     "missing": false
   },
@@ -715,7 +715,7 @@
     "time": 1672207045164.1152
   },
   "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Prefab/Modal/ResultModal.prefab": {
-    "time": 1673417146541.8384,
+    "time": 1673577934544.705,
     "uuid": "1e01ef77-6349-407d-9593-faea67c2b7bb",
     "missing": false
   },
@@ -739,7 +739,7 @@
     "time": 1673166216952.3684
   },
   "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/Game/Modal/BetModal.ts": {
-    "time": 1673236766661.3008,
+    "time": 1673522488738.3313,
     "uuid": "6dbcc934-3ca5-45f6-9a9d-7c8b7ac67bca",
     "missing": false
   },
@@ -779,7 +779,7 @@
     "time": 1673237462819.3374
   },
   "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/UI/Timer.ts": {
-    "time": 1673237462817.2737,
+    "time": 1673517898950.3425,
     "uuid": "f3195565-4478-454c-87a0-5cc6d23eb16a",
     "missing": false
   },
@@ -835,7 +835,7 @@
     "time": 1673238493020.5378
   },
   "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/Game/Manager/GameInformation.ts": {
-    "time": 1673413625790.451,
+    "time": 1673577488205.3513,
     "uuid": "cc9fc3f5-becf-4732-96a8-cebcbe940e15",
     "missing": false
   },

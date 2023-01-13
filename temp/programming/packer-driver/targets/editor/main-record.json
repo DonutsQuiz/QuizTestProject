@@ -1,7 +1,7 @@
 {
   "modules": {
     "cce:/internal/x/cc": {
-      "mTimestamp": 7932.54136599999,
+      "mTimestamp": 5996.284479999915,
       "chunkId": "d0b282b9748ef7fc7d2e7bd647d71b0f7e84da53",
       "imports": [
         {
@@ -556,7 +556,7 @@
       ]
     },
     "cce:/internal/x/prerequisite-imports": {
-      "mTimestamp": 7507260.298073,
+      "mTimestamp": 5670120.673495,
       "chunkId": "9b3897730c12b372132a3c203f2f22c69208f515",
       "imports": [
         {
@@ -1048,7 +1048,7 @@
       ]
     },
     "cce:/internal/code-quality/cr.mjs": {
-      "mTimestamp": 1673409978245,
+      "mTimestamp": 1673574343625,
       "chunkId": "84741ad843cea9a440c5d8c2d379669b6551400d",
       "imports": [],
       "type": "esm",
@@ -2394,10 +2394,10 @@
     },
     "file:///Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts": {
       "mTimestamp": {
-        "mtime": 1673414318791.2363,
+        "mtime": 1673523151750.5405,
         "uuid": "de4c0fca-e7ce-4d86-a1ab-d03ce477a1a6"
       },
-      "chunkId": "4f6929f44db6bacac8c44e8af3d49bef055fe805",
+      "chunkId": "dbac581e41d0080f3591b2e482a46c38b1f031a4",
       "imports": [
         {
           "value": "cce:/internal/code-quality/cr.mjs",
@@ -2499,10 +2499,10 @@
     },
     "file:///Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts": {
       "mTimestamp": {
-        "mtime": 1673238862375.3743,
+        "mtime": 1673579773926.5503,
         "uuid": "97fb8f70-a8fa-4e52-aaff-727b505c27b6"
       },
-      "chunkId": "f2ee32274c65b104f85407527b956efac2e73eec",
+      "chunkId": "3e747e83efc43f26ad5c5facadc0e1c44a200bd2",
       "imports": [
         {
           "value": "cce:/internal/code-quality/cr.mjs",
@@ -2646,10 +2646,10 @@
     },
     "file:///Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts": {
       "mTimestamp": {
-        "mtime": 1673417304451.0562,
+        "mtime": 1673577693480.0452,
         "uuid": "e8e61a10-df40-4d8e-b308-cceef04de892"
       },
-      "chunkId": "52cf525ac17464717f1cef5c44771062091fafe3",
+      "chunkId": "d824d75a4865be6234a2b0ccf63f875e97525343",
       "imports": [
         {
           "value": "cce:/internal/code-quality/cr.mjs",
@@ -2729,6 +2729,20 @@
               "column": 50
             }
           }
+        },
+        {
+          "value": "./GameManager",
+          "resolved": "__unresolved_5",
+          "loc": {
+            "start": {
+              "line": 7,
+              "column": 40
+            },
+            "end": {
+              "line": 7,
+              "column": 55
+            }
+          }
         }
       ],
       "type": "esm",
@@ -2788,15 +2802,22 @@
             "url": "file:///Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts"
           },
           "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/Game/Manager/GameManager.ts"
+          },
+          "messages": []
         }
       ]
     },
     "file:///Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts": {
       "mTimestamp": {
-        "mtime": 1673417462844.34,
+        "mtime": 1673580012022.1184,
         "uuid": "2477077d-2400-442e-a5c8-67206febb2f7"
       },
-      "chunkId": "1cb4398beeeb86c532a13b694315c4afa6ae8fc6",
+      "chunkId": "b8bf7f159763f967cae63558deb2693337221c83",
       "imports": [
         {
           "value": "cce:/internal/code-quality/cr.mjs",
@@ -2890,6 +2911,20 @@
               "column": 37
             }
           }
+        },
+        {
+          "value": "./ResultModal",
+          "resolved": "__unresolved_6",
+          "loc": {
+            "start": {
+              "line": 7,
+              "column": 28
+            },
+            "end": {
+              "line": 7,
+              "column": 43
+            }
+          }
         }
       ],
       "type": "esm",
@@ -2954,6 +2989,13 @@
           "resolved": {
             "type": "module",
             "url": "file:///Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/Game/Modal/BetModal.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts"
           },
           "messages": []
         }
@@ -3150,10 +3192,10 @@
     },
     "file:///Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts": {
       "mTimestamp": {
-        "mtime": 1673414282958.929,
+        "mtime": 1673578356354.1733,
         "uuid": "6169e59e-1b7c-4843-a160-6129e0a24d7b"
       },
-      "chunkId": "69f4ca7ae864efb0f489aa58fde2206c4e24c032",
+      "chunkId": "3ec9de2eca04fa91dcd000769fdacf8c7b7d33fb",
       "imports": [
         {
           "value": "cce:/internal/code-quality/cr.mjs",
@@ -3170,11 +3212,11 @@
           "loc": {
             "start": {
               "line": 1,
-              "column": 103
+              "column": 128
             },
             "end": {
               "line": 1,
-              "column": 107
+              "column": 132
             }
           }
         },
@@ -3768,10 +3810,10 @@
     },
     "file:///Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/Game/Modal/BetModal.ts": {
       "mTimestamp": {
-        "mtime": 1673236766661.3008,
+        "mtime": 1673522488738.3313,
         "uuid": "6dbcc934-3ca5-45f6-9a9d-7c8b7ac67bca"
       },
-      "chunkId": "7d8f7f7d4fad61b66519001ac8e50c2e17a6cdc3",
+      "chunkId": "7a4c7727576248151814de50000ac6c8f1e36977",
       "imports": [
         {
           "value": "cce:/internal/code-quality/cr.mjs",
@@ -3964,10 +4006,10 @@
     },
     "file:///Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/UI/Timer.ts": {
       "mTimestamp": {
-        "mtime": 1673237462817.2737,
+        "mtime": 1673517898950.3425,
         "uuid": "f3195565-4478-454c-87a0-5cc6d23eb16a"
       },
-      "chunkId": "65324b231d1cd49d6c0658e80cc5014008e7d116",
+      "chunkId": "e6c997d5d55e51e506daced9981d3977bc04f8d7",
       "imports": [
         {
           "value": "cc"
@@ -4068,11 +4110,15 @@
     },
     "file:///Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/Game/Manager/GameInformation.ts": {
       "mTimestamp": {
-        "mtime": 1673413625790.451,
+        "mtime": 1673577488205.3513,
         "uuid": "cc9fc3f5-becf-4732-96a8-cebcbe940e15"
       },
-      "chunkId": "72b751fa8c8513262e11e25d5061b7d9908879b6",
+      "chunkId": "58a05a7b868ed1af8573f29a656e120487d48767",
       "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
         {
           "value": "cc"
         },
@@ -4084,17 +4130,24 @@
           "loc": {
             "start": {
               "line": 1,
-              "column": 44
+              "column": 65
             },
             "end": {
               "line": 1,
-              "column": 48
+              "column": 69
             }
           }
         }
       ],
       "type": "esm",
       "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
         {
           "resolved": {
             "type": "module",

@@ -1641,6 +1641,12 @@
     "coinLabel": {
       "__id__": 62
     },
+    "answerSentence": {
+      "__id__": 6
+    },
+    "answerImage": {
+      "__id__": 13
+    },
     "_id": ""
   },
   {

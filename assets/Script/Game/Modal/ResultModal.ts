@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Button, labelAssembler, Label, SpriteFrame, Color, Sprite } from 'cc';
+import { _decorator, Component, Node, Button, labelAssembler, Label, SpriteFrame, Color, Sprite, UITransform, Vec2, Size } from 'cc';
 import { ClientMode, GameManager } from '../Manager/GameManager';
 import { QuizModalManager } from '../Manager/QuizModalManager';
 import { QuizData } from '../Quiz/Data/QuizData';
@@ -18,6 +18,11 @@ export class ResultModal extends Component {
     private answerSprite : Sprite = null;
     @property(Label)
     private coinLabel : Label = null;
+
+    @property(Label)
+    answerSentence : Label = null;
+    @property(Sprite)
+    answerImage : Sprite = null;
 
     public isNext = false;
 
@@ -59,29 +64,32 @@ export class ResultModal extends Component {
     }
 
     public SetAnswerSprite(sprite : SpriteFrame){
-        this.answerSprite.spriteFrame = sprite;
+        this.answerImage.spriteFrame = sprite;
+        this.answerImage.getComponent(UITransform).setContentSize(new Size(36,36));
     }
 
     public SetAnswerLabel(ansnum : number, label : string){
+        this.answerSentence.string = "答えは";
+
         if(ansnum === 0){
-            this.answerLabel.string = "A.";
+            this.answerSentence.string += "A";
         }
         else if(ansnum === 1){
-            this.answerLabel.string = "B.";
+            this.answerSentence.string += "B";
         }
         else if(ansnum === 2){
-            this.answerLabel.string = "C.";
+            this.answerSentence.string += "C";
         }
         else if(ansnum === 3){
-            this.answerLabel.string = "D.";
+            this.answerSentence.string += "D";
         }
         else if(ansnum === 4){
-            this.answerLabel.string = "E.";
+            this.answerSentence.string += "E";
         }
         else if(ansnum === 5){
-            this.answerLabel.string = "F.";
+            this.answerSentence.string += "F";
         }
-        this.answerLabel.string += label;
+        this.answerSentence.string += "!!!";
     }
 
     public SetCoinLabel(coin : string){

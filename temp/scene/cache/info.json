@@ -6,7 +6,8 @@
     },
     "sceneListMap": {
         "6d9866d9-a192-4526-a2a7-a9e7b61f341b": "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Scene/GameScene.scene",
-        "3375720f-b256-4d50-a23b-9df7bb10ea09": "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Prefab/Modal/ChoicesModal.prefab"
+        "3375720f-b256-4d50-a23b-9df7bb10ea09": "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Prefab/Modal/ChoicesModal.prefab",
+        "1e01ef77-6349-407d-9593-faea67c2b7bb": "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Prefab/Modal/ResultModal.prefab"
     },
     "deviceMd5": "f15601644d9016c26b517e3c1b5cbdd9"
 }

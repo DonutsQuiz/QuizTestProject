@@ -87,10 +87,12 @@ export class QuizModalManager extends Component {
             this.result.node.active = false;
             this.overall.node.active = false;
             this.question.node.active = true;
+            this.question.Initialize(GameManager.Instance().GetGameInfo().qType);
         }
         else if(nextType === 'Choices'){
             this.question.node.active = false;
             this.choices.node.active = true;
+            this.choices.Initialize();
         }
         else if(nextType === 'Overall'){
             this.question.node.active = false;
@@ -99,6 +101,10 @@ export class QuizModalManager extends Component {
         }
 
         this.debugNowType = nextType;
+    }
+
+    public Reset(){
+        
     }
 
     public GetQuestionModal() : QuestionModal{
