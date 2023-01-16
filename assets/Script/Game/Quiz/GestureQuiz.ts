@@ -1,5 +1,6 @@
 import { _decorator, Component, Node, SpriteFrame, math, SphereColliderComponent } from 'cc';
 import { ClientMode, GameManager } from '../Manager/GameManager';
+import { QuizManager } from '../Manager/QuizManager';
 import { QuizModalManager } from '../Manager/QuizModalManager';
 import { GestureData } from './Data/QuizData';
 import { QuizDataBase } from './Data/QuizDataBase';
@@ -26,18 +27,10 @@ export class GestureQuiz extends QuizComponent {
 
     public SetQuiz(){
 
-        // デバッグ用(本当はサーバーからもらってくる)
-        this.mData = QuizDataBase.Instance().GetData<GestureData>('Gesture', this.DecisionAnswer());
-        GameManager.Instance().GetGameInfo().qType = this.mType;
-        GameManager.Instance().GetGameInfo().qNumber = this.mNumber;
-        if(GameManager.Instance().GetClientMode() === 'Liver'){this.mSentence = "この顔を演じてください";}
-        else{this.mSentence = "どの顔文字を演じているでしょう";}
-        GameManager.Instance().GetGameInfo().qSentence = this.mSentence;
-        GameManager.Instance().GetGameInfo().qAnswer = this.mData.mAnswer;
-        GameManager.Instance().GetGameInfo().qSprite = this.mData.mSprite;
+        this.DebugChoiceQuestion();
 
-        this.mData.mAnswer = GameManager.Instance().GetGameInfo().qAnswer;
-        this.mData.mSprite = GameManager.Instance().GetGameInfo().qSprite;
+        this.mData.mAnswer = GameManager.Instance().GetGameInfo().qCorNumber;
+        this.mData.mSprite = GameManager.Instance().GetGameInfo().qCorSprite;
 
         // 問題文
         QuizModalManager.Instance().GetQuestionModal().SetNumber(++GameManager.Instance().GetGameInfo().qNumber);
@@ -45,43 +38,22 @@ export class GestureQuiz extends QuizComponent {
         QuizModalManager.Instance().GetQuestionModal().SetSprite(this.mSprite = this.mData.mSprite);
 
 
-
         // 選択肢
+        var index : number = 0;
         QuizModalManager.Instance().GetChoicesModal().SetQuestion("どの顔を演じている?");
-        var temp : Array<number> = [-1,-1,-1,-1,-1,-1];
-        for(var i : number = 0; i < 6; i++){
+        for(var i : number = 0; i < QuizManager.Instance().GetChoiceMax(); i++){
             var select : string;
-            if(i === 0){select = "A.";}
-            else if(i === 1){select = "B.";}
-            else if(i === 2){select = "C.";}
-            else if(i === 3){select = "D.";}
-            else if(i === 4){select = "E.";}
-            else if(i === 5){select = "F.";}
+            if(i === 0){select = "A";}
+            else if(i === 1){select = "B";}
+            else if(i === 2){select = "C";}
+            else if(i === 3){select = "D";}
 
             if(i === this.mData.mAnswer){
-                QuizModalManager.Instance().GetChoicesModal().SetChoices(i, select, this.mData.mSprite);
-                temp[i] = this.mData.mIndex;
+                QuizModalManager.Instance().GetChoicesModal().SetChoices(i, select, GameManager.Instance().GetGameInfo().qCorSprite);
             }
             else{
-                var tempdata : GestureData = null
-                do {
-                    tempdata = QuizDataBase.Instance().GetData<GestureData>('Gesture', this.DecisionAnswer());
-                    var result : Boolean = false;
-                    for(var n = 0; n < temp.length; n++){
-                        if(tempdata.mIndex === this.mData.mIndex || temp[n] === tempdata.mIndex){
-                            result = false;
-                            break;
-                        }
-
-                        if(temp[n] === -1){
-                            temp[n] = tempdata.mIndex;
-                            result = true;
-                            break;
-                        }
-                    }
-                } while (!result);
-
-                QuizModalManager.Instance().GetChoicesModal().SetChoices(i, select, tempdata.mSprite);
+                QuizModalManager.Instance().GetChoicesModal().SetChoices(i, select, GameManager.Instance().GetGameInfo().qIncSprite[index]);
+                index++;
             }
         }
 
@@ -117,6 +89,42 @@ export class GestureQuiz extends QuizComponent {
                 this.debugClientMode = 'User';
             }
             QuizModalManager.Instance().GetQuestionModal().SetSentence(this.mSentence);
+        }
+    }
+
+    private DebugChoiceQuestion(){
+
+        this.mData = QuizDataBase.Instance().GetData<GestureData>('Gesture', this.DecisionAnswer());
+        GameManager.Instance().GetGameInfo().qType = this.mType;
+        if(GameManager.Instance().GetClientMode() === 'Liver'){this.mSentence = "この顔を演じてください";}
+        else{this.mSentence = "どの顔文字を演じているでしょう";}
+        GameManager.Instance().GetGameInfo().qSentence = this.mSentence;
+        GameManager.Instance().GetGameInfo().qCorNumber = this.mData.mAnswer;
+        GameManager.Instance().GetGameInfo().qCorSprite = this.mData.mSprite;
+
+        var tempind : boolean[] = [false, false, false];
+        for(var i = 0; i < QuizManager.Instance().GetChoiceMax(); i++){
+            // デバッグ用
+            if(i != this.mData.mAnswer){
+                var tempdata : GestureData = null
+                    do {
+                            tempdata = QuizDataBase.Instance().GetData<GestureData>('Gesture', this.DecisionAnswer());
+                            var result : Boolean = false;
+                            for(var n = 0; n < QuizManager.Instance().GetChoiceMax() - 1; n++){
+                                if(tempdata.mIndex === this.mData.mIndex || GameManager.Instance().GetGameInfo().qIncSprite[n] === tempdata.mSprite){
+                                    result = false;
+                                    break;
+                                }
+                    
+                                if(tempind[n] === false){
+                                    GameManager.Instance().GetGameInfo().qIncSprite[n] = tempdata.mSprite;
+                                    tempind[n] = true;
+                                    result = true;
+                                    break;
+                                }
+                            }
+                    } while (!result);
+            }
         }
     }
 }

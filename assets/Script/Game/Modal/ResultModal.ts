@@ -40,7 +40,7 @@ export class ResultModal extends Component {
     }
 
     public SetInfo(choice : number, data : QuizData){
-        if(choice === GameManager.Instance().GetGameInfo().qAnswer){
+        if(choice === GameManager.Instance().GetGameInfo().qCorNumber){
             this.resultLabel.string = "正解";
             this.resultLabel.color = new Color(0,255,0,255);
             this.coinLabel.node.active = true;

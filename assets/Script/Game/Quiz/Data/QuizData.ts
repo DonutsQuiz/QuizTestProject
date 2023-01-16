@@ -14,3 +14,8 @@ export class GestureData extends QuizData{
     mSprite : SpriteFrame = null;
 }
 
+export class ActData extends QuizData{
+    mType: QuizType = 'Act';
+    mSentence : string = "";
+}
+

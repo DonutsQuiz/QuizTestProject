@@ -29,14 +29,32 @@ export class QuestionModal extends Component {
     private debugClientMode : ClientMode = 'Liver';
     private debugQuizMode : QuizType = 'None';
 
+    private changeDelay : number = 0.0; // 演出用の時間
+    @property(Number)
+    private delayMax : number = 1.0;
+    private isNext : boolean = false;
+
     start() {
-        this.qStartB.node.on(Button.EventType.CLICK, function(){
-            QuizModalManager.Instance().ChangeModal('Choices');
-        },this);
+        this.qStartB.node.on(Button.EventType.CLICK, this.Next,this);
     }
 
     update(deltaTime: number) {
         this.DebugModalUpdate();
+
+        if(this.isNext){
+            this.changeDelay -= deltaTime;
+            if(this.changeDelay <= 0.0){
+                QuizModalManager.Instance().ChangeModal('Choices');
+                this.isNext = false;
+            }
+        }
+    }
+
+    private Next(){
+        this.isNext = true;
+        this.changeDelay = this.delayMax;
+        this.userNode.active = false;
+        this.liverNode.active = false;
     }
 
     public SetNumber(num : number){
