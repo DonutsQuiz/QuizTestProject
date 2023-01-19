@@ -1084,5 +1084,13 @@
         "1e6d20ce-ec65-43d3-b1eb-47fbd22579a8@6c48a"
       ]
     }
+  },
+  "c39dd70a-6524-4ce4-93c9-631c662d9b3b": {
+    "url": "db://assets/Script/Game/Quiz/ActQuiz.ts",
+    "value": {}
+  },
+  "7362c783-f18f-4b91-a2f8-4a0cb87d0055": {
+    "url": "db://assets/Script/Game/Quiz/PersonalQuiz.ts",
+    "value": {}
   }
 }
