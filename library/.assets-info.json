@@ -854,5 +854,661 @@
     "time": 1673410728037.937,
     "uuid": "2967629a-369d-4128-a91e-9925c704a228",
     "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Animations": {
+    "time": 1673856600775.1636,
+    "uuid": "a9fca1fa-e42c-450a-91de-ba577bf456f5",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Prefab": {
+    "time": 1673769528000,
+    "uuid": "23bf12bd-e6af-49da-b6c8-b9c4de7f7db5",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Scene": {
+    "time": 1673769528000,
+    "uuid": "0221ecf7-83f5-43d7-91a4-3037a4321faa",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script": {
+    "time": 1673856600776.0059,
+    "uuid": "7d4accac-d36f-4de2-995c-017a2f9bcf1f",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Texture": {
+    "time": 1673856457431.332,
+    "uuid": "ed281ba2-4aab-406b-b135-a686277376fd",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Animations/Chip": {
+    "time": 1672386021576.1233,
+    "uuid": "cd70caa7-ed98-4741-932c-aa7daef15467",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Prefab/Modal": {
+    "time": 1673769528000,
+    "uuid": "b2d4f7f4-91af-495f-a4ab-8a4f293964c5",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Prefab/UI": {
+    "time": 1673769528000,
+    "uuid": "df6ddd61-a1c5-422c-9465-b84c44c814ff",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game": {
+    "time": 1673769528000,
+    "uuid": "8a51b193-6fbb-4637-b5cc-38f1d3943cc9",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI": {
+    "time": 1673769528000,
+    "uuid": "d4b978ce-92f9-40de-b694-5bfd9de5f5bf",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Texture/Quiz": {
+    "time": 1673769528000,
+    "uuid": "3406f4dc-03cc-4497-a126-534181a8ec24",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Texture/UI": {
+    "time": 1673769528000,
+    "uuid": "6e92dd2a-2434-44be-a103-e89d029fc5f7",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager": {
+    "time": 1673769528000,
+    "uuid": "b5c47407-1dd9-4753-b02b-616c3c2799ef",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal": {
+    "time": 1673769528000,
+    "uuid": "1b83e75f-b843-43bf-b981-208098e13810",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz": {
+    "time": 1673769528000,
+    "uuid": "f7545cb6-80ca-42fb-a27a-afcd787ac222",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data": {
+    "time": 1673769528000,
+    "uuid": "ba7c0c5d-d097-4cf4-acfc-4197317bda49",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/PlayerInfomation.ts": {
+    "time": 1673769528000,
+    "uuid": "99ec1de7-bbad-49cc-948c-5c8a091a24c0",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/TestMenu.ts": {
+    "time": 1673769528000,
+    "uuid": "fe959ade-f763-4ce3-8221-50ace0c875d4",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/Timer.ts": {
+    "time": 1673941086318.3564,
+    "uuid": "f3195565-4478-454c-87a0-5cc6d23eb16a",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameInformation.ts": {
+    "time": 1673769528000,
+    "uuid": "cc9fc3f5-becf-4732-96a8-cebcbe940e15",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts": {
+    "time": 1673769528000,
+    "uuid": "be307a6d-9f7a-4cc8-8282-15987f8f996c",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts": {
+    "time": 1673769528000,
+    "uuid": "de4c0fca-e7ce-4d86-a1ab-d03ce477a1a6",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts": {
+    "time": 1673769528000,
+    "uuid": "e8e61a10-df40-4d8e-b308-cceef04de892",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/BetModal.ts": {
+    "time": 1673859164176.7485,
+    "uuid": "6dbcc934-3ca5-45f6-9a9d-7c8b7ac67bca",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts": {
+    "time": 1674011780758.7756,
+    "uuid": "2477077d-2400-442e-a5c8-67206febb2f7",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/OverallResultModal.ts": {
+    "time": 1673769528000,
+    "uuid": "60303970-f3a2-4142-88fd-b771d6f92402",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/QuestionModal.ts": {
+    "time": 1673943694154.7307,
+    "uuid": "8f505756-d3be-4106-b8ab-5866d1bbb35b",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts": {
+    "time": 1674011163466.6262,
+    "uuid": "6169e59e-1b7c-4843-a160-6129e0a24d7b",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/WaitModal.ts": {
+    "time": 1673769528000,
+    "uuid": "522aed8b-1514-493f-ab47-59e930de67aa",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts": {
+    "time": 1674011553514.9517,
+    "uuid": "97fb8f70-a8fa-4e52-aaff-727b505c27b6",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/QuizComponent.ts": {
+    "time": 1673769528000,
+    "uuid": "236df82c-57bc-47ad-b417-7005185e6c7c",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizData.ts": {
+    "time": 1673769528000,
+    "uuid": "9d856897-1fe4-4803-ac7a-ea1f0d6e525f",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizDataBase.ts": {
+    "time": 1673769528000,
+    "uuid": "91ce4ab9-9d0d-406f-8f25-066f3085c668",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Animations.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Prefab.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Scene.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Texture.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Animations/Chip.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Prefab/Modal.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Prefab/UI.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Texture/Quiz.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Texture/UI.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/PlayerInfomation.ts.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/TestMenu.ts.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/Timer.ts.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameInformation.ts.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/BetModal.ts.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/OverallResultModal.ts.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/QuestionModal.ts.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/WaitModal.ts.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/QuizComponent.ts.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizData.ts.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizDataBase.ts.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Scene/GameScene.scene": {
+    "time": 1673769528000,
+    "uuid": "6d9866d9-a192-4526-a2a7-a9e7b61f341b",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Texture/CharactorBase (1).png": {
+    "time": 1673769528000,
+    "uuid": "f9e7a9f9-1071-485e-a110-3cd892d94b4c",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Animations/Chip/BetChip.anim": {
+    "time": 1673337583137.7673,
+    "uuid": "3380c141-ff3e-4b05-9a5a-691dd6e39fe2",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Prefab/Modal/BetModal.prefab": {
+    "time": 1673769528000,
+    "uuid": "c59290d8-8b58-4fc9-a536-b0ba1f08cc87",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Prefab/Modal/ChoicesModal.prefab": {
+    "time": 1673943636731.2393,
+    "uuid": "3375720f-b256-4d50-a23b-9df7bb10ea09",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Prefab/Modal/OverallResultModal.prefab": {
+    "time": 1673769528000,
+    "uuid": "daf8414a-5490-4197-81fa-5c82b35f7e1e",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Prefab/Modal/QuestionModal.prefab": {
+    "time": 1673944298262.0825,
+    "uuid": "c03d3bc9-8c03-4f81-ae38-705c55570072",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Prefab/Modal/ResultModal.prefab": {
+    "time": 1674011517504.699,
+    "uuid": "1e01ef77-6349-407d-9593-faea67c2b7bb",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Prefab/UI/Menu.prefab": {
+    "time": 1673769528000,
+    "uuid": "922537de-4568-4519-85f9-be5ac4746df4",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Prefab/UI/Timer.prefab": {
+    "time": 1673940635023.913,
+    "uuid": "74b65a2f-5deb-4913-8fc1-af7febee2b25",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Texture/Quiz/Ges0.png": {
+    "time": 1673769528000,
+    "uuid": "a31c13eb-4563-4140-8b00-66eb02f6e15a",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Texture/Quiz/Ges1.png": {
+    "time": 1673769528000,
+    "uuid": "fb4fbec3-93f7-47e0-9277-4711334b0b41",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Texture/Quiz/Ges2.png": {
+    "time": 1673769528000,
+    "uuid": "c2a2c2c0-1259-4ced-9027-e04be2f46f7e",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Texture/Quiz/Ges3.png": {
+    "time": 1673769528000,
+    "uuid": "fb63a019-9c62-433b-820f-b2d6b66471e0",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Texture/Quiz/Ges4.png": {
+    "time": 1673769528000,
+    "uuid": "da9ac356-52a4-4dd3-ba4f-fd56b6471b74",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Texture/Quiz/Ges5.png": {
+    "time": 1673769528000,
+    "uuid": "09338cf4-f0cb-4b5c-8481-6a323b2fae75",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Texture/UI/AnswerFrameLiver.png": {
+    "time": 1673769528000,
+    "uuid": "1e6d20ce-ec65-43d3-b1eb-47fbd22579a8",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Texture/UI/AnswerFrameUser.png": {
+    "time": 1673769528000,
+    "uuid": "2967629a-369d-4128-a91e-9925c704a228",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Texture/UI/BackFrame.png": {
+    "time": 1673769528000,
+    "uuid": "1b07d5fd-c693-477a-9c93-90f3848601f7",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Texture/UI/ButtonFrame.png": {
+    "time": 1673769528000,
+    "uuid": "0f3f39e0-7f07-43dd-97ec-32c02879f2b6",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Texture/UI/CircleButtonFrame.png": {
+    "time": 1673769528000,
+    "uuid": "d1904ac7-66dd-415b-9ace-e7f817e77a89",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Texture/UI/ModalFrane.png": {
+    "time": 1673769528000,
+    "uuid": "315f0da0-3db8-4e2d-a302-1fef0c9bd067",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Texture/UI/ResultFrame.png": {
+    "time": 1673769528000,
+    "uuid": "46382f71-d726-40f4-a91a-b3fdbfd6481f",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Texture/UI/WaitTextFrame.png": {
+    "time": 1673769528000,
+    "uuid": "d25e31c7-b8a0-4340-a2d4-aa162342b887",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Texture/UI/pixel.png": {
+    "time": 1673769528000,
+    "uuid": "f0511ae3-160a-4653-a0cf-2f3fb9e5f02b",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Texture/UI/questionFrame.png": {
+    "time": 1673769528000,
+    "uuid": "c7fe436c-770d-40a2-9782-d240155b8bf3",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Texture/UI/transparent.png": {
+    "time": 1673769528000,
+    "uuid": "404cf2f7-b06d-4e0b-b5fb-911a6fd12af4",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Prefab/Modal/BetModal.prefab.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Scene/GameScene.scene.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Animations/Chip/BetChip.anim.meta": {
+    "time": 1672386021578.0918
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Prefab/Modal/ChoicesModal.prefab.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Prefab/Modal/OverallResultModal.prefab.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Prefab/Modal/QuestionModal.prefab.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Prefab/Modal/ResultModal.prefab.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Prefab/UI/Menu.prefab.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Prefab/UI/Timer.prefab.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Texture/CharactorBase (1).png.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Texture/Quiz/Ges0.png.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Texture/Quiz/Ges2.png.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Texture/Quiz/Ges1.png.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Texture/Quiz/Ges3.png.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Texture/Quiz/Ges4.png.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Texture/Quiz/Ges5.png.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Texture/UI/BackFrame.png.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Texture/UI/AnswerFrameUser.png.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Texture/UI/AnswerFrameLiver.png.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Texture/UI/CircleButtonFrame.png.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Texture/UI/ButtonFrame.png.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Texture/UI/ResultFrame.png.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Texture/UI/ModalFrane.png.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Texture/UI/pixel.png.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Texture/UI/WaitTextFrame.png.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Texture/UI/questionFrame.png.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Texture/UI/transparent.png.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Animations/Result.meta": {
+    "time": 1673856600778.6343
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Animations/ResultScroll.meta": {
+    "time": 1673856600779.078
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Animations/Start.meta": {
+    "time": 1673856600779.3682
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim.meta": {
+    "time": 1673856600780.219
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Texture/Effect.meta": {
+    "time": 1673856457432.5479
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ChipControll.ts.meta": {
+    "time": 1672801359508.3677
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ResultAnimControll.ts.meta": {
+    "time": 1673402452579.5347
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ScrollAnim.ts.meta": {
+    "time": 1673510172596.635
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/StartControll.ts.meta": {
+    "time": 1672906230076.2627
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Animations/Result": {
+    "time": 1674009294877.1382,
+    "uuid": "f1430055-3713-49da-a319-b15ce9b23454",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Animations/ResultScroll": {
+    "time": 1673509660376.8586,
+    "uuid": "0c5f09ef-05c1-4d97-831f-18efec5a0183",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Animations/Start": {
+    "time": 1672906037194.729,
+    "uuid": "af628dd9-dcab-4072-b405-b489295ba50d",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim": {
+    "time": 1673856590879.2715,
+    "uuid": "1c51522a-d6a3-4732-8108-3fe67c9f4556",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Texture/Effect": {
+    "time": 1674007624414.7083,
+    "uuid": "f7865f5c-c559-48b4-98a6-e6bd4180f677",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ChipControll.ts": {
+    "time": 1673940404872.9568,
+    "uuid": "e72d8382-a76f-44b3-a484-18b0cdeadd9f",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ResultAnimControll.ts": {
+    "time": 1674009812990.8818,
+    "uuid": "c409621f-427c-4713-9b56-50b876397410",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ScrollAnim.ts": {
+    "time": 1673573974187.1897,
+    "uuid": "c3e7db80-a2a2-49a3-9b66-7046adba22c6",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/StartControll.ts": {
+    "time": 1673943937088.6582,
+    "uuid": "6603b7eb-f074-4c4a-9a3a-495c780f5733",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Animations/Result/CorrectAnim.anim.meta": {
+    "time": 1673402283165.9077
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Animations/Result/IncorrectAnim.anim.meta": {
+    "time": 1674009294880.292
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Animations/ResultScroll/scrollUser1.anim.meta": {
+    "time": 1673509660382.924
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Animations/ResultScroll/scrollUser2.anim.meta": {
+    "time": 1673509654979.291
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Animations/ResultScroll/scrollUser3.anim.meta": {
+    "time": 1673509650230.299
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Animations/ResultScroll/scrollUser4.anim.meta": {
+    "time": 1673509645181.5154
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Animations/ResultScroll/scrollUser5.anim.meta": {
+    "time": 1673509489272.9858
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Animations/Start/StartAnim.anim.meta": {
+    "time": 1672906037199.4211
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Texture/Effect/coin.png.meta": {
+    "time": 1673857450311.1057
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Texture/Effect/hanabi.png.meta": {
+    "time": 1673857457823.395
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Texture/Effect/hazure.png.meta": {
+    "time": 1674007639505.065
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Texture/Effect/start.png.meta": {
+    "time": 1673857465294.7156
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Texture/UI/choiceFrame.png.meta": {
+    "time": 1673769528000
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Animations/Result/CorrectAnim.anim": {
+    "time": 1673402931289.3086,
+    "uuid": "33a89dd8-489e-4919-bb7e-20c27491e456",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Animations/Result/IncorrectAnim.anim": {
+    "time": 1674008141439.7427,
+    "uuid": "52df108e-bb80-4399-a2ff-5c03262c625d",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Animations/ResultScroll/scrollUser1.anim": {
+    "time": 1673510042103.0183,
+    "uuid": "d06ed446-ad57-4acd-a026-3141408870e9",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Animations/ResultScroll/scrollUser3.anim": {
+    "time": 1673509811857.1003,
+    "uuid": "e7c29bfa-45ac-419a-a261-f3351fd6f479",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Animations/ResultScroll/scrollUser2.anim": {
+    "time": 1673509833411.768,
+    "uuid": "cfdb5f3f-e328-44be-9efe-9de2f0a93272",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Animations/Start/StartAnim.anim": {
+    "time": 1673574780273.9067,
+    "uuid": "0103b125-51db-457b-9a0c-af0601dd6196",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Animations/ResultScroll/scrollUser4.anim": {
+    "time": 1673509769555.0247,
+    "uuid": "168a06a2-8b8b-4fae-b917-a87bce3981b6",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Animations/ResultScroll/scrollUser5.anim": {
+    "time": 1673509593396.9033,
+    "uuid": "5a44e6bb-56bf-4e31-b254-edd90905eb2f",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Texture/Effect/hazure.png": {
+    "time": 1674007614681.8452,
+    "uuid": "a357ba04-c973-4167-b5ba-afac2859d639",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Texture/Effect/coin.png": {
+    "time": 1672385445266.689,
+    "uuid": "9286b225-7b5c-49c6-8fe2-9568be4e8996",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Texture/Effect/hanabi.png": {
+    "time": 1673401557753.445,
+    "uuid": "e4498d26-fd8e-4fb7-9786-f966547e36de",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Texture/UI/choiceFrame.png": {
+    "time": 1673769528000,
+    "uuid": "b40d2158-e53d-4898-9194-aa6fca835dd2",
+    "missing": false
+  },
+  "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Texture/Effect/start.png": {
+    "time": 1672905373140.7563,
+    "uuid": "56a858b4-c4d5-4788-8590-5e794f058264",
+    "missing": false
   }
 }
