@@ -1,0 +1,9 @@
+下準備
+①local-serverフォルダー内にnode_modulesがない場合、
+npm i
+をターミナルでlocal-server内に実行してください
+
+ゲーム起動方法
+①Cocos Creatorでビルドしたゲームファイルをlocal-serverのbuildフォルダー内に入れる
+②ターミナルで npm run dev　を叩く
+③Chromeでlocalhost:8080を開く
