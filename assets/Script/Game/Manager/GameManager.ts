@@ -1,5 +1,4 @@
 import { _decorator, Component, Node, Button, Label, Game } from 'cc';
-import { PlayerInfomation } from '../PlayerInfomation';
 import { GameInformation } from './GameInformation';
 import { QuizManager } from './QuizManager';
 const { ccclass, property } = _decorator;
@@ -24,21 +23,21 @@ export class GameManager extends Component {
         return GameManager.instance;
     }
 
-    @property(QuizManager)
+    @property(QuizManager) //クイズマネージャー
     quizManager : QuizManager = null;
 
-    @property(Button)
+    @property(Button) // ライバーとユーザーを変えるボタン
     private clientButton : Button = null;
-    @property(Label)
+    @property(Label) // 今ライバー側かユーザー側か
     private clientLabel : Label = null;
 
     private clientMode : ClientMode = 'Liver';
-    private playerInfo : PlayerInfomation = new PlayerInfomation();
     private gameInformation : GameInformation = new GameInformation();
 
     start() {
         GameManager.instance = this;
         this.clientButton.node.on(Button.EventType.CLICK, this.ChangeClientMode, this);
+        this.gameInformation.DebugInit();
     }
 
     update(deltaTime: number) {
@@ -59,10 +58,6 @@ export class GameManager extends Component {
 
     public GetClientMode() : ClientMode{
         return this.clientMode;
-    }
-
-    public GetPlayerInfo() : PlayerInfomation{
-        return this.playerInfo;
     }
 
     public GetGameInfo() : GameInformation{

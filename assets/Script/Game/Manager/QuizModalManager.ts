@@ -91,7 +91,7 @@ export class QuizModalManager extends Component {
         }
         else if(nextType === 'Choices'){
             this.question.node.active = false;
-            this.choices.node.active = true;
+            this.choices.node.active = true;            
             this.choices.Initialize();
         }
         else if(nextType === 'Overall'){

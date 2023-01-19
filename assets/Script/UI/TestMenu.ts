@@ -15,7 +15,7 @@ export class TestMenu extends Component {
     start() {
         this.button[0].node.on(Button.EventType.CLICK, function(){this.ClickFunction('Gesture')},this);
         this.button[1].node.on(Button.EventType.CLICK, function(){this.ClickFunction('Act')},this);
-        this.button[2].node.on(Button.EventType.CLICK, function(){this.ClickFunction('Quiz')},this);
+        this.button[2].node.on(Button.EventType.CLICK, function(){this.ClickFunction('Personal')},this);
     }
 
     private ClickFunction(name : QuizType){

@@ -19,3 +19,8 @@ export class ActData extends QuizData{
     mSentence : string = "";
 }
 
+export class PersonalData extends QuizData{
+    mType: QuizType = 'Act';
+    mSentence : string = "";
+}
+

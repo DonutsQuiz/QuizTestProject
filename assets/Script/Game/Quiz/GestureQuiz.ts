@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, SpriteFrame, math, SphereColliderComponent } from 'cc';
+import { _decorator, Component, Node, SpriteFrame, math, SphereColliderComponent, TERRAIN_MAX_LAYER_COUNT } from 'cc';
 import { ClientMode, GameManager } from '../Manager/GameManager';
 import { QuizManager } from '../Manager/QuizManager';
 import { QuizModalManager } from '../Manager/QuizModalManager';
@@ -29,36 +29,11 @@ export class GestureQuiz extends QuizComponent {
 
         this.DebugChoiceQuestion();
 
-        this.mData.mAnswer = GameManager.Instance().GetGameInfo().qCorNumber;
-        this.mData.mSprite = GameManager.Instance().GetGameInfo().qCorSprite;
+        super.SetQuiz();
 
         // 問題文
-        QuizModalManager.Instance().GetQuestionModal().SetNumber(++GameManager.Instance().GetGameInfo().qNumber);
-        QuizModalManager.Instance().GetQuestionModal().SetSentence(GameManager.Instance().GetGameInfo().qSentence);
         QuizModalManager.Instance().GetQuestionModal().SetSprite(this.mSprite = this.mData.mSprite);
-
-
-        // 選択肢
-        var index : number = 0;
-        QuizModalManager.Instance().GetChoicesModal().SetQuestion("どの顔を演じている?");
-        for(var i : number = 0; i < QuizManager.Instance().GetChoiceMax(); i++){
-            var select : string;
-            if(i === 0){select = "A";}
-            else if(i === 1){select = "B";}
-            else if(i === 2){select = "C";}
-            else if(i === 3){select = "D";}
-
-            if(i === this.mData.mAnswer){
-                QuizModalManager.Instance().GetChoicesModal().SetChoices(i, select, GameManager.Instance().GetGameInfo().qCorSprite);
-            }
-            else{
-                QuizModalManager.Instance().GetChoicesModal().SetChoices(i, select, GameManager.Instance().GetGameInfo().qIncSprite[index]);
-                index++;
-            }
-        }
-
         // 結果
-        QuizModalManager.Instance().GetChoicesModal().GetResultModal().SetAnswerLabel(this.mData.mAnswer ,"");
         QuizModalManager.Instance().GetChoicesModal().GetResultModal().SetAnswerSprite(this.mSprite);        
     }
 
@@ -96,34 +71,41 @@ export class GestureQuiz extends QuizComponent {
 
         this.mData = QuizDataBase.Instance().GetData<GestureData>('Gesture', this.DecisionAnswer());
         GameManager.Instance().GetGameInfo().qType = this.mType;
-        if(GameManager.Instance().GetClientMode() === 'Liver'){this.mSentence = "この顔を演じてください";}
-        else{this.mSentence = "どの顔文字を演じているでしょう";}
-        GameManager.Instance().GetGameInfo().qSentence = this.mSentence;
+        GameManager.Instance().GetGameInfo().qSentenceLiver = "この顔を演じてください";
+        GameManager.Instance().GetGameInfo().qSentenceUser = "どの顔を演じている？";
         GameManager.Instance().GetGameInfo().qCorNumber = this.mData.mAnswer;
-        GameManager.Instance().GetGameInfo().qCorSprite = this.mData.mSprite;
 
-        var tempind : boolean[] = [false, false, false];
-        for(var i = 0; i < QuizManager.Instance().GetChoiceMax(); i++){
-            // デバッグ用
-            if(i != this.mData.mAnswer){
-                var tempdata : GestureData = null
-                    do {
-                            tempdata = QuizDataBase.Instance().GetData<GestureData>('Gesture', this.DecisionAnswer());
-                            var result : Boolean = false;
-                            for(var n = 0; n < QuizManager.Instance().GetChoiceMax() - 1; n++){
-                                if(tempdata.mIndex === this.mData.mIndex || GameManager.Instance().GetGameInfo().qIncSprite[n] === tempdata.mSprite){
-                                    result = false;
-                                    break;
-                                }
-                    
-                                if(tempind[n] === false){
-                                    GameManager.Instance().GetGameInfo().qIncSprite[n] = tempdata.mSprite;
-                                    tempind[n] = true;
-                                    result = true;
-                                    break;
-                                }
-                            }
-                    } while (!result);
+        var tempind : SpriteFrame[] = [null, null, null];
+        var templist : number[] = [-1, -1, -1];
+        for(var i = 0; i < QuizManager.Instance().GetChoiceMax() - 1; i++){
+            var tempdata : GestureData = null;
+            do {
+                tempdata = QuizDataBase.Instance().GetData<GestureData>('Gesture', this.DecisionAnswer());
+                var result : Boolean = false;
+                for(var n = 0; n < QuizManager.Instance().GetChoiceMax() - 1; n++){
+                    if(tempdata.mIndex === this.mData.mIndex || templist[n] === tempdata.mIndex){
+                        result = false;
+                        break;
+                    }
+        
+                    if(templist[n] < 0){
+                        tempind[n] = tempdata.mSprite;
+                        templist[n] = tempdata.mIndex;
+                        result = true;
+                        break;
+                    }
+                }
+            } while (!result);
+        }
+
+        var index : number = 0;
+        for(var n = 0; n < QuizManager.Instance().GetChoiceMax(); n++){
+            if(n === GameManager.Instance().GetGameInfo().qCorNumber){
+                GameManager.Instance().GetGameInfo().qSprite[n] = this.mData.mSprite;
+            }
+            else{
+                GameManager.Instance().GetGameInfo().qSprite[n] = tempind[index];
+                index++;
             }
         }
     }

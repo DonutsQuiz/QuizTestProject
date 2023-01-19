@@ -5176,8 +5176,8 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Label",
-    "_objFlags": 512,
+    "_name": "RichText",
+    "_objFlags": 0,
     "_parent": {
       "__id__": 232
     },
@@ -5235,8 +5235,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 100,
-      "height": 40
+      "width": 90,
+      "height": 40.67999999999999
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -5247,10 +5247,10 @@
   },
   {
     "__type__": "cc.CompPrefabInfo",
-    "fileId": "10yN3MyrxMtKFEhvSo0VLY"
+    "fileId": "eeFPA92HpEoJJAaRvWG6+K"
   },
   {
-    "__type__": "cc.Label",
+    "__type__": "cc.RichText",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -5260,38 +5260,24 @@
     "__prefab": {
       "__id__": 237
     },
-    "_customMaterial": null,
-    "_srcBlendFactor": 2,
-    "_dstBlendFactor": 4,
-    "_color": {
-      "__type__": "cc.Color",
-      "r": 0,
-      "g": 0,
-      "b": 0,
-      "a": 255
-    },
-    "_string": "獲得コイン\nランキング",
+    "_lineHeight": 18,
+    "_string": "<color=#000000>BETコイン<br/>ランキング</color>",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
-    "_actualFontSize": 15,
-    "_fontSize": 15,
+    "_fontSize": 18,
+    "_maxWidth": 0,
     "_fontFamily": "Arial",
-    "_lineHeight": 19.7,
-    "_overflow": 1,
-    "_enableWrapText": false,
     "_font": null,
     "_isSystemFontUsed": true,
-    "_spacingX": 0,
-    "_isItalic": false,
-    "_isBold": false,
-    "_isUnderline": false,
-    "_underlineHeight": 2,
+    "_userDefinedFont": null,
     "_cacheMode": 0,
+    "_imageAtlas": null,
+    "_handleTouchEvent": true,
     "_id": ""
   },
   {
     "__type__": "cc.CompPrefabInfo",
-    "fileId": "87fKJ8/K9GOLA+gLY66axs"
+    "fileId": "17yXjPJspL3r+c2wJAfAYf"
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -5301,7 +5287,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "e0sd6lG3NH7baCve7Y6t7c"
+    "fileId": "22vhFwI6NGmKBJNsjvYkWW"
   },
   {
     "__type__": "cc.UITransform",
@@ -5479,7 +5465,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -150,
+      "x": -186.898,
       "y": 170,
       "z": 0
     },
@@ -5566,7 +5552,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 139.23,
+      "width": 140,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -5601,7 +5587,7 @@
       "b": 0,
       "a": 255
     },
-    "_string": "BETコインランキング",
+    "_string": "獲得コインランキング",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 14,
@@ -5867,7 +5853,7 @@
         "__id__": 195
       }
     ],
-    "rankCoin": [
+    "rankNumber": [
       {
         "__id__": 39
       },
@@ -5905,7 +5891,8 @@
     "rankChangeButton": {
       "__id__": 243
     },
-    "rankChangeLabel": {
+    "rankChangeLabel": null,
+    "rankChangeText": {
       "__id__": 236
     },
     "rankLabel": {

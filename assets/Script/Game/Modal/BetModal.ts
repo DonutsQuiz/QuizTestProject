@@ -29,8 +29,8 @@ export class BetModal extends Component {
         this.coins = GameManager.Instance().GetPlayerInfo().coins;
         this.sliderMax = this.coins / 10;
         this.criteriaPoint = 1.0 / (this.coins / 10);
-        this.decideButton.node.on(Button.EventType.CLICK, function(){this.self.active = false; this.CheckIsDecide();}, this);
-        this.closeButton.node.on(Button.EventType.CLICK, function(){this.self.active = false;}, this);
+        this.decideButton.node.on(Button.EventType.CLICK, function(){this.CheckIsDecide(); this.CloseModal();}, this);
+        this.closeButton.node.on(Button.EventType.CLICK, function(){this.CloseModal();}, this);
         this.betButtonList[0].node.on(Button.EventType.CLICK, function(){this.betSlider.progress += this.criteriaPoint;}, this);
         this.betButtonList[1].node.on(Button.EventType.CLICK, function(){this.betSlider.progress += this.criteriaPoint * 10;}, this);
         this.betButtonList[2].node.on(Button.EventType.CLICK, function(){this.betSlider.progress += this.criteriaPoint * 100;}, this);
@@ -67,5 +67,11 @@ export class BetModal extends Component {
             this.isDecide = true;
         }
     }
+
+    private CloseModal(){
+        this.self.active = false;
+        this.betSlider.progress = 0.0;
+        this.betValue = 0;
+    } 
 }
 
