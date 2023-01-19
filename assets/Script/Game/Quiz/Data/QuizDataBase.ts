@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, SpriteFrame, Sprite } from 'cc';
+import { _decorator, Component, Node, SpriteFrame, Sprite, random, randomRangeInt } from 'cc';
 import { QuizType } from '../QuizComponent';
 import { GestureData, QuizData } from './QuizData';
 const { ccclass, property } = _decorator;
@@ -61,7 +61,7 @@ export class QuizDataBase extends Component {
         for(var i = 0; i < 6; i++){
             var data : GestureData = new GestureData;
             data.mIndex = i;
-            data.mAnswer = i;
+            data.mAnswer = randomRangeInt(0, 4);
             data.mSprite = this.sprite[i];
             this.Add(data);
         }
