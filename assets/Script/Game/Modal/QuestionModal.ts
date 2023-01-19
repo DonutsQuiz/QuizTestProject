@@ -2,6 +2,7 @@ import { _decorator, Component, Node, Label, Button, Vec2, Vec3, SpriteFrame, Sp
 import { ClientMode, GameManager } from '../Manager/GameManager';
 import { QuizModalManager } from '../Manager/QuizModalManager';
 import { QuizType } from '../Quiz/QuizComponent';
+import { StartControll } from '../../EffectAnim/StartControll';
 const { ccclass, property } = _decorator;
 
 @ccclass('QuestionModal')
@@ -29,14 +30,37 @@ export class QuestionModal extends Component {
     private debugClientMode : ClientMode = 'Liver';
     private debugQuizMode : QuizType = 'None';
 
+    private changeDelay : number = 0.0; // 演出用の時間
+    @property(Number)
+    private delayMax : number = 1.0;
+    private isNext : boolean = false;
+
+    @property(StartControll)
+    startAnim : StartControll = null;
+
     start() {
-        this.qStartB.node.on(Button.EventType.CLICK, function(){
-            QuizModalManager.Instance().ChangeModal('Choices');
-        },this);
+        this.qStartB.node.on(Button.EventType.CLICK, this.Next,this);
     }
 
     update(deltaTime: number) {
         this.DebugModalUpdate();
+
+        if(this.isNext){
+            this.changeDelay -= deltaTime;
+            this.startAnim.Play();
+            if(this.changeDelay <= 0.0){
+                this.startAnim.AnimationReset();
+                QuizModalManager.Instance().ChangeModal('Choices');
+                this.isNext = false;
+            }
+        }
+    }
+
+    private Next(){
+        this.isNext = true;
+        this.changeDelay = this.delayMax;
+        this.userNode.active = false;
+        this.liverNode.active = false;
     }
 
     public SetNumber(num : number){
