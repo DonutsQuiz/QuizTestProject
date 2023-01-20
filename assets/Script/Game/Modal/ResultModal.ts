@@ -1,4 +1,5 @@
 import { _decorator, Component, Node, Button, labelAssembler, Label, SpriteFrame, Color, Sprite, UITransform, Vec2, Size } from 'cc';
+import { ResultAnimControll } from '../../EffectAnim/ResultAnimControll';
 import { ClientMode, GameManager } from '../Manager/GameManager';
 import { QuizModalManager } from '../Manager/QuizModalManager';
 import { QuizData } from '../Quiz/Data/QuizData';
@@ -24,9 +25,15 @@ export class ResultModal extends Component {
     @property(Sprite)
     answerImage : Sprite = null;
 
+
+    @property(ResultAnimControll)
+    resultAnim : ResultAnimControll = null;
+
     public isNext = false;
 
     private debugClientMode : ClientMode = 'Liver';
+
+    private answerResult : boolean = false;
 
     start() {
         this.nextButton.node.on(Button.EventType.CLICK, function(){
@@ -96,6 +103,19 @@ export class ResultModal extends Component {
         this.coinLabel.string = coin + "コイン獲得!!";
     }
 
+    // クイズの回答があっているか
+    public SetAnswerReslult(ansnum: number, choice: number)
+    {
+        console.log("choice: " + choice);
+        console.log("ansnum: " + ansnum);
+        if(ansnum === choice){
+            this.answerResult = true;
+        }
+        else{
+            this.answerResult = false;
+        }
+    }
+
     private DebugModalUpdate(){
         if(GameManager.Instance().GetClientMode() != this.debugClientMode){
 
@@ -110,6 +130,17 @@ export class ResultModal extends Component {
                 this.debugClientMode = 'User';
             }
         }
+
+                // animation
+                if(this.debugClientMode=== 'User'){
+                    if(this.answerResult)
+                    {
+                        this.resultAnim.PlayCorrectAnim();
+                    }
+                    else{
+                        this.resultAnim.PlayIncorrectAnim();
+                    }
+                }
     }
 }
 

@@ -1,5 +1,5 @@
 import { _decorator, Component, Node, Button, Label, SpriteFrame, Sprite, Vec3, RichText } from 'cc';
-import { ChipControll } from '../../Chip/ChipControll';
+import { ChipControll } from '../../EffectAnim/ChipControll';
 import { Timer } from '../../UI/Timer';
 import { ClientMode, GameManager } from '../Manager/GameManager';
 import { QuizManager } from '../Manager/QuizManager';
@@ -166,7 +166,7 @@ export class ChoicesModal extends Component {
         this.choiceNumber = this.tempNumber;
         this.userAnswerFrameSprite.active = true;
         this.userAnswerFrameSprite.position = new Vec3(this.buttonList[this.choiceNumber].node.position);
-        this.chipAnim.Play();
+        if(this.betModal.getIsPushedDecideButton()) this.chipAnim.Play(this.choiceNumber);
     }
 
     // 正解表示
@@ -214,6 +214,7 @@ export class ChoicesModal extends Component {
             if(isResult){
                 this.resultModal.node.active = true;
                 this.liverAnswerFrameSprite.active = true;
+                this.resultModal.SetAnswerReslult(GameManager.Instance().GetGameInfo().qCorNumber, this.GetChoics());
             }
         }
     }

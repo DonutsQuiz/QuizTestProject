@@ -370,12 +370,12 @@
     "missing": false
   },
   "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script": {
-    "time": 1673237451564.8289,
+    "time": 1674178272467.893,
     "uuid": "7d4accac-d36f-4de2-995c-017a2f9bcf1f",
     "missing": false
   },
   "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Texture": {
-    "time": 1672900680059.5989,
+    "time": 1674177739061.4932,
     "uuid": "ed281ba2-4aab-406b-b135-a686277376fd",
     "missing": false
   },
@@ -400,7 +400,7 @@
     "missing": false
   },
   "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Texture/UI": {
-    "time": 1673768193900.1228,
+    "time": 1674118304446.898,
     "uuid": "6e92dd2a-2434-44be-a103-e89d029fc5f7",
     "missing": false
   },
@@ -410,7 +410,7 @@
     "missing": false
   },
   "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/Game/Modal": {
-    "time": 1673166216951.5088,
+    "time": 1674118645968.1033,
     "uuid": "1b83e75f-b843-43bf-b981-208098e13810",
     "missing": false
   },
@@ -440,22 +440,22 @@
     "missing": false
   },
   "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts": {
-    "time": 1674113361338.5408,
+    "time": 1674120358962.4783,
     "uuid": "e8e61a10-df40-4d8e-b308-cceef04de892",
     "missing": false
   },
   "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/Game/Modal/OverallResultModal.ts": {
-    "time": 1674028539937.0012,
+    "time": 1674123168368.2666,
     "uuid": "60303970-f3a2-4142-88fd-b771d6f92402",
     "missing": false
   },
   "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/Game/Modal/QuestionModal.ts": {
-    "time": 1674112756270.6887,
+    "time": 1674177472364.6345,
     "uuid": "8f505756-d3be-4106-b8ab-5866d1bbb35b",
     "missing": false
   },
   "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts": {
-    "time": 1673760118873.0715,
+    "time": 1674179500193.5105,
     "uuid": "6169e59e-1b7c-4843-a160-6129e0a24d7b",
     "missing": false
   },
@@ -691,7 +691,7 @@
     "time": 1672207207235.3647
   },
   "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts": {
-    "time": 1674032859119.1199,
+    "time": 1674179478951.8823,
     "uuid": "2477077d-2400-442e-a5c8-67206febb2f7",
     "missing": false
   },
@@ -707,7 +707,7 @@
     "time": 1672207045161.5051
   },
   "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Prefab/Modal/ChoicesModal.prefab": {
-    "time": 1674033391722.1482,
+    "time": 1674178855203.1775,
     "uuid": "3375720f-b256-4d50-a23b-9df7bb10ea09",
     "missing": false
   },
@@ -715,7 +715,7 @@
     "time": 1672207045164.1152
   },
   "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Prefab/Modal/ResultModal.prefab": {
-    "time": 1673577934544.705,
+    "time": 1674179824299.6,
     "uuid": "1e01ef77-6349-407d-9593-faea67c2b7bb",
     "missing": false
   },
@@ -723,7 +723,7 @@
     "time": 1672207045163.4434
   },
   "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Prefab/Modal/QuestionModal.prefab": {
-    "time": 1674029349819.9675,
+    "time": 1674177885904.2686,
     "uuid": "c03d3bc9-8c03-4f81-ae38-705c55570072",
     "missing": false
   },
@@ -731,7 +731,7 @@
     "time": 1672361053076.364
   },
   "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Prefab/Modal/OverallResultModal.prefab": {
-    "time": 1674028645476.6208,
+    "time": 1674121490934.3276,
     "uuid": "daf8414a-5490-4197-81fa-5c82b35f7e1e",
     "missing": false
   },
@@ -739,7 +739,7 @@
     "time": 1673166216952.3684
   },
   "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/Game/Modal/BetModal.ts": {
-    "time": 1674033114611.1921,
+    "time": 1674178495684.5764,
     "uuid": "6dbcc934-3ca5-45f6-9a9d-7c8b7ac67bca",
     "missing": false
   },
@@ -749,22 +749,6 @@
   "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Prefab/Modal/BetModal.prefab": {
     "time": 1674033263266.0881,
     "uuid": "c59290d8-8b58-4fc9-a536-b0ba1f08cc87",
-    "missing": false
-  },
-  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/Chip.meta": {
-    "time": 1673237451565.0122
-  },
-  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/Chip/ChipControll.ts.meta": {
-    "time": 1673237451561.1663
-  },
-  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/Chip": {
-    "time": 1673237451561.9014,
-    "uuid": "91042ce5-e93c-4fff-9f8e-a6facac882fc",
-    "missing": false
-  },
-  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/Chip/ChipControll.ts": {
-    "time": 1673237451562.3013,
-    "uuid": "e72d8382-a76f-44b3-a484-18b0cdeadd9f",
     "missing": false
   },
   "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/UI/Timer.ts.meta": {
@@ -805,29 +789,21 @@
   "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Animations/Chip.meta": {
     "time": 1673237533677.2395
   },
-  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Animations/Chip/BetChip.anim.meta": {
-    "time": 1673237533678.5547
-  },
   "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Animations": {
-    "time": 1673237533677.6467,
+    "time": 1674178840937.914,
     "uuid": "a9fca1fa-e42c-450a-91de-ba577bf456f5",
     "missing": false
   },
   "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Animations/Chip": {
-    "time": 1673237533679.0317,
+    "time": 1674178843507.269,
     "uuid": "cd70caa7-ed98-4741-932c-aa7daef15467",
-    "missing": false
-  },
-  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Animations/Chip/BetChip.anim": {
-    "time": 1673237533679.5955,
-    "uuid": "3380c141-ff3e-4b05-9a5a-691dd6e39fe2",
     "missing": false
   },
   "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/Game/Manager/GameInformation.ts.meta": {
     "time": 1673238493020.5378
   },
   "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/Game/Manager/GameInformation.ts": {
-    "time": 1674112221407.6738,
+    "time": 1674123008287.0903,
     "uuid": "cc9fc3f5-becf-4732-96a8-cebcbe940e15",
     "missing": false
   },
@@ -869,6 +845,206 @@
   "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/Game/Quiz/PersonalQuiz.ts": {
     "time": 1674112918330.5793,
     "uuid": "7362c783-f18f-4b91-a2f8-4a0cb87d0055",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Texture/UI/RetryModalFrame.png.meta": {
+    "time": 1674117864051.4478
+  },
+  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Texture/UI/RetryModalFrame.png": {
+    "time": 1674117854768.5833,
+    "uuid": "92ba858f-154a-499d-8820-7e18c2633d5a",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Texture/UI/RetryButtonFrame.png.meta": {
+    "time": 1674118310678.7314
+  },
+  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Texture/UI/RetryButtonFrame.png": {
+    "time": 1674118304445.9927,
+    "uuid": "68180b27-0b60-41f8-8542-e243d2885978",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/Game/Modal/RetryModal.ts.meta": {
+    "time": 1674118645969.1755
+  },
+  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/Game/Modal/RetryModal.ts": {
+    "time": 1674123140178.5474,
+    "uuid": "81312b2e-7215-4181-b19c-8f63e06c0efa",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Animations/Result.meta": {
+    "time": 1674177007324.0215
+  },
+  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Animations/ResultScroll.meta": {
+    "time": 1674177007324.3406
+  },
+  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Animations/Start.meta": {
+    "time": 1674177007324.648
+  },
+  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Animations/Result": {
+    "time": 1674176548300.7007,
+    "uuid": "c581339d-d5be-49a2-b5b7-92a9c760e641",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Animations/ResultScroll": {
+    "time": 1674176548302.4307,
+    "uuid": "81164823-0a80-4b37-9ca4-480d1959eb14",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Animations/Start": {
+    "time": 1674176548302.9675,
+    "uuid": "d8406e95-0943-4905-b680-18b48752e217",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Animations/Result/CorrectAnim.anim.meta": {
+    "time": 1674176548300.457
+  },
+  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Animations/Result/IncorrectAnim.anim.meta": {
+    "time": 1674176548300.8188
+  },
+  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Animations/ResultScroll/scrollUser1.anim.meta": {
+    "time": 1674176548301.3901
+  },
+  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Animations/ResultScroll/scrollUser2.anim.meta": {
+    "time": 1674176548301.6658
+  },
+  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Animations/ResultScroll/scrollUser3.anim.meta": {
+    "time": 1674176548301.9387
+  },
+  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Animations/ResultScroll/scrollUser4.anim.meta": {
+    "time": 1674176548302.2163
+  },
+  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Animations/ResultScroll/scrollUser5.anim.meta": {
+    "time": 1674176548302.4983
+  },
+  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Animations/Start/StartAnim.anim.meta": {
+    "time": 1674176548303.0293
+  },
+  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Animations/Result/CorrectAnim.anim": {
+    "time": 1674176548300.275,
+    "uuid": "33a89dd8-489e-4919-bb7e-20c27491e456",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Animations/Result/IncorrectAnim.anim": {
+    "time": 1674176548300.6123,
+    "uuid": "52df108e-bb80-4399-a2ff-5c03262c625d",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Animations/ResultScroll/scrollUser1.anim": {
+    "time": 1674176548301.2205,
+    "uuid": "d06ed446-ad57-4acd-a026-3141408870e9",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Animations/ResultScroll/scrollUser3.anim": {
+    "time": 1674176548301.8005,
+    "uuid": "e7c29bfa-45ac-419a-a261-f3351fd6f479",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Animations/ResultScroll/scrollUser2.anim": {
+    "time": 1674176548301.5286,
+    "uuid": "cfdb5f3f-e328-44be-9efe-9de2f0a93272",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Animations/ResultScroll/scrollUser4.anim": {
+    "time": 1674176548302.0796,
+    "uuid": "168a06a2-8b8b-4fae-b917-a87bce3981b6",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Animations/Start/StartAnim.anim": {
+    "time": 1674176548302.8757,
+    "uuid": "0103b125-51db-457b-9a0c-af0601dd6196",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Animations/ResultScroll/scrollUser5.anim": {
+    "time": 1674176548302.3533,
+    "uuid": "5a44e6bb-56bf-4e31-b254-edd90905eb2f",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/EffectAnim.meta": {
+    "time": 1674177175531.137
+  },
+  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/EffectAnim/ChipControll.ts.meta": {
+    "time": 1674177175529.5938
+  },
+  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/EffectAnim/ResultAnimControll.ts.meta": {
+    "time": 1674176548307.6467
+  },
+  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/EffectAnim/ScrollAnim.ts.meta": {
+    "time": 1674176548307.9866
+  },
+  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/EffectAnim/StartControll.ts.meta": {
+    "time": 1674176548308.3032
+  },
+  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/EffectAnim": {
+    "time": 1674176548308.2402,
+    "uuid": "eb92b440-44f3-491c-8059-3f6beebd1880",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/EffectAnim/ChipControll.ts": {
+    "time": 1674176548307.175,
+    "uuid": "6fea9413-9c92-49a9-ae8a-a707b2693daa",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/EffectAnim/ResultAnimControll.ts": {
+    "time": 1674176548307.4834,
+    "uuid": "c409621f-427c-4713-9b56-50b876397410",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/EffectAnim/ScrollAnim.ts": {
+    "time": 1674176548307.8132,
+    "uuid": "c3e7db80-a2a2-49a3-9b66-7046adba22c6",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/EffectAnim/StartControll.ts": {
+    "time": 1674176548308.1494,
+    "uuid": "6603b7eb-f074-4c4a-9a3a-495c780f5733",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Texture/Effect.meta": {
+    "time": 1674177739062.1711
+  },
+  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Texture/Effect": {
+    "time": 1674176548315.8367,
+    "uuid": "66bad8af-2f22-406f-a3ba-9e49e26b7e80",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Texture/Effect/coin.png.meta": {
+    "time": 1674176548313.352
+  },
+  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Texture/Effect/hanabi.png.meta": {
+    "time": 1674176548314.3762
+  },
+  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Texture/Effect/hazure.png.meta": {
+    "time": 1674176548314.9766
+  },
+  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Texture/Effect/start.png.meta": {
+    "time": 1674176548315.9807
+  },
+  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Texture/Effect/hazure.png": {
+    "time": 1674176548314.7695,
+    "uuid": "a357ba04-c973-4167-b5ba-afac2859d639",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Texture/Effect/coin.png": {
+    "time": 1674176548313.0596,
+    "uuid": "9286b225-7b5c-49c6-8fe2-9568be4e8996",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Texture/Effect/start.png": {
+    "time": 1674176548315.7078,
+    "uuid": "56a858b4-c4d5-4788-8590-5e794f058264",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Texture/Effect/hanabi.png": {
+    "time": 1674176548314.1536,
+    "uuid": "e4498d26-fd8e-4fb7-9786-f966547e36de",
+    "missing": false
+  },
+  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Animations/Chip/BetChip.anim.meta": {
+    "time": 1674178843515.1519
+  },
+  "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Animations/Chip/BetChip.anim": {
+    "time": 1674176548299.8037,
+    "uuid": "012f6ddb-5d4f-4a48-be5d-b761111defe9",
     "missing": false
   }
 }

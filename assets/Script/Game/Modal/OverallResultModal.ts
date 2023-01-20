@@ -1,6 +1,8 @@
 import { _decorator, Component, Node, PageView, Label, Button, labelAssembler, game, RichText } from 'cc';
 import { GameManager } from '../Manager/GameManager';
+import { QuizManager } from '../Manager/QuizManager';
 import { QuizModalManager } from '../Manager/QuizModalManager';
+import { RetryModal } from './RetryModal';
 const { ccclass, property } = _decorator;
 
 class UserInfomation{
@@ -26,12 +28,12 @@ export class OverallResultModal extends Component {
     nextButton : Button = null;
     @property(Button)
     rankChangeButton : Button = null;
-    @property(Label)
-    rankChangeLabel : Label = null;
     @property(RichText)
     rankChangeText : RichText = null;
     @property(Label)
     rankLabel : Label = null;
+    @property(RetryModal)
+    retryModal : RetryModal = null;
 
     userList : Array<UserInfomation> = new Array<UserInfomation>();
     displayNumber : number = 10;
@@ -43,15 +45,23 @@ export class OverallResultModal extends Component {
         this.userList.sort((a,b) => {return b.mCoin - a.mCoin})
         this.Initialize();
 
-        this.nextButton.node.on(Button.EventType.CLICK, function(){
-            QuizModalManager.Instance().ChangeModal('Question');
-        })
+        this.nextButton.node.on(Button.EventType.CLICK, this.ClickRetryModal, this);
 
         this.rankChangeButton.node.on(Button.EventType.CLICK, this.ChangeRanking, this);
     }
 
     update(deltaTime: number) {
-        
+
+        if(this.retryModal.GetIsDecide()){
+            if(this.retryModal.GetIsRetry()){
+                QuizModalManager.Instance().ChangeModal('Question');
+                QuizManager.Instance().quizComponent.SetQuiz();
+            }
+            else{
+                QuizModalManager.Instance().node.active = false;
+            }
+            this.retryModal.Reset();
+        }
     }
 
 
@@ -103,6 +113,10 @@ export class OverallResultModal extends Component {
                 this.rankNumber[i].string = this.userList[i].mBet.toString() + "ポイント";
             }
         }
+    }
+
+    private ClickRetryModal(){
+        this.retryModal.SetActive();
     }
 }
 

@@ -77,9 +77,7 @@ export class QuizModalManager extends Component {
         //this.DebugClientMode();
     }
 
-    public OnUpdate(deltaTime : number){
-
-    }
+    OnUpdate(deltaTime : number){}
 
     public ChangeModal(nextType : ModalType){
         if(nextType === 'Question'){

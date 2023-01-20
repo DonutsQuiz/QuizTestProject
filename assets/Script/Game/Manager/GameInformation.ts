@@ -29,7 +29,6 @@ export class GameInformation{
 
 
     public DebugInit(){
-        this.qType = "None";
         this.qNumber = 0;
         this.qSentenceLiver = "";
         this.qCorNumber = 0;

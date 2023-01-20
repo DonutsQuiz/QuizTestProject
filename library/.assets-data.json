@@ -99,9 +99,11 @@
         "951249e0-9f16-456d-8b85-a6ca954da16b@f9941",
         "2967629a-369d-4128-a91e-9925c704a228@f9941",
         "1e01ef77-6349-407d-9593-faea67c2b7bb",
+        "9286b225-7b5c-49c6-8fe2-9568be4e8996@f9941",
+        "3380c141-ff3e-4b05-9a5a-691dd6e39fe2",
+        "012f6ddb-5d4f-4a48-be5d-b761111defe9",
+        "012f6ddb-5d4f-4a48-be5d-b761111defe9",
         "c7fe436c-770d-40a2-9782-d240155b8bf3@f9941",
-        "3380c141-ff3e-4b05-9a5a-691dd6e39fe2",
-        "3380c141-ff3e-4b05-9a5a-691dd6e39fe2",
         "74b65a2f-5deb-4913-8fc1-af7febee2b25",
         "57520716-48c8-4a19-8acf-41c9f8777fb0@f9941",
         "57520716-48c8-4a19-8acf-41c9f8777fb0@f9941",
@@ -168,7 +170,10 @@
         "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
         "544e49d6-3f05-4fa8-9a9e-091f98fc2ce8@f9941",
         "951249e0-9f16-456d-8b85-a6ca954da16b@f9941",
-        "315f0da0-3db8-4e2d-a302-1fef0c9bd067@f9941"
+        "315f0da0-3db8-4e2d-a302-1fef0c9bd067@f9941",
+        "56a858b4-c4d5-4788-8590-5e794f058264@f9941",
+        "0103b125-51db-457b-9a0c-af0601dd6196",
+        "0103b125-51db-457b-9a0c-af0601dd6196"
       ]
     }
   },
@@ -185,7 +190,13 @@
         "0f3f39e0-7f07-43dd-97ec-32c02879f2b6@f9941",
         "544e49d6-3f05-4fa8-9a9e-091f98fc2ce8@f9941",
         "951249e0-9f16-456d-8b85-a6ca954da16b@f9941",
-        "315f0da0-3db8-4e2d-a302-1fef0c9bd067@f9941"
+        "315f0da0-3db8-4e2d-a302-1fef0c9bd067@f9941",
+        "e4498d26-fd8e-4fb7-9786-f966547e36de@f9941",
+        "33a89dd8-489e-4919-bb7e-20c27491e456",
+        "33a89dd8-489e-4919-bb7e-20c27491e456",
+        "a357ba04-c973-4167-b5ba-afac2859d639@f9941",
+        "52df108e-bb80-4399-a2ff-5c03262c625d",
+        "52df108e-bb80-4399-a2ff-5c03262c625d"
       ]
     }
   },
@@ -621,7 +632,18 @@
         "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
         "544e49d6-3f05-4fa8-9a9e-091f98fc2ce8@f9941",
         "951249e0-9f16-456d-8b85-a6ca954da16b@f9941",
-        "c7fe436c-770d-40a2-9782-d240155b8bf3@f9941"
+        "c7fe436c-770d-40a2-9782-d240155b8bf3@f9941",
+        "68180b27-0b60-41f8-8542-e243d2885978@f9941",
+        "68180b27-0b60-41f8-8542-e243d2885978@f9941",
+        "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+        "544e49d6-3f05-4fa8-9a9e-091f98fc2ce8@f9941",
+        "951249e0-9f16-456d-8b85-a6ca954da16b@f9941",
+        "68180b27-0b60-41f8-8542-e243d2885978@f9941",
+        "68180b27-0b60-41f8-8542-e243d2885978@f9941",
+        "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+        "544e49d6-3f05-4fa8-9a9e-091f98fc2ce8@f9941",
+        "951249e0-9f16-456d-8b85-a6ca954da16b@f9941",
+        "92ba858f-154a-499d-8820-7e18c2633d5a@f9941"
       ]
     }
   },
@@ -817,9 +839,7 @@
   },
   "3380c141-ff3e-4b05-9a5a-691dd6e39fe2": {
     "url": "db://assets/Animations/Chip/BetChip.anim",
-    "value": {
-      "depends": []
-    }
+    "value": {}
   },
   "cc9fc3f5-becf-4732-96a8-cebcbe940e15": {
     "url": "db://assets/Script/Game/Manager/GameInformation.ts",
@@ -922,5 +942,231 @@
   "7362c783-f18f-4b91-a2f8-4a0cb87d0055": {
     "url": "db://assets/Script/Game/Quiz/PersonalQuiz.ts",
     "value": {}
+  },
+  "92ba858f-154a-499d-8820-7e18c2633d5a": {
+    "url": "db://assets/Texture/UI/RetryModalFrame.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "92ba858f-154a-499d-8820-7e18c2633d5a@6c48a": {
+    "url": "db://assets/Texture/UI/RetryModalFrame.png@6c48a",
+    "value": {
+      "depends": [
+        "92ba858f-154a-499d-8820-7e18c2633d5a"
+      ]
+    }
+  },
+  "92ba858f-154a-499d-8820-7e18c2633d5a@f9941": {
+    "url": "db://assets/Texture/UI/RetryModalFrame.png@f9941",
+    "value": {
+      "depends": [
+        "92ba858f-154a-499d-8820-7e18c2633d5a@6c48a"
+      ]
+    }
+  },
+  "68180b27-0b60-41f8-8542-e243d2885978": {
+    "url": "db://assets/Texture/UI/RetryButtonFrame.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "68180b27-0b60-41f8-8542-e243d2885978@6c48a": {
+    "url": "db://assets/Texture/UI/RetryButtonFrame.png@6c48a",
+    "value": {
+      "depends": [
+        "68180b27-0b60-41f8-8542-e243d2885978"
+      ]
+    }
+  },
+  "68180b27-0b60-41f8-8542-e243d2885978@f9941": {
+    "url": "db://assets/Texture/UI/RetryButtonFrame.png@f9941",
+    "value": {
+      "depends": [
+        "68180b27-0b60-41f8-8542-e243d2885978@6c48a"
+      ]
+    }
+  },
+  "81312b2e-7215-4181-b19c-8f63e06c0efa": {
+    "url": "db://assets/Script/Game/Modal/RetryModal.ts",
+    "value": {}
+  },
+  "c581339d-d5be-49a2-b5b7-92a9c760e641": {
+    "url": "db://assets/Animations/Result",
+    "value": {}
+  },
+  "81164823-0a80-4b37-9ca4-480d1959eb14": {
+    "url": "db://assets/Animations/ResultScroll",
+    "value": {}
+  },
+  "d8406e95-0943-4905-b680-18b48752e217": {
+    "url": "db://assets/Animations/Start",
+    "value": {}
+  },
+  "33a89dd8-489e-4919-bb7e-20c27491e456": {
+    "url": "db://assets/Animations/Result/CorrectAnim.anim",
+    "value": {
+      "depends": []
+    }
+  },
+  "52df108e-bb80-4399-a2ff-5c03262c625d": {
+    "url": "db://assets/Animations/Result/IncorrectAnim.anim",
+    "value": {
+      "depends": []
+    }
+  },
+  "d06ed446-ad57-4acd-a026-3141408870e9": {
+    "url": "db://assets/Animations/ResultScroll/scrollUser1.anim",
+    "value": {
+      "depends": []
+    }
+  },
+  "cfdb5f3f-e328-44be-9efe-9de2f0a93272": {
+    "url": "db://assets/Animations/ResultScroll/scrollUser2.anim",
+    "value": {
+      "depends": []
+    }
+  },
+  "e7c29bfa-45ac-419a-a261-f3351fd6f479": {
+    "url": "db://assets/Animations/ResultScroll/scrollUser3.anim",
+    "value": {
+      "depends": []
+    }
+  },
+  "168a06a2-8b8b-4fae-b917-a87bce3981b6": {
+    "url": "db://assets/Animations/ResultScroll/scrollUser4.anim",
+    "value": {
+      "depends": []
+    }
+  },
+  "5a44e6bb-56bf-4e31-b254-edd90905eb2f": {
+    "url": "db://assets/Animations/ResultScroll/scrollUser5.anim",
+    "value": {
+      "depends": []
+    }
+  },
+  "0103b125-51db-457b-9a0c-af0601dd6196": {
+    "url": "db://assets/Animations/Start/StartAnim.anim",
+    "value": {
+      "depends": []
+    }
+  },
+  "eb92b440-44f3-491c-8059-3f6beebd1880": {
+    "url": "db://assets/Script/EffectAnim",
+    "value": {}
+  },
+  "6fea9413-9c92-49a9-ae8a-a707b2693daa": {
+    "url": "db://assets/Script/EffectAnim/ChipControll.ts",
+    "value": {}
+  },
+  "c409621f-427c-4713-9b56-50b876397410": {
+    "url": "db://assets/Script/EffectAnim/ResultAnimControll.ts",
+    "value": {}
+  },
+  "c3e7db80-a2a2-49a3-9b66-7046adba22c6": {
+    "url": "db://assets/Script/EffectAnim/ScrollAnim.ts",
+    "value": {}
+  },
+  "6603b7eb-f074-4c4a-9a3a-495c780f5733": {
+    "url": "db://assets/Script/EffectAnim/StartControll.ts",
+    "value": {}
+  },
+  "66bad8af-2f22-406f-a3ba-9e49e26b7e80": {
+    "url": "db://assets/Texture/Effect",
+    "value": {}
+  },
+  "9286b225-7b5c-49c6-8fe2-9568be4e8996": {
+    "url": "db://assets/Texture/Effect/coin.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "e4498d26-fd8e-4fb7-9786-f966547e36de": {
+    "url": "db://assets/Texture/Effect/hanabi.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "a357ba04-c973-4167-b5ba-afac2859d639": {
+    "url": "db://assets/Texture/Effect/hazure.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "56a858b4-c4d5-4788-8590-5e794f058264": {
+    "url": "db://assets/Texture/Effect/start.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "9286b225-7b5c-49c6-8fe2-9568be4e8996@6c48a": {
+    "url": "db://assets/Texture/Effect/coin.png@6c48a",
+    "value": {
+      "depends": [
+        "9286b225-7b5c-49c6-8fe2-9568be4e8996"
+      ]
+    }
+  },
+  "a357ba04-c973-4167-b5ba-afac2859d639@6c48a": {
+    "url": "db://assets/Texture/Effect/hazure.png@6c48a",
+    "value": {
+      "depends": [
+        "a357ba04-c973-4167-b5ba-afac2859d639"
+      ]
+    }
+  },
+  "56a858b4-c4d5-4788-8590-5e794f058264@6c48a": {
+    "url": "db://assets/Texture/Effect/start.png@6c48a",
+    "value": {
+      "depends": [
+        "56a858b4-c4d5-4788-8590-5e794f058264"
+      ]
+    }
+  },
+  "a357ba04-c973-4167-b5ba-afac2859d639@f9941": {
+    "url": "db://assets/Texture/Effect/hazure.png@f9941",
+    "value": {
+      "depends": [
+        "a357ba04-c973-4167-b5ba-afac2859d639@6c48a"
+      ]
+    }
+  },
+  "9286b225-7b5c-49c6-8fe2-9568be4e8996@f9941": {
+    "url": "db://assets/Texture/Effect/coin.png@f9941",
+    "value": {
+      "depends": [
+        "9286b225-7b5c-49c6-8fe2-9568be4e8996@6c48a"
+      ]
+    }
+  },
+  "56a858b4-c4d5-4788-8590-5e794f058264@f9941": {
+    "url": "db://assets/Texture/Effect/start.png@f9941",
+    "value": {
+      "depends": [
+        "56a858b4-c4d5-4788-8590-5e794f058264@6c48a"
+      ]
+    }
+  },
+  "e4498d26-fd8e-4fb7-9786-f966547e36de@6c48a": {
+    "url": "db://assets/Texture/Effect/hanabi.png@6c48a",
+    "value": {
+      "depends": [
+        "e4498d26-fd8e-4fb7-9786-f966547e36de"
+      ]
+    }
+  },
+  "e4498d26-fd8e-4fb7-9786-f966547e36de@f9941": {
+    "url": "db://assets/Texture/Effect/hanabi.png@f9941",
+    "value": {
+      "depends": [
+        "e4498d26-fd8e-4fb7-9786-f966547e36de@6c48a"
+      ]
+    }
+  },
+  "012f6ddb-5d4f-4a48-be5d-b761111defe9": {
+    "url": "db://assets/Animations/Chip/BetChip.anim",
+    "value": {
+      "depends": []
+    }
   }
 }

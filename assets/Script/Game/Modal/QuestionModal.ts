@@ -1,4 +1,5 @@
 import { _decorator, Component, Node, Label, Button, Vec2, Vec3, SpriteFrame, Sprite, RichText } from 'cc';
+import { StartControll } from '../../EffectAnim/StartControll';
 import { ClientMode, GameManager } from '../Manager/GameManager';
 import { QuizModalManager } from '../Manager/QuizModalManager';
 import { QuizType } from '../Quiz/QuizComponent';
@@ -34,6 +35,9 @@ export class QuestionModal extends Component {
     private delayMax : number = 1.0;
     private isNext : boolean = false;
 
+    @property(StartControll) // スタート演出
+    startAnim : StartControll = null;
+
     start() {
         this.qStartB.node.on(Button.EventType.CLICK, this.Next,this);
     }
@@ -43,7 +47,9 @@ export class QuestionModal extends Component {
 
         if(this.isNext){
             this.changeDelay -= deltaTime;
+            this.startAnim.Play();
             if(this.changeDelay <= 0.0){
+                this.startAnim.AnimationReset();
                 QuizModalManager.Instance().ChangeModal('Choices');
                 this.isNext = false;
             }
