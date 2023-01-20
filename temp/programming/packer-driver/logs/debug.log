@@ -1,11 +1,11 @@
-debug: Thu, 19 Jan 2023 08:23:15 GMT
+debug: Fri, 20 Jan 2023 01:34:30 GMT
 debug: Project: /Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject
 debug: Targets: editor,preview
 debug: Incremental file seems great.
 debug: Engine path: /Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine
 debug: Initializing target [Editor]
 debug: Loading cache
-debug: Loading cache costs 1.849831998348236ms.
+debug: Loading cache costs 4.478296995162964ms.
 debug: Engine features shipped in editor: base,gfx-webgl,gfx-webgl2,3d,animation,skeletal-animation,2d,ui,particle,particle-2d,physics-framework,physics-2d-framework,intersection-2d,primitive,profiler,occlusion-query,geometry-renderer,debug-renderer,audio,video,xr,terrain,webview,tween,tiled-map,spine,dragon-bones,marionette,custom-pipeline
 debug: Our import map(foo:/bar): {
   "imports": {
@@ -14,7 +14,7 @@ debug: Our import map(foo:/bar): {
 }
 debug: Initializing target [Preview]
 debug: Loading cache
-debug: Loading cache costs 1.913124993443489ms.
+debug: Loading cache costs 4.2465600073337555ms.
 debug: Our import map(foo:/bar): {
   "imports": {
     "cc": "cce:/internal/x/cc"
@@ -46,12 +46,12 @@ debug: Our import map(foo:/bar): {
   }
 }
 debug: Pulling asset-db.
-debug: Fetch asset-db cost: 30.23650400340557ms.
+debug: Fetch asset-db cost: 32.43877199292183ms.
 debug: Build iteration starts.
-Number of accumulated asset changes: 18
+Number of accumulated asset changes: 21
 Feature changed: false
 debug: Target(editor) build started.
-debug: Detected change: cce:/internal/x/cc. Last mtime: Thu Jan 01 1970 09:00:05 GMT+0900 (日本標準時), Current mtime: Thu Jan 01 1970 09:00:07 GMT+0900 (日本標準時)
+debug: Detected change: cce:/internal/x/cc. Last mtime: Thu Jan 01 1970 09:00:07 GMT+0900 (日本標準時), Current mtime: Thu Jan 01 1970 09:00:06 GMT+0900 (日本標準時)
 debug: Inspect cce:/internal/x/cc
 debug: Resolve cce:/internal/x/cc-fu/base from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/base.
 debug: Resolve cce:/internal/x/cc-fu/gfx-webgl from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/gfx-webgl.
@@ -79,112 +79,112 @@ debug: Resolve cce:/internal/x/cc-fu/tiled-map from cce:/internal/x/cc as extern
 debug: Resolve cce:/internal/x/cc-fu/spine from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/spine.
 debug: Resolve cce:/internal/x/cc-fu/dragon-bones from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/dragon-bones.
 debug: Resolve cce:/internal/x/cc-fu/custom-pipeline from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/custom-pipeline.
-debug: Detected change: cce:/internal/x/prerequisite-imports. Last mtime: Thu Jan 01 1970 10:34:30 GMT+0900 (日本標準時), Current mtime: Thu Jan 01 1970 09:00:07 GMT+0900 (日本標準時)
+debug: Detected change: cce:/internal/x/prerequisite-imports. Last mtime: Thu Jan 01 1970 09:21:15 GMT+0900 (日本標準時), Current mtime: Thu Jan 01 1970 09:00:06 GMT+0900 (日本標準時)
 debug: Inspect cce:/internal/x/prerequisite-imports
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Chip/ChipControll.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Chip/ChipControll.ts.
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Chip/ChipControll.ts
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Chip/ChipControll.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Chip/ChipControll.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Chip/ChipControll.ts as cce:/internal/x/cc.
+debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ChipControll.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ChipControll.ts.
+debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ChipControll.ts as cce:/internal/x/cc.
+debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ChipControll.ts as cce:/internal/x/cc.
+debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ChipControll.ts as cce:/internal/x/cc.
+debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ResultAnimControll.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ResultAnimControll.ts.
+debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ResultAnimControll.ts as cce:/internal/x/cc.
+debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ResultAnimControll.ts as cce:/internal/x/cc.
+debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ResultAnimControll.ts as cce:/internal/x/cc.
+debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ScrollAnim.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ScrollAnim.ts.
+debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ScrollAnim.ts as cce:/internal/x/cc.
+debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ScrollAnim.ts as cce:/internal/x/cc.
+debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ScrollAnim.ts as cce:/internal/x/cc.
+debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/StartControll.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/StartControll.ts.
+debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/StartControll.ts as cce:/internal/x/cc.
+debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/StartControll.ts as cce:/internal/x/cc.
+debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/StartControll.ts as cce:/internal/x/cc.
 debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameInformation.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameInformation.ts.
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameInformation.ts
 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameInformation.ts as cce:/internal/code-quality/cr.mjs.
-debug: Detected change: cce:/internal/code-quality/cr.mjs. Last mtime: Fri Jan 13 2023 10:45:43 GMT+0900 (日本標準時), Current mtime: Thu Jan 19 2023 17:23:08 GMT+0900 (日本標準時)
+debug: Detected change: cce:/internal/code-quality/cr.mjs. Last mtime: Thu Jan 19 2023 17:23:08 GMT+0900 (日本標準時), Current mtime: Fri Jan 20 2023 10:34:24 GMT+0900 (日本標準時)
 debug: Inspect cce:/internal/code-quality/cr.mjs
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameInformation.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameInformation.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameInformation.ts as cce:/internal/x/cc.
 debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts.
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts
 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts as cce:/internal/code-quality/cr.mjs.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts as cce:/internal/x/cc.
 debug: Resolve ../PlayerInfomation from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/PlayerInfomation.ts.
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/PlayerInfomation.ts
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/PlayerInfomation.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/PlayerInfomation.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/PlayerInfomation.ts as cce:/internal/x/cc.
 debug: Resolve ./GameInformation from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameInformation.ts.
 debug: Resolve ./QuizManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts.
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts
 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts as cce:/internal/code-quality/cr.mjs.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts as cce:/internal/x/cc.
 debug: Resolve ../Quiz/GestureQuiz from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts.
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts
 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts as cce:/internal/code-quality/cr.mjs.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts as cce:/internal/x/cc.
 debug: Resolve ../Manager/GameManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts.
+debug: Resolve ../Manager/QuizManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts.
 debug: Resolve ../Manager/QuizModalManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts.
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts
 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts as cce:/internal/code-quality/cr.mjs.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts as cce:/internal/x/cc.
 debug: Resolve ../Modal/ChoicesModal from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts.
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts
 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts as cce:/internal/code-quality/cr.mjs.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts as cce:/internal/x/cc.
-debug: Resolve ../../Chip/ChipControll from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Chip/ChipControll.ts.
+debug: Resolve ../../EffectAnim/ChipControll from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ChipControll.ts.
 debug: Resolve ../../UI/Timer from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/Timer.ts.
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/Timer.ts
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/Timer.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/Timer.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/Timer.ts as cce:/internal/x/cc.
 debug: Resolve ../Manager/GameManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts.
+debug: Resolve ../Manager/QuizManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts.
 debug: Resolve ../Manager/QuizModalManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts.
 debug: Resolve ./BetModal from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/BetModal.ts.
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/BetModal.ts
 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/BetModal.ts as cce:/internal/code-quality/cr.mjs.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/BetModal.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/BetModal.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/BetModal.ts as cce:/internal/x/cc.
 debug: Resolve ../Manager/GameManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/BetModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts.
 debug: Resolve ./ResultModal from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts.
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts
 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts as cce:/internal/code-quality/cr.mjs.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts as cce:/internal/x/cc.
 debug: Resolve ../Manager/GameManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts.
 debug: Resolve ../Manager/QuizModalManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts.
+debug: Resolve ../../EffectAnim/ResultAnimControll from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ResultAnimControll.ts.
 debug: Resolve ../Modal/OverallResultModal from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/OverallResultModal.ts.
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/OverallResultModal.ts
 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/OverallResultModal.ts as cce:/internal/code-quality/cr.mjs.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/OverallResultModal.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/OverallResultModal.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/OverallResultModal.ts as cce:/internal/x/cc.
 debug: Resolve ../Manager/QuizModalManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/OverallResultModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts.
 debug: Resolve ../Modal/QuestionModal from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/QuestionModal.ts.
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/QuestionModal.ts
 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/QuestionModal.ts as cce:/internal/code-quality/cr.mjs.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/QuestionModal.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/QuestionModal.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/QuestionModal.ts as cce:/internal/x/cc.
 debug: Resolve ../Manager/GameManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/QuestionModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts.
 debug: Resolve ../Manager/QuizModalManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/QuestionModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts.
+debug: Resolve ../../EffectAnim/StartControll from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/QuestionModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/StartControll.ts.
 debug: Resolve ../Modal/ResultModal from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts.
 debug: Resolve ./GameManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts.
 debug: Resolve ./Data/QuizDataBase from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizDataBase.ts.
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizDataBase.ts
 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizDataBase.ts as cce:/internal/code-quality/cr.mjs.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizDataBase.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizDataBase.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizDataBase.ts as cce:/internal/x/cc.
 debug: Resolve ./QuizData from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizDataBase.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizData.ts.
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizData.ts
 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizData.ts as cce:/internal/code-quality/cr.mjs.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizData.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizData.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizData.ts as cce:/internal/x/cc.
 debug: Resolve ./QuizComponent from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/QuizComponent.ts.
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/QuizComponent.ts
 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/QuizComponent.ts as cce:/internal/code-quality/cr.mjs.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/QuizComponent.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/QuizComponent.ts as cce:/internal/x/cc.
@@ -198,7 +198,6 @@ debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/a
 debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/QuestionModal.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/QuestionModal.ts.
 debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts.
 debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/WaitModal.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/WaitModal.ts.
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/WaitModal.ts
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/WaitModal.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/WaitModal.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/WaitModal.ts as cce:/internal/x/cc.
@@ -208,7 +207,6 @@ debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/a
 debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts.
 debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/QuizComponent.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/QuizComponent.ts.
 debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/TestMenu.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/TestMenu.ts.
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/TestMenu.ts
 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/TestMenu.ts as cce:/internal/code-quality/cr.mjs.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/TestMenu.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/TestMenu.ts as cce:/internal/x/cc.
@@ -216,9 +214,9 @@ debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestP
 debug: Resolve ../Game/Manager/QuizManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/TestMenu.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts.
 debug: Resolve ../Game/Manager/QuizModalManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/TestMenu.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts.
 debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/Timer.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/Timer.ts.
-debug: Target(editor) ends with cost 818.8421809971333ms.
+debug: Target(editor) ends with cost 152.01642900705338ms.
 debug: Target(preview) build started.
-debug: Detected change: cce:/internal/x/cc. Last mtime: Thu Jan 01 1970 09:00:05 GMT+0900 (日本標準時), Current mtime: Thu Jan 01 1970 09:00:07 GMT+0900 (日本標準時)
+debug: Detected change: cce:/internal/x/cc. Last mtime: Thu Jan 01 1970 09:00:07 GMT+0900 (日本標準時), Current mtime: Thu Jan 01 1970 09:00:06 GMT+0900 (日本標準時)
 debug: Inspect cce:/internal/x/cc
 debug: Resolve cce:/internal/x/cc-fu/2d from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/2d.
 debug: Resolve cce:/internal/x/cc-fu/3d from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/3d.
@@ -247,112 +245,112 @@ debug: Resolve cce:/internal/x/cc-fu/ui from cce:/internal/x/cc as external depe
 debug: Resolve cce:/internal/x/cc-fu/video from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/video.
 debug: Resolve cce:/internal/x/cc-fu/webview from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/webview.
 debug: Resolve cce:/internal/x/cc-fu/xr from cce:/internal/x/cc as external dependency cce:/internal/x/cc-fu/xr.
-debug: Detected change: cce:/internal/x/prerequisite-imports. Last mtime: Thu Jan 01 1970 10:34:30 GMT+0900 (日本標準時), Current mtime: Thu Jan 01 1970 09:00:08 GMT+0900 (日本標準時)
+debug: Detected change: cce:/internal/x/prerequisite-imports. Last mtime: Thu Jan 01 1970 09:21:15 GMT+0900 (日本標準時), Current mtime: Thu Jan 01 1970 09:00:06 GMT+0900 (日本標準時)
 debug: Inspect cce:/internal/x/prerequisite-imports
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Chip/ChipControll.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Chip/ChipControll.ts.
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Chip/ChipControll.ts
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Chip/ChipControll.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Chip/ChipControll.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Chip/ChipControll.ts as cce:/internal/x/cc.
+debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ChipControll.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ChipControll.ts.
+debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ChipControll.ts as cce:/internal/x/cc.
+debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ChipControll.ts as cce:/internal/x/cc.
+debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ChipControll.ts as cce:/internal/x/cc.
+debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ResultAnimControll.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ResultAnimControll.ts.
+debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ResultAnimControll.ts as cce:/internal/x/cc.
+debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ResultAnimControll.ts as cce:/internal/x/cc.
+debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ResultAnimControll.ts as cce:/internal/x/cc.
+debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ScrollAnim.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ScrollAnim.ts.
+debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ScrollAnim.ts as cce:/internal/x/cc.
+debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ScrollAnim.ts as cce:/internal/x/cc.
+debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ScrollAnim.ts as cce:/internal/x/cc.
+debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/StartControll.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/StartControll.ts.
+debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/StartControll.ts as cce:/internal/x/cc.
+debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/StartControll.ts as cce:/internal/x/cc.
+debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/StartControll.ts as cce:/internal/x/cc.
 debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameInformation.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameInformation.ts.
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameInformation.ts
 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameInformation.ts as cce:/internal/code-quality/cr.mjs.
-debug: Detected change: cce:/internal/code-quality/cr.mjs. Last mtime: Fri Jan 13 2023 10:45:43 GMT+0900 (日本標準時), Current mtime: Thu Jan 19 2023 17:23:08 GMT+0900 (日本標準時)
+debug: Detected change: cce:/internal/code-quality/cr.mjs. Last mtime: Thu Jan 19 2023 17:23:08 GMT+0900 (日本標準時), Current mtime: Fri Jan 20 2023 10:34:24 GMT+0900 (日本標準時)
 debug: Inspect cce:/internal/code-quality/cr.mjs
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameInformation.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameInformation.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameInformation.ts as cce:/internal/x/cc.
 debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts.
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts
 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts as cce:/internal/code-quality/cr.mjs.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts as cce:/internal/x/cc.
 debug: Resolve ../PlayerInfomation from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/PlayerInfomation.ts.
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/PlayerInfomation.ts
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/PlayerInfomation.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/PlayerInfomation.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/PlayerInfomation.ts as cce:/internal/x/cc.
 debug: Resolve ./GameInformation from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameInformation.ts.
 debug: Resolve ./QuizManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts.
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts
 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts as cce:/internal/code-quality/cr.mjs.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts as cce:/internal/x/cc.
 debug: Resolve ../Quiz/GestureQuiz from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts.
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts
 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts as cce:/internal/code-quality/cr.mjs.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts as cce:/internal/x/cc.
 debug: Resolve ../Manager/GameManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts.
+debug: Resolve ../Manager/QuizManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts.
 debug: Resolve ../Manager/QuizModalManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts.
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts
 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts as cce:/internal/code-quality/cr.mjs.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts as cce:/internal/x/cc.
 debug: Resolve ../Modal/ChoicesModal from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts.
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts
 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts as cce:/internal/code-quality/cr.mjs.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts as cce:/internal/x/cc.
-debug: Resolve ../../Chip/ChipControll from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Chip/ChipControll.ts.
+debug: Resolve ../../EffectAnim/ChipControll from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ChipControll.ts.
 debug: Resolve ../../UI/Timer from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/Timer.ts.
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/Timer.ts
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/Timer.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/Timer.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/Timer.ts as cce:/internal/x/cc.
 debug: Resolve ../Manager/GameManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts.
+debug: Resolve ../Manager/QuizManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts.
 debug: Resolve ../Manager/QuizModalManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts.
 debug: Resolve ./BetModal from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/BetModal.ts.
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/BetModal.ts
 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/BetModal.ts as cce:/internal/code-quality/cr.mjs.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/BetModal.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/BetModal.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/BetModal.ts as cce:/internal/x/cc.
 debug: Resolve ../Manager/GameManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/BetModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts.
 debug: Resolve ./ResultModal from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts.
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts
 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts as cce:/internal/code-quality/cr.mjs.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts as cce:/internal/x/cc.
 debug: Resolve ../Manager/GameManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts.
 debug: Resolve ../Manager/QuizModalManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts.
+debug: Resolve ../../EffectAnim/ResultAnimControll from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ResultAnimControll.ts.
 debug: Resolve ../Modal/OverallResultModal from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/OverallResultModal.ts.
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/OverallResultModal.ts
 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/OverallResultModal.ts as cce:/internal/code-quality/cr.mjs.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/OverallResultModal.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/OverallResultModal.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/OverallResultModal.ts as cce:/internal/x/cc.
 debug: Resolve ../Manager/QuizModalManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/OverallResultModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts.
 debug: Resolve ../Modal/QuestionModal from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/QuestionModal.ts.
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/QuestionModal.ts
 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/QuestionModal.ts as cce:/internal/code-quality/cr.mjs.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/QuestionModal.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/QuestionModal.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/QuestionModal.ts as cce:/internal/x/cc.
 debug: Resolve ../Manager/GameManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/QuestionModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts.
 debug: Resolve ../Manager/QuizModalManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/QuestionModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts.
+debug: Resolve ../../EffectAnim/StartControll from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/QuestionModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/StartControll.ts.
 debug: Resolve ../Modal/ResultModal from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts.
 debug: Resolve ./GameManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts.
 debug: Resolve ./Data/QuizDataBase from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizDataBase.ts.
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizDataBase.ts
 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizDataBase.ts as cce:/internal/code-quality/cr.mjs.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizDataBase.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizDataBase.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizDataBase.ts as cce:/internal/x/cc.
 debug: Resolve ./QuizData from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizDataBase.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizData.ts.
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizData.ts
 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizData.ts as cce:/internal/code-quality/cr.mjs.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizData.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizData.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizData.ts as cce:/internal/x/cc.
 debug: Resolve ./QuizComponent from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/QuizComponent.ts.
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/QuizComponent.ts
 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/QuizComponent.ts as cce:/internal/code-quality/cr.mjs.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/QuizComponent.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/QuizComponent.ts as cce:/internal/x/cc.
@@ -366,7 +364,6 @@ debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/a
 debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/QuestionModal.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/QuestionModal.ts.
 debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts.
 debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/WaitModal.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/WaitModal.ts.
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/WaitModal.ts
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/WaitModal.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/WaitModal.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/WaitModal.ts as cce:/internal/x/cc.
@@ -376,7 +373,6 @@ debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/a
 debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts.
 debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/QuizComponent.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/QuizComponent.ts.
 debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/TestMenu.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/TestMenu.ts.
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/TestMenu.ts
 debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/TestMenu.ts as cce:/internal/code-quality/cr.mjs.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/TestMenu.ts as cce:/internal/x/cc.
 debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/TestMenu.ts as cce:/internal/x/cc.
@@ -384,16 +380,19 @@ debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestP
 debug: Resolve ../Game/Manager/QuizManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/TestMenu.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts.
 debug: Resolve ../Game/Manager/QuizModalManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/TestMenu.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts.
 debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/Timer.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/Timer.ts.
-debug: Target(preview) ends with cost 787.2877070009708ms.
+debug: Target(preview) ends with cost 109.41779100894928ms.
 debug: Pulling asset-db.
-debug: Fetch asset-db cost: 19.61728999018669ms.
+debug: Fetch asset-db cost: 18.38791400194168ms.
 debug: Build iteration starts.
-Number of accumulated asset changes: 18
+Number of accumulated asset changes: 21
 Feature changed: false
 debug: Target(editor) build started.
-debug: Detected change: cce:/internal/x/prerequisite-imports. Last mtime: Thu Jan 01 1970 09:00:07 GMT+0900 (日本標準時), Current mtime: Thu Jan 01 1970 09:00:10 GMT+0900 (日本標準時)
+debug: Detected change: cce:/internal/x/prerequisite-imports. Last mtime: Thu Jan 01 1970 09:00:06 GMT+0900 (日本標準時), Current mtime: Thu Jan 01 1970 09:00:07 GMT+0900 (日本標準時)
 debug: Inspect cce:/internal/x/prerequisite-imports
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Chip/ChipControll.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Chip/ChipControll.ts.
+debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ChipControll.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ChipControll.ts.
+debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ResultAnimControll.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ResultAnimControll.ts.
+debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ScrollAnim.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ScrollAnim.ts.
+debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/StartControll.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/StartControll.ts.
 debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameInformation.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameInformation.ts.
 debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts.
 debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts.
@@ -411,387 +410,9 @@ debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/a
 debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/QuizComponent.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/QuizComponent.ts.
 debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/TestMenu.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/TestMenu.ts.
 debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/Timer.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/Timer.ts.
-debug: Target(editor) ends with cost 36.25511699914932ms.
+debug: Target(editor) ends with cost 62.35964900255203ms.
 debug: Target(preview) build started.
-debug: Detected change: cce:/internal/x/prerequisite-imports. Last mtime: Thu Jan 01 1970 09:00:08 GMT+0900 (日本標準時), Current mtime: Thu Jan 01 1970 09:00:10 GMT+0900 (日本標準時)
-debug: Inspect cce:/internal/x/prerequisite-imports
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Chip/ChipControll.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Chip/ChipControll.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameInformation.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameInformation.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/BetModal.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/BetModal.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/OverallResultModal.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/OverallResultModal.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/QuestionModal.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/QuestionModal.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/WaitModal.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/WaitModal.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/PlayerInfomation.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/PlayerInfomation.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizData.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizData.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizDataBase.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizDataBase.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/QuizComponent.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/QuizComponent.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/TestMenu.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/TestMenu.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/Timer.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/Timer.ts.
-debug: Target(preview) ends with cost 38.34077799320221ms.
-debug: Dispatch build request for time accumulated 5 asset changes.
-debug: Build iteration starts.
-Number of accumulated asset changes: 5
-Feature changed: false
-debug: Target(editor) build started.
-debug: Detected change: cce:/internal/x/prerequisite-imports. Last mtime: Thu Jan 01 1970 09:00:10 GMT+0900 (日本標準時), Current mtime: Thu Jan 01 1970 09:03:36 GMT+0900 (日本標準時)
-debug: Inspect cce:/internal/x/prerequisite-imports
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ChipControll.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ChipControll.ts.
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ChipControll.ts
-debug: Dispatch build request for time accumulated 17 asset changes.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ChipControll.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ChipControll.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ChipControll.ts as cce:/internal/x/cc.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ResultAnimControll.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ResultAnimControll.ts.
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ResultAnimControll.ts
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ResultAnimControll.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ResultAnimControll.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ResultAnimControll.ts as cce:/internal/x/cc.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ScrollAnim.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ScrollAnim.ts.
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ScrollAnim.ts
-debug: Dispatch build request for time accumulated 3 asset changes.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ScrollAnim.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ScrollAnim.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ScrollAnim.ts as cce:/internal/x/cc.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/StartControll.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/StartControll.ts.
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/StartControll.ts
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/StartControll.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/StartControll.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/StartControll.ts as cce:/internal/x/cc.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameInformation.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameInformation.ts.
-debug: Detected change: file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameInformation.ts. Last mtime: Thu Jan 19 2023 17:22:19 GMT+0900 (日本標準時)@cc9fc3f5-becf-4732-96a8-cebcbe940e15, Current mtime: Sun Jan 15 2023 16:58:48 GMT+0900 (日本標準時)@cc9fc3f5-becf-4732-96a8-cebcbe940e15
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameInformation.ts
-debug: Dispatch build request for time accumulated 14 asset changes.
-debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameInformation.ts as cce:/internal/code-quality/cr.mjs.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameInformation.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameInformation.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameInformation.ts as cce:/internal/x/cc.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts.
-debug: Detected change: file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts. Last mtime: Thu Jan 19 2023 17:22:19 GMT+0900 (日本標準時)@be307a6d-9f7a-4cc8-8282-15987f8f996c, Current mtime: Sun Jan 15 2023 16:58:48 GMT+0900 (日本標準時)@be307a6d-9f7a-4cc8-8282-15987f8f996c
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts
-debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts as cce:/internal/code-quality/cr.mjs.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts as cce:/internal/x/cc.
-debug: Resolve ../PlayerInfomation from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/PlayerInfomation.ts.
-debug: Detected change: file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/PlayerInfomation.ts. Last mtime: Thu Jan 19 2023 17:22:19 GMT+0900 (日本標準時)@99ec1de7-bbad-49cc-948c-5c8a091a24c0, Current mtime: Sun Jan 15 2023 16:58:48 GMT+0900 (日本標準時)@99ec1de7-bbad-49cc-948c-5c8a091a24c0
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/PlayerInfomation.ts
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/PlayerInfomation.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/PlayerInfomation.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/PlayerInfomation.ts as cce:/internal/x/cc.
-debug: Resolve ./GameInformation from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameInformation.ts.
-debug: Resolve ./QuizManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts.
-debug: Detected change: file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts. Last mtime: Thu Jan 19 2023 17:22:19 GMT+0900 (日本標準時)@de4c0fca-e7ce-4d86-a1ab-d03ce477a1a6, Current mtime: Sun Jan 15 2023 16:58:48 GMT+0900 (日本標準時)@de4c0fca-e7ce-4d86-a1ab-d03ce477a1a6
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts
-debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts as cce:/internal/code-quality/cr.mjs.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts as cce:/internal/x/cc.
-debug: Resolve ../Quiz/GestureQuiz from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts.
-debug: Detected change: file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts. Last mtime: Thu Jan 19 2023 17:22:19 GMT+0900 (日本標準時)@97fb8f70-a8fa-4e52-aaff-727b505c27b6, Current mtime: Wed Jan 18 2023 12:12:33 GMT+0900 (日本標準時)@97fb8f70-a8fa-4e52-aaff-727b505c27b6
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts
-debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts as cce:/internal/code-quality/cr.mjs.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts as cce:/internal/x/cc.
-debug: Resolve ../Manager/GameManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts.
-debug: Resolve ../Manager/QuizManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts.
-debug: Resolve ../Manager/QuizModalManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts.
-debug: Detected change: file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts. Last mtime: Thu Jan 19 2023 17:22:19 GMT+0900 (日本標準時)@e8e61a10-df40-4d8e-b308-cceef04de892, Current mtime: Sun Jan 15 2023 16:58:48 GMT+0900 (日本標準時)@e8e61a10-df40-4d8e-b308-cceef04de892
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts
-debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts as cce:/internal/code-quality/cr.mjs.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts as cce:/internal/x/cc.
-debug: Resolve ../Modal/ChoicesModal from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts.
-debug: Detected change: file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts. Last mtime: Thu Jan 19 2023 17:22:19 GMT+0900 (日本標準時)@2477077d-2400-442e-a5c8-67206febb2f7, Current mtime: Wed Jan 18 2023 12:16:20 GMT+0900 (日本標準時)@2477077d-2400-442e-a5c8-67206febb2f7
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts
-debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts as cce:/internal/code-quality/cr.mjs.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts as cce:/internal/x/cc.
-debug: Resolve ../../EffectAnim/ChipControll from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ChipControll.ts.
-debug: Resolve ../../UI/Timer from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/Timer.ts.
-debug: Detected change: file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/Timer.ts. Last mtime: Thu Jan 19 2023 17:22:19 GMT+0900 (日本標準時)@f3195565-4478-454c-87a0-5cc6d23eb16a, Current mtime: Tue Jan 17 2023 16:38:06 GMT+0900 (日本標準時)@f3195565-4478-454c-87a0-5cc6d23eb16a
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/Timer.ts
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/Timer.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/Timer.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/Timer.ts as cce:/internal/x/cc.
-debug: Resolve ../Manager/GameManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts.
-debug: Resolve ../Manager/QuizManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts.
-debug: Resolve ../Manager/QuizModalManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts.
-debug: Resolve ./BetModal from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/BetModal.ts.
-debug: Detected change: file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/BetModal.ts. Last mtime: Thu Jan 19 2023 17:22:19 GMT+0900 (日本標準時)@6dbcc934-3ca5-45f6-9a9d-7c8b7ac67bca, Current mtime: Mon Jan 16 2023 17:52:44 GMT+0900 (日本標準時)@6dbcc934-3ca5-45f6-9a9d-7c8b7ac67bca
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/BetModal.ts
-debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/BetModal.ts as cce:/internal/code-quality/cr.mjs.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/BetModal.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/BetModal.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/BetModal.ts as cce:/internal/x/cc.
-debug: Resolve ../Manager/GameManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/BetModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts.
-debug: Resolve ./ResultModal from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts.
-debug: Detected change: file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts. Last mtime: Thu Jan 19 2023 17:22:19 GMT+0900 (日本標準時)@6169e59e-1b7c-4843-a160-6129e0a24d7b, Current mtime: Wed Jan 18 2023 12:06:03 GMT+0900 (日本標準時)@6169e59e-1b7c-4843-a160-6129e0a24d7b
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts
-debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts as cce:/internal/code-quality/cr.mjs.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts as cce:/internal/x/cc.
-debug: Resolve ../Manager/GameManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts.
-debug: Resolve ../Manager/QuizModalManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts.
-debug: Resolve ../../EffectAnim/ResultAnimControll from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ResultAnimControll.ts.
-debug: Resolve ../Modal/OverallResultModal from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/OverallResultModal.ts.
-debug: Detected change: file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/OverallResultModal.ts. Last mtime: Thu Jan 19 2023 17:22:19 GMT+0900 (日本標準時)@60303970-f3a2-4142-88fd-b771d6f92402, Current mtime: Sun Jan 15 2023 16:58:48 GMT+0900 (日本標準時)@60303970-f3a2-4142-88fd-b771d6f92402
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/OverallResultModal.ts
-debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/OverallResultModal.ts as cce:/internal/code-quality/cr.mjs.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/OverallResultModal.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/OverallResultModal.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/OverallResultModal.ts as cce:/internal/x/cc.
-debug: Resolve ../Manager/QuizModalManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/OverallResultModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts.
-debug: Resolve ../Modal/QuestionModal from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/QuestionModal.ts.
-debug: Detected change: file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/QuestionModal.ts. Last mtime: Thu Jan 19 2023 17:22:19 GMT+0900 (日本標準時)@8f505756-d3be-4106-b8ab-5866d1bbb35b, Current mtime: Tue Jan 17 2023 17:21:34 GMT+0900 (日本標準時)@8f505756-d3be-4106-b8ab-5866d1bbb35b
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/QuestionModal.ts
-debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/QuestionModal.ts as cce:/internal/code-quality/cr.mjs.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/QuestionModal.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/QuestionModal.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/QuestionModal.ts as cce:/internal/x/cc.
-debug: Resolve ../Manager/GameManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/QuestionModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts.
-debug: Resolve ../Manager/QuizModalManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/QuestionModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts.
-debug: Resolve ../../EffectAnim/StartControll from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/QuestionModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/StartControll.ts.
-debug: Resolve ../Modal/ResultModal from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts.
-debug: Resolve ./GameManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts.
-debug: Resolve ./Data/QuizDataBase from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizDataBase.ts.
-debug: Detected change: file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizDataBase.ts. Last mtime: Thu Jan 19 2023 17:22:19 GMT+0900 (日本標準時)@91ce4ab9-9d0d-406f-8f25-066f3085c668, Current mtime: Sun Jan 15 2023 16:58:48 GMT+0900 (日本標準時)@91ce4ab9-9d0d-406f-8f25-066f3085c668
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizDataBase.ts
-debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizDataBase.ts as cce:/internal/code-quality/cr.mjs.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizDataBase.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizDataBase.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizDataBase.ts as cce:/internal/x/cc.
-debug: Resolve ./QuizData from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizDataBase.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizData.ts.
-debug: Detected change: file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizData.ts. Last mtime: Thu Jan 19 2023 17:22:19 GMT+0900 (日本標準時)@9d856897-1fe4-4803-ac7a-ea1f0d6e525f, Current mtime: Sun Jan 15 2023 16:58:48 GMT+0900 (日本標準時)@9d856897-1fe4-4803-ac7a-ea1f0d6e525f
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizData.ts
-debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizData.ts as cce:/internal/code-quality/cr.mjs.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizData.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizData.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizData.ts as cce:/internal/x/cc.
-debug: Resolve ./QuizComponent from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/QuizComponent.ts.
-debug: Detected change: file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/QuizComponent.ts. Last mtime: Thu Jan 19 2023 17:22:19 GMT+0900 (日本標準時)@236df82c-57bc-47ad-b417-7005185e6c7c, Current mtime: Sun Jan 15 2023 16:58:48 GMT+0900 (日本標準時)@236df82c-57bc-47ad-b417-7005185e6c7c
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/QuizComponent.ts
-debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/QuizComponent.ts as cce:/internal/code-quality/cr.mjs.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/QuizComponent.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/QuizComponent.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/QuizComponent.ts as cce:/internal/x/cc.
-debug: Resolve ./QuizModalManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/BetModal.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/BetModal.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/OverallResultModal.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/OverallResultModal.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/QuestionModal.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/QuestionModal.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/WaitModal.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/WaitModal.ts.
-debug: Detected change: file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/WaitModal.ts. Last mtime: Thu Jan 19 2023 17:22:14 GMT+0900 (日本標準時)@522aed8b-1514-493f-ab47-59e930de67aa, Current mtime: Sun Jan 15 2023 16:58:48 GMT+0900 (日本標準時)@522aed8b-1514-493f-ab47-59e930de67aa
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/WaitModal.ts
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/WaitModal.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/WaitModal.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/WaitModal.ts as cce:/internal/x/cc.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/PlayerInfomation.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/PlayerInfomation.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizData.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizData.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizDataBase.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizDataBase.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/QuizComponent.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/QuizComponent.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/TestMenu.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/TestMenu.ts.
-debug: Detected change: file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/TestMenu.ts. Last mtime: Thu Jan 19 2023 17:22:19 GMT+0900 (日本標準時)@fe959ade-f763-4ce3-8221-50ace0c875d4, Current mtime: Sun Jan 15 2023 16:58:48 GMT+0900 (日本標準時)@fe959ade-f763-4ce3-8221-50ace0c875d4
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/TestMenu.ts
-debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/TestMenu.ts as cce:/internal/code-quality/cr.mjs.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/TestMenu.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/TestMenu.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/TestMenu.ts as cce:/internal/x/cc.
-debug: Resolve ../Game/Manager/QuizManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/TestMenu.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts.
-debug: Resolve ../Game/Manager/QuizModalManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/TestMenu.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/Timer.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/Timer.ts.
-debug: Target(editor) ends with cost 1431.449298992753ms.
-debug: Target(preview) build started.
-debug: Detected change: cce:/internal/x/prerequisite-imports. Last mtime: Thu Jan 01 1970 09:00:10 GMT+0900 (日本標準時), Current mtime: Thu Jan 01 1970 09:03:38 GMT+0900 (日本標準時)
-debug: Inspect cce:/internal/x/prerequisite-imports
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ChipControll.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ChipControll.ts.
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ChipControll.ts
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ChipControll.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ChipControll.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ChipControll.ts as cce:/internal/x/cc.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ResultAnimControll.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ResultAnimControll.ts.
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ResultAnimControll.ts
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ResultAnimControll.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ResultAnimControll.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ResultAnimControll.ts as cce:/internal/x/cc.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ScrollAnim.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ScrollAnim.ts.
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ScrollAnim.ts
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ScrollAnim.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ScrollAnim.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ScrollAnim.ts as cce:/internal/x/cc.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/StartControll.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/StartControll.ts.
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/StartControll.ts
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/StartControll.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/StartControll.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/StartControll.ts as cce:/internal/x/cc.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameInformation.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameInformation.ts.
-debug: Detected change: file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameInformation.ts. Last mtime: Thu Jan 19 2023 17:22:19 GMT+0900 (日本標準時)@cc9fc3f5-becf-4732-96a8-cebcbe940e15, Current mtime: Sun Jan 15 2023 16:58:48 GMT+0900 (日本標準時)@cc9fc3f5-becf-4732-96a8-cebcbe940e15
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameInformation.ts
-debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameInformation.ts as cce:/internal/code-quality/cr.mjs.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameInformation.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameInformation.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameInformation.ts as cce:/internal/x/cc.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts.
-debug: Detected change: file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts. Last mtime: Thu Jan 19 2023 17:22:19 GMT+0900 (日本標準時)@be307a6d-9f7a-4cc8-8282-15987f8f996c, Current mtime: Sun Jan 15 2023 16:58:48 GMT+0900 (日本標準時)@be307a6d-9f7a-4cc8-8282-15987f8f996c
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts
-debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts as cce:/internal/code-quality/cr.mjs.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts as cce:/internal/x/cc.
-debug: Resolve ../PlayerInfomation from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/PlayerInfomation.ts.
-debug: Detected change: file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/PlayerInfomation.ts. Last mtime: Thu Jan 19 2023 17:22:19 GMT+0900 (日本標準時)@99ec1de7-bbad-49cc-948c-5c8a091a24c0, Current mtime: Sun Jan 15 2023 16:58:48 GMT+0900 (日本標準時)@99ec1de7-bbad-49cc-948c-5c8a091a24c0
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/PlayerInfomation.ts
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/PlayerInfomation.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/PlayerInfomation.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/PlayerInfomation.ts as cce:/internal/x/cc.
-debug: Resolve ./GameInformation from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameInformation.ts.
-debug: Resolve ./QuizManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts.
-debug: Detected change: file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts. Last mtime: Thu Jan 19 2023 17:22:19 GMT+0900 (日本標準時)@de4c0fca-e7ce-4d86-a1ab-d03ce477a1a6, Current mtime: Sun Jan 15 2023 16:58:48 GMT+0900 (日本標準時)@de4c0fca-e7ce-4d86-a1ab-d03ce477a1a6
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts
-debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts as cce:/internal/code-quality/cr.mjs.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts as cce:/internal/x/cc.
-debug: Resolve ../Quiz/GestureQuiz from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts.
-debug: Detected change: file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts. Last mtime: Thu Jan 19 2023 17:22:19 GMT+0900 (日本標準時)@97fb8f70-a8fa-4e52-aaff-727b505c27b6, Current mtime: Wed Jan 18 2023 12:12:33 GMT+0900 (日本標準時)@97fb8f70-a8fa-4e52-aaff-727b505c27b6
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts
-debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts as cce:/internal/code-quality/cr.mjs.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts as cce:/internal/x/cc.
-debug: Resolve ../Manager/GameManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts.
-debug: Resolve ../Manager/QuizManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts.
-debug: Resolve ../Manager/QuizModalManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts.
-debug: Detected change: file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts. Last mtime: Thu Jan 19 2023 17:22:19 GMT+0900 (日本標準時)@e8e61a10-df40-4d8e-b308-cceef04de892, Current mtime: Sun Jan 15 2023 16:58:48 GMT+0900 (日本標準時)@e8e61a10-df40-4d8e-b308-cceef04de892
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts
-debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts as cce:/internal/code-quality/cr.mjs.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts as cce:/internal/x/cc.
-debug: Resolve ../Modal/ChoicesModal from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts.
-debug: Detected change: file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts. Last mtime: Thu Jan 19 2023 17:22:19 GMT+0900 (日本標準時)@2477077d-2400-442e-a5c8-67206febb2f7, Current mtime: Wed Jan 18 2023 12:16:20 GMT+0900 (日本標準時)@2477077d-2400-442e-a5c8-67206febb2f7
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts
-debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts as cce:/internal/code-quality/cr.mjs.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts as cce:/internal/x/cc.
-debug: Resolve ../../EffectAnim/ChipControll from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ChipControll.ts.
-debug: Resolve ../../UI/Timer from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/Timer.ts.
-debug: Detected change: file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/Timer.ts. Last mtime: Thu Jan 19 2023 17:22:19 GMT+0900 (日本標準時)@f3195565-4478-454c-87a0-5cc6d23eb16a, Current mtime: Tue Jan 17 2023 16:38:06 GMT+0900 (日本標準時)@f3195565-4478-454c-87a0-5cc6d23eb16a
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/Timer.ts
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/Timer.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/Timer.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/Timer.ts as cce:/internal/x/cc.
-debug: Resolve ../Manager/GameManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts.
-debug: Resolve ../Manager/QuizManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts.
-debug: Resolve ../Manager/QuizModalManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts.
-debug: Resolve ./BetModal from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/BetModal.ts.
-debug: Detected change: file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/BetModal.ts. Last mtime: Thu Jan 19 2023 17:22:19 GMT+0900 (日本標準時)@6dbcc934-3ca5-45f6-9a9d-7c8b7ac67bca, Current mtime: Mon Jan 16 2023 17:52:44 GMT+0900 (日本標準時)@6dbcc934-3ca5-45f6-9a9d-7c8b7ac67bca
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/BetModal.ts
-debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/BetModal.ts as cce:/internal/code-quality/cr.mjs.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/BetModal.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/BetModal.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/BetModal.ts as cce:/internal/x/cc.
-debug: Resolve ../Manager/GameManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/BetModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts.
-debug: Resolve ./ResultModal from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts.
-debug: Detected change: file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts. Last mtime: Thu Jan 19 2023 17:22:19 GMT+0900 (日本標準時)@6169e59e-1b7c-4843-a160-6129e0a24d7b, Current mtime: Wed Jan 18 2023 12:06:03 GMT+0900 (日本標準時)@6169e59e-1b7c-4843-a160-6129e0a24d7b
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts
-debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts as cce:/internal/code-quality/cr.mjs.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts as cce:/internal/x/cc.
-debug: Resolve ../Manager/GameManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts.
-debug: Resolve ../Manager/QuizModalManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts.
-debug: Resolve ../../EffectAnim/ResultAnimControll from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ResultAnimControll.ts.
-debug: Resolve ../Modal/OverallResultModal from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/OverallResultModal.ts.
-debug: Detected change: file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/OverallResultModal.ts. Last mtime: Thu Jan 19 2023 17:22:19 GMT+0900 (日本標準時)@60303970-f3a2-4142-88fd-b771d6f92402, Current mtime: Sun Jan 15 2023 16:58:48 GMT+0900 (日本標準時)@60303970-f3a2-4142-88fd-b771d6f92402
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/OverallResultModal.ts
-debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/OverallResultModal.ts as cce:/internal/code-quality/cr.mjs.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/OverallResultModal.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/OverallResultModal.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/OverallResultModal.ts as cce:/internal/x/cc.
-debug: Resolve ../Manager/QuizModalManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/OverallResultModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts.
-debug: Resolve ../Modal/QuestionModal from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/QuestionModal.ts.
-debug: Detected change: file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/QuestionModal.ts. Last mtime: Thu Jan 19 2023 17:22:19 GMT+0900 (日本標準時)@8f505756-d3be-4106-b8ab-5866d1bbb35b, Current mtime: Tue Jan 17 2023 17:21:34 GMT+0900 (日本標準時)@8f505756-d3be-4106-b8ab-5866d1bbb35b
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/QuestionModal.ts
-debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/QuestionModal.ts as cce:/internal/code-quality/cr.mjs.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/QuestionModal.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/QuestionModal.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/QuestionModal.ts as cce:/internal/x/cc.
-debug: Resolve ../Manager/GameManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/QuestionModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts.
-debug: Resolve ../Manager/QuizModalManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/QuestionModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts.
-debug: Resolve ../../EffectAnim/StartControll from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/QuestionModal.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/StartControll.ts.
-debug: Resolve ../Modal/ResultModal from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts.
-debug: Resolve ./GameManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts.
-debug: Resolve ./Data/QuizDataBase from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizDataBase.ts.
-debug: Detected change: file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizDataBase.ts. Last mtime: Thu Jan 19 2023 17:22:19 GMT+0900 (日本標準時)@91ce4ab9-9d0d-406f-8f25-066f3085c668, Current mtime: Sun Jan 15 2023 16:58:48 GMT+0900 (日本標準時)@91ce4ab9-9d0d-406f-8f25-066f3085c668
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizDataBase.ts
-debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizDataBase.ts as cce:/internal/code-quality/cr.mjs.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizDataBase.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizDataBase.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizDataBase.ts as cce:/internal/x/cc.
-debug: Resolve ./QuizData from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizDataBase.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizData.ts.
-debug: Detected change: file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizData.ts. Last mtime: Thu Jan 19 2023 17:22:19 GMT+0900 (日本標準時)@9d856897-1fe4-4803-ac7a-ea1f0d6e525f, Current mtime: Sun Jan 15 2023 16:58:48 GMT+0900 (日本標準時)@9d856897-1fe4-4803-ac7a-ea1f0d6e525f
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizData.ts
-debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizData.ts as cce:/internal/code-quality/cr.mjs.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizData.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizData.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizData.ts as cce:/internal/x/cc.
-debug: Resolve ./QuizComponent from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/QuizComponent.ts.
-debug: Detected change: file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/QuizComponent.ts. Last mtime: Thu Jan 19 2023 17:22:19 GMT+0900 (日本標準時)@236df82c-57bc-47ad-b417-7005185e6c7c, Current mtime: Sun Jan 15 2023 16:58:48 GMT+0900 (日本標準時)@236df82c-57bc-47ad-b417-7005185e6c7c
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/QuizComponent.ts
-debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/QuizComponent.ts as cce:/internal/code-quality/cr.mjs.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/QuizComponent.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/QuizComponent.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/QuizComponent.ts as cce:/internal/x/cc.
-debug: Resolve ./QuizModalManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/BetModal.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/BetModal.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/OverallResultModal.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/OverallResultModal.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/QuestionModal.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/QuestionModal.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/WaitModal.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/WaitModal.ts.
-debug: Detected change: file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/WaitModal.ts. Last mtime: Thu Jan 19 2023 17:22:14 GMT+0900 (日本標準時)@522aed8b-1514-493f-ab47-59e930de67aa, Current mtime: Sun Jan 15 2023 16:58:48 GMT+0900 (日本標準時)@522aed8b-1514-493f-ab47-59e930de67aa
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/WaitModal.ts
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/WaitModal.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/WaitModal.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/WaitModal.ts as cce:/internal/x/cc.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/PlayerInfomation.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/PlayerInfomation.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizData.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizData.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizDataBase.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizDataBase.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/QuizComponent.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/QuizComponent.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/TestMenu.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/TestMenu.ts.
-debug: Detected change: file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/TestMenu.ts. Last mtime: Thu Jan 19 2023 17:22:19 GMT+0900 (日本標準時)@fe959ade-f763-4ce3-8221-50ace0c875d4, Current mtime: Sun Jan 15 2023 16:58:48 GMT+0900 (日本標準時)@fe959ade-f763-4ce3-8221-50ace0c875d4
-debug: Inspect file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/TestMenu.ts
-debug: Resolve cce:/internal/code-quality/cr.mjs from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/TestMenu.ts as cce:/internal/code-quality/cr.mjs.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/TestMenu.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/TestMenu.ts as cce:/internal/x/cc.
-debug: Resolve cc from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/TestMenu.ts as cce:/internal/x/cc.
-debug: Resolve ../Game/Manager/QuizManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/TestMenu.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts.
-debug: Resolve ../Game/Manager/QuizModalManager from file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/TestMenu.ts as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/Timer.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/Timer.ts.
-debug: Target(preview) ends with cost 788.1048690080643ms.
-debug: Build iteration starts.
-Number of accumulated asset changes: 34
-Feature changed: false
-debug: Target(editor) build started.
-debug: Detected change: cce:/internal/x/prerequisite-imports. Last mtime: Thu Jan 01 1970 09:03:36 GMT+0900 (日本標準時), Current mtime: Thu Jan 01 1970 09:03:38 GMT+0900 (日本標準時)
+debug: Detected change: cce:/internal/x/prerequisite-imports. Last mtime: Thu Jan 01 1970 09:00:06 GMT+0900 (日本標準時), Current mtime: Thu Jan 01 1970 09:00:07 GMT+0900 (日本標準時)
 debug: Inspect cce:/internal/x/prerequisite-imports
 debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ChipControll.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ChipControll.ts.
 debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ResultAnimControll.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ResultAnimControll.ts.
@@ -814,29 +435,4 @@ debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/a
 debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/QuizComponent.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/QuizComponent.ts.
 debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/TestMenu.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/TestMenu.ts.
 debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/Timer.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/Timer.ts.
-debug: Target(editor) ends with cost 39.57563400268555ms.
-debug: Target(preview) build started.
-debug: Detected change: cce:/internal/x/prerequisite-imports. Last mtime: Thu Jan 01 1970 09:03:38 GMT+0900 (日本標準時), Current mtime: Thu Jan 01 1970 09:03:38 GMT+0900 (日本標準時)
-debug: Inspect cce:/internal/x/prerequisite-imports
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ChipControll.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ChipControll.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ResultAnimControll.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ResultAnimControll.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ScrollAnim.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ScrollAnim.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/StartControll.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/StartControll.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameInformation.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameInformation.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameManager.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizManager.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/QuizModalManager.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/BetModal.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/BetModal.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ChoicesModal.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/OverallResultModal.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/OverallResultModal.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/QuestionModal.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/QuestionModal.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/ResultModal.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/WaitModal.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/WaitModal.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/PlayerInfomation.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/PlayerInfomation.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizData.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizData.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizDataBase.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizDataBase.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/QuizComponent.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/QuizComponent.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/TestMenu.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/TestMenu.ts.
-debug: Resolve file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/Timer.ts from cce:/internal/x/prerequisite-imports as file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/Timer.ts.
-debug: Target(preview) ends with cost 41.64776900410652ms.
+debug: Target(preview) ends with cost 39.798967987298965ms.
