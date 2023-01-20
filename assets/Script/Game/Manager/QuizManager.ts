@@ -18,6 +18,8 @@ export class QuizManager extends Component {
         return QuizManager.instance;
     }
 
+    private CHOICE_MAX : number = 4;
+
     @property(Button)
     startButton : Button = null;
     @property(Number)
@@ -79,6 +81,10 @@ export class QuizManager extends Component {
         if(QuizModalManager.Instance().GetChoicesModal().GetChoics() > -1){
             QuizModalManager.Instance().GetResultModal().SetInfo(QuizModalManager.Instance().GetChoicesModal().GetChoics(),this.quizComponent.GetQuizData());
         }
+    }
+
+    public GetChoiceMax() : number{
+        return this.CHOICE_MAX;
     }
 }
 

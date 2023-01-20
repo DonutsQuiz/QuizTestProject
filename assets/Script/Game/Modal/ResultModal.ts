@@ -3,6 +3,7 @@ import { ClientMode, GameManager } from '../Manager/GameManager';
 import { QuizModalManager } from '../Manager/QuizModalManager';
 import { QuizData } from '../Quiz/Data/QuizData';
 import { QuestionModal } from './QuestionModal';
+import { ResultAnimControll } from '../../EffectAnim/ResultAnimControll';
 const { ccclass, property } = _decorator;
 
 @ccclass('ResultModal')
@@ -24,9 +25,14 @@ export class ResultModal extends Component {
     @property(Sprite)
     answerImage : Sprite = null;
 
+    @property(ResultAnimControll)
+    resultAnim : ResultAnimControll = null;
+
     public isNext = false;
 
     private debugClientMode : ClientMode = 'Liver';
+
+    private answerResult : boolean = false;
 
     start() {
         this.nextButton.node.on(Button.EventType.CLICK, function(){
@@ -40,7 +46,7 @@ export class ResultModal extends Component {
     }
 
     public SetInfo(choice : number, data : QuizData){
-        if(choice === GameManager.Instance().GetGameInfo().qAnswer){
+        if(choice === GameManager.Instance().GetGameInfo().qCorNumber){
             this.resultLabel.string = "正解";
             this.resultLabel.color = new Color(0,255,0,255);
             this.coinLabel.node.active = true;
@@ -96,6 +102,19 @@ export class ResultModal extends Component {
         this.coinLabel.string = coin + "コイン獲得!!";
     }
 
+    // クイズの回答があっているか
+    public SetAnswerReslult(ansnum: number, choice: number)
+    {
+        console.log("choice: " + choice);
+        console.log("ansnum: " + ansnum);
+        if(ansnum === choice){
+            this.answerResult = true;
+        }
+        else{
+            this.answerResult = false;
+        }
+    }
+
     private DebugModalUpdate(){
         if(GameManager.Instance().GetClientMode() != this.debugClientMode){
 
@@ -108,6 +127,17 @@ export class ResultModal extends Component {
                 this.nextButton.node.active = false;
                 this.coinLabel.node.active = true;
                 this.debugClientMode = 'User';
+            }
+        }
+
+        // animation
+        if(this.debugClientMode=== 'User'){
+            if(this.answerResult)
+            {
+                this.resultAnim.PlayCorrectAnim();
+            }
+            else{
+                this.resultAnim.PlayIncorrectAnim();
             }
         }
     }

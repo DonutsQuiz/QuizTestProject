@@ -1,7 +1,8 @@
 import { _decorator, Component, Node, Button, Label, SpriteFrame, Sprite, Vec3 } from 'cc';
-import { ChipControll } from '../../Chip/ChipControll';
+import { ChipControll } from '../../EffectAnim/ChipControll';
 import { Timer } from '../../UI/Timer';
 import { ClientMode, GameManager } from '../Manager/GameManager';
+import { QuizManager } from '../Manager/QuizManager';
 import { QuizModalManager } from '../Manager/QuizModalManager';
 import { BetModal } from './BetModal';
 import { ResultModal } from './ResultModal';
@@ -60,8 +61,6 @@ export class ChoicesModal extends Component {
         this.buttonList[1].node.on(Button.EventType.CLICK, function(){this.Choice(1);}, this);
         this.buttonList[2].node.on(Button.EventType.CLICK, function(){this.Choice(2);}, this);
         this.buttonList[3].node.on(Button.EventType.CLICK, function(){this.Choice(3);}, this);
-        this.buttonList[4].node.on(Button.EventType.CLICK, function(){this.Choice(4);}, this);
-        this.buttonList[5].node.on(Button.EventType.CLICK, function(){this.Choice(5);}, this);
         this.nextButton.node.on( Button.EventType.CLICK, this.Next, this);
         this.resultButton.node.on( Button.EventType.CLICK, this.ShowResult, this);
     }
@@ -70,6 +69,11 @@ export class ChoicesModal extends Component {
         this.DebugModalUpdate();
 
         this.timer.Display();
+
+        for(var i = 0; i < QuizManager.Instance().GetChoiceMax(); i++){
+            this.oddsLabelList[i].string = "X" + GameManager.Instance().GetGameInfo().odds[i].toString();
+            this.betLabelList[i].string = GameManager.Instance().GetGameInfo().totalBet[i].toString() + "コイン";
+        }
 
         // 時間切れの処理
         if(this.timer.GetIsFinish()){
@@ -118,7 +122,7 @@ export class ChoicesModal extends Component {
         this.questionLabel.string = GameManager.Instance().GetGameInfo().qSentence;
         this.betModal.node.active = false;
         this.resultModal.node.active = false;
-        this.liverAnswerFrameSprite.position = new Vec3(this.buttonList[GameManager.Instance().GetGameInfo().qAnswer].node.position);
+        this.liverAnswerFrameSprite.position = new Vec3(this.buttonList[GameManager.Instance().GetGameInfo().qCorNumber].node.position);
 
         if(GameManager.Instance().GetClientMode() === 'Liver'){
             this.liverNode.active = true;
@@ -154,7 +158,7 @@ export class ChoicesModal extends Component {
         this.choiceNumber = this.tempNumber;
         this.userAnswerFrameSprite.active = true;
         this.userAnswerFrameSprite.position = new Vec3(this.buttonList[this.choiceNumber].node.position);
-        this.chipAnim.Play();
+        if(this.betModal.getIsPushedDecideButton()) this.chipAnim.Play(this.choiceNumber);
     }
 
     // 正解表示
@@ -166,6 +170,7 @@ export class ChoicesModal extends Component {
     }
 
     private Next(){
+        this.timer.Reset();
         this.isNext = true;
         this.resultModal.node.active = false;
         this.betModal.SetIsDecide(false);
@@ -197,6 +202,7 @@ export class ChoicesModal extends Component {
             if(isResult){
                 this.resultModal.node.active = true;
                 this.liverAnswerFrameSprite.active = true;
+                this.resultModal.SetAnswerReslult(GameManager.Instance().GetGameInfo().qCorNumber, this.GetChoics());
             }
         }
     }

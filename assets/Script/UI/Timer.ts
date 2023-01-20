@@ -21,6 +21,8 @@ export class Timer extends Component {
 
     public Reset()
     {
+        this.isEnd = false;
+        this.isFinish = false;
         this.elapsed_time = 0;
     }
 
