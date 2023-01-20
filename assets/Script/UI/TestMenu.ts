@@ -1,7 +1,6 @@
-import { _decorator, Component, Node, Button, ButtonComponent, Enum, NodeEventType } from 'cc';
+import { _decorator, Component, Node, Button, Enum, NodeEventType } from 'cc';
 import { QuizManager } from '../Game/Manager/QuizManager';
 import { QuizModalManager } from '../Game/Manager/QuizModalManager';
-import { QuestionModal } from '../Game/Modal/QuestionModal';
 import { QuizType } from '../Game/Quiz/QuizComponent';
 
 const { ccclass, property } = _decorator;

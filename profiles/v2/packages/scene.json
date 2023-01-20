@@ -56,8 +56,26 @@
     },
     "6d9866d9-a192-4526-a2a7-a9e7b61f341b": {
       "position": {
-        "x": 187.5,
-        "y": 408.5,
+        "x": 304.5,
+        "y": 441.5,
+        "z": 5000
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "w": 1
+      },
+      "viewCenter": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    "3fz8/LYYdMBKYwPRZ++RV1": {
+      "position": {
+        "x": 147.49999999999994,
+        "y": 271.32500000000005,
         "z": 5000
       },
       "rotation": {
@@ -90,7 +108,7 @@
     }
   },
   "game-view": {
-    "scaleValue": 136,
-    "sliderValue": 56
+    "scaleValue": 78,
+    "sliderValue": 38
   }
 }

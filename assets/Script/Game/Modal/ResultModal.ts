@@ -4,7 +4,6 @@ import { ClientMode, GameManager } from '../Manager/GameManager';
 import { QuizModalManager } from '../Manager/QuizModalManager';
 import { QuizData } from '../Quiz/Data/QuizData';
 import { QuestionModal } from './QuestionModal';
-import { ResultAnimControll } from '../../EffectAnim/ResultAnimControll';
 const { ccclass, property } = _decorator;
 
 @ccclass('ResultModal')

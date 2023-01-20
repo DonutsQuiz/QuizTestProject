@@ -61,33 +61,34 @@ export class QuizManager extends Component {
     }
 
     public SetQuizType(type : QuizType){
-        
+        console.log(type);
         if(this.quizComponent){
             this.quizComponent.destroy();
         }
-
         if(type === 'Gesture'){
+            console.log("gesture");
             this.quizComponent = this.addComponent(GestureQuiz);
         }
         if(type === 'Act'){
+
+            console.log("act");
             this.quizComponent = this.addComponent(ActQuiz);
         }
         if(type === 'Personal'){
+
+            console.log("personal");
             this.quizComponent = this.addComponent(PersonalQuiz);
         }
     }
 
     // 出題
     private QuestionPhase(){
+        console.log(this.quizComponent);
         this.quizComponent.Initialize();
         this.quizComponent.SetQuiz();
     }
 
     // 選択肢の最大数
-    public GetChoiceMax() : number{
-        return this.CHOICE_MAX;
-    }
-
     public GetChoiceMax() : number{
         return this.CHOICE_MAX;
     }

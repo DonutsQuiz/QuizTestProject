@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Button, Label, SpriteFrame, Sprite, Vec3 } from 'cc';
+import { _decorator, Component, Node, Button, Label, SpriteFrame, Sprite, Vec3,RichText } from 'cc';
 import { ChipControll } from '../../EffectAnim/ChipControll';
 import { Timer } from '../../UI/Timer';
 import { ClientMode, GameManager } from '../Manager/GameManager';
