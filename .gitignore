@@ -1,12 +1,7 @@
 build
-local-server/node_modules
-temp
-library
-preview-template
 build-templates
-profiles
+library
 local
-library/.assets-info.json
-library/.internal-info.json
-library/6d/6d9866d9-a192-4526-a2a7-a9e7b61f341b.json
-library/f9/f9e7a9f9-1071-485e-a110-3cd892d94b4c.png
+temp
+preview-template
+local-server/node_modules

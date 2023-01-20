@@ -1,0 +1,23 @@
+{
+  "common": {
+    "polyfills": {
+      "asyncFunctions": true,
+      "coreJs": true
+    },
+    "buildPath": "project://build",
+    "outputName": "web-mobile-001",
+    "mainBundleCompressionType": "merge_dep",
+    "platform": "web-mobile",
+    "sourceMaps": false,
+    "debug": false,
+    "md5Cache": true,
+    "replaceSplashScreen": true
+  },
+  "options": {
+    "web-mobile": {
+      "orientation": "portrait",
+      "embedWebDebugger": true,
+      "__version__": "1.0.1"
+    }
+  }
+}

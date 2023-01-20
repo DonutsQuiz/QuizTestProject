@@ -1,0 +1,11 @@
+{
+  "common": {
+    "polyfills": {
+      "asyncFunctions": true,
+      "coreJs": true
+    },
+    "md5Cache": true,
+    "debug": true,
+    "sourceMaps": true
+  }
+}
