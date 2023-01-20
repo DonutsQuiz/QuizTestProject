@@ -349,3 +349,5 @@ myProp = 0;
     at doExec (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/app.asar/node_modules/@editor/lib-programming/static/executor/systemjs-bridge/out/index.js:517:30)
     at postOrderExec (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/app.asar/node_modules/@editor/lib-programming/static/executor/systemjs-bridge/out/index.js:508:21)
 2023-01-20T01:34:38.730Z - info: [Scene] [PHYSICS]: switch from builtin to bullet.
+2023-01-20T01:40:23.396Z - log: [Scene] Animation node(3cA5qawL5Ji7T2DiOJQWVK)doesn't exist
+2023-01-20T01:40:23.454Z - log: [Scene] Animation node(3cA5qawL5Ji7T2DiOJQWVK)doesn't exist
