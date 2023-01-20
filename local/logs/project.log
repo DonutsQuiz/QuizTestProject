@@ -1,102 +1,103 @@
-2023-01-19T08:23:04.439Z - log: [Package] menu@1.0.0 enable
-2023-01-19T08:23:04.441Z - log: [Package] profile@1.0.0 enable
-2023-01-19T08:23:04.450Z - log: [Package] project@1.0.2 enable
-2023-01-19T08:23:04.455Z - log: [Package] messages@1.0.0 enable
-2023-01-19T08:23:04.457Z - log: [Package] program@1.0.0 enable
-2023-01-19T08:23:04.463Z - log: [Package] tester@1.0.0 enable
-2023-01-19T08:23:04.468Z - log: [Package] preferences@1.0.0 enable
-2023-01-19T08:23:07.923Z - log: Load engine in /Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine
-2023-01-19T08:23:08.443Z - log: Register native engine in /Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/native
-2023-01-19T08:23:08.446Z - log: [Package] engine@1.0.7 enable
-2023-01-19T08:23:09.314Z - log: [Package] programming@1.0.0 enable
-2023-01-19T08:23:09.374Z - warn: 
-2023-01-19T08:23:09.405Z - warn: 
-2023-01-19T08:23:09.602Z - log: [Package] device@1.0.1 enable
-2023-01-19T08:23:09.630Z - log: [Package] ui-kit@1.0.1 enable
-2023-01-19T08:23:09.653Z - log: [Package] engine-extends@1.0.0 enable
-2023-01-19T08:23:09.719Z - log: [Package] asset-db@1.0.0 enable
-2023-01-19T08:23:09.720Z - warn: 
-2023-01-19T08:23:09.764Z - log: [Package] scene@1.0.0 enable
-2023-01-19T08:23:09.940Z - log: [Package] server@1.0.0 enable
-2023-01-19T08:23:09.968Z - log: [Package] utils@1.0.0 enable
-2023-01-19T08:23:14.182Z - warn: 
-2023-01-19T08:23:14.182Z - warn: 
-2023-01-19T08:23:14.182Z - warn: 
-2023-01-19T08:23:14.198Z - warn: 
-2023-01-19T08:23:14.198Z - warn: 
-2023-01-19T08:23:14.199Z - warn: 
-2023-01-19T08:23:15.851Z - warn: 
-2023-01-19T08:23:15.907Z - log: [Package] preview@1.0.1 enable
-2023-01-19T08:23:15.937Z - log: [Package] animator@1.0.0 enable
-2023-01-19T08:23:15.982Z - log: pluginManager init: 0.154ms
-2023-01-19T08:23:16.843Z - log: [Package] builder@1.3.3 enable
-2023-01-19T08:23:16.875Z - log: [Package] shortcuts@1.0.1 enable
-2023-01-19T08:23:16.912Z - log: [Package] animation-graph@1.0.0 enable
-2023-01-19T08:23:16.943Z - log: [Package] about@1.0.0 enable
-2023-01-19T08:23:16.971Z - log: [Package] assets@1.0.0 enable
-2023-01-19T08:23:17.000Z - log: [Package] console@1.0.0 enable
-2023-01-19T08:23:17.211Z - log: [Package] extension@3.0.16 enable
-2023-01-19T08:23:17.241Z - log: [Package] hierarchy@1.0.0 enable
-2023-01-19T08:23:17.273Z - log: [Package] inspector@1.0.0 enable
-2023-01-19T08:23:17.304Z - log: [Package] lightmap@1.0.4 enable
-2023-01-19T08:23:17.744Z - log: [Package] localization-editor@1.0.0 enable
-2023-01-19T08:23:17.756Z - log: [Build-plugin] register pkg localization-editor: 7.789ms
-2023-01-19T08:23:17.783Z - log: [Package] node-library@1.0.1 enable
-2023-01-19T08:23:17.805Z - log: [Package] package-asset@1.0.0 enable
-2023-01-19T08:23:17.832Z - log: [Package] process@1.0.0 enable
-2023-01-19T08:23:17.860Z - log: [Package] reference-image@1.0.0 enable
-2023-01-19T08:23:17.881Z - log: [Package] alipay-mini-game@1.0.1 enable
-2023-01-19T08:23:17.883Z - log: [Build-plugin] register pkg alipay-mini-game: 1.349ms
-2023-01-19T08:23:17.908Z - log: [Package] android@1.0.1 enable
-2023-01-19T08:23:17.915Z - log: [Build-plugin] register pkg android: 6.678ms
-2023-01-19T08:23:17.978Z - log: [Package] baidu-mini-game@1.0.1 enable
-2023-01-19T08:23:17.982Z - log: [Build-plugin] register pkg baidu-mini-game: 3.695ms
-2023-01-19T08:23:18.011Z - log: [Package] bytedance-mini-game@1.0.2 enable
-2023-01-19T08:23:18.014Z - log: [Build-plugin] register pkg bytedance-mini-game: 2.361ms
-2023-01-19T08:23:18.036Z - log: [Package] certificate@1.0.0 enable
-2023-01-19T08:23:18.058Z - log: [Package] channel-upload-tools@1.0.0 enable
-2023-01-19T08:23:18.081Z - log: [Package] cocos-play@1.0.1 enable
-2023-01-19T08:23:18.086Z - log: [Build-plugin] register pkg cocos-play: 4.916ms
-2023-01-19T08:23:18.109Z - log: [Package] huawei-agc@1.0.0 enable
-2023-01-19T08:23:18.113Z - log: [Build-plugin] register pkg huawei-agc: 3.691ms
-2023-01-19T08:23:18.135Z - log: [Package] huawei-quick-game@1.0.1 enable
-2023-01-19T08:23:18.139Z - log: [Build-plugin] register pkg huawei-quick-game: 4.123ms
-2023-01-19T08:23:18.616Z - log: [Package] ios@1.0.0 enable
-2023-01-19T08:23:18.621Z - log: [Build-plugin] register pkg ios: 4.416ms
-2023-01-19T08:23:18.626Z - warn: 
-2023-01-19T08:23:18.626Z - warn: 
-2023-01-19T08:23:18.626Z - warn: 
-2023-01-19T08:23:18.642Z - log: [Package] linux@1.0.0 enable
-2023-01-19T08:23:18.644Z - log: [Build-plugin] register pkg linux: 1.015ms
-2023-01-19T08:23:18.668Z - log: [Package] mac@1.0.0 enable
-2023-01-19T08:23:18.673Z - log: [Build-plugin] register pkg mac: 5.081ms
-2023-01-19T08:23:18.785Z - log: [Package] native@1.0.2 enable
-2023-01-19T08:23:18.792Z - log: [Build-plugin] register pkg native: 7.076ms
-2023-01-19T08:23:18.815Z - log: [Package] ohos@1.0.0 enable
-2023-01-19T08:23:18.818Z - log: [Build-plugin] register pkg ohos: 3.104ms
-2023-01-19T08:23:18.840Z - log: [Package] open-harmonyos@1.0.0 enable
-2023-01-19T08:23:18.842Z - log: [Build-plugin] register pkg open-harmonyos: 1.731ms
-2023-01-19T08:23:18.864Z - log: [Package] oppo-mini-game@1.0.1 enable
-2023-01-19T08:23:18.869Z - log: [Build-plugin] register pkg oppo-mini-game: 4.474ms
-2023-01-19T08:23:18.891Z - log: [Package] runtime-dev-tools@1.0.0 enable
-2023-01-19T08:23:18.917Z - log: [Package] vivo-mini-game@1.0.1 enable
-2023-01-19T08:23:18.922Z - log: [Build-plugin] register pkg vivo-mini-game: 4.192ms
-2023-01-19T08:23:18.967Z - log: [Package] web-desktop@1.0.1 enable
-2023-01-19T08:23:18.972Z - log: [Build-plugin] register pkg web-desktop: 3.534ms
-2023-01-19T08:23:19.002Z - log: [Package] web-mobile@1.0.1 enable
-2023-01-19T08:23:19.006Z - log: [Build-plugin] register pkg web-mobile: 3.118ms
-2023-01-19T08:23:19.034Z - log: [Package] wechatgame@1.0.2 enable
-2023-01-19T08:23:19.038Z - log: [Build-plugin] register pkg wechatgame: 3.616ms
-2023-01-19T08:23:19.061Z - log: [Package] windows@1.0.1 enable
-2023-01-19T08:23:19.064Z - log: [Build-plugin] register pkg windows: 2.914ms
-2023-01-19T08:23:19.091Z - log: [Package] xiaomi-quick-game@1.0.1 enable
-2023-01-19T08:23:19.095Z - log: [Build-plugin] register pkg xiaomi-quick-game: 3.652ms
-2023-01-19T08:23:19.310Z - log: [Package] cocos-service@3.0.4 enable
-2023-01-19T08:23:19.313Z - log: [Build-plugin] register pkg cocos-service: 1.974ms
-2023-01-19T08:23:19.343Z - log: [Package] importer@1.1.0 enable
-2023-01-19T08:23:19.608Z - log: [Im-plugin] Check im-plugin version.
-2023-01-19T08:23:19.613Z - log: [Package] im-plugin@3.0.9 enable
-2023-01-19T08:23:22.601Z - log: [Scene] Please specifiy a default value for "cc.EditorExtendable.__editorExtras__" property at its declaration:
+2023-01-20T01:34:20.502Z - log: [Package] menu@1.0.0 enable
+2023-01-20T01:34:20.504Z - log: [Package] profile@1.0.0 enable
+2023-01-20T01:34:20.514Z - log: [Package] project@1.0.2 enable
+2023-01-20T01:34:20.519Z - log: [Package] messages@1.0.0 enable
+2023-01-20T01:34:20.521Z - log: [Package] program@1.0.0 enable
+2023-01-20T01:34:20.527Z - log: [Package] tester@1.0.0 enable
+2023-01-20T01:34:20.532Z - log: [Package] preferences@1.0.0 enable
+2023-01-20T01:34:23.783Z - log: Load engine in /Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine
+2023-01-20T01:34:24.324Z - log: Register native engine in /Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/native
+2023-01-20T01:34:24.327Z - log: [Package] engine@1.0.7 enable
+2023-01-20T01:34:25.122Z - log: [Package] programming@1.0.0 enable
+2023-01-20T01:34:25.185Z - warn: 
+2023-01-20T01:34:25.214Z - warn: 
+2023-01-20T01:34:25.406Z - log: [Package] device@1.0.1 enable
+2023-01-20T01:34:25.436Z - log: [Package] ui-kit@1.0.1 enable
+2023-01-20T01:34:25.461Z - log: [Package] engine-extends@1.0.0 enable
+2023-01-20T01:34:25.525Z - log: [Package] asset-db@1.0.0 enable
+2023-01-20T01:34:25.525Z - warn: 
+2023-01-20T01:34:25.563Z - log: [Package] scene@1.0.0 enable
+2023-01-20T01:34:25.740Z - log: [Package] server@1.0.0 enable
+2023-01-20T01:34:25.768Z - log: [Package] utils@1.0.0 enable
+2023-01-20T01:34:29.424Z - warn: 
+2023-01-20T01:34:29.424Z - warn: 
+2023-01-20T01:34:29.424Z - warn: 
+2023-01-20T01:34:29.445Z - warn: 
+2023-01-20T01:34:29.445Z - warn: 
+2023-01-20T01:34:29.446Z - warn: 
+2023-01-20T01:34:30.958Z - warn: 
+2023-01-20T01:34:31.027Z - log: [Package] preview@1.0.1 enable
+2023-01-20T01:34:31.057Z - log: [Package] animator@1.0.0 enable
+2023-01-20T01:34:31.099Z - log: pluginManager init: 0.152ms
+2023-01-20T01:34:31.411Z - warn: 
+2023-01-20T01:34:31.411Z - warn: 
+2023-01-20T01:34:31.411Z - warn: 
+2023-01-20T01:34:31.959Z - log: [Package] builder@1.3.3 enable
+2023-01-20T01:34:31.991Z - log: [Package] shortcuts@1.0.1 enable
+2023-01-20T01:34:32.022Z - log: [Package] animation-graph@1.0.0 enable
+2023-01-20T01:34:32.051Z - log: [Package] about@1.0.0 enable
+2023-01-20T01:34:32.082Z - log: [Package] assets@1.0.0 enable
+2023-01-20T01:34:32.111Z - log: [Package] console@1.0.0 enable
+2023-01-20T01:34:32.331Z - log: [Package] extension@3.0.16 enable
+2023-01-20T01:34:32.360Z - log: [Package] hierarchy@1.0.0 enable
+2023-01-20T01:34:32.390Z - log: [Package] inspector@1.0.0 enable
+2023-01-20T01:34:32.419Z - log: [Package] lightmap@1.0.4 enable
+2023-01-20T01:34:32.801Z - log: [Package] localization-editor@1.0.0 enable
+2023-01-20T01:34:32.816Z - log: [Build-plugin] register pkg localization-editor: 10.526ms
+2023-01-20T01:34:32.853Z - log: [Package] node-library@1.0.1 enable
+2023-01-20T01:34:32.876Z - log: [Package] package-asset@1.0.0 enable
+2023-01-20T01:34:32.907Z - log: [Package] process@1.0.0 enable
+2023-01-20T01:34:32.935Z - log: [Package] reference-image@1.0.0 enable
+2023-01-20T01:34:32.959Z - log: [Package] alipay-mini-game@1.0.1 enable
+2023-01-20T01:34:32.960Z - log: [Build-plugin] register pkg alipay-mini-game: 1.297ms
+2023-01-20T01:34:32.986Z - log: [Package] android@1.0.1 enable
+2023-01-20T01:34:32.992Z - log: [Build-plugin] register pkg android: 5.156ms
+2023-01-20T01:34:33.052Z - log: [Package] baidu-mini-game@1.0.1 enable
+2023-01-20T01:34:33.056Z - log: [Build-plugin] register pkg baidu-mini-game: 3.202ms
+2023-01-20T01:34:33.083Z - log: [Package] bytedance-mini-game@1.0.2 enable
+2023-01-20T01:34:33.085Z - log: [Build-plugin] register pkg bytedance-mini-game: 2.302ms
+2023-01-20T01:34:33.109Z - log: [Package] certificate@1.0.0 enable
+2023-01-20T01:34:33.136Z - log: [Package] channel-upload-tools@1.0.0 enable
+2023-01-20T01:34:33.159Z - log: [Package] cocos-play@1.0.1 enable
+2023-01-20T01:34:33.163Z - log: [Build-plugin] register pkg cocos-play: 4.074ms
+2023-01-20T01:34:33.186Z - log: [Package] huawei-agc@1.0.0 enable
+2023-01-20T01:34:33.190Z - log: [Build-plugin] register pkg huawei-agc: 3.386ms
+2023-01-20T01:34:33.216Z - log: [Package] huawei-quick-game@1.0.1 enable
+2023-01-20T01:34:33.220Z - log: [Build-plugin] register pkg huawei-quick-game: 3.864ms
+2023-01-20T01:34:33.704Z - log: [Package] ios@1.0.0 enable
+2023-01-20T01:34:33.708Z - log: [Build-plugin] register pkg ios: 4.391ms
+2023-01-20T01:34:33.734Z - log: [Package] linux@1.0.0 enable
+2023-01-20T01:34:33.736Z - log: [Build-plugin] register pkg linux: 0.973ms
+2023-01-20T01:34:33.762Z - log: [Package] mac@1.0.0 enable
+2023-01-20T01:34:33.768Z - log: [Build-plugin] register pkg mac: 4.953ms
+2023-01-20T01:34:33.873Z - log: [Package] native@1.0.2 enable
+2023-01-20T01:34:33.880Z - log: [Build-plugin] register pkg native: 5.983ms
+2023-01-20T01:34:33.905Z - log: [Package] ohos@1.0.0 enable
+2023-01-20T01:34:33.909Z - log: [Build-plugin] register pkg ohos: 3.041ms
+2023-01-20T01:34:33.935Z - log: [Package] open-harmonyos@1.0.0 enable
+2023-01-20T01:34:33.936Z - log: [Build-plugin] register pkg open-harmonyos: 1.53ms
+2023-01-20T01:34:33.961Z - log: [Package] oppo-mini-game@1.0.1 enable
+2023-01-20T01:34:33.966Z - log: [Build-plugin] register pkg oppo-mini-game: 4.044ms
+2023-01-20T01:34:33.991Z - log: [Package] runtime-dev-tools@1.0.0 enable
+2023-01-20T01:34:34.012Z - log: [Package] vivo-mini-game@1.0.1 enable
+2023-01-20T01:34:34.017Z - log: [Build-plugin] register pkg vivo-mini-game: 4.036ms
+2023-01-20T01:34:34.060Z - log: [Package] web-desktop@1.0.1 enable
+2023-01-20T01:34:34.064Z - log: [Build-plugin] register pkg web-desktop: 3.53ms
+2023-01-20T01:34:34.093Z - log: [Package] web-mobile@1.0.1 enable
+2023-01-20T01:34:34.097Z - log: [Build-plugin] register pkg web-mobile: 3.156ms
+2023-01-20T01:34:34.124Z - log: [Package] wechatgame@1.0.2 enable
+2023-01-20T01:34:34.129Z - log: [Build-plugin] register pkg wechatgame: 4.15ms
+2023-01-20T01:34:34.151Z - log: [Package] windows@1.0.1 enable
+2023-01-20T01:34:34.154Z - log: [Build-plugin] register pkg windows: 3.334ms
+2023-01-20T01:34:34.180Z - log: [Package] xiaomi-quick-game@1.0.1 enable
+2023-01-20T01:34:34.184Z - log: [Build-plugin] register pkg xiaomi-quick-game: 4.556ms
+2023-01-20T01:34:34.425Z - log: [Package] cocos-service@3.0.4 enable
+2023-01-20T01:34:34.429Z - log: [Build-plugin] register pkg cocos-service: 2.042ms
+2023-01-20T01:34:34.457Z - log: [Package] importer@1.1.0 enable
+2023-01-20T01:34:34.721Z - log: [Im-plugin] Check im-plugin version.
+2023-01-20T01:34:34.725Z - log: [Package] im-plugin@3.0.9 enable
+2023-01-20T01:34:35.417Z - log: [Im-plugin] No online info of im-plugin.
+2023-01-20T01:34:38.093Z - log: [Scene] Please specifiy a default value for "cc.EditorExtendable.__editorExtras__" property at its declaration:
 
  
 // Before:
@@ -105,7 +106,7 @@ myProp;
 // After:
 @property(...)
 myProp = 0;
-2023-01-19T08:23:22.622Z - log: [Scene] Please specifiy a default value for "CCPropertyOverrideInfo.value" property at its declaration:
+2023-01-20T01:34:38.119Z - log: [Scene] Please specifiy a default value for "CCPropertyOverrideInfo.value" property at its declaration:
 
  
 // Before:
@@ -114,7 +115,7 @@ myProp;
 // After:
 @property(...)
 myProp = 0;
-2023-01-19T08:23:22.624Z - log: [Scene] Please specifiy a default value for "cc.PrefabInfo.asset" property at its declaration:
+2023-01-20T01:34:38.120Z - log: [Scene] Please specifiy a default value for "cc.PrefabInfo.asset" property at its declaration:
 
  
 // Before:
@@ -123,7 +124,7 @@ myProp;
 // After:
 @property(...)
 myProp = 0;
-2023-01-19T08:23:22.624Z - log: [Scene] Please specifiy a default value for "cc.PrefabInfo.nestedPrefabInstanceRoots" property at its declaration:
+2023-01-20T01:34:38.120Z - log: [Scene] Please specifiy a default value for "cc.PrefabInfo.nestedPrefabInstanceRoots" property at its declaration:
 
  
 // Before:
@@ -132,9 +133,9 @@ myProp;
 // After:
 @property(...)
 myProp = 0;
-2023-01-19T08:23:22.627Z - log: [Scene] The 'default' attribute of 'ColorDesc.beginAccesses' must be an array
-2023-01-19T08:23:22.627Z - log: [Scene] The 'default' attribute of 'ColorDesc.endAccesses' must be an array
-2023-01-19T08:23:22.641Z - log: [Scene] Please specifiy a default value for "cc.animation.TrackBinding.proxy" property at its declaration:
+2023-01-20T01:34:38.124Z - log: [Scene] The 'default' attribute of 'ColorDesc.beginAccesses' must be an array
+2023-01-20T01:34:38.124Z - log: [Scene] The 'default' attribute of 'ColorDesc.endAccesses' must be an array
+2023-01-20T01:34:38.140Z - log: [Scene] Please specifiy a default value for "cc.animation.TrackBinding.proxy" property at its declaration:
 
  
 // Before:
@@ -143,7 +144,7 @@ myProp;
 // After:
 @property(...)
 myProp = 0;
-2023-01-19T08:23:22.642Z - log: [Scene] Please specifiy a default value for "cc.animation.Channel._curve" property at its declaration:
+2023-01-20T01:34:38.140Z - log: [Scene] Please specifiy a default value for "cc.animation.Channel._curve" property at its declaration:
 
  
 // Before:
@@ -152,7 +153,7 @@ myProp;
 // After:
 @property(...)
 myProp = 0;
-2023-01-19T08:23:22.642Z - log: [Scene] Please specifiy a default value for "cc.animation.SingleChannelTrack._channel" property at its declaration:
+2023-01-20T01:34:38.140Z - log: [Scene] Please specifiy a default value for "cc.animation.SingleChannelTrack._channel" property at its declaration:
 
  
 // Before:
@@ -161,7 +162,7 @@ myProp;
 // After:
 @property(...)
 myProp = 0;
-2023-01-19T08:23:22.643Z - log: [Scene] Please specifiy a default value for "cc.animation.VectorTrack._channels" property at its declaration:
+2023-01-20T01:34:38.141Z - log: [Scene] Please specifiy a default value for "cc.animation.VectorTrack._channels" property at its declaration:
 
  
 // Before:
@@ -170,7 +171,7 @@ myProp;
 // After:
 @property(...)
 myProp = 0;
-2023-01-19T08:23:22.643Z - log: [Scene] Please specifiy a default value for "cc.animation.ColorTrack._channels" property at its declaration:
+2023-01-20T01:34:38.142Z - log: [Scene] Please specifiy a default value for "cc.animation.ColorTrack._channels" property at its declaration:
 
  
 // Before:
@@ -179,7 +180,7 @@ myProp;
 // After:
 @property(...)
 myProp = 0;
-2023-01-19T08:23:22.643Z - log: [Scene] Please specifiy a default value for "cc.animation.SizeTrack._channels" property at its declaration:
+2023-01-20T01:34:38.142Z - log: [Scene] Please specifiy a default value for "cc.animation.SizeTrack._channels" property at its declaration:
 
  
 // Before:
@@ -188,7 +189,7 @@ myProp;
 // After:
 @property(...)
 myProp = 0;
-2023-01-19T08:23:22.644Z - log: [Scene] Please specifiy a default value for "cc.animation.Transition.from" property at its declaration:
+2023-01-20T01:34:38.142Z - log: [Scene] Please specifiy a default value for "cc.animation.Transition.from" property at its declaration:
 
  
 // Before:
@@ -197,7 +198,7 @@ myProp;
 // After:
 @property(...)
 myProp = 0;
-2023-01-19T08:23:22.644Z - log: [Scene] Please specifiy a default value for "cc.animation.Transition.to" property at its declaration:
+2023-01-20T01:34:38.142Z - log: [Scene] Please specifiy a default value for "cc.animation.Transition.to" property at its declaration:
 
  
 // Before:
@@ -206,7 +207,7 @@ myProp;
 // After:
 @property(...)
 myProp = 0;
-2023-01-19T08:23:22.644Z - log: [Scene] Please specifiy a default value for "cc.animation.StateMachine._entryState" property at its declaration:
+2023-01-20T01:34:38.143Z - log: [Scene] Please specifiy a default value for "cc.animation.StateMachine._entryState" property at its declaration:
 
  
 // Before:
@@ -215,7 +216,7 @@ myProp;
 // After:
 @property(...)
 myProp = 0;
-2023-01-19T08:23:22.645Z - log: [Scene] Please specifiy a default value for "cc.animation.StateMachine._exitState" property at its declaration:
+2023-01-20T01:34:38.143Z - log: [Scene] Please specifiy a default value for "cc.animation.StateMachine._exitState" property at its declaration:
 
  
 // Before:
@@ -224,7 +225,7 @@ myProp;
 // After:
 @property(...)
 myProp = 0;
-2023-01-19T08:23:22.645Z - log: [Scene] Please specifiy a default value for "cc.animation.StateMachine._anyState" property at its declaration:
+2023-01-20T01:34:38.143Z - log: [Scene] Please specifiy a default value for "cc.animation.StateMachine._anyState" property at its declaration:
 
  
 // Before:
@@ -233,7 +234,7 @@ myProp;
 // After:
 @property(...)
 myProp = 0;
-2023-01-19T08:23:22.645Z - log: [Scene] Please specifiy a default value for "cc.animation.Layer._stateMachine" property at its declaration:
+2023-01-20T01:34:38.143Z - log: [Scene] Please specifiy a default value for "cc.animation.Layer._stateMachine" property at its declaration:
 
  
 // Before:
@@ -242,7 +243,7 @@ myProp;
 // After:
 @property(...)
 myProp = 0;
-2023-01-19T08:23:22.646Z - log: [Scene] Please specifiy a default value for "cc.animation.ExoticVectorLikeTrackValues._values" property at its declaration:
+2023-01-20T01:34:38.144Z - log: [Scene] Please specifiy a default value for "cc.animation.ExoticVectorLikeTrackValues._values" property at its declaration:
 
  
 // Before:
@@ -251,7 +252,7 @@ myProp;
 // After:
 @property(...)
 myProp = 0;
-2023-01-19T08:23:22.646Z - log: [Scene] Please specifiy a default value for "cc.animation.ExoticVectorLikeTrackValues._isQuantized" property at its declaration:
+2023-01-20T01:34:38.144Z - log: [Scene] Please specifiy a default value for "cc.animation.ExoticVectorLikeTrackValues._isQuantized" property at its declaration:
 
  
 // Before:
@@ -260,7 +261,7 @@ myProp;
 // After:
 @property(...)
 myProp = 0;
-2023-01-19T08:23:22.646Z - log: [Scene] Please specifiy a default value for "cc.animation.ExoticTrack.times" property at its declaration:
+2023-01-20T01:34:38.145Z - log: [Scene] Please specifiy a default value for "cc.animation.ExoticTrack.times" property at its declaration:
 
  
 // Before:
@@ -269,7 +270,7 @@ myProp;
 // After:
 @property(...)
 myProp = 0;
-2023-01-19T08:23:22.646Z - log: [Scene] Please specifiy a default value for "cc.animation.ExoticTrack.values" property at its declaration:
+2023-01-20T01:34:38.145Z - log: [Scene] Please specifiy a default value for "cc.animation.ExoticTrack.values" property at its declaration:
 
  
 // Before:
@@ -278,7 +279,7 @@ myProp;
 // After:
 @property(...)
 myProp = 0;
-2023-01-19T08:23:22.646Z - log: [Scene] Please specifiy a default value for "cc.animation.QuantizedFloatArray.originalPrecision" property at its declaration:
+2023-01-20T01:34:38.145Z - log: [Scene] Please specifiy a default value for "cc.animation.QuantizedFloatArray.originalPrecision" property at its declaration:
 
  
 // Before:
@@ -287,7 +288,7 @@ myProp;
 // After:
 @property(...)
 myProp = 0;
-2023-01-19T08:23:22.646Z - log: [Scene] Please specifiy a default value for "cc.animation.QuantizedFloatArray.min" property at its declaration:
+2023-01-20T01:34:38.145Z - log: [Scene] Please specifiy a default value for "cc.animation.QuantizedFloatArray.min" property at its declaration:
 
  
 // Before:
@@ -296,7 +297,7 @@ myProp;
 // After:
 @property(...)
 myProp = 0;
-2023-01-19T08:23:22.646Z - log: [Scene] Please specifiy a default value for "cc.animation.QuantizedFloatArray.extent" property at its declaration:
+2023-01-20T01:34:38.145Z - log: [Scene] Please specifiy a default value for "cc.animation.QuantizedFloatArray.extent" property at its declaration:
 
  
 // Before:
@@ -305,7 +306,7 @@ myProp;
 // After:
 @property(...)
 myProp = 0;
-2023-01-19T08:23:22.647Z - log: [Scene] Please specifiy a default value for "cc.animation.QuantizedFloatArray.values" property at its declaration:
+2023-01-20T01:34:38.145Z - log: [Scene] Please specifiy a default value for "cc.animation.QuantizedFloatArray.values" property at its declaration:
 
  
 // Before:
@@ -314,16 +315,16 @@ myProp;
 // After:
 @property(...)
 myProp = 0;
-2023-01-19T08:23:22.682Z - log: [Scene] 'cc.ParticleSystem2D.color' hides inherited property 'cc.UIRenderer.color'. To make the current property override that implementation, add the `override: true` attribute please.
-2023-01-19T08:23:22.719Z - log: [Scene] No needs to indicate the 'cc.Boolean' attribute for "cc.Terrain._receiveShadow", which its default value is type of Boolean.
-2023-01-19T08:23:22.719Z - log: [Scene] No needs to indicate the 'cc.Boolean' attribute for "cc.Terrain._useNormalmap", which its default value is type of Boolean.
-2023-01-19T08:23:22.719Z - log: [Scene] No needs to indicate the 'cc.Boolean' attribute for "cc.Terrain._usePBR", which its default value is type of Boolean.
-2023-01-19T08:23:22.719Z - log: [Scene] No needs to indicate the 'cc.Boolean' attribute for "cc.Terrain._lodEnable", which its default value is type of Boolean.
-2023-01-19T08:23:22.805Z - info: [Scene] [Physics][Bullet]: Using asmjs Bullet libs.
-2023-01-19T08:23:22.816Z - info: [Scene] [PHYSICS]: using builtin.
-2023-01-19T08:23:22.986Z - log: [Scene] Cocos Creator v3.6.2
-2023-01-19T08:23:22.986Z - info: [Scene] Forward render pipeline initialized.
-2023-01-19T08:23:23.150Z - warn: [Scene] The type of "QuizManager.raundMax" must be CCFloat or CCInteger, not Number.Error: [Scene] The type of "QuizManager.raundMax" must be CCFloat or CCInteger, not Number.
+2023-01-20T01:34:38.187Z - log: [Scene] 'cc.ParticleSystem2D.color' hides inherited property 'cc.UIRenderer.color'. To make the current property override that implementation, add the `override: true` attribute please.
+2023-01-20T01:34:38.241Z - log: [Scene] No needs to indicate the 'cc.Boolean' attribute for "cc.Terrain._receiveShadow", which its default value is type of Boolean.
+2023-01-20T01:34:38.241Z - log: [Scene] No needs to indicate the 'cc.Boolean' attribute for "cc.Terrain._useNormalmap", which its default value is type of Boolean.
+2023-01-20T01:34:38.241Z - log: [Scene] No needs to indicate the 'cc.Boolean' attribute for "cc.Terrain._usePBR", which its default value is type of Boolean.
+2023-01-20T01:34:38.242Z - log: [Scene] No needs to indicate the 'cc.Boolean' attribute for "cc.Terrain._lodEnable", which its default value is type of Boolean.
+2023-01-20T01:34:38.334Z - info: [Scene] [Physics][Bullet]: Using asmjs Bullet libs.
+2023-01-20T01:34:38.345Z - info: [Scene] [PHYSICS]: using builtin.
+2023-01-20T01:34:38.498Z - log: [Scene] Cocos Creator v3.6.2
+2023-01-20T01:34:38.498Z - info: [Scene] Forward render pipeline initialized.
+2023-01-20T01:34:38.672Z - warn: [Scene] The type of "QuestionModal.delayMax" must be CCFloat or CCInteger, not Number.Error: [Scene] The type of "QuestionModal.delayMax" must be CCFloat or CCInteger, not Number.
     at warn (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:139774:12)
     at warnID (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:139988:5)
     at parseType (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:227074:11)
@@ -331,8 +332,15 @@ myProp = 0;
     at declareProperties (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:117266:7)
     at CCClass (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:117303:5)
     at eval (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:224915:21)
-2023-01-19T08:23:23.257Z - log: [Im-plugin] No online info of im-plugin.
-2023-01-19T08:23:23.204Z - warn: [Scene] 'ButtonComponent' is deprecated since v1.2.0, please use 'Button' instead.Error: [Scene] 'ButtonComponent' is deprecated since v1.2.0, please use 'Button' instead.
+2023-01-20T01:34:38.723Z - warn: [Scene] The type of "QuizManager.raundMax" must be CCFloat or CCInteger, not Number.Error: [Scene] The type of "QuizManager.raundMax" must be CCFloat or CCInteger, not Number.
+    at warn (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:139774:12)
+    at warnID (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:139988:5)
+    at parseType (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:227074:11)
+    at preprocessAttrs (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:227202:11)
+    at declareProperties (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:117266:7)
+    at CCClass (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:117303:5)
+    at eval (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:224915:21)
+2023-01-20T01:34:38.727Z - warn: [Scene] 'ButtonComponent' is deprecated since v1.2.0, please use 'Button' instead.Error: [Scene] 'ButtonComponent' is deprecated since v1.2.0, please use 'Button' instead.
     at warn (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:139774:12)
     at warnID (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:139988:5)
     at _checkObsoleteByName (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:165028:7)
@@ -340,102 +348,4 @@ myProp = 0;
     at Object.execute (file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/temp/programming/packer-driver/targets/editor/chunks/ab/abb38ca3f0c65fdd067dd0ace227088b0db76700.js:44:7)
     at doExec (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/app.asar/node_modules/@editor/lib-programming/static/executor/systemjs-bridge/out/index.js:517:30)
     at postOrderExec (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/app.asar/node_modules/@editor/lib-programming/static/executor/systemjs-bridge/out/index.js:508:21)
-2023-01-19T08:23:23.208Z - info: [Scene] [PHYSICS]: switch from builtin to bullet.
-2023-01-19T08:23:24.392Z - info: [Preview] preview process is ready
-2023-01-19T08:23:38.982Z - info: [Preview] [Physics][Bullet]: Using asmjs Bullet libs.
-2023-01-19T08:23:38.999Z - info: [Preview] [PHYSICS]: using builtin.
-2023-01-19T08:23:39.162Z - log: [Preview] Cocos Creator v3.6.2
-2023-01-19T08:23:39.163Z - info: [Preview] Forward render pipeline initialized.
-2023-01-19T08:23:39.315Z - warn: [Preview] The type of "QuizManager.raundMax" must be CCFloat or CCInteger, not Number.Error: [Preview] The type of "QuizManager.raundMax" must be CCFloat or CCInteger, not Number.
-    at warn (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:139774:12)
-    at warnID (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:139988:5)
-    at parseType (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:227074:11)
-    at preprocessAttrs (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:227202:11)
-    at declareProperties (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:117266:7)
-    at CCClass (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:117303:5)
-    at eval (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:224915:21)
-2023-01-19T08:23:39.369Z - warn: [Preview] 'ButtonComponent' is deprecated since v1.2.0, please use 'Button' instead.Error: [Preview] 'ButtonComponent' is deprecated since v1.2.0, please use 'Button' instead.
-    at warn (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:139774:12)
-    at warnID (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:139988:5)
-    at _checkObsoleteByName (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:165028:7)
-    at __checkObsolete__ (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:165048:7)
-    at Object.execute (file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/temp/programming/packer-driver/targets/editor/chunks/ab/abb38ca3f0c65fdd067dd0ace227088b0db76700.js:44:7)
-    at doExec (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/app.asar/node_modules/@editor/lib-programming/static/executor/systemjs-bridge/out/index.js:517:30)
-    at postOrderExec (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/app.asar/node_modules/@editor/lib-programming/static/executor/systemjs-bridge/out/index.js:508:21)
-2023-01-19T08:23:39.372Z - info: [Preview] [PHYSICS]: switch from builtin to bullet.
-2023-01-19T08:23:55.585Z - warn: [Window] Message does not exist: scene.preview-stop
-2023-01-19T08:23:57.080Z - warn: Attempting to call a function in a renderer window that has been closed or released.
-Function provided here: timer-util.ccc:1:1017
-2023-01-19T08:23:58.366Z - info: [Preview] preview process is ready
-2023-01-19T08:23:58.432Z - info: [Preview] [Physics][Bullet]: Using asmjs Bullet libs.
-2023-01-19T08:23:58.448Z - info: [Preview] [PHYSICS]: using builtin.
-2023-01-19T08:23:58.601Z - log: [Preview] Cocos Creator v3.6.2
-2023-01-19T08:23:58.602Z - info: [Preview] Forward render pipeline initialized.
-2023-01-19T08:23:58.777Z - warn: [Preview] The type of "QuizManager.raundMax" must be CCFloat or CCInteger, not Number.Error: [Preview] The type of "QuizManager.raundMax" must be CCFloat or CCInteger, not Number.
-    at warn (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:139774:12)
-    at warnID (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:139988:5)
-    at parseType (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:227074:11)
-    at preprocessAttrs (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:227202:11)
-    at declareProperties (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:117266:7)
-    at CCClass (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:117303:5)
-    at eval (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:224915:21)
-2023-01-19T08:23:58.828Z - warn: [Preview] 'ButtonComponent' is deprecated since v1.2.0, please use 'Button' instead.Error: [Preview] 'ButtonComponent' is deprecated since v1.2.0, please use 'Button' instead.
-    at warn (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:139774:12)
-    at warnID (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:139988:5)
-    at _checkObsoleteByName (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:165028:7)
-    at __checkObsolete__ (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:165048:7)
-    at Object.execute (file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/temp/programming/packer-driver/targets/editor/chunks/ab/abb38ca3f0c65fdd067dd0ace227088b0db76700.js:44:7)
-    at doExec (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/app.asar/node_modules/@editor/lib-programming/static/executor/systemjs-bridge/out/index.js:517:30)
-    at postOrderExec (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/app.asar/node_modules/@editor/lib-programming/static/executor/systemjs-bridge/out/index.js:508:21)
-2023-01-19T08:23:58.832Z - info: [Preview] [PHYSICS]: switch from builtin to bullet.
-2023-01-19T08:24:01.486Z - warn: [Window] Message does not exist: scene.preview-stop
-2023-01-19T08:24:01.537Z - warn: Attempting to call a function in a renderer window that has been closed or released.
-Function provided here: timer-util.ccc:1:1017
-2023-01-19T08:26:46.693Z - warn: [Scene] The type of "QuestionModal.delayMax" must be CCFloat or CCInteger, not Number.Error: [Scene] The type of "QuestionModal.delayMax" must be CCFloat or CCInteger, not Number.
-    at warn (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:139774:12)
-    at warnID (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:139988:5)
-    at parseType (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:227074:11)
-    at preprocessAttrs (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:227202:11)
-    at declareProperties (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:117266:7)
-    at CCClass (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:117303:5)
-    at eval (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:224915:21)
-2023-01-19T08:26:46.694Z - warn: [Scene] The type of "QuizManager.raundMax" must be CCFloat or CCInteger, not Number.Error: [Scene] The type of "QuizManager.raundMax" must be CCFloat or CCInteger, not Number.
-    at warn (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:139774:12)
-    at warnID (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:139988:5)
-    at parseType (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:227074:11)
-    at preprocessAttrs (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:227202:11)
-    at declareProperties (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:117266:7)
-    at CCClass (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:117303:5)
-    at eval (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:224915:21)
-2023-01-19T08:26:46.697Z - warn: [Scene] 'ButtonComponent' is deprecated since v1.2.0, please use 'Button' instead.Error: [Scene] 'ButtonComponent' is deprecated since v1.2.0, please use 'Button' instead.
-    at warn (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:139774:12)
-    at warnID (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:139988:5)
-    at _checkObsoleteByName (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:165028:7)
-    at __checkObsolete__ (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:165048:7)
-    at Object.execute (file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/temp/programming/packer-driver/targets/editor/chunks/ab/abb38ca3f0c65fdd067dd0ace227088b0db76700.js:44:7)
-    at doExec (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/app.asar/node_modules/@editor/lib-programming/static/executor/systemjs-bridge/out/index.js:517:30)
-    at postOrderExec (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/app.asar/node_modules/@editor/lib-programming/static/executor/systemjs-bridge/out/index.js:508:21)
-2023-01-19T08:26:47.498Z - warn: [Scene] The type of "QuestionModal.delayMax" must be CCFloat or CCInteger, not Number.Error: [Scene] The type of "QuestionModal.delayMax" must be CCFloat or CCInteger, not Number.
-    at warn (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:139774:12)
-    at warnID (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:139988:5)
-    at parseType (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:227074:11)
-    at preprocessAttrs (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:227202:11)
-    at declareProperties (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:117266:7)
-    at CCClass (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:117303:5)
-    at eval (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:224915:21)
-2023-01-19T08:26:47.499Z - warn: [Scene] The type of "QuizManager.raundMax" must be CCFloat or CCInteger, not Number.Error: [Scene] The type of "QuizManager.raundMax" must be CCFloat or CCInteger, not Number.
-    at warn (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:139774:12)
-    at warnID (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:139988:5)
-    at parseType (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:227074:11)
-    at preprocessAttrs (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:227202:11)
-    at declareProperties (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:117266:7)
-    at CCClass (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:117303:5)
-    at eval (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:224915:21)
-2023-01-19T08:26:47.500Z - warn: [Scene] 'ButtonComponent' is deprecated since v1.2.0, please use 'Button' instead.Error: [Scene] 'ButtonComponent' is deprecated since v1.2.0, please use 'Button' instead.
-    at warn (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:139774:12)
-    at warnID (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:139988:5)
-    at _checkObsoleteByName (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:165028:7)
-    at __checkObsolete__ (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/resources/3d/engine/bin/.cache/dev/editor/bundled/index.js:165048:7)
-    at Object.execute (file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/temp/programming/packer-driver/targets/editor/chunks/ab/abb38ca3f0c65fdd067dd0ace227088b0db76700.js:44:7)
-    at doExec (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/app.asar/node_modules/@editor/lib-programming/static/executor/systemjs-bridge/out/index.js:517:30)
-    at postOrderExec (/Applications/CocosCreator/Creator/3.6.2/CocosCreator.app/Contents/Resources/app.asar/node_modules/@editor/lib-programming/static/executor/systemjs-bridge/out/index.js:508:21)
+2023-01-20T01:34:38.730Z - info: [Scene] [PHYSICS]: switch from builtin to bullet.
