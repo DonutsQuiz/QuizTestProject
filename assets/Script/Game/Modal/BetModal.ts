@@ -29,7 +29,7 @@ export class BetModal extends Component {
     private isPushedDecideButton : boolean = false;
 
     start() {
-        this.coins = GameManager.Instance().GetPlayerInfo().coins;
+        this.coins = GameManager.Instance().GetGameInfo().coins;
         this.sliderMax = this.coins / 10;
         this.criteriaPoint = 1.0 / (this.coins / 10);
         this.decideButton.node.on(Button.EventType.CLICK, 
@@ -85,5 +85,11 @@ export class BetModal extends Component {
             this.isDecide = true;
         }
     }
+
+    private CloseModal(){
+        this.self.active = false;
+        this.betSlider.progress = 0.0;
+        this.betValue = 0;
+    } 
 }
 

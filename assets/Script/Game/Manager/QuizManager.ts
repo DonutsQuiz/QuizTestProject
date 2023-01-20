@@ -1,7 +1,10 @@
-import { _decorator, Component, Node, profiler, Button, InstancedBuffer } from 'cc';
-import { QuizData } from '../Quiz/Data/QuizData';
+import { _decorator, Component, Node, profiler, Button, InstancedBuffer, Game } from 'cc';
+import { ActQuiz } from '../Quiz/ActQuiz';
+import { PersonalData, QuizData } from '../Quiz/Data/QuizData';
 import { GestureQuiz } from '../Quiz/GestureQuiz';
+import { PersonalQuiz } from '../Quiz/PersonalQuiz';
 import { QuizComponent, QuizType } from '../Quiz/QuizComponent';
+import { GameManager } from './GameManager';
 import { QuizModalManager } from './QuizModalManager';
 const { ccclass, property } = _decorator;
 
@@ -41,14 +44,16 @@ export class QuizManager extends Component {
     }
 
     public OnUpdate(){
-        //this.AnswerPhase();
-
         // 全問題が終了したら総合結果に移行する
         if(QuizModalManager.Instance().GetChoicesModal().isNext){
-            if(this.quizComponent.mNumber >= this.raundMax){
+            if(GameManager.Instance().GetGameInfo().qNumber >= this.raundMax){
                 QuizModalManager.Instance().ChangeModal('Overall');
+                GameManager.Instance().GetGameInfo().DebugInit();
             }
             else{
+                // デバッグ
+                QuizModalManager.Instance().GetChoicesModal().GetTimer().Reset();
+                GameManager.Instance().GetGameInfo().thinkTime = 600;
                 this.quizComponent.SetQuiz();
             }
             QuizModalManager.Instance().GetChoicesModal().isNext = false;
@@ -65,8 +70,10 @@ export class QuizManager extends Component {
             this.quizComponent = this.addComponent(GestureQuiz);
         }
         if(type === 'Act'){
+            this.quizComponent = this.addComponent(ActQuiz);
         }
-        if(type === 'Quiz'){
+        if(type === 'Personal'){
+            this.quizComponent = this.addComponent(PersonalQuiz);
         }
     }
 
@@ -76,11 +83,9 @@ export class QuizManager extends Component {
         this.quizComponent.SetQuiz();
     }
 
-    // 
-    AnswerPhase(){
-        if(QuizModalManager.Instance().GetChoicesModal().GetChoics() > -1){
-            QuizModalManager.Instance().GetResultModal().SetInfo(QuizModalManager.Instance().GetChoicesModal().GetChoics(),this.quizComponent.GetQuizData());
-        }
+    // 選択肢の最大数
+    public GetChoiceMax() : number{
+        return this.CHOICE_MAX;
     }
 
     public GetChoiceMax() : number{

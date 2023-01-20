@@ -24,6 +24,8 @@ export class Timer extends Component {
         this.isEnd = false;
         this.isFinish = false;
         this.elapsed_time = 0;
+        this.isFinish = false;
+        this.isEnd  = false; 
     }
 
     public SetTimeLimit(limit: number)

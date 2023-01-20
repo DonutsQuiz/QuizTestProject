@@ -741,7 +741,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "QuizButton",
+    "_name": "PersonalButton",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -890,7 +890,7 @@
       "b": 0,
       "a": 255
     },
-    "_string": "クイズ",
+    "_string": "パーソナル",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 20,
@@ -1148,7 +1148,6 @@
     "__type__": "fe959re92NM44IhUKzgyHXU",
     "_name": "",
     "_objFlags": 0,
-    "__editorExtras__": {},
     "node": {
       "__id__": 1
     },

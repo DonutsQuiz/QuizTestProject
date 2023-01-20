@@ -1,4 +1,5 @@
 import { _decorator, Component, Node, Button, labelAssembler, Label, SpriteFrame, Color, Sprite, UITransform, Vec2, Size } from 'cc';
+import { ResultAnimControll } from '../../EffectAnim/ResultAnimControll';
 import { ClientMode, GameManager } from '../Manager/GameManager';
 import { QuizModalManager } from '../Manager/QuizModalManager';
 import { QuizData } from '../Quiz/Data/QuizData';
@@ -24,6 +25,7 @@ export class ResultModal extends Component {
     answerSentence : Label = null;
     @property(Sprite)
     answerImage : Sprite = null;
+
 
     @property(ResultAnimControll)
     resultAnim : ResultAnimControll = null;

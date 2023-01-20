@@ -1,4 +1,5 @@
-import { _decorator, Component, Node, Label, Button, Vec2, Vec3, SpriteFrame, Sprite } from 'cc';
+import { _decorator, Component, Node, Label, Button, Vec2, Vec3, SpriteFrame, Sprite, RichText } from 'cc';
+import { StartControll } from '../../EffectAnim/StartControll';
 import { ClientMode, GameManager } from '../Manager/GameManager';
 import { QuizModalManager } from '../Manager/QuizModalManager';
 import { QuizType } from '../Quiz/QuizComponent';
@@ -12,8 +13,8 @@ export class QuestionModal extends Component {
     private liverNode : Node = null;
     @property(Label)
     qNumber : Label = null;
-    @property(Label)
-    qSentence : Label = null;
+    @property(RichText)
+    qSentence : RichText = null;
     @property(Label)
     qSelect : Label = null;
     @property(Node)
@@ -68,7 +69,7 @@ export class QuestionModal extends Component {
     }
 
     public SetSentence(sent : string){
-        this.qSentence.string = sent;
+        this.qSentence.string = "<color=#000000>" + sent + "</color>";
     }
 
     public SetSelect(sele : Array<string>){
@@ -113,10 +114,10 @@ export class QuestionModal extends Component {
             }
         }
         else if(qtype === 'Act'){   // アクト
-            this.qSentence.node.setPosition(new Vec3(0,50,0));
+            this.qSentence.node.setPosition(new Vec3(0,25,0));
             this.qStartB.node.active = true;
         }
-        else if(qtype === 'Quiz'){   // クイズ
+        else if(qtype === 'Personal'){   // クイズ
             this.qSentence.node.setPosition(new Vec3(0,75,0));
             this.qSelect.node.active = true;
             this.qSelectB.forEach(element => {element.node.active = true;});
@@ -154,10 +155,10 @@ export class QuestionModal extends Component {
                 }
             }
             else if(this.debugQuizMode === 'Act'){   // アクト
-                this.qSentence.node.setPosition(new Vec3(0,50,0));
+                this.qSentence.node.setPosition(new Vec3(0,25,0));
                 this.qStartB.node.active = true;
             }
-            else if(this.debugQuizMode === 'Quiz'){   // クイズ
+            else if(this.debugQuizMode === 'Personal'){   // クイズ
                 this.qSentence.node.setPosition(new Vec3(0,75,0));
                 this.qSelect.node.active = true;
                 this.qSelectB.forEach(element => {element.node.active = true;});

@@ -19,8 +19,10 @@ export class ChoicesModal extends Component {
     buttonList : Array<Button> = new Array<Button>();
     @property(Node) // 選択肢（枠）
     frameList : Array<Node> = new Array<Node>();
-    @property(Label) // 選択肢（文字）
+    @property(Label) // 選択肢（文字　背景）
     labelList : Array<Label> = new Array<Label>();
+    @property(RichText) // 選択肢（文字　文章）
+    textList : Array<RichText> = new Array<RichText>();
     @property(Sprite)// 選択肢（画像）
     spriteList : Array<Sprite> = new Array<Sprite>();
     @property(Label)// オッズ
@@ -84,7 +86,7 @@ export class ChoicesModal extends Component {
         }
 
         // ベットモーダルが出ている時は選択肢を押せないようにする
-        if(this.betModal.node.active || this.timer.GetIsEnd()){
+        if(this.betModal.node.active || this.timer.GetIsEnd() || this.userAnswerFrameSprite.active){
             this.DontClickButton(false);
         }
         else{
@@ -104,7 +106,13 @@ export class ChoicesModal extends Component {
 
     // 選択肢を設定
     public SetChoices(index : number, text : string, sprite : SpriteFrame){
-        this.labelList[index].string = text;
+        var alphabet : string = "";
+        if(index === 0){alphabet = "A";}
+        else if(index === 1){alphabet = "B";}
+        else if(index === 2){alphabet = "C";}
+        else if(index === 3){alphabet = "D";}
+        this.labelList[index].string = alphabet;
+        this.textList[index].string = "<color=#000000>" + text + "</color>";
         this.spriteList[index].spriteFrame = sprite;
     }
 
@@ -119,7 +127,7 @@ export class ChoicesModal extends Component {
 
     public Initialize(){
         this.timer.SetTimeLimit(GameManager.Instance().GetGameInfo().thinkTime);   // タイマーのセット
-        this.questionLabel.string = GameManager.Instance().GetGameInfo().qSentence;
+        this.questionLabel.string = GameManager.Instance().GetGameInfo().qSentenceUser;
         this.betModal.node.active = false;
         this.resultModal.node.active = false;
         this.liverAnswerFrameSprite.position = new Vec3(this.buttonList[GameManager.Instance().GetGameInfo().qCorNumber].node.position);
@@ -193,7 +201,12 @@ export class ChoicesModal extends Component {
             this.Initialize();
 
             if(this.timer.GetIsEnd()){
-                this.resultButton.node.active = true;
+                if(isResult){
+                    this.nextButton.node.active = true;
+                }
+                else{
+                    this.resultButton.node.active = true;
+                }
                 for(const odds of this.oddsLabelList){
                     odds.node.active = true;
                 }
@@ -209,6 +222,10 @@ export class ChoicesModal extends Component {
 
     public GetResultModal() : ResultModal{
         return this.resultModal;
+    }
+
+    public GetTimer() : Timer{
+        return this.timer;
     }
 }
 
