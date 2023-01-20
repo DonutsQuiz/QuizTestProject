@@ -2,11 +2,11 @@
   "imports": {
     "cce:/internal/x/cc": "./chunks/d0/d0b282b9748ef7fc7d2e7bd647d71b0f7e84da53.js",
     "cce:/internal/x/prerequisite-imports": "./chunks/32/3202266d9b1668effcf452ec1074060ca1b51774.js",
-    "file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/PlayerInfomation.ts": "./chunks/84/84bba495edd9dc61ad4d889e463f7c5c9d35aa63.js",
     "file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ChipControll.ts": "./chunks/b8/b8f44a81f4a550f42fa2d2931850e54e3b7c7a6a.js",
     "file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ResultAnimControll.ts": "./chunks/54/543b2cd43fed7226df8ca00a6706ada1bc9a4195.js",
     "file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/ScrollAnim.ts": "./chunks/b9/b9b548cd30293b64bceefcc6e3515436faeb2779.js",
     "file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/EffectAnim/StartControll.ts": "./chunks/5b/5b65d73b7e0c316704912dde9f01c755e2c8469c.js",
+    "file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/PlayerInfomation.ts": "./chunks/84/84bba495edd9dc61ad4d889e463f7c5c9d35aa63.js",
     "file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/TestMenu.ts": "./chunks/ab/abb38ca3f0c65fdd067dd0ace227088b0db76700.js",
     "file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/UI/Timer.ts": "./chunks/f9/f999f8106bc43ce0e06ab87b575c0bff240a5477.js",
     "file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Manager/GameInformation.ts": "./chunks/c0/c070569bfc5b4df6b8f84c320e681c4bef56bf2e.js",
@@ -21,8 +21,8 @@
     "file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Modal/WaitModal.ts": "./chunks/c5/c5ec3f58a25e59eac6739e7c637e00fa3b3b6391.js",
     "file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/GestureQuiz.ts": "./chunks/4b/4be7148efacf69f39b94b60b69588dc4fae4df8d.js",
     "file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/QuizComponent.ts": "./chunks/63/63b3590318ca9523d0fe7d0513b0791a5019e9b1.js",
-    "file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizDataBase.ts": "./chunks/79/7919d60c37e7bf55007623b22960c7ad49a2890f.js",
-    "file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizData.ts": "./chunks/52/522a06e85d297ea2062d776f02be7a9d8a1901dd.js"
+    "file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizData.ts": "./chunks/52/522a06e85d297ea2062d776f02be7a9d8a1901dd.js",
+    "file:///Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Script/Game/Quiz/Data/QuizDataBase.ts": "./chunks/79/7919d60c37e7bf55007623b22960c7ad49a2890f.js"
   },
   "scopes": {
     "./chunks/d0/d0b282b9748ef7fc7d2e7bd647d71b0f7e84da53.js": {
