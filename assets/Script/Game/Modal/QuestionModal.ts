@@ -3,6 +3,7 @@ import { StartControll } from '../../EffectAnim/StartControll';
 import { ClientMode, GameManager } from '../Manager/GameManager';
 import { QuizModalManager } from '../Manager/QuizModalManager';
 import { QuizType } from '../Quiz/QuizComponent';
+import { StartControll } from '../../EffectAnim/StartControll';
 const { ccclass, property } = _decorator;
 
 @ccclass('QuestionModal')
@@ -35,7 +36,7 @@ export class QuestionModal extends Component {
     private delayMax : number = 1.0;
     private isNext : boolean = false;
 
-    @property(StartControll) // スタート演出
+    @property(StartControll)
     startAnim : StartControll = null;
 
     start() {

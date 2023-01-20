@@ -1,5 +1,6 @@
 import { _decorator, Component, Node, Slider, Button, Label, labelAssembler, convertUtils, math, isUnicodeCJK } from 'cc';
 import { GameManager } from '../Manager/GameManager';
+
 const { ccclass, property } = _decorator;
 
 @ccclass('BetModal')
@@ -31,8 +32,13 @@ export class BetModal extends Component {
         this.coins = GameManager.Instance().GetGameInfo().coins;
         this.sliderMax = this.coins / 10;
         this.criteriaPoint = 1.0 / (this.coins / 10);
-        this.decideButton.node.on(Button.EventType.CLICK, function(){this.CheckIsDecide(); this.setIsPushedDecideButton(); this.CloseModal();}, this);
-        this.closeButton.node.on(Button.EventType.CLICK, function(){this.CloseModal();}, this);
+        this.decideButton.node.on(Button.EventType.CLICK, 
+            function(){
+            this.self.active = false; 
+            this.setIsPushedDecideButton();
+            this.CheckIsDecide();
+        }, this);
+        this.closeButton.node.on(Button.EventType.CLICK, function(){this.self.active = false;}, this);
         this.betButtonList[0].node.on(Button.EventType.CLICK, function(){this.betSlider.progress += this.criteriaPoint;}, this);
         this.betButtonList[1].node.on(Button.EventType.CLICK, function(){this.betSlider.progress += this.criteriaPoint * 10;}, this);
         this.betButtonList[2].node.on(Button.EventType.CLICK, function(){this.betSlider.progress += this.criteriaPoint * 100;}, this);
@@ -50,7 +56,6 @@ export class BetModal extends Component {
         this.betValue = Math.round(this.sliderMax * this.betSlider.progress) * 10;
         this.valueLabel.string = this.betValue.toString();
     }
-
 
     private setIsPushedDecideButton()
     {

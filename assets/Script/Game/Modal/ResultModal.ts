@@ -4,6 +4,7 @@ import { ClientMode, GameManager } from '../Manager/GameManager';
 import { QuizModalManager } from '../Manager/QuizModalManager';
 import { QuizData } from '../Quiz/Data/QuizData';
 import { QuestionModal } from './QuestionModal';
+import { ResultAnimControll } from '../../EffectAnim/ResultAnimControll';
 const { ccclass, property } = _decorator;
 
 @ccclass('ResultModal')
@@ -131,16 +132,16 @@ export class ResultModal extends Component {
             }
         }
 
-                // animation
-                if(this.debugClientMode=== 'User'){
-                    if(this.answerResult)
-                    {
-                        this.resultAnim.PlayCorrectAnim();
-                    }
-                    else{
-                        this.resultAnim.PlayIncorrectAnim();
-                    }
-                }
+        // animation
+        if(this.debugClientMode=== 'User'){
+            if(this.answerResult)
+            {
+                this.resultAnim.PlayCorrectAnim();
+            }
+            else{
+                this.resultAnim.PlayIncorrectAnim();
+            }
+        }
     }
 }
 

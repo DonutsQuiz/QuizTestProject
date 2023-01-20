@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Button, Label, SpriteFrame, Sprite, Vec3, RichText } from 'cc';
+import { _decorator, Component, Node, Button, Label, SpriteFrame, Sprite, Vec3 } from 'cc';
 import { ChipControll } from '../../EffectAnim/ChipControll';
 import { Timer } from '../../UI/Timer';
 import { ClientMode, GameManager } from '../Manager/GameManager';
@@ -178,6 +178,7 @@ export class ChoicesModal extends Component {
     }
 
     private Next(){
+        this.timer.Reset();
         this.isNext = true;
         this.resultModal.node.active = false;
         this.betModal.SetIsDecide(false);

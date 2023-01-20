@@ -87,5 +87,9 @@ export class QuizManager extends Component {
     public GetChoiceMax() : number{
         return this.CHOICE_MAX;
     }
+
+    public GetChoiceMax() : number{
+        return this.CHOICE_MAX;
+    }
 }
 
