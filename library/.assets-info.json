@@ -768,7 +768,7 @@
   "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/Chip": {
     "time": 1673237451561.9014,
     "uuid": "91042ce5-e93c-4fff-9f8e-a6facac882fc",
-    "missing": false
+    "missing": true
   },
   "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Script/Chip/ChipControll.ts": {
     "time": 1673237451562.3013,
@@ -845,7 +845,7 @@
   "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Texture/UI/AnswerFrameLiver.png": {
     "time": 1673411700674.2,
     "uuid": "a3014057-d2c0-4bcb-bd15-ab134be02e07",
-    "missing": false
+    "missing": true
   },
   "/Users/takeda.naomichi/Desktop/QuizTestProject/assets/Texture/UI/AnswerFrameUser.png.meta": {
     "time": 1673411730122.6406
@@ -1132,7 +1132,7 @@
     "missing": false
   },
   "/Users/yoshimura.kazuma/Documents/GitHub/QuizTestProject/assets/Prefab/Modal/ChoicesModal.prefab": {
-    "time": 1674117854147.6594,
+    "time": 1674178268658.4622,
     "uuid": "3375720f-b256-4d50-a23b-9df7bb10ea09",
     "missing": false
   },
