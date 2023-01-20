@@ -853,9 +853,7 @@
   },
   "a3014057-d2c0-4bcb-bd15-ab134be02e07": {
     "url": "db://assets/Texture/UI/AnswerFrameLiver.png",
-    "value": {
-      "depends": []
-    }
+    "value": {}
   },
   "a3014057-d2c0-4bcb-bd15-ab134be02e07@6c48a": {
     "url": "db://assets/Texture/UI/AnswerFrameLiver.png@6c48a",
@@ -872,6 +870,62 @@
         "a3014057-d2c0-4bcb-bd15-ab134be02e07@6c48a"
       ]
     }
+  },
+  "b40d2158-e53d-4898-9194-aa6fca835dd2": {
+    "url": "db://assets/Texture/UI/choiceFrame.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "b40d2158-e53d-4898-9194-aa6fca835dd2@6c48a": {
+    "url": "db://assets/Texture/UI/choiceFrame.png@6c48a",
+    "value": {
+      "depends": [
+        "b40d2158-e53d-4898-9194-aa6fca835dd2"
+      ]
+    }
+  },
+  "b40d2158-e53d-4898-9194-aa6fca835dd2@f9941": {
+    "url": "db://assets/Texture/UI/choiceFrame.png@f9941",
+    "value": {
+      "depends": [
+        "b40d2158-e53d-4898-9194-aa6fca835dd2@6c48a"
+      ]
+    }
+  },
+  "1e6d20ce-ec65-43d3-b1eb-47fbd22579a8": {
+    "url": "db://assets/Texture/UI/AnswerFrameLiver.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "1e6d20ce-ec65-43d3-b1eb-47fbd22579a8@6c48a": {
+    "url": "db://assets/Texture/UI/AnswerFrameLiver.png@6c48a",
+    "value": {
+      "depends": [
+        "1e6d20ce-ec65-43d3-b1eb-47fbd22579a8"
+      ]
+    }
+  },
+  "1e6d20ce-ec65-43d3-b1eb-47fbd22579a8@f9941": {
+    "url": "db://assets/Texture/UI/AnswerFrameLiver.png@f9941",
+    "value": {
+      "depends": [
+        "1e6d20ce-ec65-43d3-b1eb-47fbd22579a8@6c48a"
+      ]
+    }
+  },
+  "9f9d8716-3d36-4708-96df-6c736eca8cf4": {
+    "url": "db://assets/Script/Game/Quiz/Act.ts",
+    "value": {}
+  },
+  "c39dd70a-6524-4ce4-93c9-631c662d9b3b": {
+    "url": "db://assets/Script/Game/Quiz/ActQuiz.ts",
+    "value": {}
+  },
+  "7362c783-f18f-4b91-a2f8-4a0cb87d0055": {
+    "url": "db://assets/Script/Game/Quiz/PersonalQuiz.ts",
+    "value": {}
   },
   "f1430055-3713-49da-a319-b15ce9b23454": {
     "url": "db://assets/Animations/Result",
@@ -977,12 +1031,6 @@
       "depends": []
     }
   },
-  "b40d2158-e53d-4898-9194-aa6fca835dd2": {
-    "url": "db://assets/Texture/UI/choiceFrame.png",
-    "value": {
-      "depends": []
-    }
-  },
   "9286b225-7b5c-49c6-8fe2-9568be4e8996@6c48a": {
     "url": "db://assets/Texture/Effect/coin.png@6c48a",
     "value": {
@@ -1007,19 +1055,11 @@
       ]
     }
   },
-  "b40d2158-e53d-4898-9194-aa6fca835dd2@6c48a": {
-    "url": "db://assets/Texture/UI/choiceFrame.png@6c48a",
+  "56a858b4-c4d5-4788-8590-5e794f058264@6c48a": {
+    "url": "db://assets/Texture/Effect/start.png@6c48a",
     "value": {
       "depends": [
-        "b40d2158-e53d-4898-9194-aa6fca835dd2"
-      ]
-    }
-  },
-  "a357ba04-c973-4167-b5ba-afac2859d639@f9941": {
-    "url": "db://assets/Texture/Effect/hazure.png@f9941",
-    "value": {
-      "depends": [
-        "a357ba04-c973-4167-b5ba-afac2859d639@6c48a"
+        "56a858b4-c4d5-4788-8590-5e794f058264"
       ]
     }
   },
@@ -1031,27 +1071,11 @@
       ]
     }
   },
-  "56a858b4-c4d5-4788-8590-5e794f058264@6c48a": {
-    "url": "db://assets/Texture/Effect/start.png@6c48a",
+  "a357ba04-c973-4167-b5ba-afac2859d639@f9941": {
+    "url": "db://assets/Texture/Effect/hazure.png@f9941",
     "value": {
       "depends": [
-        "56a858b4-c4d5-4788-8590-5e794f058264"
-      ]
-    }
-  },
-  "e4498d26-fd8e-4fb7-9786-f966547e36de@f9941": {
-    "url": "db://assets/Texture/Effect/hanabi.png@f9941",
-    "value": {
-      "depends": [
-        "e4498d26-fd8e-4fb7-9786-f966547e36de@6c48a"
-      ]
-    }
-  },
-  "b40d2158-e53d-4898-9194-aa6fca835dd2@f9941": {
-    "url": "db://assets/Texture/UI/choiceFrame.png@f9941",
-    "value": {
-      "depends": [
-        "b40d2158-e53d-4898-9194-aa6fca835dd2@6c48a"
+        "a357ba04-c973-4167-b5ba-afac2859d639@6c48a"
       ]
     }
   },
@@ -1063,34 +1087,12 @@
       ]
     }
   },
-  "1e6d20ce-ec65-43d3-b1eb-47fbd22579a8": {
-    "url": "db://assets/Texture/UI/AnswerFrameLiver.png",
-    "value": {
-      "depends": []
-    }
-  },
-  "1e6d20ce-ec65-43d3-b1eb-47fbd22579a8@6c48a": {
-    "url": "db://assets/Texture/UI/AnswerFrameLiver.png@6c48a",
+  "e4498d26-fd8e-4fb7-9786-f966547e36de@f9941": {
+    "url": "db://assets/Texture/Effect/hanabi.png@f9941",
     "value": {
       "depends": [
-        "1e6d20ce-ec65-43d3-b1eb-47fbd22579a8"
+        "e4498d26-fd8e-4fb7-9786-f966547e36de@6c48a"
       ]
     }
-  },
-  "1e6d20ce-ec65-43d3-b1eb-47fbd22579a8@f9941": {
-    "url": "db://assets/Texture/UI/AnswerFrameLiver.png@f9941",
-    "value": {
-      "depends": [
-        "1e6d20ce-ec65-43d3-b1eb-47fbd22579a8@6c48a"
-      ]
-    }
-  },
-  "c39dd70a-6524-4ce4-93c9-631c662d9b3b": {
-    "url": "db://assets/Script/Game/Quiz/ActQuiz.ts",
-    "value": {}
-  },
-  "7362c783-f18f-4b91-a2f8-4a0cb87d0055": {
-    "url": "db://assets/Script/Game/Quiz/PersonalQuiz.ts",
-    "value": {}
   }
 }
