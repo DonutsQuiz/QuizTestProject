@@ -3,6 +3,7 @@ import { ClientMode, GameManager } from '../Manager/GameManager';
 import { QuizManager } from '../Manager/QuizManager';
 import { QuizModalManager } from '../Manager/QuizModalManager';
 import { RetryModal } from './RetryModal';
+import { ScrollAnim } from '../../EffectAnim/ScrollAnim';
 const { ccclass, property } = _decorator;
 
 class UserInfomation{
@@ -42,6 +43,8 @@ export class OverallResultModal extends Component {
     private rankLabel : Label = null;
     @property(RetryModal) // 確認モーダル
     private retryModal : RetryModal = null;
+    @property(ScrollAnim) // ランキングのスクロールアニメーション
+    private scrollAnim : ScrollAnim = null;
 
     private userList : Array<UserInfomation> = new Array<UserInfomation>();
     private displayNumber : number = 10;
@@ -88,6 +91,7 @@ export class OverallResultModal extends Component {
             }
             this.retryModal.Reset();
         }
+        this.scrollAnim.Play();
     }
 
     private ChangeRanking(){
@@ -115,6 +119,8 @@ export class OverallResultModal extends Component {
         this.isRoundEnd = false;
         this.isResultDisply = false;
         this.debugClientMode = 'Liver';
+
+        this.scrollAnim.Reset();
     }
 
     public SetUI(){
