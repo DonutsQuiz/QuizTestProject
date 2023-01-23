@@ -7,15 +7,15 @@ export class RetryModal extends Component {
     @property(Node)
     private self : Node = null;
     @property(Button)
-    private cancelBurron : Button = null;
+    private cancelButton : Button = null;
     @property(Button)
     private retryButton : Button = null;
 
     private isRetry : boolean = false;
     private isDecide : boolean = false;
 
-    start() {
-        this.cancelBurron.node.on(Button.EventType.CLICK, function(){this.isDecide = true; this.isRetry = false; this.self.active = false;}, this);
+    public Constructor(){
+        this.cancelButton.node.on(Button.EventType.CLICK, function(){this.isDecide = true; this.isRetry = false; this.self.active = false;}, this);
         this.retryButton.node.on(Button.EventType.CLICK, function(){this.isDecide = true; this.isRetry = true; this.self.active = false;}, this);
     }
 

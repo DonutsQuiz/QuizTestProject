@@ -90,12 +90,6 @@ export class ResultModal extends Component {
         else if(ansnum === 3){
             this.answerSentence.string += "D";
         }
-        else if(ansnum === 4){
-            this.answerSentence.string += "E";
-        }
-        else if(ansnum === 5){
-            this.answerSentence.string += "F";
-        }
         this.answerSentence.string += "!!!";
     }
 

@@ -22,10 +22,12 @@ export class GameInformation{
     thinkTime : number = 0; // 制限時間
 
     // ランキング
-    rankUserName : Array<string> = new Array<string>(); // ユーザー名
-    rankUserAcqPoint : Array<number> = new Array<number>(); // 獲得ポイント
-    rankUserBetPoint : Array<number> = new Array<number>(); // ベットポイント
-    rankTopSprite : SpriteFrame = null; // 一位のアイコン画像
+    rankName : Array<string> = new Array<string>(); // ユーザー名
+    rankAcqPoint : Array<number> = new Array<number>(); // 獲得ポイント (クイズごと)
+    rankBetPoint : Array<number> = new Array<number>(); // ベットポイント (クイズごと)
+    rankTotalAcqPoint : Array<number> = new Array<number>(); // 総合獲得ポイント
+    rankSprite : SpriteFrame[] = [null, null, null]; // 1位~3位のアイコン画像
+
 
 
     public DebugInit(){

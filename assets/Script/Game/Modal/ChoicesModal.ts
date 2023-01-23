@@ -182,8 +182,7 @@ export class ChoicesModal extends Component {
         this.isNext = true;
         this.resultModal.node.active = false;
         this.betModal.SetIsDecide(false);
-        QuizModalManager.Instance().ChangeModal('Question');
-        QuizModalManager.Instance().GetResultModal().SetCoinLabel("400");
+        QuizModalManager.Instance().ChangeModal('Overall');
     }
 
     // ボタンを押せないようにする

@@ -676,7 +676,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 206.31,
+      "width": 115,
       "height": 25.2
     },
     "_anchorPoint": {
@@ -691,7 +691,7 @@
     "fileId": "a0sGpoJllIzIyR6a4he3EN"
   },
   {
-    "__type__": "cc.Label",
+    "__type__": "cc.RichText",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -701,38 +701,24 @@
     "__prefab": {
       "__id__": 29
     },
-    "_customMaterial": null,
-    "_srcBlendFactor": 2,
-    "_dstBlendFactor": 4,
-    "_color": {
-      "__type__": "cc.Color",
-      "r": 0,
-      "g": 0,
-      "b": 0,
-      "a": 255
-    },
-    "_string": "あなたは誰ですか？",
+    "_lineHeight": 20,
+    "_string": "<color=#00ff00>こんにちは</color>",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
-    "_actualFontSize": 23,
     "_fontSize": 23,
+    "_maxWidth": 0,
     "_fontFamily": "Arial",
-    "_lineHeight": 20.1,
-    "_overflow": 0,
-    "_enableWrapText": true,
     "_font": null,
     "_isSystemFontUsed": true,
-    "_spacingX": 0,
-    "_isItalic": false,
-    "_isBold": false,
-    "_isUnderline": false,
-    "_underlineHeight": 2,
+    "_userDefinedFont": null,
     "_cacheMode": 0,
+    "_imageAtlas": null,
+    "_handleTouchEvent": true,
     "_id": ""
   },
   {
     "__type__": "cc.CompPrefabInfo",
-    "fileId": "d0iI65hfdHcadkDZMELNpF"
+    "fileId": "3dT6ShVgJM7qtkWXJDmpcA"
   },
   {
     "__type__": "cc.PrefabInfo",

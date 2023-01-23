@@ -71,6 +71,7 @@ export class QuizModalManager extends Component {
         temp.setParent(this.canvas);
         temp.active = false;
         this.overall = temp.getComponent(OverallResultModal);
+        this.overall.Constructor();
     }
 
     update(deltaTime: number) {
@@ -96,6 +97,8 @@ export class QuizModalManager extends Component {
             this.question.node.active = false;
             this.choices.node.active = false;
             this.overall.node.active = true;
+            this.overall.Initialize();
+            this.overall.SetUI();
         }
 
         this.debugNowType = nextType;

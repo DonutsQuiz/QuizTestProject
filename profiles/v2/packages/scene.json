@@ -56,8 +56,8 @@
     },
     "6d9866d9-a192-4526-a2a7-a9e7b61f341b": {
       "position": {
-        "x": 147.49999999999994,
-        "y": 271.32500000000005,
+        "x": 183.10587906636988,
+        "y": 387.71289814964274,
         "z": 5000
       },
       "rotation": {
@@ -92,7 +92,7 @@
     }
   },
   "camera-uuids": [
-    "6d9866d9-a192-4526-a2a7-a9e7b61f341b"
+    "f46876e4-e81b-4931-b493-6d367be385e7"
   ],
   "float-window": {
     "position": {
@@ -108,7 +108,7 @@
     }
   },
   "game-view": {
-    "scaleValue": 78,
-    "sliderValue": 38
+    "scaleValue": 136,
+    "sliderValue": 56
   }
 }

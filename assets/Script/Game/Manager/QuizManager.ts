@@ -47,7 +47,7 @@ export class QuizManager extends Component {
         // 全問題が終了したら総合結果に移行する
         if(QuizModalManager.Instance().GetChoicesModal().isNext){
             if(GameManager.Instance().GetGameInfo().qNumber >= this.raundMax){
-                QuizModalManager.Instance().ChangeModal('Overall');
+                QuizModalManager.Instance().GetOverallResultModal().SetIsRoundEnd(true);
                 GameManager.Instance().GetGameInfo().DebugInit();
             }
             else{
