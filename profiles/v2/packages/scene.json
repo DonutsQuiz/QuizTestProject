@@ -56,8 +56,8 @@
     },
     "6d9866d9-a192-4526-a2a7-a9e7b61f341b": {
       "position": {
-        "x": 177.6293094042996,
-        "y": 215.67029254135275,
+        "x": 187.5,
+        "y": 333.5,
         "z": 5000
       },
       "rotation": {
@@ -107,10 +107,46 @@
         "y": 0,
         "z": 0
       }
+    },
+    "2cccaGE59BUacF0QiBRhIZ": {
+      "position": {
+        "x": -7.577499999999873,
+        "y": 656.25,
+        "z": 5000
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "w": 1
+      },
+      "viewCenter": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    "82OorNhsJNaLgOJp52Zm1p": {
+      "position": {
+        "x": -7.577499999999873,
+        "y": 656.25,
+        "z": 5000
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "w": 1
+      },
+      "viewCenter": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
     }
   },
   "camera-uuids": [
-    "6d9866d9-a192-4526-a2a7-a9e7b61f341b"
+    "82OorNhsJNaLgOJp52Zm1p"
   ],
   "float-window": {
     "position": {

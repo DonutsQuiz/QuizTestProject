@@ -1,5 +1,6 @@
 import { _decorator, Component, Node, Button, Label, SpriteFrame, Sprite, Vec3,RichText } from 'cc';
 import { ChipControll } from '../../EffectAnim/ChipControll';
+import { TimeUpAnim } from '../../EffectAnim/TimeUpAnim';
 import { Timer } from '../../UI/Timer';
 import { ClientMode, GameManager } from '../Manager/GameManager';
 import { QuizManager } from '../Manager/QuizManager';
@@ -51,6 +52,8 @@ export class ChoicesModal extends Component {
     timer : Timer = null;
     @property(ChipControll)
     chipAnim : ChipControll = null;
+    @property(TimeUpAnim)
+    timeUpAnim : TimeUpAnim = null;
 
     choiceNumber : number = -1;
     private tempNumber : number = 0;
@@ -79,6 +82,7 @@ export class ChoicesModal extends Component {
 
         // 時間切れの処理
         if(this.timer.GetIsFinish()){
+            this.timeUpAnim.Play();
             this.resultButton.node.active = true;
             for(const odds of this.oddsLabelList){
                 odds.node.active = true;
@@ -179,6 +183,7 @@ export class ChoicesModal extends Component {
 
     private Next(){
         this.timer.Reset();
+        this.timeUpAnim.AnimationReset();
         this.isNext = true;
         this.resultModal.node.active = false;
         this.betModal.SetIsDecide(false);
