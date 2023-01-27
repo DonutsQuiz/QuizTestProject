@@ -3,6 +3,13 @@ import { QuizData } from '../Quiz/Data/QuizData';
 import { QuizType } from '../Quiz/QuizComponent';
 const { ccclass, property } = _decorator;
 
+export class RankingInfo{
+    mName : string = "";
+    mPoint : number = 0;
+    mBet : number = 0;
+    mTotalPoint : number = 0;
+}
+
 @ccclass('GameInformation')
 export class GameInformation{
 
@@ -28,17 +35,11 @@ export class GameInformation{
     rankTotalAcqPoint : Array<number> = new Array<number>(); // 総合獲得ポイント
     rankSprite : SpriteFrame[] = [null, null, null]; // 1位~3位のアイコン画像
 
+    ranking : Array<RankingInfo> = new Array<RankingInfo>(); //現在のランキング
+    lastMonthRanking : Array<RankingInfo> = new Array<RankingInfo>(); // 先月のランキング
 
-
-    public DebugInit(){
-        this.qNumber = 0;
-        this.qSentenceLiver = "";
-        this.qCorNumber = 0;
-        this.qSentence = ["", "", "", ""];
-        this.totalBet = [100, 100, 100, 100];
-        this.odds = [1, 1, 1, 1];
-        this.coins = 20000;
-        this.thinkTime = 600;
-    }
+    liverName : string = ""; //ライバーの名前
+    subTitle : string = ""; // サブタイトル
+    topIndex : number = -1; // 一位のプレイヤーの添字
 }
 

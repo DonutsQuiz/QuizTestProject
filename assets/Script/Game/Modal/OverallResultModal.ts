@@ -6,7 +6,7 @@ import { RetryModal } from './RetryModal';
 import { ScrollAnim } from '../../EffectAnim/ScrollAnim';
 const { ccclass, property } = _decorator;
 
-class UserInfomation{
+export class UserInfomation{
     constructor(name : string, coin : number, bet : number, point : number){
         this.mName = name;
         this.mCoin = coin;
@@ -55,8 +55,6 @@ export class OverallResultModal extends Component {
     private debugClientMode : ClientMode = 'Liver';
 
     public Constructor(){
-        this.TestPlayerInfo();
-
         this.retryModal.Constructor();
 
         this.nextRoundButton.node.on(Button.EventType.CLICK, this.ClickRetryModal, this);
@@ -67,20 +65,7 @@ export class OverallResultModal extends Component {
         this.rankChangeButton.node.on(Button.EventType.CLICK, this.ChangeRanking, this);    
     }
 
-    // start() {
-    //     this.TestPlayerInfo();
-
-    //     this.nextRoundButton.node.on(Button.EventType.CLICK, this.ClickRetryModal, this);
-    //     this.nextQuizButton.node.on(Button.EventType.CLICK, this.ClickNextQuizButton, this);
-    //     this.resultButton.node.on(Button.EventType.CLICK, this.ClickResultButton, this);
-    //     this.resultButton.node.active = false;
-
-    //     this.rankChangeButton.node.on(Button.EventType.CLICK, this.ChangeRanking, this);        
-
-    // }
-
-    update(deltaTime: number) {
-
+    public OnUpdate(deltaTime: number){
         if(this.retryModal.GetIsDecide()){
             if(this.retryModal.GetIsRetry()){
                 QuizModalManager.Instance().ChangeModal('Question');
@@ -119,6 +104,14 @@ export class OverallResultModal extends Component {
         this.isRoundEnd = false;
         this.isResultDisply = false;
         this.debugClientMode = 'Liver';
+
+        for(var i = 0; i < GameManager.Instance().GetGameInfo().ranking.length; i++){
+            this.userList.push(new UserInfomation("",0,0,0));
+            this.userList[i].mName       = GameManager.Instance().GetGameInfo().ranking[i].mName;
+            this.userList[i].mBet        = GameManager.Instance().GetGameInfo().ranking[i].mBet;
+            this.userList[i].mCoin       = GameManager.Instance().GetGameInfo().ranking[i].mPoint;
+            this.userList[i].mTotalPoint = GameManager.Instance().GetGameInfo().ranking[i].mTotalPoint;
+        }
 
         this.scrollAnim.Reset();
     }
@@ -193,29 +186,6 @@ export class OverallResultModal extends Component {
     public SetIsRoundEnd(is : boolean){
         this.isRoundEnd = is;
         this.SetUI();
-    }
-
-
-
-
-    private TestPlayerInfo(){
-        this.userList.push(new UserInfomation("パンダ",   20000, 5000, 35000));
-        this.userList.push(new UserInfomation("キリン",    19000, 3000, 62000));
-        this.userList.push(new UserInfomation("マングース", 18000, 1000, 18000));
-        this.userList.push(new UserInfomation("インパラ",   17000, 6000, 49000));
-        this.userList.push(new UserInfomation("シロクマ",   16000, 2000, 21000));
-        this.userList.push(new UserInfomation("ライオン",   15000, 8000, 74000));
-        this.userList.push(new UserInfomation("サイ",      14000, 10000, 91000));
-        this.userList.push(new UserInfomation("ゾウ",      13000, 9000, 95000));
-        this.userList.push(new UserInfomation("カメレオン", 12000, 4000, 39000));
-        this.userList.push(new UserInfomation("サメ",      11000, 7000, 24000));
-
-        for(var i = 0; i < 10; i++){
-            GameManager.Instance().GetGameInfo().rankName[i] = this.userList[i].mName
-            GameManager.Instance().GetGameInfo().rankAcqPoint[i] = this.userList[i].mCoin;
-            GameManager.Instance().GetGameInfo().rankBetPoint[i] = this.userList[i].mBet;
-            GameManager.Instance().GetGameInfo().rankTotalAcqPoint[i] = this.userList[i].mTotalPoint;
-        }
     }
 }
 

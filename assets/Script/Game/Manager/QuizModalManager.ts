@@ -2,16 +2,21 @@ import { _decorator, Component, Node, instantiate, Prefab, Canvas, Button, Label
 import { ChoicesModal } from '../Modal/ChoicesModal';
 import { OverallResultModal } from '../Modal/OverallResultModal';
 import { QuestionModal } from '../Modal/QuestionModal';
+import { RankingModal } from '../Modal/RankingModal';
 import { ResultModal } from '../Modal/ResultModal';
+import { RuleModal } from '../Modal/RuleModal';
+import { TitleModal } from '../Modal/TitleModal';
 import { WaitModal } from '../Modal/WaitModal';
 import { ClientMode, GameManager } from './GameManager';
 const { ccclass, property } = _decorator;
 
 const ModalType = {
     None     : 'None',
+    Title    : 'Title',
+    Rule     : 'Rule',
+    Ranking  : 'Ranking',
     Question : 'Question',
     Choices  : 'Choices',
-    Result   : 'Result',
     Overall  : 'Overall',
 } as const;
 
@@ -33,39 +38,60 @@ export class QuizModalManager extends Component {
     @property(Node)
     canvas : Node = null;
     @property(Prefab)
+    private titlePrefab : Prefab = null;
+    @property(Prefab)
+    private rulePrefab : Prefab = null;
+    @property(Prefab)
+    private rankingPrefab : Prefab = null;
+    @property(Prefab)
     private questionPrefab : Prefab = null;
     @property(Prefab)
     private choicesPrefab : Prefab = null;
     @property(Prefab)
-    private resultPrefab : Prefab = null;
-    @property(Prefab)
     private overallPrefab : Prefab = null;
 
+    private title : TitleModal = null;
+    private rule : RuleModal = null;
+    private ranking : RankingModal = null;
     private question : QuestionModal = null;
     private choices : ChoicesModal = null;
-    private result : ResultModal = null;
     private overall : OverallResultModal = null;
 
     private debugClientMode : ClientMode = 'Liver';
-    private debugNowType : ModalType = 'Question';
+    private nowType : ModalType = 'Title';
 
-    start() {
+    public Constructor(){
         QuizModalManager.instance = this;
 
-        var temp = instantiate(this.questionPrefab);
+        var temp = instantiate(this.titlePrefab);
+        temp.setParent(this.canvas);
+        temp.active = false;
+        this.title = temp.getComponent(TitleModal);
+        this.title.Constructor();
+
+        temp = instantiate(this.rulePrefab);
+        temp.setParent(this.canvas);
+        temp.active = false;
+        this.rule = temp.getComponent(RuleModal);
+        this.rule.Constructor();
+
+        temp = instantiate(this.rankingPrefab);
+        temp.setParent(this.canvas);
+        temp.active = false;
+        this.ranking = temp.getComponent(RankingModal);
+        this.ranking.Constructor();
+
+        temp = instantiate(this.questionPrefab);
         temp.setParent(this.canvas);
         temp.active = false;
         this.question = temp.getComponent(QuestionModal);
+        this.question.Constructor();
 
         temp = instantiate(this.choicesPrefab);
         temp.setParent(this.canvas);
         temp.active = false;
         this.choices = temp.getComponent(ChoicesModal);
-
-        temp = instantiate(this.resultPrefab);
-        temp.setParent(this.canvas);
-        temp.active = false;
-        this.result = temp.getComponent(ResultModal);
+        this.choices.Constructor();
 
         temp = instantiate(this.overallPrefab);
         temp.setParent(this.canvas);
@@ -74,34 +100,59 @@ export class QuizModalManager extends Component {
         this.overall.Constructor();
     }
 
-    update(deltaTime: number) {
-        //this.DebugClientMode();
+    public OnUpdate(deltaTime : number){
+        if(this.nowType === 'Title'){
+            this.title.OnUpdate(deltaTime);
+        }
+        else if(this.nowType === 'Rule'){
+            this.rule.OnUpdate(deltaTime);
+        }
+        else if(this.nowType === 'Ranking'){
+            this.rule.OnUpdate(deltaTime);
+        }
+        else if(this.nowType === 'Question'){
+            this.question.OnUpdate(deltaTime);
+        }
+        else if(this.nowType === 'Choices'){
+            this.choices.OnUpdate(deltaTime);
+        }
+        else if(this.nowType === 'Overall'){
+            this.overall.OnUpdate(deltaTime);
+        }
     }
 
-    OnUpdate(deltaTime : number){}
-
     public ChangeModal(nextType : ModalType){
-        if(nextType === 'Question'){
-            this.choices.node.active = false;
-            this.result.node.active = false;
-            this.overall.node.active = false;
+        this.title.node.active = false;
+        this.rule.node.active = false;
+        this.ranking.node.active = false;
+        this.question.node.active = false;
+        this.choices.node.active = false;
+        this.overall.node.active = false;
+
+        if(nextType === 'Title'){
+            this.title.node.active = true;
+        }
+        else if(nextType === 'Rule'){
+            this.rule.node.active = true;
+        }
+        else if(nextType === 'Ranking'){
+            this.ranking.node.active = true;
+        }
+        else if(nextType === 'Question'){
             this.question.node.active = true;
             this.question.Initialize(GameManager.Instance().GetGameInfo().qType);
         }
         else if(nextType === 'Choices'){
-            this.question.node.active = false;
             this.choices.node.active = true;            
             this.choices.Initialize();
         }
         else if(nextType === 'Overall'){
-            this.question.node.active = false;
-            this.choices.node.active = false;
             this.overall.node.active = true;
             this.overall.Initialize();
             this.overall.SetUI();
         }
 
-        this.debugNowType = nextType;
+        this.nowType = nextType;
     }
 
     public Reset(){
@@ -113,9 +164,6 @@ export class QuizModalManager extends Component {
     }
     public GetChoicesModal() : ChoicesModal{
         return this.choices;
-    }
-    public GetResultModal() : ResultModal{
-        return this.result;
     }
     public GetOverallResultModal() : OverallResultModal{
         return this.overall;

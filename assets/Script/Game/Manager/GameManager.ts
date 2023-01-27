@@ -1,6 +1,8 @@
-import { _decorator, Component, Node, Button, Label, Game } from 'cc';
-import { GameInformation } from './GameInformation';
+import { _decorator, Component, Node, Button, Label, Game, game } from 'cc';
+import { UserInfomation } from '../Modal/OverallResultModal';
+import { GameInformation, RankingInfo } from './GameInformation';
 import { QuizManager } from './QuizManager';
+import { QuizModalManager } from './QuizModalManager';
 const { ccclass, property } = _decorator;
 
 const ClientMode = {
@@ -25,6 +27,8 @@ export class GameManager extends Component {
 
     @property(QuizManager) //クイズマネージャー
     quizManager : QuizManager = null;
+    @property(QuizModalManager) // モーダルマネージャー
+    modalManager : QuizModalManager = null;
 
     @property(Button) // ライバーとユーザーを変えるボタン
     private clientButton : Button = null;
@@ -37,11 +41,16 @@ export class GameManager extends Component {
     start() {
         GameManager.instance = this;
         this.clientButton.node.on(Button.EventType.CLICK, this.ChangeClientMode, this);
-        this.gameInformation.DebugInit();
+
+        this.DebugConstractor();
+
+        this.modalManager.Constructor();
+
     }
 
     update(deltaTime: number) {
         this.quizManager.OnUpdate();
+        this.modalManager.OnUpdate(deltaTime);
     }
 
     // ライバーとユーザーの切り替え(デバッグ用)
@@ -62,6 +71,75 @@ export class GameManager extends Component {
 
     public GetGameInfo() : GameInformation{
         return this.gameInformation;
+    }
+
+
+
+
+
+    private DebugConstractor(){
+
+        // ランキング情報
+        var userList : Array<UserInfomation> = new Array<UserInfomation>();
+        userList.push(new UserInfomation("パンダ",   20000, 5000, 35000));
+        userList.push(new UserInfomation("キリン",    19000, 3000, 62000));
+        userList.push(new UserInfomation("マングース", 18000, 1000, 18000));
+        userList.push(new UserInfomation("インパラ",   17000, 6000, 49000));
+        userList.push(new UserInfomation("シロクマ",   16000, 2000, 21000));
+        userList.push(new UserInfomation("ライオン",   15000, 8000, 74000));
+        userList.push(new UserInfomation("サイ",      14000, 10000, 91000));
+        userList.push(new UserInfomation("ゾウ",      13000, 9000, 95000));
+        userList.push(new UserInfomation("カメレオン", 12000, 4000, 39000));
+        userList.push(new UserInfomation("サメ",      11000, 7000, 24000));
+
+        for(var i = 0; i < 10; i++){
+            GameManager.Instance().GetGameInfo().ranking.push(new RankingInfo());
+            GameManager.Instance().GetGameInfo().ranking[i].mName       = userList[i].mName;
+            GameManager.Instance().GetGameInfo().ranking[i].mBet        = userList[i].mBet;
+            GameManager.Instance().GetGameInfo().ranking[i].mPoint      = userList[i].mCoin;
+            GameManager.Instance().GetGameInfo().ranking[i].mTotalPoint = userList[i].mTotalPoint;
+
+            GameManager.Instance().GetGameInfo().rankName[i] = userList[i].mName
+            GameManager.Instance().GetGameInfo().rankAcqPoint[i] = userList[i].mCoin;
+            GameManager.Instance().GetGameInfo().rankBetPoint[i] = userList[i].mBet;
+            GameManager.Instance().GetGameInfo().rankTotalAcqPoint[i] = userList[i].mTotalPoint;
+        }
+
+        GameManager.Instance().GetGameInfo().rankSprite = [null, null, null];
+
+
+        GameManager.Instance().GetGameInfo().totalBet = [100, 100, 100, 100];
+        GameManager.Instance().GetGameInfo().odds = [1, 1, 1, 1];
+        GameManager.Instance().GetGameInfo().coins = 20000;
+        GameManager.Instance().GetGameInfo().thinkTime = 600;
+
+
+        GameManager.Instance().GetGameInfo().liverName = "ライオン";
+        GameManager.Instance().GetGameInfo().subTitle = "私のこと知ってる？";
+        GameManager.Instance().GetGameInfo().topIndex = 0;
+
+
+        var lasttemp = new RankingInfo();
+        lasttemp.mName = "ささき";
+        lasttemp.mBet = 10000;
+        lasttemp.mPoint = 999000;
+        GameManager.Instance().GetGameInfo().lastMonthRanking.push(lasttemp);
+        lasttemp = new RankingInfo();
+        lasttemp.mName = "こんどう";
+        lasttemp.mBet = 20000;
+        lasttemp.mPoint = 872000;
+        GameManager.Instance().GetGameInfo().lastMonthRanking.push(lasttemp);
+        lasttemp = new RankingInfo();
+        lasttemp.mName = "さいとう";
+        lasttemp.mBet = 30000;
+        lasttemp.mPoint = 642000;
+        GameManager.Instance().GetGameInfo().lastMonthRanking.push(lasttemp);
+        lasttemp = new RankingInfo();
+        lasttemp.mName = "やました";
+        lasttemp.mBet = 40000;
+        lasttemp.mPoint = 311000;
+        GameManager.Instance().GetGameInfo().lastMonthRanking.push(lasttemp);
+
     }
 }
 

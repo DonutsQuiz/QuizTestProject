@@ -48,7 +48,6 @@ export class QuizManager extends Component {
         if(QuizModalManager.Instance().GetChoicesModal().isNext){
             if(GameManager.Instance().GetGameInfo().qNumber >= this.raundMax){
                 QuizModalManager.Instance().GetOverallResultModal().SetIsRoundEnd(true);
-                GameManager.Instance().GetGameInfo().DebugInit();
             }
             else{
                 // デバッグ
@@ -84,6 +83,7 @@ export class QuizManager extends Component {
     // 出題
     private QuestionPhase(){
         console.log(this.quizComponent);
+        QuizModalManager.Instance().ChangeModal('Title');
         this.quizComponent.Initialize();
         this.quizComponent.SetQuiz();
     }

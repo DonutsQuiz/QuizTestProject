@@ -58,7 +58,8 @@ export class ChoicesModal extends Component {
 
     isNext : boolean = false;
 
-    start() {
+
+    public Constructor(){
         this.buttonList[0].node.on(Button.EventType.CLICK, function(){this.Choice(0);}, this);
         this.buttonList[1].node.on(Button.EventType.CLICK, function(){this.Choice(1);}, this);
         this.buttonList[2].node.on(Button.EventType.CLICK, function(){this.Choice(2);}, this);
@@ -67,7 +68,7 @@ export class ChoicesModal extends Component {
         this.resultButton.node.on( Button.EventType.CLICK, this.ShowResult, this);
     }
 
-    update(deltaTime: number) {
+    public OnUpdate(deltaTime: number){
         this.DebugModalUpdate();
 
         this.timer.Display();

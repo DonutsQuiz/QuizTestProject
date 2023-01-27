@@ -38,11 +38,12 @@ export class QuestionModal extends Component {
     @property(StartControll)
     startAnim : StartControll = null;
 
-    start() {
+
+    public Constructor(){
         this.qStartB.node.on(Button.EventType.CLICK, this.Next,this);
     }
 
-    update(deltaTime: number) {
+    public OnUpdate(deltaTime: number){
         this.DebugModalUpdate();
 
         if(this.isNext){
@@ -85,7 +86,6 @@ export class QuestionModal extends Component {
 
         this.debugQuizMode = qtype;
 
-        this.node.active = true;
         this.liverNode.active = true;
         this.qNumber.node.active = true;
         this.qSentence.node.active = true;
