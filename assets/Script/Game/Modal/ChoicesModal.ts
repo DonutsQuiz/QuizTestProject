@@ -170,7 +170,7 @@ export class ChoicesModal extends Component {
         this.choiceNumber = this.tempNumber;
         this.userAnswerFrameSprite.active = true;
         this.userAnswerFrameSprite.position = new Vec3(this.buttonList[this.choiceNumber].node.position);
-        if(this.betModal.getIsPushedDecideButton()) this.chipAnim.Play(this.choiceNumber);
+        if(this.betModal.getIsPushedDecideButton()) this.chipAnim.Play(this.choiceNumber, this.betModal.GetBetValue());
     }
 
     // 正解表示
@@ -182,6 +182,7 @@ export class ChoicesModal extends Component {
     }
 
     private Next(){
+        this.chipAnim.Reset();
         this.timer.Reset();
         this.timeUpAnim.AnimationReset();
         this.isNext = true;
