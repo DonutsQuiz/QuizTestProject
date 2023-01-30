@@ -1,6 +1,7 @@
-import { _decorator, Component, Node, Label, Button, Vec2, Vec3, SpriteFrame, Sprite, RichText } from 'cc';
+import { _decorator, Component, Node, Label, Button, Vec2, Vec3, SpriteFrame, Sprite, RichText, Game } from 'cc';
 import { StartControll } from '../../EffectAnim/StartControll';
 import { ClientMode, GameManager } from '../Manager/GameManager';
+import { QuizManager } from '../Manager/QuizManager';
 import { QuizModalManager } from '../Manager/QuizModalManager';
 import { QuizType } from '../Quiz/QuizComponent';
 const { ccclass, property } = _decorator;
@@ -14,8 +15,6 @@ export class QuestionModal extends Component {
     qNumber : Label = null;
     @property(RichText)
     qSentence : RichText = null;
-    @property(Label)
-    qSelect : Label = null;
     @property(Node)
     qImageFrame : Node = null;
     @property(Sprite)
@@ -24,11 +23,14 @@ export class QuestionModal extends Component {
     qStartB : Button = null;
     @property(Button)
     qSelectB : Array<Button> = new Array<Button>();
+    @property(Label)
+    qSelectSent : Array<Label> = new Array<Label>();
     @property(Node)
     private userNode : Node = null;
 
     private debugClientMode : ClientMode = 'Liver';
     private debugQuizMode : QuizType = 'None';
+    private isSelect : number = -1; // 答えの番号
 
     private changeDelay : number = 0.0; // 演出用の時間
     @property(Number)
@@ -41,10 +43,19 @@ export class QuestionModal extends Component {
 
     public Constructor(){
         this.qStartB.node.on(Button.EventType.CLICK, this.Next,this);
+        this.qSelectB[0].node.on(Button.EventType.CLICK, function(){this.isSelect = 0;},this);
+        this.qSelectB[1].node.on(Button.EventType.CLICK, function(){this.isSelect = 1;},this);
+        this.qSelectB[2].node.on(Button.EventType.CLICK, function(){this.isSelect = 2;},this);
+        this.qSelectB[3].node.on(Button.EventType.CLICK, function(){this.isSelect = 3;},this);
     }
 
     public OnUpdate(deltaTime: number){
         this.DebugModalUpdate();
+
+        if(this.isSelect >= 0){
+            GameManager.Instance().GetGameInfo().qCorNumber = this.isSelect;
+            this.qStartB.node.active = true;
+        }
 
         if(this.isNext){
             this.changeDelay -= deltaTime;
@@ -65,16 +76,16 @@ export class QuestionModal extends Component {
     }
 
     public SetNumber(num : number){
-        this.qNumber.string = "第" + num.toString() + "問"; 
+        this.qNumber.string = num.toString() + " / " + QuizManager.Instance().raundMax + "問";
     }
 
     public SetSentence(sent : string){
-        this.qSentence.string = "<color=#000000>" + sent + "</color>";
+        this.qSentence.string = sent;
     }
 
     public SetSelect(sele : Array<string>){
         for(const sent in sele){
-            this.qSelect.string += sent;
+            // this.qSelect.string += sent;
         }
     }
 
@@ -82,7 +93,7 @@ export class QuestionModal extends Component {
         this.qSpriteFrame.spriteFrame = sprite;
     }
 
-    public Initialize(qtype : QuizType){
+    public SetUI(qtype : QuizType){
 
         this.debugQuizMode = qtype;
 
@@ -90,7 +101,6 @@ export class QuestionModal extends Component {
         this.qNumber.node.active = true;
         this.qSentence.node.active = true;
 
-        this.qSelect.node.active = false;
         this.qImageFrame.active = false;
         this.qSpriteFrame.node.active = false;
         this.qStartB.node.active = false;
@@ -100,7 +110,6 @@ export class QuestionModal extends Component {
         if(qtype === 'Gesture'){    // ジェスチャー
             if(GameManager.Instance().GetClientMode() === 'Liver'){
                 this.qSentence.node.setPosition(new Vec3(0,75,0));
-                this.qSentence.fontSize = 23;
                 this.qImageFrame.active = true;
                 this.qSpriteFrame.node.active = true;
                 this.qStartB.node.active = true;
@@ -117,9 +126,17 @@ export class QuestionModal extends Component {
             this.qStartB.node.active = true;
         }
         else if(qtype === 'Personal'){   // クイズ
-            this.qSentence.node.setPosition(new Vec3(0,75,0));
-            this.qSelect.node.active = true;
-            this.qSelectB.forEach(element => {element.node.active = true;});
+            this.qSentence.node.setPosition(new Vec3(0,25,0));
+            //this.qSelectB.forEach(element => {element.node.active = true;});
+            var sele : string = "";
+            for(var i = 0; i < QuizManager.Instance().GetChoiceMax(); i++){
+                this.qSelectB[i].node.active = true;
+                if(i === 0)sele = "A.";
+                if(i === 1)sele = "B.";
+                if(i === 2)sele = "C.";
+                if(i === 3)sele = "D.";
+                this.qSelectSent[i].string = sele + GameManager.Instance().GetGameInfo().qParSelect[i];
+            }
         }
     }
 
@@ -130,8 +147,7 @@ export class QuestionModal extends Component {
             this.liverNode.active = true;
             this.qNumber.node.active = true;
             this.qSentence.node.active = true;
-    
-            this.qSelect.node.active = false;
+
             this.qImageFrame.active = false;
             this.qSpriteFrame.node.active = false;
             this.qStartB.node.active = false;
@@ -141,7 +157,6 @@ export class QuestionModal extends Component {
             if(this.debugQuizMode === 'Gesture'){    // ジェスチャー
                 if(GameManager.Instance().GetClientMode() === 'Liver'){
                     this.qSentence.node.setPosition(new Vec3(0,75,0));
-                    this.qSentence.fontSize = 23;
                     this.qImageFrame.active = true;
                     this.qSpriteFrame.node.active = true;
                     this.qStartB.node.active = true;
@@ -158,9 +173,16 @@ export class QuestionModal extends Component {
                 this.qStartB.node.active = true;
             }
             else if(this.debugQuizMode === 'Personal'){   // クイズ
-                this.qSentence.node.setPosition(new Vec3(0,75,0));
-                this.qSelect.node.active = true;
+                this.qSentence.node.setPosition(new Vec3(0,25,0));
                 this.qSelectB.forEach(element => {element.node.active = true;});
+                var sele : string = "";
+                for(var i = 0; i < QuizManager.Instance().GetChoiceMax(); i++){
+                    if(i === 0)sele = "A.";
+                    if(i === 1)sele = "B.";
+                    if(i === 2)sele = "C.";
+                    if(i === 3)sele = "D.";
+                    this.qSelectSent[i].string = sele + GameManager.Instance().GetGameInfo().qParSelect[i];
+                }
             }
         }
 

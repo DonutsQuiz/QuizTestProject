@@ -311,7 +311,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 300,
+      "width": 325,
       "height": 50
     },
     "_anchorPoint": {
@@ -352,7 +352,7 @@
     },
     "_type": 0,
     "_fillType": 0,
-    "_sizeMode": 1,
+    "_sizeMode": 0,
     "_fillCenter": {
       "__type__": "cc.Vec2",
       "x": 0,
@@ -409,7 +409,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": -25,
+      "y": -40,
       "z": 0
     },
     "_lrot": {
@@ -495,7 +495,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 1102.08,
+      "width": 1170.96,
       "height": 592.64
     },
     "_anchorPoint": {
@@ -533,8 +533,8 @@
     "_string": "これから５問の４択問題が出題されます。\n\n出題されたお題に対して、私が何を選択したのかを\nメダルでBETしてください。\n\n正解するとBET\nに応じて点数が入ります！！\n\n私のことを一番知っているのは誰？",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
-    "_actualFontSize": 48,
-    "_fontSize": 48,
+    "_actualFontSize": 51,
+    "_fontSize": 51,
     "_fontFamily": "Arial",
     "_lineHeight": 64,
     "_overflow": 0,
@@ -593,7 +593,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": -80,
+      "y": -98.282,
       "z": 0
     },
     "_lrot": {
@@ -910,8 +910,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 300,
-      "height": 225
+      "width": 325,
+      "height": 250
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",

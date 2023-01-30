@@ -18,7 +18,7 @@ export class TestMenu extends Component {
     }
 
     private ClickFunction(name : QuizType){
-        QuizModalManager.Instance().GetQuestionModal().Initialize(name);
+        QuizModalManager.Instance().GetQuestionModal().SetUI(name);
         QuizManager.Instance().SetQuizType(name);
     }
 }

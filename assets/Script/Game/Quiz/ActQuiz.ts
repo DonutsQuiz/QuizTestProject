@@ -35,7 +35,7 @@ export class ActQuiz extends QuizComponent {
 
     public Initialize(){
         super.Reset();
-        QuizModalManager.Instance().GetQuestionModal().Initialize(this.mType = 'Act');
+        QuizModalManager.Instance().GetQuestionModal().SetUI(this.mType = 'Act');
         this.mSentence = null;
         this.mData = null;
     }
@@ -48,13 +48,11 @@ export class ActQuiz extends QuizComponent {
     private DebugChoiceQuestion(){
 
         this.mData = QuizDataBase.Instance().GetData<ActData>('Act', this.DecisionAnswer());
-        GameManager.Instance().GetGameInfo().qCorSent = this.mData.mSentence;
         GameManager.Instance().GetGameInfo().qActTheme = "はぁ";
         GameManager.Instance().GetGameInfo().qType = this.mType;
-        GameManager.Instance().GetGameInfo().qSentenceLiver = "<color=#000000>" + GameManager.Instance().GetGameInfo().qCorSent + "の<br/>" + "「" + GameManager.Instance().GetGameInfo().qActTheme + "」" + "を演じてください" + "</color>";
+        GameManager.Instance().GetGameInfo().qSentenceLiver = "<color=#000000>" + GameManager.Instance().GetGameInfo().qSentence[GameManager.Instance().GetGameInfo().qCorNumber] + "の<br/>" + "「" + GameManager.Instance().GetGameInfo().qActTheme + "」" + "を演じてください" + "</color>";
         GameManager.Instance().GetGameInfo().qSentenceUser = "どの「" + GameManager.Instance().GetGameInfo().qActTheme + "」を演じている？";
         GameManager.Instance().GetGameInfo().qCorNumber = this.mData.mAnswer;
-        GameManager.Instance().GetGameInfo().qCorSent = this.mData.mSentence;
 
 
         var tempind : string[] = [null, null, null];

@@ -969,7 +969,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": 0,
+      "y": -10,
       "z": 0
     },
     "_lrot": {
@@ -1016,7 +1016,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -85.447,
+      "x": -90,
       "y": 0,
       "z": 0
     },
@@ -1278,7 +1278,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -45,
+      "x": -50.223,
       "y": 0,
       "z": 0
     },
@@ -1326,7 +1326,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 325,
+      "x": 560,
       "y": 0,
       "z": 0
     },
@@ -1446,7 +1446,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 320,
+      "width": 40,
       "height": 100.8
     },
     "_anchorPoint": {
@@ -1481,7 +1481,7 @@
       "b": 94,
       "a": 255
     },
-    "_string": "小泉萌香",
+    "_string": "k",
     "_horizontalAlign": 0,
     "_verticalAlign": 1,
     "_actualFontSize": 80,
@@ -1656,8 +1656,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 250,
-      "height": 100
+      "width": 260,
+      "height": 110
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1751,7 +1751,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": -100,
-      "y": -75,
+      "y": -100,
       "z": 0
     },
     "_lrot": {
@@ -2098,7 +2098,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": -75,
+      "y": -100,
       "z": 0
     },
     "_lrot": {
@@ -2448,7 +2448,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 155,
-      "y": -75,
+      "y": -100,
       "z": 0
     },
     "_lrot": {
@@ -2922,6 +2922,12 @@
     },
     "topNameLabel": {
       "__id__": 60
+    },
+    "topNameTrans": {
+      "__id__": 58
+    },
+    "topHonoNode": {
+      "__id__": 52
     },
     "topSprite": {
       "__id__": 42

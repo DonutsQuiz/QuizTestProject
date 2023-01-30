@@ -1,5 +1,6 @@
-import { _decorator, Component, Node, Button, Label, Game, game } from 'cc';
+import { _decorator, Component, Node, Button, Label, Game, game, SpriteFrame } from 'cc';
 import { UserInfomation } from '../Modal/OverallResultModal';
+import { QuizDataBase } from '../Quiz/Data/QuizDataBase';
 import { GameInformation, RankingInfo } from './GameInformation';
 import { QuizManager } from './QuizManager';
 import { QuizModalManager } from './QuizModalManager';
@@ -29,6 +30,10 @@ export class GameManager extends Component {
     quizManager : QuizManager = null;
     @property(QuizModalManager) // モーダルマネージャー
     modalManager : QuizModalManager = null;
+    @property(QuizDataBase) // データベース（デバッグ用）
+    dataBase : QuizDataBase = null;
+    @property(SpriteFrame)
+    iconSpriteList : Array<SpriteFrame> = new Array<SpriteFrame>();
 
     @property(Button) // ライバーとユーザーを変えるボタン
     private clientButton : Button = null;
@@ -44,6 +49,7 @@ export class GameManager extends Component {
 
         this.DebugConstractor();
 
+        this.dataBase.Constructor();
         this.modalManager.Constructor();
 
     }
@@ -98,14 +104,7 @@ export class GameManager extends Component {
             GameManager.Instance().GetGameInfo().ranking[i].mBet        = userList[i].mBet;
             GameManager.Instance().GetGameInfo().ranking[i].mPoint      = userList[i].mCoin;
             GameManager.Instance().GetGameInfo().ranking[i].mTotalPoint = userList[i].mTotalPoint;
-
-            GameManager.Instance().GetGameInfo().rankName[i] = userList[i].mName
-            GameManager.Instance().GetGameInfo().rankAcqPoint[i] = userList[i].mCoin;
-            GameManager.Instance().GetGameInfo().rankBetPoint[i] = userList[i].mBet;
-            GameManager.Instance().GetGameInfo().rankTotalAcqPoint[i] = userList[i].mTotalPoint;
         }
-
-        GameManager.Instance().GetGameInfo().rankSprite = [null, null, null];
 
 
         GameManager.Instance().GetGameInfo().totalBet = [100, 100, 100, 100];
@@ -118,26 +117,44 @@ export class GameManager extends Component {
         GameManager.Instance().GetGameInfo().subTitle = "私のこと知ってる？";
         GameManager.Instance().GetGameInfo().topIndex = 0;
 
+        // 今日のランキング
+        var todaytemp = new RankingInfo();
+        todaytemp.mName = "パラダイス運河";
+        todaytemp.mTotalPoint = 999000;
+        todaytemp.mSprite = this.iconSpriteList[0];
+        GameManager.Instance().GetGameInfo().todayRanking.push(todaytemp);        
+        todaytemp = new RankingInfo();
+        todaytemp.mSprite = this.iconSpriteList[1];
+        GameManager.Instance().GetGameInfo().todayRanking.push(todaytemp);
+        todaytemp = new RankingInfo();
+        todaytemp.mSprite = this.iconSpriteList[2];
+        GameManager.Instance().GetGameInfo().todayRanking.push(todaytemp);
 
+
+        // 先月のランキング
         var lasttemp = new RankingInfo();
         lasttemp.mName = "ささき";
         lasttemp.mBet = 10000;
         lasttemp.mPoint = 999000;
+        lasttemp.mSprite = this.iconSpriteList[3];
         GameManager.Instance().GetGameInfo().lastMonthRanking.push(lasttemp);
         lasttemp = new RankingInfo();
         lasttemp.mName = "こんどう";
         lasttemp.mBet = 20000;
         lasttemp.mPoint = 872000;
+        lasttemp.mSprite = this.iconSpriteList[4];
         GameManager.Instance().GetGameInfo().lastMonthRanking.push(lasttemp);
         lasttemp = new RankingInfo();
         lasttemp.mName = "さいとう";
         lasttemp.mBet = 30000;
         lasttemp.mPoint = 642000;
+        lasttemp.mSprite = this.iconSpriteList[5];
         GameManager.Instance().GetGameInfo().lastMonthRanking.push(lasttemp);
         lasttemp = new RankingInfo();
         lasttemp.mName = "やました";
         lasttemp.mBet = 40000;
         lasttemp.mPoint = 311000;
+        lasttemp.mSprite = this.iconSpriteList[6];
         GameManager.Instance().GetGameInfo().lastMonthRanking.push(lasttemp);
 
     }

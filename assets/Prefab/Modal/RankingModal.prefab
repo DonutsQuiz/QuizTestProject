@@ -2180,7 +2180,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "MineSprite",
+    "_name": "LegendSprite",
     "_objFlags": 0,
     "_parent": {
       "__id__": 23

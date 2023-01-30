@@ -20,7 +20,8 @@ export class ActData extends QuizData{
 }
 
 export class PersonalData extends QuizData{
-    mType: QuizType = 'Act';
+    mType: QuizType = 'Personal';
     mSentence : string = "";
+    mQuestionSent : string[] = ["", "", "", ""];
 }
 

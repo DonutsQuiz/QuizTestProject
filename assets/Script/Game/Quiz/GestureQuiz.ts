@@ -39,7 +39,7 @@ export class GestureQuiz extends QuizComponent {
 
     public Initialize(){
         super.Reset();
-        QuizModalManager.Instance().GetQuestionModal().Initialize(this.mType = 'Gesture');
+        QuizModalManager.Instance().GetQuestionModal().SetUI(this.mType = 'Gesture');
         this.mSprite = null;  // 問題の画像
         this.mData = null;
     }

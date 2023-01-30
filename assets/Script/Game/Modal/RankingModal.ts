@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Button, labelAssembler, Label } from 'cc';
+import { _decorator, Component, Node, Button, labelAssembler, Label, spriteAssembler, Sprite, game } from 'cc';
 import { ClientMode, GameManager } from '../Manager/GameManager';
 import { QuizModalManager } from '../Manager/QuizModalManager';
 const { ccclass, property } = _decorator;

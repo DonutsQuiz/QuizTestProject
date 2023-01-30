@@ -131,6 +131,7 @@ export class QuizModalManager extends Component {
 
         if(nextType === 'Title'){
             this.title.node.active = true;
+            this.title.SetIsFirst(true);
         }
         else if(nextType === 'Rule'){
             this.rule.node.active = true;
@@ -140,7 +141,7 @@ export class QuizModalManager extends Component {
         }
         else if(nextType === 'Question'){
             this.question.node.active = true;
-            this.question.Initialize(GameManager.Instance().GetGameInfo().qType);
+            this.question.SetUI(GameManager.Instance().GetGameInfo().qType);
         }
         else if(nextType === 'Choices'){
             this.choices.node.active = true;            

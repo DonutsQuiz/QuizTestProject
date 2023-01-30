@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Label, Button, SpriteFrame, labelAssembler, Sprite, game, Game, Vec3 } from 'cc';
+import { _decorator, Component, Node, Label, Button, SpriteFrame, labelAssembler, Sprite, game, Game, Vec3, UITransform } from 'cc';
 import { ClientMode, GameManager } from '../Manager/GameManager';
 import { QuizModalManager } from '../Manager/QuizModalManager';
 const { ccclass, property } = _decorator;
@@ -16,40 +16,60 @@ export class TitleModal extends Component {
     private topInfoNode : Node = null;
     @property(Label) //一位の名前
     private topNameLabel : Label = null;
+    @property(UITransform) // 一位の名前の大きさ
+    private topNameTrans : UITransform = null;
+    @property(Node) // 敬称のノード
+    private topHonoNode : Node = null;
     @property(Sprite) //一位のアイコン
-    private topSprite : SpriteFrame = null;
+    private topSprite : Sprite = null;
     @property(Label) //一位の獲得ポイント
     private topPointLabel : Label = null;
     @property(Sprite) //二位のアイコン
-    private secondSprite : SpriteFrame = null;
+    private secondSprite : Sprite = null;
     @property(Sprite) //三位のアイコン
-    private thirdSprite : SpriteFrame = null;
+    private thirdSprite : Sprite = null;
     @property(Button) //ランキング表示
     private rankButton : Button = null;
 
 
     private debugClientMode : ClientMode = 'Liver';
 
+    private isFirst : boolean = false;
+
     
     public Constructor(){
-        this.startButton.node.on(Button.EventType.CLICK, function(){QuizModalManager.Instance().ChangeModal('Rule')}, this);
+        this.startButton.node.on(Button.EventType.CLICK, function(){
+            QuizModalManager.Instance().ChangeModal('Rule')
+            this.isFirst = false;}, 
+            this);
         
         this.SetUI();
     }
 
     public OnUpdate(deltaTime: number){
+        if(this.isFirst){
+            // this.topHonoNode.position = new Vec3(this.topNameTrans.contentSize.width, 0,0);
+            this.isFirst = false;
+        }
+
         this.DebugUpdate();
     }
 
     public SetUI(){
         this.titleLabel.string = "「" + GameManager.Instance().GetGameInfo().liverName +  "」の推し検定";
         this.subTitleLabel.string = GameManager.Instance().GetGameInfo().subTitle + "編";
-        this.topNameLabel.string = GameManager.Instance().GetGameInfo().rankName[GameManager.Instance().GetGameInfo().topIndex];
-        this.topPointLabel.string = GameManager.Instance().GetGameInfo().rankTotalAcqPoint[GameManager.Instance().GetGameInfo().topIndex].toString() + "点";
-        this.topSprite = GameManager.Instance().GetGameInfo().rankSprite[0];
-        this.secondSprite = GameManager.Instance().GetGameInfo().rankSprite[1];
-        this.thirdSprite = GameManager.Instance().GetGameInfo().rankSprite[2];
+        this.topNameLabel.string = GameManager.Instance().GetGameInfo().todayRanking[0].mName;
+        this.topPointLabel.string = GameManager.Instance().GetGameInfo().todayRanking[0].mTotalPoint.toString() + "点";
+        this.topSprite.spriteFrame = GameManager.Instance().GetGameInfo().todayRanking[0].mSprite;
+        this.secondSprite.spriteFrame = GameManager.Instance().GetGameInfo().todayRanking[1].mSprite;
+        this.thirdSprite.spriteFrame = GameManager.Instance().GetGameInfo().todayRanking[2].mSprite;
     }
+
+    public SetIsFirst(is : boolean){
+        this.isFirst = is;
+    }
+
+
 
     private DebugInit(){
         GameManager.Instance().GetGameInfo().liverName = "佐藤日向";
@@ -72,6 +92,7 @@ export class TitleModal extends Component {
                 this.topInfoNode.scale = new Vec3(1.2,1.2,1.0);
                 this.debugClientMode = 'User';
             }
+            var temp = this.topNameTrans.contentSize.width;
         }
     }
 }

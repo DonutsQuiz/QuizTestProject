@@ -8,6 +8,7 @@ export class RankingInfo{
     mPoint : number = 0;
     mBet : number = 0;
     mTotalPoint : number = 0;
+    mSprite : SpriteFrame = null;
 }
 
 @ccclass('GameInformation')
@@ -22,19 +23,14 @@ export class GameInformation{
     qSentence : string[] = ["", "", "", ""]; // 選択肢の文
     qSprite : SpriteFrame[] = [null, null, null, null];
     qActTheme : string = "" // アクトのお題 (言う言葉)
-    qParTheme : string[] = ["", ""]; // パーソナルのお題
+    qParSelect : string[] = ["", "", "", ""]; // パーソナルの選択肢
     totalBet : number[] = [0, 0, 0, 0]; // 選択肢ごとのベット数
     odds : number[] = [0, 0, 0, 0]; // 選択肢ごとのオッズ
     coins : number = 0; // 所持コイン数
     thinkTime : number = 0; // 制限時間
 
     // ランキング
-    rankName : Array<string> = new Array<string>(); // ユーザー名
-    rankAcqPoint : Array<number> = new Array<number>(); // 獲得ポイント (クイズごと)
-    rankBetPoint : Array<number> = new Array<number>(); // ベットポイント (クイズごと)
-    rankTotalAcqPoint : Array<number> = new Array<number>(); // 総合獲得ポイント
-    rankSprite : SpriteFrame[] = [null, null, null]; // 1位~3位のアイコン画像
-
+    todayRanking : Array<RankingInfo> = new Array<RankingInfo>(); //今日のランキング
     ranking : Array<RankingInfo> = new Array<RankingInfo>(); //現在のランキング
     lastMonthRanking : Array<RankingInfo> = new Array<RankingInfo>(); // 先月のランキング
 

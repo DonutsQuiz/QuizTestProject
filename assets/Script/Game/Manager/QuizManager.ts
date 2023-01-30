@@ -35,7 +35,7 @@ export class QuizManager extends Component {
     start(){
         QuizManager.instance = this;
         
-        this.SetQuizType('Gesture');
+        this.SetQuizType('Personal');
 
         this.startButton.node.on(Button.EventType.CLICK, function(){
             this.QuestionPhase();
