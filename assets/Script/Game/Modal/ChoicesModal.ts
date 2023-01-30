@@ -29,8 +29,8 @@ export class ChoicesModal extends Component {
     private oddsLabelList : Array<Label> = new Array<Label>();
     @property(Label)// 総ベット量
     private betLabelList : Array<Label> = new Array<Label>();
-    @property(Label)// 問題文
-    private questionLabel : Label = null;
+    @property(RichText)// 問題文
+    private questionText : RichText = null;
     @property(Label)// 所持コイン
     private coinsLabel : Label = null;
     @property(BetModal)// ベットモーダル
@@ -123,12 +123,12 @@ export class ChoicesModal extends Component {
     }
 
     public SetQuestion(sent : string){
-        this.questionLabel.string = sent;
+        this.questionText.string = "<color=#000000>" + sent + "</color>";
     }
 
     public Initialize(){
         this.timer.SetTimeLimit(GameManager.Instance().GetGameInfo().thinkTime);   // タイマーのセット
-        this.questionLabel.string = GameManager.Instance().GetGameInfo().qSentenceUser;
+        this.questionText.string ="<color=#000000>" +  GameManager.Instance().GetGameInfo().qSentenceUser + "</color>";
         this.betModal.node.active = false;
         this.resultModal.node.active = false;
         this.liverAnswerFrameSprite.position = new Vec3(this.buttonList[GameManager.Instance().GetGameInfo().qCorNumber].node.position);

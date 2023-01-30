@@ -37,7 +37,8 @@ export class PersonalQuiz extends QuizComponent {
         GameManager.Instance().GetGameInfo().qSentenceUser = this.mData.mSentence;
 
         for(var n = 0; n < QuizManager.Instance().GetChoiceMax(); n++){
-            GameManager.Instance().GetGameInfo().qParSelect[n] = this.mData.mQuestionSent[n];
+            GameManager.Instance().GetGameInfo().qSentence[n] = this.mData.mQuestionSent[n];
+            // GameManager.Instance().GetGameInfo().qParSelect[n] = this.mData.mQuestionSent[n];
         }
     }
 }

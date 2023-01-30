@@ -87,11 +87,11 @@ export class QuizDataBase extends Component {
     private PersonalDataInitialize(){
 
         var sent : string[] = [
-            "<color=#000000>今日はオフの日。<br/>次のうち、行きたい場所はどこ？</color>",
-            "<color=#000000>やっていたかもしれない職業は？</color>",
-            "<color=#000000>失敗しそうな料理は？</color>",
-            "<color=#000000>一番得意な教科は？</color>",
-            "<color=#000000>ペットにするなら？</color>"
+            "今日はオフの日。<br/>次のうち、行きたい場所はどこ？",
+            "やっていたかもしれない職業は？",
+            "失敗しそうな料理は？",
+            "一番得意な教科は？",
+            "ペットにするなら？"
         ];
 
         var select : string[][] = [

@@ -3813,7 +3813,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "QuestionLabel",
+    "_name": "QuestionText",
     "_objFlags": 0,
     "_parent": {
       "__id__": 164
@@ -3846,8 +3846,8 @@
     },
     "_lscale": {
       "__type__": "cc.Vec3",
-      "x": 1,
-      "y": 1,
+      "x": 0.25,
+      "y": 0.25,
       "z": 1
     },
     "_layer": 33554432,
@@ -3872,8 +3872,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 29.58,
-      "height": 50.4
+      "width": 230.07,
+      "height": 75.6
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -3884,10 +3884,10 @@
   },
   {
     "__type__": "cc.CompPrefabInfo",
-    "fileId": "82scy3Yk1BdKWLlq+mrbsl"
+    "fileId": "0dHCNvGS1KkKlSywZzrGTr"
   },
   {
-    "__type__": "cc.Label",
+    "__type__": "cc.RichText",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -3897,38 +3897,24 @@
     "__prefab": {
       "__id__": 169
     },
-    "_customMaterial": null,
-    "_srcBlendFactor": 2,
-    "_dstBlendFactor": 4,
-    "_color": {
-      "__type__": "cc.Color",
-      "r": 0,
-      "g": 0,
-      "b": 0,
-      "a": 255
-    },
-    "_string": "label",
+    "_lineHeight": 60,
+    "_string": "<color=#00ff00>Rich</color><color=#0fffff>Text</color>",
     "_horizontalAlign": 0,
-    "_verticalAlign": 1,
-    "_actualFontSize": 14,
-    "_fontSize": 14,
+    "_verticalAlign": 0,
+    "_fontSize": 60,
+    "_maxWidth": 0,
     "_fontFamily": "Arial",
-    "_lineHeight": 40,
-    "_overflow": 0,
-    "_enableWrapText": true,
     "_font": null,
     "_isSystemFontUsed": true,
-    "_spacingX": 0,
-    "_isItalic": false,
-    "_isBold": false,
-    "_isUnderline": false,
-    "_underlineHeight": 2,
+    "_userDefinedFont": null,
     "_cacheMode": 0,
+    "_imageAtlas": null,
+    "_handleTouchEvent": true,
     "_id": ""
   },
   {
     "__type__": "cc.CompPrefabInfo",
-    "fileId": "86yxWoCL5PXqJ2hRABAjAk"
+    "fileId": "dfKt5NX/tO9rF4qYFixe9X"
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -3938,7 +3924,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "af1JrpHtdNM5YiYyWnK0O+"
+    "fileId": "5051I9Z9hAgoWO7nqFjjRW"
   },
   {
     "__type__": "cc.UITransform",
@@ -10322,7 +10308,7 @@
         "__id__": 81
       }
     ],
-    "questionLabel": {
+    "questionText": {
       "__id__": 168
     },
     "coinsLabel": {

@@ -29,7 +29,7 @@ export abstract class QuizComponent extends Component {
     public SetQuiz(){
         // 問題文
         QuizModalManager.Instance().GetQuestionModal().SetNumber(++GameManager.Instance().GetGameInfo().qNumber);
-        QuizModalManager.Instance().GetQuestionModal().SetSentence(GameManager.Instance().GetGameInfo().qSentenceLiver);
+        QuizModalManager.Instance().GetQuestionModal().SetSentence("<color=#000000>" + GameManager.Instance().GetGameInfo().qSentenceLiver + "</color>");
         
         // 選択肢
         //var index : number = 0;

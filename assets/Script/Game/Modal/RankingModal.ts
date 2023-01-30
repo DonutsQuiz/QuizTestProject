@@ -12,6 +12,8 @@ export class RankingModal extends Component {
     nameLabelList : Array<Label> = new Array<Label>();
     @property(Label)
     pointLabelList : Array<Label> = new Array<Label>();
+    @property(Label)
+    liverNameLabel : Label = null;
 
     private debugClientMode : ClientMode = 'Liver';
 
@@ -31,6 +33,7 @@ export class RankingModal extends Component {
             this.nameLabelList[i].string  = GameManager.Instance().GetGameInfo().lastMonthRanking[i].mName;
             this.pointLabelList[i].string = GameManager.Instance().GetGameInfo().lastMonthRanking[i].mPoint.toString() + "点";
         }
+        this.liverNameLabel.string = "「" + GameManager.Instance().GetGameInfo().liverName +  "」の推し検定";
     }
 
     private DebugUpdate(){

@@ -73,6 +73,7 @@ export class QuestionModal extends Component {
         this.changeDelay = this.delayMax;
         this.userNode.active = false;
         this.liverNode.active = false;
+        this.isSelect = -1;
     }
 
     public SetNumber(num : number){
@@ -135,7 +136,7 @@ export class QuestionModal extends Component {
                 if(i === 1)sele = "B.";
                 if(i === 2)sele = "C.";
                 if(i === 3)sele = "D.";
-                this.qSelectSent[i].string = sele + GameManager.Instance().GetGameInfo().qParSelect[i];
+                this.qSelectSent[i].string = sele + GameManager.Instance().GetGameInfo().qSentence[i];
             }
         }
     }
@@ -181,7 +182,7 @@ export class QuestionModal extends Component {
                     if(i === 1)sele = "B.";
                     if(i === 2)sele = "C.";
                     if(i === 3)sele = "D.";
-                    this.qSelectSent[i].string = sele + GameManager.Instance().GetGameInfo().qParSelect[i];
+                    this.qSelectSent[i].string = sele + GameManager.Instance().GetGameInfo().qSentence[i];
                 }
             }
         }
