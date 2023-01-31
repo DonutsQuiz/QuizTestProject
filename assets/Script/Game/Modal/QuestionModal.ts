@@ -189,9 +189,6 @@ export class QuestionModal extends Component {
                 this.debugClientMode = 'Liver';
             }
             else if(GameManager.Instance().GetClientMode() === 'User'){
-                this.startButton.node.active = false;
-                this.topInfoNode.position = new Vec3(0,15,0);
-                this.topInfoNode.scale = new Vec3(1.2,1.2,1.0);
                 this.debugClientMode = 'User';
             }
         }
