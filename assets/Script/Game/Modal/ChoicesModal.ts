@@ -1,6 +1,7 @@
 import { _decorator, Component, Node, Button, Label, SpriteFrame, Sprite, Vec3,RichText } from 'cc';
 import { ChipControll } from '../../EffectAnim/ChipControll';
 import { TimeUpAnim } from '../../EffectAnim/TimeUpAnim';
+import { CountDownAnim } from '../../EffectAnim/CountDownAnim';
 import { Timer } from '../../UI/Timer';
 import { ClientMode, GameManager } from '../Manager/GameManager';
 import { QuizManager } from '../Manager/QuizManager';
@@ -54,6 +55,8 @@ export class ChoicesModal extends Component {
     chipAnim : ChipControll = null;
     @property(TimeUpAnim)
     timeUpAnim : TimeUpAnim = null;
+    @property(CountDownAnim)
+    countDownAnim : CountDownAnim = null;
 
     choiceNumber : number = -1;
     private tempNumber : number = 0;
@@ -74,6 +77,8 @@ export class ChoicesModal extends Component {
         this.DebugModalUpdate();
 
         this.timer.Display();
+
+        this.countDownAnim.Play();
 
         for(var i = 0; i < QuizManager.Instance().GetChoiceMax(); i++){
             this.oddsLabelList[i].string = "X" + GameManager.Instance().GetGameInfo().odds[i].toString();
@@ -185,6 +190,8 @@ export class ChoicesModal extends Component {
         this.chipAnim.Reset();
         this.timer.Reset();
         this.timeUpAnim.AnimationReset();
+        this.countDownAnim.AnimationReset();
+        
         this.isNext = true;
         this.resultModal.node.active = false;
         this.betModal.SetIsDecide(false);

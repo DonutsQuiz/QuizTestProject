@@ -1,13 +1,10 @@
-import { _decorator, Component, Node, Animation } from 'cc';
+import { _decorator, Component, Node, Animation, Label } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('TimeUpAnim')
 export class TimeUpAnim extends Component {
     @property({type: Animation})
     public TimeUpAnim: Animation|null = null;
-
-    // @property(String)
-    // private AnimName: String = "Anim";
 
     start() {
         this.TimeUpAnim.node.active = false

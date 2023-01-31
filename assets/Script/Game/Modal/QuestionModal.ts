@@ -47,6 +47,8 @@ export class QuestionModal extends Component {
 
         if(this.isNext){
             this.changeDelay -= deltaTime;
+            this.startAnim.SetQuizLabel(this.debugClientMode);
+
             this.startAnim.Play();
             if(this.changeDelay <= 0.0){
                 this.startAnim.AnimationReset();
