@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Button, Label, Game, game, SpriteFrame } from 'cc';
+import { _decorator, Component, Node, Button, Label, Game, game, SpriteFrame, Prefab, Canvas, instantiate } from 'cc';
 import { UserInfomation } from '../Modal/OverallResultModal';
 import { QuizDataBase } from '../Quiz/Data/QuizDataBase';
 import { GameInformation, RankingInfo } from './GameInformation';
@@ -35,6 +35,13 @@ export class GameManager extends Component {
     @property(SpriteFrame)
     iconSpriteList : Array<SpriteFrame> = new Array<SpriteFrame>();
 
+    @property(Node)
+    private canvas : Node = null;
+    @property(Prefab) //ゲームメニュー
+    private gameMenuPrefab : Prefab = null;
+    @property(Prefab) //コメント
+    private commentPrefab : Prefab = null;
+
     @property(Button) // ライバーとユーザーを変えるボタン
     private clientButton : Button = null;
     @property(Label) // 今ライバー側かユーザー側か
@@ -42,6 +49,8 @@ export class GameManager extends Component {
 
     private clientMode : ClientMode = 'Liver';
     private gameInformation : GameInformation = new GameInformation();
+    private gameMenu = null;
+    private comment = null;
 
     start() {
         GameManager.instance = this;
@@ -52,6 +61,12 @@ export class GameManager extends Component {
         this.dataBase.Constructor();
         this.modalManager.Constructor();
 
+        this.gameMenu = instantiate(this.gameMenuPrefab);
+        this.gameMenu.setParent(this.canvas);
+        this.gameMenu.active = false;
+        this.comment = instantiate(this.commentPrefab);
+        this.comment.setParent(this.canvas);
+        this.comment.active = false;
     }
 
     update(deltaTime: number) {
@@ -79,6 +94,10 @@ export class GameManager extends Component {
         return this.gameInformation;
     }
 
+    public SetMenuActive(){
+        this.gameMenu.active = true;
+        this.comment.active = true;
+    }
 
 
 

@@ -71,12 +71,6 @@ export class TitleModal extends Component {
 
 
 
-    private DebugInit(){
-        GameManager.Instance().GetGameInfo().liverName = "佐藤日向";
-        GameManager.Instance().GetGameInfo().subTitle = "私のこと知ってる？";
-        GameManager.Instance().GetGameInfo().topIndex = 0;
-
-    }
 
     private DebugUpdate(){
         if(GameManager.Instance().GetClientMode() != this.debugClientMode){
@@ -88,11 +82,10 @@ export class TitleModal extends Component {
             }
             else if(GameManager.Instance().GetClientMode() === 'User'){
                 this.startButton.node.active = false;
-                this.topInfoNode.position = new Vec3(0,25,0);
+                this.topInfoNode.position = new Vec3(0,15,0);
                 this.topInfoNode.scale = new Vec3(1.2,1.2,1.0);
                 this.debugClientMode = 'User';
             }
-            var temp = this.topNameTrans.contentSize.width;
         }
     }
 }

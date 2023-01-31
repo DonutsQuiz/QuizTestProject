@@ -39,6 +39,7 @@ export class QuizManager extends Component {
 
         this.startButton.node.on(Button.EventType.CLICK, function(){
             this.QuestionPhase();
+            GameManager.Instance().SetMenuActive();
             this.startButton.node.active = false;
         }, this);
     }

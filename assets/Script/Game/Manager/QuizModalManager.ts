@@ -108,7 +108,7 @@ export class QuizModalManager extends Component {
             this.rule.OnUpdate(deltaTime);
         }
         else if(this.nowType === 'Ranking'){
-            this.rule.OnUpdate(deltaTime);
+            this.ranking.OnUpdate();
         }
         else if(this.nowType === 'Question'){
             this.question.OnUpdate(deltaTime);

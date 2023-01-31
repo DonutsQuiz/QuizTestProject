@@ -25,7 +25,7 @@ export class RankingModal extends Component {
     }
 
     public OnUpdate(){
-
+        this.DebugUpdate();
     }
 
     public SetUI(){

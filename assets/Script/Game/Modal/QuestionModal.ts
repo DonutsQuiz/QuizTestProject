@@ -143,47 +143,56 @@ export class QuestionModal extends Component {
 
     private DebugModalUpdate(){
         if(GameManager.Instance().GetClientMode() != this.debugClientMode){
-
-            this.node.active = true;
-            this.liverNode.active = true;
-            this.qNumber.node.active = true;
-            this.qSentence.node.active = true;
-
-            this.qImageFrame.active = false;
-            this.qSpriteFrame.node.active = false;
-            this.qStartB.node.active = false;
-            this.qSelectB.forEach(element => {element.node.active = false;});
-            this.userNode.active = false;
-
-            if(this.debugQuizMode === 'Gesture'){    // ジェスチャー
-                if(GameManager.Instance().GetClientMode() === 'Liver'){
-                    this.qSentence.node.setPosition(new Vec3(0,75,0));
-                    this.qImageFrame.active = true;
-                    this.qSpriteFrame.node.active = true;
+            if(GameManager.Instance().GetClientMode() === 'Liver'){
+                this.node.active = true;
+                this.liverNode.active = true;
+                this.qNumber.node.active = true;
+                this.qSentence.node.active = true;
+    
+                this.qImageFrame.active = false;
+                this.qSpriteFrame.node.active = false;
+                this.qStartB.node.active = false;
+                this.qSelectB.forEach(element => {element.node.active = false;});
+                this.userNode.active = false;
+    
+                if(this.debugQuizMode === 'Gesture'){    // ジェスチャー
+                    if(GameManager.Instance().GetClientMode() === 'Liver'){
+                        this.qSentence.node.setPosition(new Vec3(0,75,0));
+                        this.qImageFrame.active = true;
+                        this.qSpriteFrame.node.active = true;
+                        this.qStartB.node.active = true;
+                        this.debugClientMode = 'Liver';
+                    }
+                    else{
+                        this.liverNode.active = false;
+                        this.userNode.active = true;
+                        this.debugClientMode = 'User';
+                    }
+                }
+                else if(this.debugQuizMode === 'Act'){   // アクト
+                    this.qSentence.node.setPosition(new Vec3(0,25,0));
                     this.qStartB.node.active = true;
-                    this.debugClientMode = 'Liver';
                 }
-                else{
-                    this.liverNode.active = false;
-                    this.userNode.active = true;
-                    this.debugClientMode = 'User';
+                else if(this.debugQuizMode === 'Personal'){   // クイズ
+                    this.qSentence.node.setPosition(new Vec3(0,25,0));
+                    this.qSelectB.forEach(element => {element.node.active = true;});
+                    var sele : string = "";
+                    for(var i = 0; i < QuizManager.Instance().GetChoiceMax(); i++){
+                        if(i === 0)sele = "A.";
+                        if(i === 1)sele = "B.";
+                        if(i === 2)sele = "C.";
+                        if(i === 3)sele = "D.";
+                        this.qSelectSent[i].string = sele + GameManager.Instance().GetGameInfo().qSentence[i];
+                    }
                 }
+
+                this.debugClientMode = 'Liver';
             }
-            else if(this.debugQuizMode === 'Act'){   // アクト
-                this.qSentence.node.setPosition(new Vec3(0,25,0));
-                this.qStartB.node.active = true;
-            }
-            else if(this.debugQuizMode === 'Personal'){   // クイズ
-                this.qSentence.node.setPosition(new Vec3(0,25,0));
-                this.qSelectB.forEach(element => {element.node.active = true;});
-                var sele : string = "";
-                for(var i = 0; i < QuizManager.Instance().GetChoiceMax(); i++){
-                    if(i === 0)sele = "A.";
-                    if(i === 1)sele = "B.";
-                    if(i === 2)sele = "C.";
-                    if(i === 3)sele = "D.";
-                    this.qSelectSent[i].string = sele + GameManager.Instance().GetGameInfo().qSentence[i];
-                }
+            else if(GameManager.Instance().GetClientMode() === 'User'){
+                this.startButton.node.active = false;
+                this.topInfoNode.position = new Vec3(0,15,0);
+                this.topInfoNode.scale = new Vec3(1.2,1.2,1.0);
+                this.debugClientMode = 'User';
             }
         }
 
