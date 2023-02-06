@@ -1,5 +1,5 @@
 import { _decorator, Component, Node, Button, Label, SpriteFrame, Sprite, Vec3,RichText, game, color } from 'cc';
-import { ChipControll } from '../../EffectAnim/ChipControll';
+import { AnimationManager } from '../Manager/AnimationManager';
 import { Timer } from '../../UI/Timer';
 import { ClientMode, GameManager } from '../Manager/GameManager';
 import { QuizManager } from '../Manager/QuizManager';
@@ -63,8 +63,6 @@ export class ChoicesModal extends Component {
 
     @property(Timer)
     timer : Timer = null;
-    @property(ChipControll)
-    chipAnim : ChipControll = null;
 
     choiceNumber : number = -1;
     private tempNumber : number = 0;
@@ -93,10 +91,13 @@ export class ChoicesModal extends Component {
         // カウントダウン処理
         if(this.isCountDown){
             this.timer.Display();
+            AnimationManager.Instance().countDownAnim.Play(this.timer.GetTimeLeft());
         }
 
         // 時間切れの処理
         if(this.timer.GetIsFinish()){
+            AnimationManager.Instance().timeUpAnim.Play();
+
             this.resultButton.node.active = true;
             this.TitleFrameNode.active = true;
             this.TitleFrameLabel.string = "ボーナス倍率結果";
@@ -168,6 +169,8 @@ export class ChoicesModal extends Component {
         if(GameManager.Instance().GetClientMode() === 'Liver'){
             this.liverNode.active = true;
             this.userNode.active = false;
+            AnimationManager.Instance().liverNode.active = true;
+            AnimationManager.Instance().userNode.active = false;
             this.nextButton.node.active = false;
             this.resultButton.node.active = false;
             this.frameList[GameManager.Instance().GetGameInfo().qCorNumber].spriteFrame = this.correctFrameSprite;
@@ -178,6 +181,8 @@ export class ChoicesModal extends Component {
         else{
             this.liverNode.active = false;
             this.userNode.active = true;
+            AnimationManager.Instance().liverNode.active = false;
+            AnimationManager.Instance().userNode.active = true;
             this.coinsLabel.string = GameManager.Instance().GetGameInfo().coins.toString();
             this.debugClientMode = 'User';
         }
@@ -187,7 +192,7 @@ export class ChoicesModal extends Component {
     private DecideChoice(){
         this.choiceNumber = this.tempNumber;
         this.frameList[this.choiceNumber].spriteFrame = this.selectFrameSprite;
-        if(this.betModal.getIsPushedDecideButton()) this.chipAnim.Play(this.choiceNumber);
+        if(this.betModal.getIsPushedDecideButton()) AnimationManager.Instance().betAnim.Play(this.choiceNumber, this.betModal.GetBetValue());
         this.betModal.SetIsDecide(false);
     }
 
@@ -208,6 +213,8 @@ export class ChoicesModal extends Component {
     // 結果発表に進む
     private Next(){
         this.timer.Reset();
+        AnimationManager.Instance().timeUpAnim.AnimationReset();
+        AnimationManager.Instance().countDownAnim.AnimationReset();
         this.isNext = true;
         this.resultModal.node.active = false;
         this.betModal.SetIsDecide(false);

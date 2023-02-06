@@ -77,6 +77,10 @@ export class BetModal extends Component {
         return this.isDecide;
     }
 
+    public GetBetValue() :number {
+        return this.betValue;
+    }
+
     private CheckIsDecide(){
         if(this.betValue <= 0){
             this.isDecide = false;

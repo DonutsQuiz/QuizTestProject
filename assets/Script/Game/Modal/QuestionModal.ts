@@ -1,5 +1,5 @@
 import { _decorator, Component, Node, Label, Button, Vec2, Vec3, SpriteFrame, Sprite, RichText, Game, color, Color } from 'cc';
-import { StartControll } from '../../EffectAnim/StartControll';
+import { AnimationManager } from '../Manager/AnimationManager';
 import { ClientMode, GameManager } from '../Manager/GameManager';
 import { QuizManager } from '../Manager/QuizManager';
 import { QuizModalManager } from '../Manager/QuizModalManager';
@@ -43,10 +43,6 @@ export class QuestionModal extends Component {
     private delayMax = 1.0;
     private isNext : boolean = false;
 
-    @property(StartControll)
-    startAnim : StartControll = null;
-
-
     public Constructor(){
         this.qStartB.node.on(Button.EventType.CLICK, this.Next,this);
         this.qSelectB[0].node.on(Button.EventType.CLICK, function(){this.SelectButtonClick(0);},this);
@@ -65,9 +61,10 @@ export class QuestionModal extends Component {
 
         if(this.isNext){
             this.changeDelay -= deltaTime;
-            this.startAnim.Play();
+            AnimationManager.Instance().startAnim.SetQuizLabel(this.debugClientMode);
+            AnimationManager.Instance().startAnim.Play();
             if(this.changeDelay <= 0.0){
-                this.startAnim.AnimationReset();
+                AnimationManager.Instance().startAnim.AnimationReset();
                 QuizModalManager.Instance().ChangeModal('Choices');
                 this.isNext = false;
             }
@@ -165,6 +162,7 @@ export class QuestionModal extends Component {
             if(GameManager.Instance().GetClientMode() === 'Liver'){
                 this.node.active = true;
                 this.liverNode.active = true;
+                AnimationManager.Instance().liverNode.active = true;
                 this.qNumber.node.active = true;
                 this.qSentence.node.active = true;
     
@@ -173,6 +171,7 @@ export class QuestionModal extends Component {
                 this.qStartB.node.active = false;
                 this.qSelectB.forEach(element => {element.node.active = false;});
                 this.userNode.active = false;
+                AnimationManager.Instance().userNode.active = false;
     
                 if(this.debugQuizMode === 'Gesture'){    // ジェスチャー
                     if(GameManager.Instance().GetClientMode() === 'Liver'){
@@ -209,8 +208,10 @@ export class QuestionModal extends Component {
             }
             else if(GameManager.Instance().GetClientMode() === 'User'){
                 this.liverNode.active = false;
+                AnimationManager.Instance().liverNode.active = false;
                 this.userNode.active = true;
                 this.debugClientMode = 'User';
+                AnimationManager.Instance().userNode.active = true;
             }
         }
 

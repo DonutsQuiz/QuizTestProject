@@ -3,7 +3,7 @@
     "native": false
   },
   "gizmos-infos": {
-    "is2D": true,
+    "is2D": false,
     "is3DIcon": false,
     "iconSize": 2,
     "gridVisible": true,
@@ -38,9 +38,9 @@
   "camera-infos": {
     "f46876e4-e81b-4931-b493-6d367be385e7": {
       "position": {
-        "x": 187.5,
-        "y": 333.5,
-        "z": 5000
+        "x": 0,
+        "y": 0,
+        "z": 0
       },
       "rotation": {
         "x": 0,
@@ -56,9 +56,9 @@
     },
     "6d9866d9-a192-4526-a2a7-a9e7b61f341b": {
       "position": {
-        "x": 179.6644726541253,
-        "y": 453.6546565774581,
-        "z": 5000
+        "x": 0,
+        "y": 0,
+        "z": 0.013000000000000001
       },
       "rotation": {
         "x": 0,
@@ -107,10 +107,172 @@
         "y": 0,
         "z": 0
       }
+    },
+    "2cccaGE59BUacF0QiBRhIZ": {
+      "position": {
+        "x": -7.577499999999873,
+        "y": 656.25,
+        "z": 5000
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "w": 1
+      },
+      "viewCenter": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    "82OorNhsJNaLgOJp52Zm1p": {
+      "position": {
+        "x": -7.577499999999873,
+        "y": 656.25,
+        "z": 5000
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "w": 1
+      },
+      "viewCenter": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    "604oCVIyxG8KDsjoYMgtNc": {
+      "position": {
+        "x": 187.5,
+        "y": 333.5,
+        "z": 5000
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "w": 1
+      },
+      "viewCenter": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    "c5dfPVJOpBg4y89U54wVhg": {
+      "position": {
+        "x": 187.5,
+        "y": 333.5,
+        "z": 5000
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "w": 1
+      },
+      "viewCenter": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    "38r4eQUgFE3a4yL4pUYMEs": {
+      "position": {
+        "x": 187.5,
+        "y": 333.5,
+        "z": 5000
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "w": 1
+      },
+      "viewCenter": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    "b4HZFmcYdEJ41nfp5qq0oh": {
+      "position": {
+        "x": 187.5,
+        "y": 213.5,
+        "z": 312.8435446729967
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "w": 1
+      },
+      "viewCenter": {
+        "x": 187.5,
+        "y": 213.5,
+        "z": 0
+      }
+    },
+    "2dKURf9oxDVZL4Db+D1Xm1": {
+      "position": {
+        "x": 187.5,
+        "y": 333.5,
+        "z": 5000
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "w": 1
+      },
+      "viewCenter": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    "adiD7k8C9Esb1XOjen92dQ": {
+      "position": {
+        "x": 19.914814814814815,
+        "y": 19.914814814814815,
+        "z": 19.914814814814815
+      },
+      "rotation": {
+        "x": -0.11537945383401621,
+        "y": 0.1503654317410505,
+        "z": 0.04779173459724991,
+        "w": 0.9807108486574814
+      },
+      "viewCenter": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    "11RD3biaRKAoL84OIQZ5Sx": {
+      "position": {
+        "x": 919.5805462210222,
+        "y": 965.5805462210221,
+        "z": 732.080546221022
+      },
+      "rotation": {
+        "x": -0.27984814233312133,
+        "y": 0.3647051996310009,
+        "z": 0.11591689595929514,
+        "w": 0.8804762392171493
+      },
+      "viewCenter": {
+        "x": 187.5,
+        "y": 233.5,
+        "z": 0
+      }
     }
   },
   "camera-uuids": [
-    "6d9866d9-a192-4526-a2a7-a9e7b61f341b"
+    "f46876e4-e81b-4931-b493-6d367be385e7"
   ],
   "float-window": {
     "position": {
@@ -126,7 +288,7 @@
     }
   },
   "game-view": {
-    "scaleValue": 172,
-    "sliderValue": 62
+    "scaleValue": 136,
+    "sliderValue": 56
   }
 }

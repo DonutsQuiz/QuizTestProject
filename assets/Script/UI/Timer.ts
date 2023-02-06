@@ -50,30 +50,42 @@ export class Timer extends Component {
     {
         if(this.isFinish)this.isFinish = false;
 
-        let second = Math.ceil((this.time_limit - this.elapsed_time) / 60.0);
-        let minutes = Math.floor(second / 60.0);
-        second %= 60;
-
-        // 時間を表示
-        this.time_display.string = ("00" + minutes).slice(-2) + ":" + ("00" + second).slice(-2);
-
-        //　時間（サークル）を表示
-        let _endAngle = (0.5 - 2.0 * (this.elapsed_time / this.time_limit)) * Math.PI;
-        // console.log(_endAngle);
-        
-        this.time_circle.fillColor.fromHEX('#00FFFF');
-        this.time_circle.lineWidth = 2;
-
-        this.time_circle.clear();
-        this.time_circle.arc(0, 0, 30, 0.5 * Math.PI, _endAngle, true);
-        this.time_circle.lineTo(0, 0);
-        this.time_circle.close();
-        this.time_circle.stroke();
-        this.time_circle.fill();
         if(this.elapsed_time < this.time_limit){
+            let second = Math.ceil((this.time_limit - this.elapsed_time) / 60.0);
+            let minutes = Math.floor(second / 60.0);
+            second %= 60;
+    
+            // 時間を表示
+            // this.time_display.string = ("00" + minutes).slice(-2) + ":" + ("00" + second).slice(-2);
+            this.time_display.string = (second).toString();
+    
+            //　時間（サークル）を表示
+            let _endAngle = (0.5 - 2.0 * (this.elapsed_time / this.time_limit)) * Math.PI;
+            
+            this.time_circle.clear();
+            
+            this.time_circle.lineWidth = 2;
+            this.time_circle.strokeColor.fromHEX('#000000');
+            this.time_circle.fillColor.fromHEX('#FFFF00');
+            this.time_circle.circle(0, 0, 30);
+            this.time_circle.stroke();
+            this.time_circle.fill();
+
+            this.time_circle.lineWidth = 0;
+            this.time_circle.fillColor.fromHEX('#9B9B9B');
+            this.time_circle.arc(0, 0, 30, 0.5 * Math.PI, _endAngle, true);
+            this.time_circle.lineTo(0, 0);
+            this.time_circle.close();
+            this.time_circle.stroke();
+            this.time_circle.fill();
+
+
+            
             this.elapsed_time += 1;
         }
         else{
+            this.time_circle.clear();
+
             if(!this.isEnd){
                 this.isEnd = true;
                 this.isFinish = true;

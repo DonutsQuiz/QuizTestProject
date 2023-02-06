@@ -1,5 +1,5 @@
 import { _decorator, Component, Node, Button, labelAssembler, Label, SpriteFrame, Color, Sprite, UITransform, Vec2, Size } from 'cc';
-import { ResultAnimControll } from '../../EffectAnim/ResultAnimControll';
+import { AnimationManager } from '../Manager/AnimationManager';
 import { ClientMode, GameManager } from '../Manager/GameManager';
 import { QuizModalManager } from '../Manager/QuizModalManager';
 import { QuizData } from '../Quiz/Data/QuizData';
@@ -24,10 +24,6 @@ export class ResultModal extends Component {
     answerSentence : Label = null;
     @property(Sprite)
     answerImage : Sprite = null;
-
-
-    @property(ResultAnimControll)
-    resultAnim : ResultAnimControll = null;
 
     public isNext = false;
 
@@ -117,11 +113,17 @@ export class ResultModal extends Component {
                 this.nextButton.node.active = true;
                 this.coinLabel.node.active = false;
                 this.debugClientMode = 'Liver';
+
+                AnimationManager.Instance().liverNode.active = true;
+                AnimationManager.Instance().userNode.active = false;
             }
             else{
                 this.nextButton.node.active = false;
                 this.coinLabel.node.active = true;
                 this.debugClientMode = 'User';
+
+                AnimationManager.Instance().liverNode.active = false;
+                AnimationManager.Instance().userNode.active = true;
             }
         }
 
@@ -129,10 +131,10 @@ export class ResultModal extends Component {
         if(this.debugClientMode=== 'User'){
             if(this.answerResult)
             {
-                this.resultAnim.PlayCorrectAnim();
+                AnimationManager.Instance().resultAnim.PlayCorrectAnim();
             }
             else{
-                this.resultAnim.PlayIncorrectAnim();
+                AnimationManager.Instance().resultAnim.PlayIncorrectAnim();
             }
         }
     }

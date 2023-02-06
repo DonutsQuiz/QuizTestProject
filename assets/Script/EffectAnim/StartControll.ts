@@ -1,10 +1,12 @@
-import { _decorator, Component, Node, Animation } from 'cc';
+import { _decorator, Component, Node, Animation, Label } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('StartControll')
 export class StartControll extends Component {
     @property({type: Animation})
     public StartAnim: Animation|null = null;
+    @property(Label)
+    private quizLable: Label = null;
 
     start() {
         this.StartAnim.node.active = false
@@ -20,6 +22,16 @@ export class StartControll extends Component {
             this.StartAnim.play('StartAnim');
         }
     }   
+
+    public SetQuizLabel(cliant: string)
+    {
+        if(cliant == 'User'){
+            this.quizLable.string = "クイズ";
+        }
+        else if(cliant == 'Liver'){
+            this.quizLable.string = "推し検定";
+        }
+    }
 
     public AnimationReset()
     {

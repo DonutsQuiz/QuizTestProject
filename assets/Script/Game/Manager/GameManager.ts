@@ -4,6 +4,7 @@ import { QuizDataBase } from '../Quiz/Data/QuizDataBase';
 import { GameInformation, RankingInfo } from './GameInformation';
 import { QuizManager } from './QuizManager';
 import { QuizModalManager } from './QuizModalManager';
+import { AnimationManager } from './AnimationManager';
 const { ccclass, property } = _decorator;
 
 const ClientMode = {
@@ -30,6 +31,8 @@ export class GameManager extends Component {
     quizManager : QuizManager = null;
     @property(QuizModalManager) // モーダルマネージャー
     modalManager : QuizModalManager = null;
+    @property(AnimationManager) // アニメーションマネージャー
+    animManager : QuizModalManager = null;
     @property(QuizDataBase) // データベース（デバッグ用）
     dataBase : QuizDataBase = null;
     @property(SpriteFrame)
@@ -77,6 +80,8 @@ export class GameManager extends Component {
         this.comment = instantiate(this.commentPrefab);
         this.comment.setParent(this.canvas);
         this.comment.active = false;
+        
+        this.animManager.Constructor();
     }
 
     update(deltaTime: number) {
