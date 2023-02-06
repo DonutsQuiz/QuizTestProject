@@ -47,16 +47,26 @@ export class GameManager extends Component {
     @property(Label) // 今ライバー側かユーザー側か
     private clientLabel : Label = null;
 
+    @property(Button) // 初回かどうか変えるボタン
+    private firstButton : Button = null;
+    @property(Label) // 初回か二回目以降か
+    private firstLabel : Label = null;
+
     private clientMode : ClientMode = 'Liver';
     private gameInformation : GameInformation = new GameInformation();
     private gameMenu = null;
     private comment = null;
+    private isFirstTime : boolean = false;
 
     start() {
         GameManager.instance = this;
+
         this.clientButton.node.on(Button.EventType.CLICK, this.ChangeClientMode, this);
+        this.firstButton.node.on(Button.EventType.CLICK, this.ChangeFirstMode, this);
 
         this.DebugConstractor();
+
+        this.isFirstTime = this.gameInformation.isFirstTime;
 
         this.dataBase.Constructor();
         this.modalManager.Constructor();
@@ -86,6 +96,18 @@ export class GameManager extends Component {
         }
     }
 
+    // ライバーとユーザーの切り替え(デバッグ用)
+    private ChangeFirstMode(){
+        if(this.isFirstTime){
+            this.isFirstTime = false;
+            this.firstLabel.string = "二回目以降";
+        }
+        else if(!this.isFirstTime){
+            this.isFirstTime = true;
+            this.firstLabel.string = "初回";
+        }
+    }
+
     public GetClientMode() : ClientMode{
         return this.clientMode;
     }
@@ -106,16 +128,16 @@ export class GameManager extends Component {
 
         // ランキング情報
         var userList : Array<UserInfomation> = new Array<UserInfomation>();
-        userList.push(new UserInfomation("パンダ",   20000, 5000, 35000));
-        userList.push(new UserInfomation("キリン",    19000, 3000, 62000));
-        userList.push(new UserInfomation("マングース", 18000, 1000, 18000));
-        userList.push(new UserInfomation("インパラ",   17000, 6000, 49000));
-        userList.push(new UserInfomation("シロクマ",   16000, 2000, 21000));
-        userList.push(new UserInfomation("ライオン",   15000, 8000, 74000));
-        userList.push(new UserInfomation("サイ",      14000, 10000, 91000));
-        userList.push(new UserInfomation("ゾウ",      13000, 9000, 95000));
-        userList.push(new UserInfomation("カメレオン", 12000, 4000, 39000));
-        userList.push(new UserInfomation("サメ",      11000, 7000, 24000));
+        userList.push(new UserInfomation("パンダ",   20000, 5000, 35000,this.iconSpriteList[0]));
+        userList.push(new UserInfomation("キリン",    19000, 3000, 62000,this.iconSpriteList[1]));
+        userList.push(new UserInfomation("マングース", 18000, 1000, 18000,this.iconSpriteList[2]));
+        userList.push(new UserInfomation("インパラ",   17000, 6000, 49000,this.iconSpriteList[3]));
+        userList.push(new UserInfomation("シロクマ",   16000, 2000, 21000,this.iconSpriteList[4]));
+        userList.push(new UserInfomation("ライオン",   15000, 8000, 74000,this.iconSpriteList[5]));
+        userList.push(new UserInfomation("サイ",      14000, 10000, 91000,this.iconSpriteList[6]));
+        userList.push(new UserInfomation("ゾウ",      13000, 9000, 95000,this.iconSpriteList[7]));
+        userList.push(new UserInfomation("カメレオン", 12000, 4000, 39000,this.iconSpriteList[8]));
+        userList.push(new UserInfomation("サメ",      11000, 7000, 24000,this.iconSpriteList[9]));
 
         for(var i = 0; i < 10; i++){
             GameManager.Instance().GetGameInfo().ranking.push(new RankingInfo());
@@ -123,6 +145,7 @@ export class GameManager extends Component {
             GameManager.Instance().GetGameInfo().ranking[i].mBet        = userList[i].mBet;
             GameManager.Instance().GetGameInfo().ranking[i].mPoint      = userList[i].mCoin;
             GameManager.Instance().GetGameInfo().ranking[i].mTotalPoint = userList[i].mTotalPoint;
+            this.gameInformation.ranking[i].mSprite = userList[i].mSprite;
         }
 
 
@@ -176,6 +199,19 @@ export class GameManager extends Component {
         lasttemp.mSprite = this.iconSpriteList[6];
         GameManager.Instance().GetGameInfo().lastMonthRanking.push(lasttemp);
 
+        this.gameInformation.odds[0] = 3.2;
+        this.gameInformation.odds[1] = 4.6;
+        this.gameInformation.odds[2] = 5.0;
+        this.gameInformation.odds[3] = 6.8;
+
+        this.gameInformation.isFirstTime = true;
+
+        // ヒント
+        this.gameInformation.hintSentence.push("ヒント1");
+        this.gameInformation.hintSentence.push("ヒント2");
+        this.gameInformation.hintSentence.push("ヒント3");
+        this.gameInformation.hintSentence.push("ヒント4");
+        this.gameInformation.hintSentence.push("ヒント5");
     }
 }
 

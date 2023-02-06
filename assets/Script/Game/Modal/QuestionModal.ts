@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Label, Button, Vec2, Vec3, SpriteFrame, Sprite, RichText, Game } from 'cc';
+import { _decorator, Component, Node, Label, Button, Vec2, Vec3, SpriteFrame, Sprite, RichText, Game, color, Color } from 'cc';
 import { StartControll } from '../../EffectAnim/StartControll';
 import { ClientMode, GameManager } from '../Manager/GameManager';
 import { QuizManager } from '../Manager/QuizManager';
@@ -11,22 +11,28 @@ export class QuestionModal extends Component {
 
     @property(Node)
     private liverNode : Node = null;
-    @property(Label)
-    qNumber : Label = null;
-    @property(RichText)
-    qSentence : RichText = null;
-    @property(Node)
-    qImageFrame : Node = null;
-    @property(Sprite)
-    qSpriteFrame : Sprite = null;
-    @property(Button)
-    qStartB : Button = null;
-    @property(Button)
-    qSelectB : Array<Button> = new Array<Button>();
-    @property(Label)
-    qSelectSent : Array<Label> = new Array<Label>();
     @property(Node)
     private userNode : Node = null;
+    @property(Label)
+    private qNumber : Label = null;
+    @property(RichText)
+    private qSentence : RichText = null;
+    @property(Node)
+    private qImageFrame : Node = null;
+    @property(Sprite)
+    private qSpriteFrame : Sprite = null;
+    @property(Button)
+    private qStartB : Button = null;
+    @property(Button)
+    private qSelectB : Array<Button> = new Array<Button>();
+    @property(Sprite)
+    private qSelectSprite : Array<Sprite> = new Array<Sprite>();
+    @property(Label)
+    private qSelectSent : Array<Label> = new Array<Label>();
+    @property(Color)
+    private notSelectColor : Color = null;
+    @property(Color)
+    private selectColor : Color = null;
 
     private debugClientMode : ClientMode = 'Liver';
     private debugQuizMode : QuizType = 'None';
@@ -43,10 +49,10 @@ export class QuestionModal extends Component {
 
     public Constructor(){
         this.qStartB.node.on(Button.EventType.CLICK, this.Next,this);
-        this.qSelectB[0].node.on(Button.EventType.CLICK, function(){this.isSelect = 0;},this);
-        this.qSelectB[1].node.on(Button.EventType.CLICK, function(){this.isSelect = 1;},this);
-        this.qSelectB[2].node.on(Button.EventType.CLICK, function(){this.isSelect = 2;},this);
-        this.qSelectB[3].node.on(Button.EventType.CLICK, function(){this.isSelect = 3;},this);
+        this.qSelectB[0].node.on(Button.EventType.CLICK, function(){this.SelectButtonClick(0);},this);
+        this.qSelectB[1].node.on(Button.EventType.CLICK, function(){this.SelectButtonClick(1);},this);
+        this.qSelectB[2].node.on(Button.EventType.CLICK, function(){this.SelectButtonClick(2);},this);
+        this.qSelectB[3].node.on(Button.EventType.CLICK, function(){this.SelectButtonClick(3);},this);
     }
 
     public OnUpdate(deltaTime: number){
@@ -81,7 +87,7 @@ export class QuestionModal extends Component {
     }
 
     public SetSentence(sent : string){
-        this.qSentence.string = sent;
+        this.qSentence.string = "<color=#000000>" + sent + "</color>";
     }
 
     public SetSelect(sele : Array<string>){
@@ -92,6 +98,19 @@ export class QuestionModal extends Component {
 
     public SetSprite(sprite : SpriteFrame){
         this.qSpriteFrame.spriteFrame = sprite;
+    }
+
+    // 選択肢をクリックした
+    private SelectButtonClick(sele : number){
+        this.isSelect = sele;
+        for(var i = 0; i < QuizManager.Instance().GetChoiceMax(); i++){
+            if(i === sele){
+                this.qSelectSprite[i].color = this.selectColor;
+            }
+            else{
+                this.qSelectSprite[i].color = this.notSelectColor;
+            }
+        }
     }
 
     public SetUI(qtype : QuizType){
@@ -189,6 +208,8 @@ export class QuestionModal extends Component {
                 this.debugClientMode = 'Liver';
             }
             else if(GameManager.Instance().GetClientMode() === 'User'){
+                this.liverNode.active = false;
+                this.userNode.active = true;
                 this.debugClientMode = 'User';
             }
         }

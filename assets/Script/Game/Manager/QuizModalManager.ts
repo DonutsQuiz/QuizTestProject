@@ -145,7 +145,7 @@ export class QuizModalManager extends Component {
         }
         else if(nextType === 'Choices'){
             this.choices.node.active = true;            
-            this.choices.Initialize();
+            this.choices.SetUI();
         }
         else if(nextType === 'Overall'){
             this.overall.node.active = true;

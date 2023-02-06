@@ -76,7 +76,7 @@ export class ResultModal extends Component {
     }
 
     public SetAnswerLabel(ansnum : number, label : string){
-        this.answerSentence.string = "答えは";
+        this.answerSentence.string = "正解.";
 
         if(ansnum === 0){
             this.answerSentence.string += "A";

@@ -37,5 +37,9 @@ export class GameInformation{
     liverName : string = ""; //ライバーの名前
     subTitle : string = ""; // サブタイトル
     topIndex : number = -1; // 一位のプレイヤーの添字
+
+    hintSentence : Array<string> = new Array<string>(); // ヒントの文章
+
+    isFirstTime : boolean = false; //初プレイかどうか
 }
 
