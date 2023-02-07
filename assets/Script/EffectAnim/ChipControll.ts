@@ -9,13 +9,14 @@ export class ChipControll extends Component {
     @property(Label)
     private money_display : Label = null;
 
-    private posCenterX: number[] = [-94.5, 94.5, -94.5, 94.5];
-    private posCenterY: number[] = [57, 57, -57, -57];
+    private posCenterX: number[] = [-92, 92, -92, 92];
+    private posCenterY: number[] = [10, 10, -75, -75];
+
+    private offsetY: number = -168;
 
     start() {
-        console.log("set bet");
         this.ChipAnim.node.active = false;
-        // this.money_display.node.active = false;
+        this.money_display.string = null;
 
         let animation = this.ChipAnim.node.getComponent(Animation);
         animation.on(Animation.EventType.FINISHED, this.onTriggered, this);
@@ -23,8 +24,8 @@ export class ChipControll extends Component {
 
     public Play(selection: number, money: number)
     {
-        console.log("animation!");
-        let pos = new Vec3(this.posCenterX[selection] - 50, this.posCenterY[selection] - 20, 0);
+        console.log("bet animation!");
+        let pos = new Vec3(this.posCenterX[selection] - 50, this.posCenterY[selection] - 20 + this.offsetY, 0);
         if(this.ChipAnim && !this.ChipAnim.node.active )
         {
             this.money_display.string = (money).toString();
@@ -40,7 +41,7 @@ export class ChipControll extends Component {
 
     }
 
-    public Reset()
+    public AnimationReset()
     {
         this.money_display.string = null;
         // this.money_display.node.active = false;

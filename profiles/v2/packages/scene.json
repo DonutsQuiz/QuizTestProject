@@ -269,10 +269,28 @@
         "y": 233.5,
         "z": 0
       }
+    },
+    "ccQu3GmMBOw7rr0DhBHymy": {
+      "position": {
+        "x": 187.5,
+        "y": 333.5,
+        "z": 253.60014022000686
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "w": 1
+      },
+      "viewCenter": {
+        "x": 187.5,
+        "y": 333.5,
+        "z": 0
+      }
     }
   },
   "camera-uuids": [
-    "6d9866d9-a192-4526-a2a7-a9e7b61f341b"
+    "ccQu3GmMBOw7rr0DhBHymy"
   ],
   "float-window": {
     "position": {

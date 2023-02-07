@@ -47,7 +47,7 @@ export class AnimationManager extends Component {
         this.allNode = temp.getChildByName('AllSide');
 
         this.startAnim = this.allNode.getChildByName('StartAnimation').getComponent(StartControll);
-        this.betAnim = this.allNode.getChildByName('BetAnimation').getComponent(ChipControll);
+        this.betAnim = this.userNode.getChildByName('BetAnimation').getComponent(ChipControll);
         this.resultAnim = this.userNode.getChildByName('ResultAnimation').getComponent(ResultAnimControll);
         this.timeUpAnim = this.allNode.getChildByName('TimeUp').getComponent(TimeUpAnim);
         this.countDownAnim = this.liverNode.getChildByName('CountDown').getComponent(CountDownAnim);
