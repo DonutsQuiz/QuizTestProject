@@ -9,30 +9,32 @@ const { ccclass, property } = _decorator;
 @ccclass('QuestionModal')
 export class QuestionModal extends Component {
 
-    @property(Node)
+    @property(Node) //ライバー側のノード
     private liverNode : Node = null;
-    @property(Node)
+    @property(Node) //ユーザー側のノード
     private userNode : Node = null;
-    @property(Label)
+    @property(Label) //何問目か
     private qNumber : Label = null;
-    @property(RichText)
+    @property(RichText) //問題文
     private qSentence : RichText = null;
-    @property(Node)
+    @property(Node) //画像の枠(いらないかも)
     private qImageFrame : Node = null;
-    @property(Sprite)
+    @property(Sprite) //問題の画像(いらないかも)
     private qSpriteFrame : Sprite = null;
-    @property(Button)
+    @property(Button) //スタートボタン
     private qStartB : Button = null;
-    @property(Button)
+    @property(Button) //選択肢のボタン
     private qSelectB : Array<Button> = new Array<Button>();
-    @property(Sprite)
+    @property(Sprite) //選択肢の画像
     private qSelectSprite : Array<Sprite> = new Array<Sprite>();
-    @property(Label)
+    @property(Label) //選択肢の文
     private qSelectSent : Array<Label> = new Array<Label>();
-    @property(Color)
+    @property(Color) //非選択時のボタンの色
     private notSelectColor : Color = null;
-    @property(Color)
+    @property(Color) //選択時のボタンの色
     private selectColor : Color = null;
+    @property(Button) //問題を変えるボタン
+    private questionChangeButton : Button = null;
 
     private debugClientMode : ClientMode = 'Liver';
     private debugQuizMode : QuizType = 'None';
@@ -45,10 +47,12 @@ export class QuestionModal extends Component {
 
     public Constructor(){
         this.qStartB.node.on(Button.EventType.CLICK, this.Next,this);
-        this.qSelectB[0].node.on(Button.EventType.CLICK, function(){this.SelectButtonClick(0);},this);
-        this.qSelectB[1].node.on(Button.EventType.CLICK, function(){this.SelectButtonClick(1);},this);
-        this.qSelectB[2].node.on(Button.EventType.CLICK, function(){this.SelectButtonClick(2);},this);
-        this.qSelectB[3].node.on(Button.EventType.CLICK, function(){this.SelectButtonClick(3);},this);
+        this.qSelectB[0].node.on(Button.EventType.CLICK, function(){this.ClickSelectButton(0);},this);
+        this.qSelectB[1].node.on(Button.EventType.CLICK, function(){this.ClickSelectButton(1);},this);
+        this.qSelectB[2].node.on(Button.EventType.CLICK, function(){this.ClickSelectButton(2);},this);
+        this.qSelectB[3].node.on(Button.EventType.CLICK, function(){this.ClickSelectButton(3);},this);
+        this.questionChangeButton.node.on(Button.EventType.CLICK, this.ClikeChangeButton, this);
+
     }
 
     public OnUpdate(deltaTime: number){
@@ -98,7 +102,7 @@ export class QuestionModal extends Component {
     }
 
     // 選択肢をクリックした
-    private SelectButtonClick(sele : number){
+    private ClickSelectButton(sele : number){
         this.isSelect = sele;
         for(var i = 0; i < QuizManager.Instance().GetChoiceMax(); i++){
             if(i === sele){
@@ -108,6 +112,10 @@ export class QuestionModal extends Component {
                 this.qSelectSprite[i].color = this.notSelectColor;
             }
         }
+    }
+
+    private ClikeChangeButton(){
+        QuizManager.Instance().ResettinQuiz();
     }
 
     public SetUI(qtype : QuizType){
@@ -148,6 +156,7 @@ export class QuestionModal extends Component {
             var sele : string = "";
             for(var i = 0; i < QuizManager.Instance().GetChoiceMax(); i++){
                 this.qSelectB[i].node.active = true;
+                this.qSelectSprite[i].color = this.notSelectColor;
                 if(i === 0)sele = "A.";
                 if(i === 1)sele = "B.";
                 if(i === 2)sele = "C.";

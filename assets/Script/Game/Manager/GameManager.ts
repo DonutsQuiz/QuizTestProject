@@ -103,12 +103,12 @@ export class GameManager extends Component {
 
     // ライバーとユーザーの切り替え(デバッグ用)
     private ChangeFirstMode(){
-        if(this.isFirstTime){
-            this.isFirstTime = false;
+        if(this.gameInformation.isFirstTime){
+            this.gameInformation.isFirstTime = false;
             this.firstLabel.string = "二回目以降";
         }
-        else if(!this.isFirstTime){
-            this.isFirstTime = true;
+        else if(!this.gameInformation.isFirstTime){
+            this.gameInformation.isFirstTime = true;
             this.firstLabel.string = "初回";
         }
     }

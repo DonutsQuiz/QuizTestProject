@@ -60,10 +60,11 @@ export class OverallResultModal extends Component {
     private scrollAnim : ScrollAnim = null;
 
     private userList : Array<UserInfomation> = new Array<UserInfomation>();
-    private displayNumber : number = 10;
-    private nowRankMode : number = 0;
+    private displayNumber : number = 10; //表示するランキングの個数
+    private nowRankMode : number = 0; //0:獲得点数　1:BET 2:総合
     private isRoundEnd : boolean = false; // ラウンドが終了したか
     private isResultDisply : boolean = false; // 総合結果を表示するか
+    
     private animationTime : number = 0.0;
     private ANIMATION_TIME : number = 8.0;
 

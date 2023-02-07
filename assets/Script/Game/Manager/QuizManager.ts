@@ -88,6 +88,12 @@ export class QuizManager extends Component {
         this.quizComponent.Initialize();
         this.quizComponent.SetQuiz();
     }
+    
+    // 問題の再設定
+    public ResettinQuiz(){
+        this.quizComponent.SetQuiz();
+        GameManager.Instance().GetGameInfo().qNumber--;
+    }
 
     // 選択肢の最大数
     public GetChoiceMax() : number{
