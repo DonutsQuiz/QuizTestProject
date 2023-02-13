@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Button, Label, SpriteFrame, Sprite, Vec3,RichText, game, color } from 'cc';
+import { _decorator, Component, Node, Button, Label, SpriteFrame, Sprite, Vec3,RichText, game, color, Game } from 'cc';
 import { AnimationManager } from '../Manager/AnimationManager';
 import { Timer } from '../../UI/Timer';
 import { ClientMode, GameManager } from '../Manager/GameManager';
@@ -201,10 +201,11 @@ export class ChoicesModal extends Component {
         this.resultButton.node.active = false;
         this.nextButton.node.active = true;
         this.resultModal.node.active = true;
+        this.resultModal.SetAnswerLabel(GameManager.Instance().GetGameInfo().qCorNumber,"");
         for(var i = 0; i < QuizManager.Instance().GetChoiceMax(); i++){
             if(i != GameManager.Instance().GetGameInfo().qCorNumber){
                 this.oddsLabelList[i].string = "x1.0";
-                this.oddsLabelList[i].color = color(0,0,0,255);
+                this.oddsLabelList[i].color = color(255,255,255,255);
             }
         }
         this.TitleFrameLabel.string = "正解発表";
@@ -216,6 +217,7 @@ export class ChoicesModal extends Component {
         AnimationManager.Instance().timeUpAnim.AnimationReset();
         AnimationManager.Instance().countDownAnim.AnimationReset();
         AnimationManager.Instance().betAnim.AnimationReset();
+        this.isCountDown = false;
         this.isNext = true;
         this.resultModal.node.active = false;
         this.betModal.SetIsDecide(false);

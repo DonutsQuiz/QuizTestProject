@@ -11,10 +11,6 @@
     "ios": {
       "configID": "1eac13",
       "services": []
-    },
-    "android": {
-      "configID": "1eac13",
-      "services": []
     }
   },
   "builder-options": {
