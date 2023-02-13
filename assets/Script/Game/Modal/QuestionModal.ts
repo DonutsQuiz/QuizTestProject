@@ -35,6 +35,8 @@ export class QuestionModal extends Component {
     private selectColor : Color = null;
     @property(Button) //問題を変えるボタン
     private questionChangeButton : Button = null;
+    @property(Sprite) //選択時のマーク
+    private decideSprite : Sprite = null;
 
     private debugClientMode : ClientMode = 'Liver';
     private debugQuizMode : QuizType = 'None';
@@ -71,6 +73,7 @@ export class QuestionModal extends Component {
                 AnimationManager.Instance().startAnim.AnimationReset();
                 QuizModalManager.Instance().ChangeModal('Choices');
                 this.isNext = false;
+                this.decideSprite.node.active = false;
             }
         }
     }
@@ -107,6 +110,8 @@ export class QuestionModal extends Component {
         for(var i = 0; i < QuizManager.Instance().GetChoiceMax(); i++){
             if(i === sele){
                 this.qSelectSprite[i].color = this.selectColor;
+                this.decideSprite.node.active = true;
+                this.decideSprite.node.position = new Vec3(75 + this.qSelectB[i].node.position.x, this.qSelectB[i].node.position.y - 40, 0);
             }
             else{
                 this.qSelectSprite[i].color = this.notSelectColor;
@@ -116,6 +121,7 @@ export class QuestionModal extends Component {
 
     private ClikeChangeButton(){
         QuizManager.Instance().ResettinQuiz();
+        QuizModalManager.Instance().GetQuestionModal().SetUI(GameManager.Instance().GetGameInfo().qType);
     }
 
     public SetUI(qtype : QuizType){

@@ -91,8 +91,8 @@ export class QuizManager extends Component {
     
     // 問題の再設定
     public ResettinQuiz(){
-        this.quizComponent.SetQuiz();
         GameManager.Instance().GetGameInfo().qNumber--;
+        this.quizComponent.SetQuiz();
     }
 
     // 選択肢の最大数

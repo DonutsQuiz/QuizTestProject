@@ -216,6 +216,7 @@ export class ChoicesModal extends Component {
         this.timer.Reset();
         AnimationManager.Instance().timeUpAnim.AnimationReset();
         AnimationManager.Instance().countDownAnim.AnimationReset();
+        this.isCountDown = false;
         this.isNext = true;
         this.resultModal.node.active = false;
         this.betModal.SetIsDecide(false);

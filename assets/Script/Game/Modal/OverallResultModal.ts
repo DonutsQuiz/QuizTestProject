@@ -1,10 +1,11 @@
-import { _decorator, Component, Node, PageView, Label, Button, labelAssembler, game, RichText, Vec3, Sprite, SpriteFrame, CameraComponent } from 'cc';
+import { _decorator, Component, Node, PageView, Label, Button, labelAssembler, game, RichText, Vec3, Sprite, SpriteFrame, CameraComponent, Prefab } from 'cc';
 import { ClientMode, GameManager } from '../Manager/GameManager';
 import { QuizManager } from '../Manager/QuizManager';
 import { QuizModalManager } from '../Manager/QuizModalManager';
 import { RetryModal } from './RetryModal';
 import { ScrollAnim } from '../../EffectAnim/ScrollAnim';
 import { RankingUser } from '../../UI/RankingUser';
+import { Ranking } from '../../UI/Ranking';
 const { ccclass, property } = _decorator;
 
 export class UserInfomation{
@@ -58,6 +59,16 @@ export class OverallResultModal extends Component {
     private thirdSprite : Sprite = null;
     @property(ScrollAnim) // ランキングのスクロールアニメーション
     private scrollAnim : ScrollAnim = null;
+    @property(Ranking) //ランキング部分
+    private ranking : Ranking = null;
+
+    @property(Node)
+    private rankingRootNode : Node = null;
+    @property(Prefab)
+    private rankingPrefab : Prefab = null;
+    private nowRankingNodeNum : number = 0;
+    private basePositionY : number = -336;
+    private INTERVAL : number = -26;
 
     private userList : Array<UserInfomation> = new Array<UserInfomation>();
     private displayNumber : number = 10; //表示するランキングの個数
@@ -79,6 +90,8 @@ export class OverallResultModal extends Component {
         this.resultButton.node.active = false;
 
         this.rankChangeButton.node.on(Button.EventType.CLICK, this.ChangeRanking, this);    
+
+        this.ranking.Constructor();
     }
 
     public OnUpdate(deltaTime: number){
@@ -217,16 +230,16 @@ export class OverallResultModal extends Component {
         }
 
 
-        for(var i = 0; i < this.displayNumber; i++){
-            this.rankingUser[i].SetInfomation((i + 1).toString() + "位 : " + this.userList[i].mName + "  ");
+        for(var i = 0; i < this.ranking.GetLength(); i++){
+            this.ranking.GetRankignUser(i).SetInfomation((i + 1).toString() + "位 : " + this.userList[i].mName + "  ");
             if(this.nowRankMode === 0){
-                this.rankingUser[i].SetInfomation(this.rankingUser[i].GetInfomation() + this.userList[i].mCoin.toString() + "点");
+                this.ranking.GetRankignUser(i).SetInfomation(this.ranking.GetRankignUser(i).GetInfomation() + this.userList[i].mCoin.toString() + "点");
             }
             else if(this.nowRankMode === 1){
-                this.rankingUser[i].SetInfomation(this.rankingUser[i].GetInfomation() + this.userList[i].mBet.toString() + "点");
+                this.ranking.GetRankignUser(i).SetInfomation(this.ranking.GetRankignUser(i).GetInfomation() + this.userList[i].mBet.toString() + "点");
             }
             else if(this.nowRankMode === 2){
-                this.rankingUser[i].SetInfomation(this.rankingUser[i].GetInfomation() + this.userList[i].mTotalPoint.toString() + "点");
+                this.ranking.GetRankignUser(i).SetInfomation(this.ranking.GetRankignUser(i).GetInfomation() + this.userList[i].mTotalPoint.toString() + "点");
             }
         }
 
@@ -236,6 +249,16 @@ export class OverallResultModal extends Component {
         this.firstSprite.spriteFrame = this.userList[0].mSprite;
         this.secondSprite.spriteFrame = this.userList[1].mSprite;
         this.thirdSprite.spriteFrame = this.userList[2].mSprite;
+    }
+
+
+    private RankingGeneration(){
+        const rankMax : number = GameManager.Instance().GetGameInfo().ranking.length;
+
+        if(rankMax > this.nowRankingNodeNum){
+            const dif : number = rankMax - this.nowRankingNodeNum;
+            // var interval : number = 
+        }
     }
 
     private DebugModalUpdate(){
