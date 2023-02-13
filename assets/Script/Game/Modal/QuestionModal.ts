@@ -67,7 +67,12 @@ export class QuestionModal extends Component {
 
         if(this.isNext){
             this.changeDelay -= deltaTime;
-            AnimationManager.Instance().startAnim.SetQuizLabel(this.debugClientMode);
+            if(this.debugClientMode = 'Liver'){
+                AnimationManager.Instance().startAnim.SetQuizLabel("クイズ");
+            }
+            else{
+                AnimationManager.Instance().startAnim.SetQuizLabel("推し検定");
+            }
             AnimationManager.Instance().startAnim.Play();
             if(this.changeDelay <= 0.0){
                 AnimationManager.Instance().startAnim.AnimationReset();

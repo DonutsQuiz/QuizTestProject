@@ -1,6 +1,7 @@
 import { _decorator, Component, Node, Button, RichText, ButtonComponent } from 'cc';
 import { ClientMode, GameManager } from '../Manager/GameManager';
 import { QuizModalManager } from '../Manager/QuizModalManager';
+import { AnimationManager } from '../Manager/AnimationManager';
 const { ccclass, property } = _decorator;
 
 @ccclass('RuleModal')
@@ -46,9 +47,14 @@ export class RuleModal extends Component {
         this.DebugUpdate();
 
         if(this.isNext && this.animationDelay > 0.0){
+            AnimationManager.Instance().startAnim.SetQuizLabel("体験問題");
+            AnimationManager.Instance().startAnim.Play();
+
             this.animationDelay -= deltaTime;
         }
         else if(this.isNext && this.animationDelay <= 0.0){
+            AnimationManager.Instance().stampAnim.AnimationReset();
+
             this.animationDelay = 0.0;
             this.isNext = false;
             QuizModalManager.Instance().ChangeModal('Question');

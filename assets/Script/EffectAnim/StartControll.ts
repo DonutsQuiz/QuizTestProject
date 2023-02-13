@@ -23,14 +23,19 @@ export class StartControll extends Component {
         }
     }   
 
-    public SetQuizLabel(cliant: string)
+    // public SetQuizLabel(cliant: string)
+    // {
+    //     if(cliant == 'User'){
+    //         this.quizLable.string = "クイズ";
+    //     }
+    //     else if(cliant == 'Liver'){
+    //         this.quizLable.string = "推し検定";
+    //     }
+    // }
+
+    public SetQuizLabel(qlabel: string)
     {
-        if(cliant == 'User'){
-            this.quizLable.string = "クイズ";
-        }
-        else if(cliant == 'Liver'){
-            this.quizLable.string = "推し検定";
-        }
+        this.quizLable.string = qlabel;
     }
 
     public AnimationReset()
