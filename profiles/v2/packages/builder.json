@@ -8,9 +8,9 @@
       "coreJs": true
     },
     "buildPath": "project://build",
-    "outputName": "web-mobile",
+    "outputName": "ios",
     "mainBundleCompressionType": "merge_dep",
-    "platform": "web-mobile"
+    "platform": "ios"
   },
   "BuildTaskManager": {
     "taskMap": {
