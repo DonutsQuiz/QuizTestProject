@@ -6,6 +6,10 @@
     },
     "md5Cache": true,
     "debug": true,
-    "sourceMaps": true
+    "sourceMaps": true,
+    "buildPath": "project://build",
+    "outputName": "web-desktop",
+    "mainBundleCompressionType": "merge_dep",
+    "platform": "web-desktop"
   }
 }

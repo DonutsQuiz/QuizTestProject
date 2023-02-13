@@ -181,8 +181,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 200,
-      "height": 135.6
+      "width": 0,
+      "height": 75.6
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -216,7 +216,7 @@
       "b": 255,
       "a": 255
     },
-    "_string": "タイム\nアップ！",
+    "_string": "",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 50,
@@ -298,7 +298,7 @@
       "a": 255
     },
     "_spriteFrame": {
-      "__uuid__": "43f8663f-3c12-4b5d-b5b3-44d86c3f241d@f9941",
+      "__uuid__": "00795eeb-dd63-4397-89e2-565e67b970c5@f9941",
       "__expectedType__": "cc.SpriteFrame"
     },
     "_type": 0,
@@ -333,18 +333,6 @@
     },
     "playOnLoad": false,
     "_clips": [
-      {
-        "__uuid__": "4b403a33-b440-4518-828e-e8b43a314f7f",
-        "__expectedType__": "cc.AnimationClip"
-      },
-      {
-        "__uuid__": "f9c03a0a-0273-4e65-956a-fe95da068722",
-        "__expectedType__": "cc.AnimationClip"
-      },
-      {
-        "__uuid__": "0103b125-51db-457b-9a0c-af0601dd6196",
-        "__expectedType__": "cc.AnimationClip"
-      },
       {
         "__uuid__": "0e085de3-e620-4a14-9422-efd8657d5ee2",
         "__expectedType__": "cc.AnimationClip"

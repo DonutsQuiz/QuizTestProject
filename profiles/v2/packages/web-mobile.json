@@ -5,7 +5,7 @@
       "coreJs": true
     },
     "buildPath": "project://build",
-    "outputName": "web-mobile-001",
+    "outputName": "web-mobile",
     "mainBundleCompressionType": "merge_dep",
     "platform": "web-mobile",
     "sourceMaps": false,
@@ -16,7 +16,7 @@
   "options": {
     "web-mobile": {
       "orientation": "portrait",
-      "embedWebDebugger": true,
+      "embedWebDebugger": false,
       "__version__": "1.0.1"
     }
   }

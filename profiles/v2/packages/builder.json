@@ -4,8 +4,13 @@
   },
   "common": {
     "polyfills": {
-      "asyncFunctions": true
-    }
+      "asyncFunctions": true,
+      "coreJs": true
+    },
+    "buildPath": "project://build",
+    "outputName": "web-mobile",
+    "mainBundleCompressionType": "merge_dep",
+    "platform": "web-mobile"
   },
   "BuildTaskManager": {
     "taskMap": {
@@ -53,7 +58,8 @@
             },
             "cocos-service": {
               "configID": "1eac13",
-              "services": []
+              "services": [],
+              "__version__": "3.0.4"
             }
           },
           "__version__": "1.3.3"
@@ -218,6 +224,59 @@
           "__version__": "1.3.3"
         },
         "time": "2023-1-16 12:34",
+        "dirty": false
+      },
+      "1675825159872": {
+        "type": "build",
+        "id": "1675825159872",
+        "progress": 1,
+        "state": "success",
+        "stage": "build",
+        "message": "2023-2-10 18:41:46 Build success in 30608 ms!",
+        "options": {
+          "name": "TestQuizSecond",
+          "platform": "web-mobile",
+          "buildPath": "project://build",
+          "debug": false,
+          "md5Cache": true,
+          "skipCompressTexture": false,
+          "sourceMaps": false,
+          "polyfills": {
+            "asyncFunctions": true,
+            "coreJs": true
+          },
+          "experimentalEraseModules": false,
+          "useBuiltinServer": false,
+          "mainBundleIsRemote": false,
+          "mainBundleCompressionType": "merge_dep",
+          "replaceSplashScreen": true,
+          "startScene": "6d9866d9-a192-4526-a2a7-a9e7b61f341b",
+          "outputName": "web-mobile",
+          "scenes": [
+            {
+              "url": "db://assets/Scene/GameScene.scene",
+              "uuid": "6d9866d9-a192-4526-a2a7-a9e7b61f341b",
+              "inBundle": false
+            }
+          ],
+          "web-desktop": [],
+          "packages": {
+            "web-mobile": {
+              "orientation": "portrait",
+              "embedWebDebugger": false,
+              "__version__": "1.0.1"
+            },
+            "cocos-service": {
+              "configID": "1eac13",
+              "services": [],
+              "__version__": "3.0.4"
+            }
+          },
+          "__version__": "1.3.3",
+          "web-mobile": [],
+          "android": []
+        },
+        "time": "2023-2-10 18:41",
         "dirty": false
       }
     }

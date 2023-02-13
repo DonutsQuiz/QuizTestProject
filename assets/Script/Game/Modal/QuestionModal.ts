@@ -72,6 +72,7 @@ export class QuestionModal extends Component {
     }
 
     private Next(){
+        AnimationManager.Instance().stampAnim.AnimationReset();
         this.isNext = true;
         this.changeDelay = this.delayMax;
         this.userNode.active = false;
@@ -103,6 +104,8 @@ export class QuestionModal extends Component {
         for(var i = 0; i < QuizManager.Instance().GetChoiceMax(); i++){
             if(i === sele){
                 this.qSelectSprite[i].color = this.selectColor;
+                AnimationManager.Instance().stampAnim.AnimationReset();
+                AnimationManager.Instance().stampAnim.Play(sele);
             }
             else{
                 this.qSelectSprite[i].color = this.notSelectColor;

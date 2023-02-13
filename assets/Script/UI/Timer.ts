@@ -13,8 +13,11 @@ export class Timer extends Component {
 
     private time_limit : number = 1800.0;
 
+    private radius: number = 24;
+
     private isFinish : boolean = false;
     private isEnd : boolean = false;
+
 
     start() {
     }
@@ -67,24 +70,23 @@ export class Timer extends Component {
             this.time_circle.lineWidth = 2;
             this.time_circle.strokeColor.fromHEX('#000000');
             this.time_circle.fillColor.fromHEX('#FFFF00');
-            this.time_circle.circle(0, 0, 30);
+            this.time_circle.circle(0, 0, this.radius);
             this.time_circle.stroke();
             this.time_circle.fill();
 
             this.time_circle.lineWidth = 0;
             this.time_circle.fillColor.fromHEX('#9B9B9B');
-            this.time_circle.arc(0, 0, 30, 0.5 * Math.PI, _endAngle, true);
+            this.time_circle.arc(0, 0, this.radius, 0.5 * Math.PI, _endAngle, true);
             this.time_circle.lineTo(0, 0);
             this.time_circle.close();
             this.time_circle.stroke();
             this.time_circle.fill();
-
-
             
             this.elapsed_time += 1;
         }
         else{
             this.time_circle.clear();
+            this.time_display.string = null;
 
             if(!this.isEnd){
                 this.isEnd = true;
