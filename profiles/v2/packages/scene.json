@@ -3,7 +3,7 @@
     "native": false
   },
   "gizmos-infos": {
-    "is2D": true,
+    "is2D": false,
     "is3DIcon": false,
     "iconSize": 2,
     "gridVisible": true,
@@ -269,10 +269,46 @@
         "y": 233.5,
         "z": 0
       }
+    },
+    "c9i2NasyFGK726h0PQOqYS": {
+      "position": {
+        "x": 87.5,
+        "y": 408.5,
+        "z": 5000
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "w": 1
+      },
+      "viewCenter": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    "02h+aFKrxPgaFcpazqVDNK": {
+      "position": {
+        "x": 87.5,
+        "y": 408.5,
+        "z": 5000
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "w": 1
+      },
+      "viewCenter": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
     }
   },
   "camera-uuids": [
-    "6d9866d9-a192-4526-a2a7-a9e7b61f341b"
+    "02h+aFKrxPgaFcpazqVDNK"
   ],
   "float-window": {
     "position": {

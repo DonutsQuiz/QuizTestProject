@@ -60,7 +60,21 @@ export class QuestionModal extends Component {
     public OnUpdate(deltaTime: number){
         this.DebugModalUpdate();
 
+        if(this.isSelect < 0 && !this.isNext && GameManager.Instance().GetGameInfo().isFirstTime){
+            AnimationManager.Instance().kumaHintAnim.SetPos(80, -250);
+            AnimationManager.Instance().kumaHintAnim.SetFrameSize(210, 44);
+            AnimationManager.Instance().kumaHintAnim.SetHintLabel('質問の回答をここで決めましょう\n上の４つのボタンから選択してね');
+            AnimationManager.Instance().kumaHintAnim.Play();
+        }
+
         if(this.isSelect >= 0){
+            if(!this.isNext && GameManager.Instance().GetGameInfo().isFirstTime)
+            {
+                AnimationManager.Instance().kumaHintAnim.SetPos(0, -60);
+                AnimationManager.Instance().kumaHintAnim.SetFrameSize(132, 44);
+                AnimationManager.Instance().kumaHintAnim.SetHintLabel('正解を決めたら\nスタートしましょう');
+                AnimationManager.Instance().kumaHintAnim.Play();
+            }
             GameManager.Instance().GetGameInfo().qCorNumber = this.isSelect;
             this.qStartB.node.active = true;
         }
@@ -76,6 +90,7 @@ export class QuestionModal extends Component {
             AnimationManager.Instance().startAnim.Play();
             if(this.changeDelay <= 0.0){
                 AnimationManager.Instance().startAnim.AnimationReset();
+                AnimationManager.Instance().kumaHintAnim.AnimationReset();
                 QuizModalManager.Instance().ChangeModal('Choices');
                 this.isNext = false;
                 this.decideSprite.node.active = false;
@@ -85,6 +100,7 @@ export class QuestionModal extends Component {
 
     private Next(){
         AnimationManager.Instance().stampAnim.AnimationReset();
+        AnimationManager.Instance().kumaHintAnim.AnimationReset();
         this.isNext = true;
         this.changeDelay = this.delayMax;
         this.userNode.active = false;
@@ -112,14 +128,18 @@ export class QuestionModal extends Component {
 
     // 選択肢をクリックした
     private ClickSelectButton(sele : number){
+        if(this.isSelect < 0){
+            AnimationManager.Instance().kumaHintAnim.Stop();
+        }
+
         this.isSelect = sele;
         for(var i = 0; i < QuizManager.Instance().GetChoiceMax(); i++){
             if(i === sele){
                 this.qSelectSprite[i].color = this.selectColor;
                 AnimationManager.Instance().stampAnim.AnimationReset();
                 AnimationManager.Instance().stampAnim.Play(sele);
-                this.decideSprite.node.active = true;
-                this.decideSprite.node.position = new Vec3(75 + this.qSelectB[i].node.position.x, this.qSelectB[i].node.position.y - 40, 0);
+                // this.decideSprite.node.active = true;
+                // this.decideSprite.node.position = new Vec3(75 + this.qSelectB[i].node.position.x, this.qSelectB[i].node.position.y - 40, 0);
             }
             else{
                 this.qSelectSprite[i].color = this.notSelectColor;

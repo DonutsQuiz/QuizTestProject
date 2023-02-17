@@ -53,7 +53,7 @@ export class RuleModal extends Component {
             this.animationDelay -= deltaTime;
         }
         else if(this.isNext && this.animationDelay <= 0.0){
-            AnimationManager.Instance().stampAnim.AnimationReset();
+            AnimationManager.Instance().startAnim.AnimationReset();
 
             this.animationDelay = 0.0;
             this.isNext = false;

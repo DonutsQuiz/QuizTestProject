@@ -5,6 +5,7 @@ import { ResultAnimControll } from '../../EffectAnim/ResultAnimControll';
 import { TimeUpAnim } from '../../EffectAnim/TimeUpAnim';
 import { CountDownAnim } from '../../EffectAnim/CountDownAnim';
 import { StampAnim } from '../../EffectAnim/StampAnim';
+import { KumaHintAnim } from '../../EffectAnim/KumaHintAnim';
 const { ccclass, property } = _decorator;
 
 @ccclass('AnimationManager')
@@ -32,6 +33,7 @@ export class AnimationManager extends Component {
     public timeUpAnim: TimeUpAnim = null;
     public countDownAnim: CountDownAnim = null;
     public stampAnim: StampAnim = null;
+    public kumaHintAnim: KumaHintAnim = null;
 
     public userNode: Node = null;
     public liverNode: Node = null;
@@ -54,6 +56,7 @@ export class AnimationManager extends Component {
         this.timeUpAnim = this.allNode.getChildByName('TimeUp').getComponent(TimeUpAnim);
         this.countDownAnim = this.liverNode.getChildByName('CountDown').getComponent(CountDownAnim);
         this.stampAnim = this.liverNode.getChildByName('SeikaiStamp').getComponent(StampAnim);
+        this.kumaHintAnim = this.liverNode.getChildByName('KumaHint').getComponent(KumaHintAnim);
     }
 
     update(deltaTime: number) {
