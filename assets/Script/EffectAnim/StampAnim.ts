@@ -20,7 +20,7 @@ export class StampAnim extends Component {
 
     public Play(selection: number)
     {
-        let pos = new Vec3(this.posCenterX[selection] + 80, this.posCenterY[selection] + 20 + this.offsetY, 0);
+        let pos = new Vec3(this.posCenterX[selection] + 65, this.posCenterY[selection] + 20 + this.offsetY, 0);
         if(this.StampAnim && !this.StampAnim.node.active )
         {
             console.log("stamp animation!");
