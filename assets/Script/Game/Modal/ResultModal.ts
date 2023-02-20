@@ -33,7 +33,6 @@ export class ResultModal extends Component {
 
     start() {
         this.nextButton.node.on(Button.EventType.CLICK, function(){
-            QuizModalManager.Instance().ChangeModal('Question');
             this.isNext = true;
         }, this)
     }

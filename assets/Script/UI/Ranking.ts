@@ -33,6 +33,15 @@ export class Ranking extends Component {
         }
     }
 
+    // start(){
+    //     this.GenerateButton.node.on(Button.EventType.CLICK, this.Generate, this);
+
+    //     for(var i = 0; i < this.firstMenber.length; i++){
+    //         this.rankingList.push(this.firstMenber[i]);
+    //         this.rankingCountMax = this.firstMenber.length;
+    //     }
+    // }
+
     public Generate(){
         var count : number = 0;
 

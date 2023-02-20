@@ -6,5 +6,19 @@
       "fitHeight": false,
       "fitWidth": true
     }
-  }
+  },
+  "layer": [
+    {
+      "name": "FrontModal",
+      "value": 524288
+    },
+    {
+      "name": "Menu",
+      "value": 262144
+    },
+    {
+      "name": "Modal",
+      "value": 131072
+    }
+  ]
 }

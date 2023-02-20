@@ -37,6 +37,8 @@ export class QuizModalManager extends Component {
 
     @property(Node)
     canvas : Node = null;
+    @property(Node)
+    frontCanvas : Node = null;
     @property(Prefab)
     private titlePrefab : Prefab = null;
     @property(Prefab)

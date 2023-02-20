@@ -87,7 +87,8 @@ export class QuizDataBase extends Component {
     private PersonalDataInitialize(){
 
         var sent : string[] = [
-            `今日はオフの日。<br/><size=1> </size><br/>次のうち、行きたい場所はどこ？`,
+            // `今日はオフの日。<br/><size=1> </size><br/>次のうち、行きたい場所はどこ？`,
+            `次のうち、行きたい場所はどこ？`,
             "やっていたかもしれない職業は？",
             "失敗しそうな料理は？",
             "一番得意な教科は？",

@@ -46,17 +46,21 @@ export class QuizManager extends Component {
 
     public OnUpdate(){
         // 全問題が終了したら総合結果に移行する
-        if(QuizModalManager.Instance().GetChoicesModal().isNext){
+        if(QuizModalManager.Instance().GetChoicesModal().isToRanking){
             if(GameManager.Instance().GetGameInfo().qNumber >= this.raundMax){
                 QuizModalManager.Instance().GetOverallResultModal().SetIsRoundEnd(true);
             }
             else{
-                // デバッグ
-                QuizModalManager.Instance().GetChoicesModal().GetTimer().Reset();
-                GameManager.Instance().GetGameInfo().thinkTime = 600;
-                this.quizComponent.SetQuiz();
+                QuizModalManager.Instance().GetOverallResultModal().SetIsRoundEnd(false);
             }
-            QuizModalManager.Instance().GetChoicesModal().isNext = false;
+            QuizModalManager.Instance().GetChoicesModal().isToRanking = false;
+        }
+
+        if(QuizModalManager.Instance().GetOverallResultModal().GetIsNextQuestion()){
+            QuizModalManager.Instance().GetChoicesModal().GetTimer().Reset();
+            GameManager.Instance().GetGameInfo().thinkTime = 600;
+            this.quizComponent.SetQuiz();
+            QuizModalManager.Instance().GetOverallResultModal().SetIsNextQuestion(false);
         }
     }
 
