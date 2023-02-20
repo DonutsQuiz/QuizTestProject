@@ -4,8 +4,8 @@ import { QuizManager } from '../Manager/QuizManager';
 import { QuizModalManager } from '../Manager/QuizModalManager';
 import { RetryModal } from './RetryModal';
 import { ScrollAnim } from '../../EffectAnim/ScrollAnim';
-import { RankingUser } from '../../UI/RankingUser';
 import { Ranking } from '../../UI/Ranking';
+import { RankTopThreeIcon } from '../../UI/RankTopThreeIcon';
 const { ccclass, property } = _decorator;
 
 export class UserInfomation{
@@ -29,8 +29,6 @@ export class OverallResultModal extends Component {
 
     @property(Node) // ライバー側のUI
     private liverNode : Node = null;
-    @property(RankingUser) //ランキングユーザー情報
-    private rankingUser : Array<RankingUser> = new Array<RankingUser>();
     @property(Button) // 次のクイズへ
     private nextRoundButton : Button = null;
     @property(Button) // 次のラウンドへ
@@ -47,14 +45,10 @@ export class OverallResultModal extends Component {
     private rankLabel : Label = null;
     @property(RichText) //カンペラベル
     private compeLabel : RichText = null;
+    @property(RankTopThreeIcon)
+    private topThreeIcon : RankTopThreeIcon = null;
     @property(Sprite) //一位の画像（モダール内）
     private topSprite : Sprite = null;
-    @property(Sprite) //一位の画像（モーダル外）
-    private firstSprite : Sprite = null;
-    @property(Sprite) //二位の画像
-    private secondSprite : Sprite = null;    
-    @property(Sprite) //三位の画像
-    private thirdSprite : Sprite = null;
     @property(ScrollAnim) // ランキングのスクロールアニメーション
     private scrollAnim : ScrollAnim = null;
     @property(Ranking) //ランキング部分
@@ -65,7 +59,6 @@ export class OverallResultModal extends Component {
     private userList : Array<UserInfomation> = new Array<UserInfomation>();
     private nowRankMode : number = 0; //0:獲得点数　1:BET 2:総合
     private isRoundEnd : boolean = false; // ラウンドが終了したか
-    private isResultDisply : boolean = false; // 総合結果を表示するか
     private isNextQuiestion : boolean = false; // 次の問題に進むか
     private retryModal : RetryModal = null;
     
@@ -177,7 +170,6 @@ export class OverallResultModal extends Component {
     public Initialize(){
         this.nowRankMode = 0;
         this.isRoundEnd = false;
-        this.isResultDisply = false;
         this.debugClientMode = 'Liver';
         this.animationTime = this.ANIMATION_TIME;
 
@@ -244,9 +236,9 @@ export class OverallResultModal extends Component {
 
         // ランキング画像の設定
         this.topSprite.spriteFrame = this.userList[0].mSprite;
-        this.firstSprite.spriteFrame = this.userList[0].mSprite;
-        this.secondSprite.spriteFrame = this.userList[1].mSprite;
-        this.thirdSprite.spriteFrame = this.userList[2].mSprite;
+        this.topThreeIcon.SetFirstSprite(this.userList[0].mSprite);
+        this.topThreeIcon.SetSecondSprite(this.userList[1].mSprite);
+        this.topThreeIcon.SetThirdSprite(this.userList[2].mSprite);
     }
 
     private DebugModalUpdate(){
@@ -275,7 +267,6 @@ export class OverallResultModal extends Component {
     }
 
     private ClickResultButton(){
-        this.isResultDisply = true;
         this.resultButton.node.active = false;
         this.rankChangeButton.node.active = false;
         this.rankLabel.string = "ランキング発表！";

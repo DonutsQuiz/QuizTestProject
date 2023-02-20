@@ -15,6 +15,8 @@ export class RankingModal extends Component {
     @property(Label)
     liverNameLabel : Label = null;
 
+    private rankingMode : number = 0; //今月：０　先月：１
+
     private debugClientMode : ClientMode = 'Liver';
 
 
@@ -34,6 +36,15 @@ export class RankingModal extends Component {
             this.pointLabelList[i].string = GameManager.Instance().GetGameInfo().lastMonthRanking[i].mPoint.toString() + "点";
         }
         this.liverNameLabel.string = "「" + GameManager.Instance().GetGameInfo().liverName +  "」の推し検定";
+    }
+
+    private ClickFunction(){
+        if(this.rankingMode === 0){
+            QuizModalManager.Instance().ChangeModal('Question');
+        }
+        else if(this.rankingMode === 1){
+            QuizModalManager.Instance().ChangeModal('Title');
+        }
     }
 
     private DebugUpdate(){

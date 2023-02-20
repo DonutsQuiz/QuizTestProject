@@ -2,12 +2,12 @@
   "ver": "1.1.40",
   "importer": "prefab",
   "imported": true,
-  "uuid": "3375720f-b256-4d50-a23b-9df7bb10ea09",
+  "uuid": "bcd71230-7dba-4175-abf8-ddacd6ec4153",
   "files": [
     ".json"
   ],
   "subMetas": {},
   "userData": {
-    "syncNodeName": "ChoicesModal"
+    "syncNodeName": "RankTop3Icon"
   }
 }

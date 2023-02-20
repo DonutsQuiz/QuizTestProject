@@ -33,7 +33,7 @@ export class TitleModal extends Component {
     
     public Constructor(){
         this.startButton.node.on(Button.EventType.CLICK, function(){
-            QuizModalManager.Instance().ChangeModal('Rule')
+            QuizModalManager.Instance().ChangeModal('Rule');
             this.isFirst = false;}, 
             this);
         
