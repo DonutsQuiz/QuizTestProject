@@ -1,11 +1,9 @@
 {
   "ver": "1.1.40",
   "importer": "prefab",
-  "imported": true,
+  "imported": false,
   "uuid": "3375720f-b256-4d50-a23b-9df7bb10ea09",
-  "files": [
-    ".json"
-  ],
+  "files": [],
   "subMetas": {},
   "userData": {
     "syncNodeName": "ChoicesModal"

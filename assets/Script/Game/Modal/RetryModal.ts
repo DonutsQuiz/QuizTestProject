@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Button } from 'cc';
+import { _decorator, Component, Node, Button, game } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('RetryModal')

@@ -5,7 +5,6 @@ import { GameInformation, RankingInfo } from './GameInformation';
 import { QuizManager } from './QuizManager';
 import { QuizModalManager } from './QuizModalManager';
 import { AnimationManager } from './AnimationManager';
-import { GameArea } from '../../UI/GameArea';
 const { ccclass, property } = _decorator;
 
 const ClientMode = {

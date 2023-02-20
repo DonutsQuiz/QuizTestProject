@@ -6,6 +6,7 @@ import { QuizManager } from '../Manager/QuizManager';
 import { QuizModalManager } from '../Manager/QuizModalManager';
 import { BetModal } from './BetModal';
 import { ResultModal } from './ResultModal';
+import { IconLineup } from '../../UI/IconLineup';
 const { ccclass, property } = _decorator;
 
 @ccclass('ChoicesModal')
@@ -57,6 +58,8 @@ export class ChoicesModal extends Component {
     private TitleFrameNode : Node = null;
     @property(Label)
     private TitleFrameLabel : Label = null;
+    @property(IconLineup)
+    private iconLineupList : Array<IconLineup> = new Array<IconLineup>();
 
     @property(ResultModal) // リザルトモーダル
     private resultModal : ResultModal = null;
@@ -69,7 +72,7 @@ export class ChoicesModal extends Component {
     private debugClientMode : ClientMode = 'Liver';
     private isCountDown : boolean = false;
 
-    isNext : boolean = false;
+    isToRanking : boolean = false;
 
     private hintIndex : number = 0;
 
@@ -83,6 +86,9 @@ export class ChoicesModal extends Component {
         this.resultButton.node.on( Button.EventType.CLICK, this.ShowResult, this);
         this.countdownButton.node.on(Button.EventType.CLICK, function(){this.isCountDown = true; this.countdownButton.node.active = false;}, this);
         this.hintButton.node.on(Button.EventType.CLICK, function(){this.ChangeHint();}, this);
+        for(const icon of this.iconLineupList){
+            icon.Constructor();
+        }
     }
 
     public OnUpdate(deltaTime: number){
@@ -104,6 +110,7 @@ export class ChoicesModal extends Component {
             for(var i = 0; i < QuizManager.Instance().GetChoiceMax(); i++){
                 this.oddsLabelList[i].node.active = true;
                 this.betLabelList[i].node.active = false;
+                this.iconLineupList[i].Reset();
             }
         }
 
@@ -192,6 +199,7 @@ export class ChoicesModal extends Component {
     private DecideChoice(){
         this.choiceNumber = this.tempNumber;
         this.frameList[this.choiceNumber].spriteFrame = this.selectFrameSprite;
+        this.iconLineupList[this.choiceNumber].AddIcon(GameManager.Instance().GetGameInfo().ranking[0].mSprite);
         if(this.betModal.getIsPushedDecideButton()) AnimationManager.Instance().betAnim.Play(this.choiceNumber, this.betModal.GetBetValue());
         this.betModal.SetIsDecide(false);
     }
@@ -218,8 +226,11 @@ export class ChoicesModal extends Component {
         AnimationManager.Instance().countDownAnim.AnimationReset();
         AnimationManager.Instance().betAnim.AnimationReset();
         this.isCountDown = false;
-        this.isNext = true;
+        this.isToRanking = true;
         this.resultModal.node.active = false;
+        this.TitleFrameNode.active = false;
+        this.TitleFrameLabel.string = "ボーナス倍率結果";
+        this.countdownButton.node.active = true;
         this.betModal.SetIsDecide(false);
         this.choiceNumber = -1;
         this.ResetUI();

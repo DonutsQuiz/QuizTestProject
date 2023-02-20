@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, PageView, Label, Button, labelAssembler, game, RichText, Vec3, Sprite, SpriteFrame, CameraComponent, Prefab } from 'cc';
+import { _decorator, Component, Node, PageView, Label, Button, labelAssembler, game, RichText, Vec3, Sprite, SpriteFrame, CameraComponent, Prefab, InstanceMaterialType, instantiate } from 'cc';
 import { ClientMode, GameManager } from '../Manager/GameManager';
 import { QuizManager } from '../Manager/QuizManager';
 import { QuizModalManager } from '../Manager/QuizModalManager';
@@ -45,8 +45,6 @@ export class OverallResultModal extends Component {
     private questionNumberLabel : Label = null;
     @property(Label) // 今のランキング
     private rankLabel : Label = null;
-    @property(RetryModal) // 確認モーダル
-    private retryModal : RetryModal = null;
     @property(RichText) //カンペラベル
     private compeLabel : RichText = null;
     @property(Sprite) //一位の画像（モダール内）
@@ -61,20 +59,15 @@ export class OverallResultModal extends Component {
     private scrollAnim : ScrollAnim = null;
     @property(Ranking) //ランキング部分
     private ranking : Ranking = null;
-
-    @property(Node)
-    private rankingRootNode : Node = null;
-    @property(Prefab)
-    private rankingPrefab : Prefab = null;
-    private nowRankingNodeNum : number = 0;
-    private basePositionY : number = -336;
-    private INTERVAL : number = -26;
+    @property(Prefab) //リトライモーダルのプレハブ
+    private RetryModalPrefab : Prefab = null;
 
     private userList : Array<UserInfomation> = new Array<UserInfomation>();
-    private displayNumber : number = 10; //表示するランキングの個数
     private nowRankMode : number = 0; //0:獲得点数　1:BET 2:総合
     private isRoundEnd : boolean = false; // ラウンドが終了したか
     private isResultDisply : boolean = false; // 総合結果を表示するか
+    private isNextQuiestion : boolean = false; // 次の問題に進むか
+    private retryModal : RetryModal = null;
     
     private animationTime : number = 0.0;
     private ANIMATION_TIME : number = 8.0;
@@ -82,6 +75,9 @@ export class OverallResultModal extends Component {
     private debugClientMode : ClientMode = 'Liver';
 
     public Constructor(){
+        var temp = instantiate(this.RetryModalPrefab);
+        temp.setParent(QuizModalManager.Instance().frontCanvas);
+        this.retryModal = temp.getComponent(RetryModal);
         this.retryModal.Constructor();
 
         this.nextRoundButton.node.on(Button.EventType.CLICK, this.ClickRetryModal, this);
@@ -91,6 +87,8 @@ export class OverallResultModal extends Component {
 
         this.rankChangeButton.node.on(Button.EventType.CLICK, this.ChangeRanking, this);    
 
+
+
         this.ranking.Constructor();
     }
 
@@ -99,6 +97,7 @@ export class OverallResultModal extends Component {
             if(this.retryModal.GetIsRetry()){
                 QuizModalManager.Instance().ChangeModal('Question');
                 QuizManager.Instance().quizComponent.SetQuiz();
+                GameManager.Instance().GetGameInfo().qNumber = 0;
                 this.nowRankMode = 0;
                 this.ChangeRanking();
             }
@@ -176,7 +175,6 @@ export class OverallResultModal extends Component {
     }
 
     public Initialize(){
-        this.displayNumber = 10;
         this.nowRankMode = 0;
         this.isRoundEnd = false;
         this.isResultDisply = false;
@@ -251,16 +249,6 @@ export class OverallResultModal extends Component {
         this.thirdSprite.spriteFrame = this.userList[2].mSprite;
     }
 
-
-    private RankingGeneration(){
-        const rankMax : number = GameManager.Instance().GetGameInfo().ranking.length;
-
-        if(rankMax > this.nowRankingNodeNum){
-            const dif : number = rankMax - this.nowRankingNodeNum;
-            // var interval : number = 
-        }
-    }
-
     private DebugModalUpdate(){
         if(GameManager.Instance().GetClientMode() != this.debugClientMode){
             if(GameManager.Instance().GetClientMode() === 'Liver'){
@@ -274,12 +262,14 @@ export class OverallResultModal extends Component {
         }
     }
 
+    // 次の問題に進むボタン処理
     private ClickNextQuizButton(){
         QuizModalManager.Instance().ChangeModal('Question');
-        this.nowRankMode = 0;
+        this.isNextQuiestion = true;
         this.ChangeRanking();
     }
 
+    // リトライモーダルを表示
     private ClickRetryModal(){
         this.retryModal.SetActive();
     }
@@ -297,6 +287,14 @@ export class OverallResultModal extends Component {
     public SetIsRoundEnd(is : boolean){
         this.isRoundEnd = is;
         this.SetUI();
+    }
+
+    public SetIsNextQuestion(is : boolean){
+        this.isNextQuiestion = is;
+    }
+
+    public GetIsNextQuestion() : boolean{
+        return this.isNextQuiestion;
     }
 }
 
