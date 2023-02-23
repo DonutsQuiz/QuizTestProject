@@ -24,22 +24,40 @@ export class TitleModal extends Component {
     private tutorialNode : Node = null;
     @property(Label) //検定名(チュートリアル用)
     private certTitleLabel : Label = null;
+    @property(Button) //ランキング用ボタン
+    private rankingButton : Button = null;
 
     private debugClientMode : ClientMode = 'Liver';
     private debugIsFirst : boolean = false;
 
     private isFirst : boolean = false;
 
+    private MODAL_CHANGE_TIME :number = 4.0;
+    private modalChangeTime :number = 4.0;
+
     
     public Constructor(){
         this.startButton.node.on(Button.EventType.CLICK, function(){
+            QuizModalManager.Instance().GetRankingModal().SetRankingMode(0);
             QuizModalManager.Instance().ChangeModal('Rule');
             this.isFirst = false;}, 
-            this);
+            this
+        );
+
+        // this.rankingButton.node.on(Button.EventType.CLICK, 
+        //     function(){
+        //         QuizModalManager.Instance()
+        //     },
+        //     this
+        // );
         
         this.SetUI();
 
         this.debugIsFirst = GameManager.Instance().GetGameInfo().isFirstTime;
+
+
+        //新仕様
+        this.modalChangeTime = this.MODAL_CHANGE_TIME;
     }
 
     public OnUpdate(deltaTime: number){
@@ -47,6 +65,15 @@ export class TitleModal extends Component {
         //     // this.topHonoNode.position = new Vec3(this.topNameTrans.contentSize.width, 0,0);
         //     this.isFirst = false;
         // }
+
+        //新仕様
+        if(this.modalChangeTime > 0.0){
+            this.modalChangeTime -= deltaTime;
+        }
+        else{
+            QuizModalManager.Instance().ChangeModal('Rule');
+            this.modalChangeTime = this.MODAL_CHANGE_TIME;
+        }
 
         this.DebugUpdate();
     }

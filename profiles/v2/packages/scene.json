@@ -3,7 +3,7 @@
     "native": false
   },
   "gizmos-infos": {
-    "is2D": false,
+    "is2D": true,
     "is3DIcon": false,
     "iconSize": 2,
     "gridVisible": true,
@@ -38,9 +38,9 @@
   "camera-infos": {
     "f46876e4-e81b-4931-b493-6d367be385e7": {
       "position": {
-        "x": 0,
-        "y": 0,
-        "z": 0
+        "x": 187.5,
+        "y": 333.5,
+        "z": 5000
       },
       "rotation": {
         "x": 0,
@@ -56,8 +56,8 @@
     },
     "6d9866d9-a192-4526-a2a7-a9e7b61f341b": {
       "position": {
-        "x": 201.72513607802915,
-        "y": 309.29991029134766,
+        "x": 159.09529528456807,
+        "y": 315.7900191003819,
         "z": 5000
       },
       "rotation": {
@@ -308,7 +308,7 @@
     }
   },
   "camera-uuids": [
-    "f46876e4-e81b-4931-b493-6d367be385e7"
+    "6d9866d9-a192-4526-a2a7-a9e7b61f341b"
   ],
   "float-window": {
     "position": {

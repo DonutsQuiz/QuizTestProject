@@ -88,7 +88,7 @@ export class OverallResultModal extends Component {
     public OnUpdate(deltaTime: number){
         if(this.retryModal.GetIsDecide()){
             if(this.retryModal.GetIsRetry()){
-                QuizModalManager.Instance().ChangeModal('Question');
+                QuizModalManager.Instance().ChangeModal('Genre');
                 QuizManager.Instance().quizComponent.SetQuiz();
                 GameManager.Instance().GetGameInfo().qNumber = 0;
                 this.nowRankMode = 0;

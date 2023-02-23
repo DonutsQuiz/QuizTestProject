@@ -21,7 +21,7 @@ export class RankingModal extends Component {
 
 
     public Constructor(){
-        this.nextButton.node.on(Button.EventType.CLICK ,function(){QuizModalManager.Instance().ChangeModal('Question')});
+        this.nextButton.node.on(Button.EventType.CLICK, this.ClickFunction, this);
 
         this.SetUI();
     }
@@ -45,6 +45,10 @@ export class RankingModal extends Component {
         else if(this.rankingMode === 1){
             QuizModalManager.Instance().ChangeModal('Title');
         }
+    }
+
+    public SetRankingMode(mode : number){
+        this.rankingMode = mode;
     }
 
     private DebugUpdate(){

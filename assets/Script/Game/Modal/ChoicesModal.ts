@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Button, Label, SpriteFrame, Sprite, Vec3,RichText, game, color, Game } from 'cc';
+import { _decorator, Component, Node, Button, Label, SpriteFrame, Sprite, Vec3,RichText, game, color, Game, ModelComponent, TERRAIN_SOUTH_INDEX } from 'cc';
 import { AnimationManager } from '../Manager/AnimationManager';
 import { Timer } from '../../UI/Timer';
 import { ClientMode, GameManager } from '../Manager/GameManager';
@@ -76,6 +76,15 @@ export class ChoicesModal extends Component {
 
     private hintIndex : number = 0;
 
+    private thinkingTime = 60.0;
+    private isThinkingEnd : boolean = false;
+    private MODAL_CHANGE_TIME :number = 3.0;
+    private modalChangeTime :number = -1.0;
+    private isModalChange :boolean = false;
+    private correctAnswerTime : number = -1.0;
+    private CORRECT_ANSWER_COUNT : number = 3;
+    private correctAnswerCount : number = 0;
+
 
     public Constructor(){
         this.buttonList[0].node.on(Button.EventType.CLICK, function(){this.Choice(0);}, this);
@@ -84,7 +93,7 @@ export class ChoicesModal extends Component {
         this.buttonList[3].node.on(Button.EventType.CLICK, function(){this.Choice(3);}, this);
         this.nextButton.node.on( Button.EventType.CLICK, this.Next, this);
         this.resultButton.node.on( Button.EventType.CLICK, this.ShowResult, this);
-        this.countdownButton.node.on(Button.EventType.CLICK, function(){this.isCountDown = true; this.countdownButton.node.active = false;}, this);
+        this.countdownButton.node.on(Button.EventType.CLICK, this.ClickCountDownButton /* function(){this.isCountDown = true; this.countdownButton.node.active = false;} */, this);
         this.hintButton.node.on(Button.EventType.CLICK, function(){this.ChangeHint();}, this);
         for(const icon of this.iconLineupList){
             icon.Constructor();
@@ -132,6 +141,60 @@ export class ChoicesModal extends Component {
         if(this.betModal.GetIsDecide()){
             this.DecideChoice();
         }
+
+
+        // 新仕様
+        if(this.thinkingTime > 0.0){
+            this.thinkingTime -= deltaTime;
+        }
+        else if(this.thinkingTime < 0.0 && this.thinkingTime > -1.0 && this.isThinkingEnd === false){
+            this.thinkingTime = -1.0;
+            this.isThinkingEnd = true;
+            this.modalChangeTime = this.MODAL_CHANGE_TIME;
+        }
+
+        // 締め切りモーダル
+        if(GameManager.Instance().debugTimeUpModal.GetIsDecise() && GameManager.Instance().debugTimeUpModal.GetIsCloseUp()){
+            this.modalChangeTime = this.MODAL_CHANGE_TIME;
+            GameManager.Instance().debugTimeUpModal.SetIsDecide(false);
+        }
+
+        // ３秒後に結果発表に移る
+        if(this.modalChangeTime > 0.0){
+            this.modalChangeTime -= deltaTime;
+        }
+        else if(this.modalChangeTime < 0.0 && this.modalChangeTime > -1.0 && this.isModalChange === false){
+            this.modalChangeTime = -1.0;
+            this.correctAnswerTime = 3.0;
+            this.isModalChange = true;
+            this.CloseUpFunction();
+        }
+
+        // 正解発表
+        if(this.correctAnswerTime > 0.0 && this.correctAnswerCount <= this.CORRECT_ANSWER_COUNT){
+            this.correctAnswerTime -= deltaTime;
+        }
+        else if(this.correctAnswerTime < 0.0 && this.correctAnswerTime > -1.0){
+            if(this.correctAnswerCount === 0){
+                this.correctAnswerTime = 3.0;
+            }
+            else if(this.correctAnswerCount === 1){
+                this.correctAnswerTime = 3.0;
+                this.ShowResult();
+            }
+            else if(this.correctAnswerCount === 2){
+                this.correctAnswerTime = 5.0;
+            }
+            else if(this.correctAnswerCount === 3){
+                this.correctAnswerTime = -1.0;
+                this.correctAnswerCount = -1;
+                this.isModalChange = false;
+                this.Next();
+            }
+
+            this.correctAnswerCount++;
+        }
+
     }
 
     // クリックした時
@@ -217,6 +280,23 @@ export class ChoicesModal extends Component {
             }
         }
         this.TitleFrameLabel.string = "正解発表";
+    }
+
+    //カウントダウンボタン
+    private ClickCountDownButton(){
+        GameManager.Instance().debugTimeUpModal.SetIsActive(true);
+    }
+
+    // 回答締め切り処理
+    private CloseUpFunction(){
+        this.resultButton.node.active = true;
+        this.TitleFrameNode.active = true;
+        this.TitleFrameLabel.string = "ボーナス倍率結果";
+        for(var i = 0; i < QuizManager.Instance().GetChoiceMax(); i++){
+            this.oddsLabelList[i].node.active = true;
+            this.betLabelList[i].node.active = false;
+            this.iconLineupList[i].Reset();
+        }
     }
 
     // 結果発表に進む
