@@ -59,7 +59,7 @@
             "cocos-service": {
               "configID": "1eac13",
               "services": [],
-              "__version__": "3.0.5"
+              "__version__": "3.0.4"
             }
           },
           "__version__": "1.3.3"
@@ -112,7 +112,7 @@
             "cocos-service": {
               "configID": "1eac13",
               "services": [],
-              "__version__": "3.0.5"
+              "__version__": "3.0.4"
             }
           },
           "__version__": "1.3.3"
@@ -165,7 +165,7 @@
             "cocos-service": {
               "configID": "1eac13",
               "services": [],
-              "__version__": "3.0.5"
+              "__version__": "3.0.4"
             }
           },
           "__version__": "1.3.3"
@@ -218,7 +218,7 @@
             "cocos-service": {
               "configID": "1eac13",
               "services": [],
-              "__version__": "3.0.5"
+              "__version__": "3.0.4"
             }
           },
           "__version__": "1.3.3"
@@ -232,7 +232,7 @@
         "progress": 1,
         "state": "success",
         "stage": "build",
-        "message": "2023-2-8 18:53:49 Build success in 27725 ms!",
+        "message": "2023-2-20 17:33:06 Build success in 104226 ms!",
         "options": {
           "name": "TestQuizSecond",
           "platform": "web-mobile",
@@ -269,13 +269,13 @@
             "cocos-service": {
               "configID": "1eac13",
               "services": [],
-              "__version__": "3.0.5"
+              "__version__": "3.0.4"
             }
           },
           "__version__": "1.3.3",
           "web-mobile": []
         },
-        "time": "2023-2-8 18:53",
+        "time": "2023-2-20 17:31",
         "dirty": false
       },
       "1675931037692": {
@@ -334,7 +334,7 @@
             "cocos-service": {
               "configID": "1eac13",
               "services": [],
-              "__version__": "3.0.5"
+              "__version__": "3.0.4"
             },
             "native": {
               "encrypted": false,

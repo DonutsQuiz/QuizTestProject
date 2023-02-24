@@ -5,10 +5,13 @@ const { ccclass, property } = _decorator;
 export class StartControll extends Component {
     @property({type: Animation})
     public StartAnim: Animation|null = null;
+    @property(Node)
+    private back: Node = null;
     @property(Label)
     private quizLable: Label = null;
 
     start() {
+        this.back.active = false;
         this.StartAnim.node.active = false
         let animation = this.StartAnim.node.getComponent(Animation);
         animation.on(Animation.EventType.FINISHED, this.onTriggered, this);
@@ -18,6 +21,7 @@ export class StartControll extends Component {
     {
         if(this.StartAnim && !this.StartAnim.node.active)
         {
+            this.back.active = true;
             this.StartAnim.node.active = true;
             this.StartAnim.play('StartAnim');
         }
@@ -40,6 +44,7 @@ export class StartControll extends Component {
 
     public AnimationReset()
     {
+        this.back.active = false;
         this.StartAnim.node.active = false;
     }
     

@@ -132,7 +132,7 @@
         "__id__": 4
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 10
@@ -397,7 +397,7 @@
         "__id__": 22
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 36
@@ -1201,7 +1201,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 876,
+      "width": 1280,
       "height": 180.8
     },
     "_anchorPoint": {
@@ -1231,12 +1231,12 @@
     "_dstBlendFactor": 4,
     "_color": {
       "__type__": "cc.Color",
-      "r": 255,
-      "g": 245,
+      "r": 0,
+      "g": 0,
       "b": 0,
       "a": 255
     },
-    "_string": "ライバーに関する問題を\n5問（1ラウンド）出題",
+    "_string": "このゲームは、ライバーにまつわる\n出題にリスナーが解答する検定です",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 80,
@@ -2115,7 +2115,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 350,
+      "width": 375,
       "height": 260
     },
     "_anchorPoint": {
@@ -2145,13 +2145,13 @@
     "_dstBlendFactor": 4,
     "_color": {
       "__type__": "cc.Color",
-      "r": 0,
-      "g": 66,
-      "b": 13,
+      "r": 228,
+      "g": 236,
+      "b": 230,
       "a": 255
     },
     "_spriteFrame": {
-      "__uuid__": "c7cf540a-ef88-436d-a347-943f6d234ed2@f9941",
+      "__uuid__": "f0511ae3-160a-4653-a0cf-2f3fb9e5f02b@f9941",
       "__expectedType__": "cc.SpriteFrame"
     },
     "_type": 1,
