@@ -20,14 +20,14 @@ export class GameMenu extends Component {
         this.listButton.node.on(Button.EventType.CLICK, this.ClickListButton, this);
     }
 
-    public ClickListButton(){
+    private ClickListButton(){
         QuizModalManager.Instance().GetGenreModal().SetConfirm(true);
         QuizModalManager.Instance().GetGenreModal().SetModalType(QuizModalManager.Instance().GetNowType());
         QuizModalManager.Instance().ChangeModal('Genre');
     }
 
     private ClickRankButton(){
-        QuizModalManager.Instance().GetGenreModal().SetModalType(QuizModalManager.Instance().GetNowType());
+        QuizModalManager.Instance().GetRankingModal().SetModalType(QuizModalManager.Instance().GetNowType());
         QuizModalManager.Instance().ChangeModal('Ranking');
     }
 

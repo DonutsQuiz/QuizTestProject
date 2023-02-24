@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Button, labelAssembler, Label, spriteAssembler, Sprite, game } from 'cc';
+import { _decorator, Component, Node, Button, labelAssembler, Label, spriteAssembler, Sprite, game, UITransform, Vec3 } from 'cc';
 import { ClientMode, GameManager } from '../Manager/GameManager';
 import { ModalType, QuizModalManager } from '../Manager/QuizModalManager';
 const { ccclass, property } = _decorator;
@@ -14,6 +14,14 @@ export class RankingModal extends Component {
     pointLabelList : Array<Label> = new Array<Label>();
     @property(Label)
     liverNameLabel : Label = null;
+    @property(Button)
+    private backButton : Button = null;
+    @property(Node)
+    private underbarTransform : Node = null;
+    @property(Button)
+    private nowRankButton : Button = null;
+    @property(Button)
+    private monthRankButton : Button = null;
 
     private rankingMode : number = 0; //今月：０　先月：１
 
@@ -24,6 +32,9 @@ export class RankingModal extends Component {
 
     public Constructor(){
         this.nextButton.node.on(Button.EventType.CLICK, this.ClickFunction, this);
+        this.backButton.node.on(Button.EventType.CLICK, this.ClickBackButton, this);
+        this.nowRankButton.node.on(Button.EventType.CLICK, function(){this.ClickSwitchingButton(0);}, this);
+        this.monthRankButton.node.on(Button.EventType.CLICK, function(){this.ClickSwitchingButton(1);}, this);
 
         this.SetUI();
     }
@@ -48,12 +59,23 @@ export class RankingModal extends Component {
             QuizModalManager.Instance().ChangeModal('Title');
         }
     }
+    private ClickBackButton(){
+        QuizModalManager.Instance().ChangeModal(this.modalType);
+        this.modalType = 'None';
+    }
+    private ClickSwitchingButton(mode : number){
+        if(mode === 0){ //今回のランキング
+            this.underbarTransform.position = new Vec3(-60, -15, 0);
+        }
+        else if(mode === 1){ //今月のランキング
+            this.underbarTransform.position = new Vec3(60, -15, 0);
+        }
+    }
+
 
     public SetRankingMode(mode : number){
         this.rankingMode = mode;
     }
-
-
     public SetModalType(type : ModalType){
         this.modalType = type;
     }
