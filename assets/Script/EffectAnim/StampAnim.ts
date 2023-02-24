@@ -6,6 +6,8 @@ export class StampAnim extends Component {
     @property({type: Animation})
     private StampAnim: Animation|null = null;
 
+    private DecideAnim: Node = null;
+
     private posCenterX: number[] = [-95, 95, -95, 95];
     private posCenterY: number[] = [27.5, 27.5, -27.5, -27.5];
 

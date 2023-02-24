@@ -222,12 +222,12 @@ export class ChoicesModal extends Component {
     }
 
     public SetQuestion(sent : string){
-        this.questionText.string = "<color=#ffffff>" + sent + "</color>";
+        this.questionText.string = "<color=#000000>" + sent + "</color>";
     }
 
     public SetUI(){
         this.timer.SetTimeLimit(GameManager.Instance().GetGameInfo().thinkTime);   // タイマーのセット
-        this.questionText.string ="<color=#ffffff>" +  GameManager.Instance().GetGameInfo().qSentenceUser + "</color>";
+        this.questionText.string ="<color=#000000>" +  GameManager.Instance().GetGameInfo().qSentenceUser + "</color>";
         this.numberLabel.string = GameManager.Instance().GetGameInfo().qNumber + "/" + QuizManager.Instance().raundMax + "問";
         this.betModal.node.active = false;
         this.resultModal.node.active = false;

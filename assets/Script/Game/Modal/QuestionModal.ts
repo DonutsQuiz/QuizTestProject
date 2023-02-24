@@ -73,21 +73,21 @@ export class QuestionModal extends Component {
             this.modalChangeTime = this.MODAL_CHANGE_TIME;
         }
 
-        if(this.isSelect < 0 && !this.isNext && GameManager.Instance().GetGameInfo().isFirstTime){
-            AnimationManager.Instance().kumaHintAnim.SetPos(80, -250);
-            AnimationManager.Instance().kumaHintAnim.SetFrameSize(210, 44);
-            AnimationManager.Instance().kumaHintAnim.SetHintLabel('質問の回答をここで決めましょう\n上の４つのボタンから選択してね');
-            AnimationManager.Instance().kumaHintAnim.Play();
-        }
+        // if(this.isSelect < 0 && !this.isNext && GameManager.Instance().GetGameInfo().isFirstTime){
+        //     AnimationManager.Instance().kumaHintAnim.SetPos(80, -250);
+        //     AnimationManager.Instance().kumaHintAnim.SetFrameSize(210, 44);
+        //     AnimationManager.Instance().kumaHintAnim.SetHintLabel('質問の回答をここで決めましょう\n上の４つのボタンから選択してね');
+        //     AnimationManager.Instance().kumaHintAnim.Play();
+        // }
 
         if(this.isSelect >= 0){
-            if(!this.isNext && GameManager.Instance().GetGameInfo().isFirstTime)
-            {
-                AnimationManager.Instance().kumaHintAnim.SetPos(0, -60);
-                AnimationManager.Instance().kumaHintAnim.SetFrameSize(132, 44);
-                AnimationManager.Instance().kumaHintAnim.SetHintLabel('正解を決めたら\nスタートしましょう');
-                AnimationManager.Instance().kumaHintAnim.Play();
-            }
+            // if(!this.isNext && GameManager.Instance().GetGameInfo().isFirstTime)
+            // {
+            //     AnimationManager.Instance().kumaHintAnim.SetPos(0, -60);
+            //     AnimationManager.Instance().kumaHintAnim.SetFrameSize(132, 44);
+            //     AnimationManager.Instance().kumaHintAnim.SetHintLabel('正解を決めたら\nスタートしましょう');
+            //     AnimationManager.Instance().kumaHintAnim.Play();
+            // }
             GameManager.Instance().GetGameInfo().qCorNumber = this.isSelect;
             this.qStartB.node.active = true;
         }
@@ -103,7 +103,7 @@ export class QuestionModal extends Component {
             AnimationManager.Instance().startAnim.Play();
             if(this.changeDelay <= 0.0){
                 AnimationManager.Instance().startAnim.AnimationReset();
-                AnimationManager.Instance().kumaHintAnim.AnimationReset();
+                // AnimationManager.Instance().kumaHintAnim.AnimationReset();
                 QuizModalManager.Instance().ChangeModal('Choices');
                 this.isNext = false;
                 this.decideSprite.node.active = false;
@@ -132,7 +132,7 @@ export class QuestionModal extends Component {
 
     private Next(){
         AnimationManager.Instance().stampAnim.AnimationReset();
-        AnimationManager.Instance().kumaHintAnim.AnimationReset();
+        // AnimationManager.Instance().kumaHintAnim.AnimationReset();
         this.isNext = true;
         this.changeDelay = this.delayMax;
         this.userNode.active = false;
@@ -160,9 +160,9 @@ export class QuestionModal extends Component {
 
     // 選択肢をクリックした
     private ClickSelectButton(sele : number){
-        if(this.isSelect < 0){
-            AnimationManager.Instance().kumaHintAnim.Stop();
-        }
+        // if(this.isSelect < 0){
+        //     AnimationManager.Instance().kumaHintAnim.Stop();
+        // }
 
         this.isSelect = sele;
         for(var i = 0; i < QuizManager.Instance().GetChoiceMax(); i++){
@@ -219,11 +219,11 @@ export class QuestionModal extends Component {
             }
         }
         else if(qtype === 'Act'){   // アクト
-            this.qSentence.node.setPosition(new Vec3(0,25,0));
+            this.qSentence.node.setPosition(new Vec3(0,35,0));
             this.qStartB.node.active = true;
         }
         else if(qtype === 'Personal'){   // クイズ
-            this.qSentence.node.setPosition(new Vec3(0,25,0));
+            this.qSentence.node.setPosition(new Vec3(0,35,0));
             //this.qSelectB.forEach(element => {element.node.active = true;});
             var sele : string = "";
             for(var i = 0; i < QuizManager.Instance().GetChoiceMax(); i++){
@@ -269,11 +269,11 @@ export class QuestionModal extends Component {
                     }
                 }
                 else if(this.debugQuizMode === 'Act'){   // アクト
-                    this.qSentence.node.setPosition(new Vec3(0,25,0));
+                    this.qSentence.node.setPosition(new Vec3(0,35,0));
                     this.qStartB.node.active = true;
                 }
                 else if(this.debugQuizMode === 'Personal'){   // クイズ
-                    this.qSentence.node.setPosition(new Vec3(0,25,0));
+                    this.qSentence.node.setPosition(new Vec3(0,35,0));
                     this.qSelectB.forEach(element => {element.node.active = true;});
                     var sele : string = "";
                     for(var i = 0; i < QuizManager.Instance().GetChoiceMax(); i++){
