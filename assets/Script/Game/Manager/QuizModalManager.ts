@@ -1,12 +1,11 @@
 import { _decorator, Component, Node, instantiate, Prefab, Canvas, Button, Label } from 'cc';
 import { ChoicesModal } from '../Modal/ChoicesModal';
+import { GenreChoiceModal } from '../Modal/GenreChoiceModal';
 import { OverallResultModal } from '../Modal/OverallResultModal';
 import { QuestionModal } from '../Modal/QuestionModal';
 import { RankingModal } from '../Modal/RankingModal';
-import { ResultModal } from '../Modal/ResultModal';
 import { RuleModal } from '../Modal/RuleModal';
 import { TitleModal } from '../Modal/TitleModal';
-import { WaitModal } from '../Modal/WaitModal';
 import { ClientMode, GameManager } from './GameManager';
 const { ccclass, property } = _decorator;
 
@@ -14,6 +13,7 @@ const ModalType = {
     None     : 'None',
     Title    : 'Title',
     Rule     : 'Rule',
+    Genre    : 'Genre',
     Ranking  : 'Ranking',
     Question : 'Question',
     Choices  : 'Choices',
@@ -44,6 +44,8 @@ export class QuizModalManager extends Component {
     @property(Prefab)
     private rulePrefab : Prefab = null;
     @property(Prefab)
+    private genrePrefab : Prefab = null;
+    @property(Prefab)
     private rankingPrefab : Prefab = null;
     @property(Prefab)
     private questionPrefab : Prefab = null;
@@ -54,13 +56,14 @@ export class QuizModalManager extends Component {
 
     private title : TitleModal = null;
     private rule : RuleModal = null;
+    private genre : GenreChoiceModal = null;
     private ranking : RankingModal = null;
     private question : QuestionModal = null;
     private choices : ChoicesModal = null;
     private overall : OverallResultModal = null;
 
     private debugClientMode : ClientMode = 'Liver';
-    private nowType : ModalType = 'Title';
+    private nowType : ModalType = 'None';
 
     public Constructor(){
         QuizModalManager.instance = this;
@@ -76,6 +79,12 @@ export class QuizModalManager extends Component {
         temp.active = false;
         this.rule = temp.getComponent(RuleModal);
         this.rule.Constructor();
+
+        temp = instantiate(this.genrePrefab);
+        temp.setParent(this.canvas);
+        temp.active = false;
+        this.genre = temp.getComponent(GenreChoiceModal);
+        this.genre.Constructor();
 
         temp = instantiate(this.rankingPrefab);
         temp.setParent(this.canvas);
@@ -109,6 +118,9 @@ export class QuizModalManager extends Component {
         else if(this.nowType === 'Rule'){
             this.rule.OnUpdate(deltaTime);
         }
+        else if(this.nowType === 'Genre'){
+            this.genre.OnUpdate(deltaTime);
+        }
         else if(this.nowType === 'Ranking'){
             this.ranking.OnUpdate();
         }
@@ -126,6 +138,7 @@ export class QuizModalManager extends Component {
     public ChangeModal(nextType : ModalType){
         this.title.node.active = false;
         this.rule.node.active = false;
+        this.genre.node.active = false;
         this.ranking.node.active = false;
         this.question.node.active = false;
         this.choices.node.active = false;
@@ -137,6 +150,9 @@ export class QuizModalManager extends Component {
         }
         else if(nextType === 'Rule'){
             this.rule.node.active = true;
+        }
+        else if(nextType === 'Genre'){
+            this.genre.node.active = true;
         }
         else if(nextType === 'Ranking'){
             this.ranking.node.active = true;
@@ -170,6 +186,9 @@ export class QuizModalManager extends Component {
     }
     public GetOverallResultModal() : OverallResultModal{
         return this.overall;
+    }
+    public GetRankingModal() : RankingModal{
+        return this.ranking;
     }
 }
 

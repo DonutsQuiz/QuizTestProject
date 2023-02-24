@@ -5,6 +5,8 @@ import { GameInformation, RankingInfo } from './GameInformation';
 import { QuizManager } from './QuizManager';
 import { QuizModalManager } from './QuizModalManager';
 import { AnimationManager } from './AnimationManager';
+import { RankTopThreeIcon } from '../../UI/RankTopThreeIcon';
+import { TimeUpModal } from '../Modal/TimeUpModal';
 const { ccclass, property } = _decorator;
 
 const ClientMode = {
@@ -33,6 +35,8 @@ export class GameManager extends Component {
     modalManager : QuizModalManager = null;
     @property(AnimationManager) // アニメーションマネージャー
     animManager : QuizModalManager = null;
+    @property(RankTopThreeIcon) //トップ３のアイコン
+    private topThreeIcon : RankTopThreeIcon = null;
     @property(QuizDataBase) // データベース（デバッグ用）
     dataBase : QuizDataBase = null;
     @property(SpriteFrame)
@@ -44,6 +48,8 @@ export class GameManager extends Component {
     private gameMenuPrefab : Prefab = null;
     @property(Prefab) //コメント
     private commentPrefab : Prefab = null;
+    @property(Prefab) //参加者
+    private participantPrefab : Prefab = null;
 
     @property(Button) // ライバーとユーザーを変えるボタン
     private clientButton : Button = null;
@@ -55,11 +61,14 @@ export class GameManager extends Component {
     @property(Label) // 初回か二回目以降か
     private firstLabel : Label = null;
 
+    @property(TimeUpModal)
+    debugTimeUpModal : TimeUpModal = null; 
+
     private clientMode : ClientMode = 'Liver';
     private gameInformation : GameInformation = new GameInformation();
     private gameMenu = null;
     private comment = null;
-    private isFirstTime : boolean = false;
+    private participant = null;
 
     start() {
         GameManager.instance = this;
@@ -69,7 +78,7 @@ export class GameManager extends Component {
 
         this.DebugConstractor();
 
-        this.isFirstTime = this.gameInformation.isFirstTime;
+        this.topThreeIcon.Constructor();
 
         this.dataBase.Constructor();
         this.modalManager.Constructor();
@@ -80,13 +89,20 @@ export class GameManager extends Component {
         this.comment = instantiate(this.commentPrefab);
         this.comment.setParent(this.canvas);
         this.comment.active = false;
+        this.participant = instantiate(this.participantPrefab);
+        this.participant.setParent(this.canvas);
+        this.participant.active = false;
         
         this.animManager.Constructor();
+
+        this.debugTimeUpModal.Constructor();
     }
 
     update(deltaTime: number) {
         this.quizManager.OnUpdate();
         this.modalManager.OnUpdate(deltaTime);
+
+        this.topThreeIcon.DebugUpdate();
     }
 
     // ライバーとユーザーの切り替え(デバッグ用)
@@ -121,9 +137,17 @@ export class GameManager extends Component {
         return this.gameInformation;
     }
 
+    public GetTopThreeIcon() : RankTopThreeIcon{
+        return this.topThreeIcon;
+    }
+
     public SetMenuActive(){
         this.gameMenu.active = true;
         this.comment.active = true;
+    }
+
+    public SetParticipantActive(is : boolean){
+        this.participant.active = is;
     }
 
 

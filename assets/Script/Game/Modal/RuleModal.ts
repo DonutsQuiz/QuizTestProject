@@ -35,11 +35,21 @@ export class RuleModal extends Component {
     private debugClientMode : ClientMode = 'Liver';
     private debugIsFirst : boolean = false;
 
+    //新仕様
+    private MODAL_CHANGE_TIME = 3.0;    // モーダルが変わる時間(定数)
+    private modalChangeTime = 3.0;      // モーダルが変わる時間(変数)
+    private MODAL_CHANGE_COUNT = 3;     // モーダルが変わる回数(定数)
+    private modalChangeCount = 0;       // モーダルが変わる回数(変数)
+
     public Constructor(){
         this.rankButton.node.on(Button.EventType.CLICK, this.NextModal, this);
         this.tutorialButton.node.on(Button.EventType.CLICK, this.ClickTutorialButton, this);
 
         this.debugIsFirst = GameManager.Instance().GetGameInfo().isFirstTime;
+
+        //新仕様
+        this.modalChangeTime = this.MODAL_CHANGE_TIME;
+        this.modalChangeCount = 0;
 
     }
 
@@ -57,7 +67,24 @@ export class RuleModal extends Component {
 
             this.animationDelay = 0.0;
             this.isNext = false;
-            QuizModalManager.Instance().ChangeModal('Question');
+            // QuizModalManager.Instance().ChangeModal('Question');
+            QuizModalManager.Instance().ChangeModal('Genre');
+        }
+
+        //新仕様
+        if(this.modalChangeTime > 0.0){
+            this.modalChangeTime -= deltaTime;
+        }
+        else{
+            if(this.modalChangeCount < this.MODAL_CHANGE_COUNT){
+                this.modalChangeCount++;
+            }
+            else{
+                QuizModalManager.Instance().ChangeModal('Genre');
+                this.modalChangeCount = 0;
+            }
+            this.modalChangeTime = this.MODAL_CHANGE_TIME;
+
         }
     }
 
@@ -86,7 +113,8 @@ export class RuleModal extends Component {
             this.tutorialNode.active = false;
         }
         else{
-            QuizModalManager.Instance().ChangeModal('Ranking');
+            // QuizModalManager.Instance().ChangeModal('Ranking');
+            QuizModalManager.Instance().ChangeModal('Genre');
         }
     }
 

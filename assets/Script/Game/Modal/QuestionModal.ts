@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Label, Button, Vec2, Vec3, SpriteFrame, Sprite, RichText, Game, color, Color } from 'cc';
+import { _decorator, Component, Node, Label, Button, Vec2, Vec3, SpriteFrame, Sprite, RichText, Game, color, Color, nextPow2 } from 'cc';
 import { AnimationManager } from '../Manager/AnimationManager';
 import { ClientMode, GameManager } from '../Manager/GameManager';
 import { QuizManager } from '../Manager/QuizManager';
@@ -47,6 +47,14 @@ export class QuestionModal extends Component {
     private delayMax = 1.0;
     private isNext : boolean = false;
 
+    //新仕様
+    private MODAL_CHANGE_TIME = 3.0;    // モーダルが変わる時間(定数)
+    private modalChangeTime = 3.0;      // モーダルが変わる時間(変数)
+    private isModelChange = false;
+    private MODAL_CHANGE_COUNT = 3;     // モーダルが変わる回数(定数)
+    private modalChangeCount = 0;       // モーダルが変わる回数(変数)
+
+
     public Constructor(){
         this.qStartB.node.on(Button.EventType.CLICK, this.Next,this);
         this.qSelectB[0].node.on(Button.EventType.CLICK, function(){this.ClickSelectButton(0);},this);
@@ -59,6 +67,11 @@ export class QuestionModal extends Component {
 
     public OnUpdate(deltaTime: number){
         this.DebugModalUpdate();
+
+        if(!this.isModelChange && this.modalChangeCount === 0){
+            this.isModelChange = true;
+            this.modalChangeTime = this.MODAL_CHANGE_TIME;
+        }
 
         if(this.isSelect < 0 && !this.isNext && GameManager.Instance().GetGameInfo().isFirstTime){
             AnimationManager.Instance().kumaHintAnim.SetPos(80, -250);
@@ -94,6 +107,25 @@ export class QuestionModal extends Component {
                 QuizModalManager.Instance().ChangeModal('Choices');
                 this.isNext = false;
                 this.decideSprite.node.active = false;
+                this.modalChangeCount = 0;
+            }
+        }
+
+        // 新仕様
+        if(this.isModelChange){
+            if(this.modalChangeTime > 0.0){
+                this.modalChangeTime -= deltaTime;
+            }
+            else{
+                this.modalChangeTime = 0.0;
+                this.isModelChange = false;
+                if(this.modalChangeCount === 0){
+                    // 選択画面に移る
+                }
+                else if(this.modalChangeCount === 1){
+                    this.Next();
+                }
+                this.modalChangeCount++;
             }
         }
     }
@@ -144,6 +176,12 @@ export class QuestionModal extends Component {
             else{
                 this.qSelectSprite[i].color = this.notSelectColor;
             }
+        }
+
+        // 新仕様
+        if(!this.isModelChange){
+            this.isModelChange = true;
+            this.modalChangeTime = this.MODAL_CHANGE_TIME;
         }
     }
 
