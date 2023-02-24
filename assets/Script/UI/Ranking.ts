@@ -24,6 +24,9 @@ export class Ranking extends Component {
     private INTERVAL : number = -26;
     private rankingList : Array<RankingUser> = new Array<RankingUser>();
 
+    private isConfirm : boolean = false; //メニューから飛んだかどうか
+    private modalType : ModalType = 'None';
+
     public Constructor(){
         this.GenerateButton.node.on(Button.EventType.CLICK, this.Generate, this);
 

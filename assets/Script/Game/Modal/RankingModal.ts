@@ -1,6 +1,6 @@
 import { _decorator, Component, Node, Button, labelAssembler, Label, spriteAssembler, Sprite, game } from 'cc';
 import { ClientMode, GameManager } from '../Manager/GameManager';
-import { QuizModalManager } from '../Manager/QuizModalManager';
+import { ModalType, QuizModalManager } from '../Manager/QuizModalManager';
 const { ccclass, property } = _decorator;
 
 @ccclass('RankingModal')
@@ -16,6 +16,8 @@ export class RankingModal extends Component {
     liverNameLabel : Label = null;
 
     private rankingMode : number = 0; //今月：０　先月：１
+
+    private modalType : ModalType = 'None';
 
     private debugClientMode : ClientMode = 'Liver';
 
@@ -49,6 +51,11 @@ export class RankingModal extends Component {
 
     public SetRankingMode(mode : number){
         this.rankingMode = mode;
+    }
+
+
+    public SetModalType(type : ModalType){
+        this.modalType = type;
     }
 
     private DebugUpdate(){

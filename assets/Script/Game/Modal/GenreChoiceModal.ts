@@ -1,27 +1,34 @@
-import { _decorator, Component, Node, Button } from 'cc';
-import { QuizModalManager } from '../Manager/QuizModalManager';
+import { _decorator, Component, Node, Button, Label, Vec3 } from 'cc';
+import { ModalType, QuizModalManager } from '../Manager/QuizModalManager';
 const { ccclass, property } = _decorator;
 
 @ccclass('GenreChoiceModal')
 export class GenreChoiceModal extends Component {
 
-    @property(Node)
+    @property(Node) //ジャンル選択ノード
     private selectNode : Node = null;
-    @property(Node)
+    @property(Node) //確認ノード
     private startNode : Node = null;
-    @property(Button)
+    @property(Node) //問題リストノード
+    private quistionListNode : Node = null;
+    @property(Button) //出題スタートボタン
     private startButton : Button = null;
-    @property(Button)
+    @property(Button) //戻る
     private backButton : Button = null;
     @property(Button)
     private genreButton : Array<Button> = new Array<Button>();
+    @property(Label)
+    private titleLabel : Label = null;
+    @property(Node)
+    private genreRootNode : Node = null;
 
     @property(Node)
     private certStartNode : Node = null;
 
     private animationTime = 0.0;
     private isNext = false;
-
+    private isConfirm : boolean = false; //メニューから飛んだかどうか
+    private modalType : ModalType = 'None';
 
 
     public Constructor(){
@@ -48,10 +55,29 @@ export class GenreChoiceModal extends Component {
         }
     }
 
+    public Initialize(){
+        if(this.isConfirm){
+            this.backButton.node.active = true;
+            this.titleLabel.string = "検定をコンプリートしよう！";
+            this.genreRootNode.position = new Vec3(0, -25, 0);
+        }
+        else{
+            this.backButton.node.active = false;
+            this.titleLabel.string = "出題テーマをえらぼう";
+            this.genreRootNode.position = new Vec3(0, -12, 0);
+        }
+    }
+
     // ジャンルを選択
     private ClickGenreButton(){
+        if(this.isConfirm){
+            this.quistionListNode.active = true;
+        }
+        else{
+            this.startNode.active = true;
+        }
         this.selectNode.active = false;
-        this.startNode.active = true;
+        this.backButton.node.active = true;
     }
 
     // 出題スタート
@@ -64,8 +90,29 @@ export class GenreChoiceModal extends Component {
 
     // 選択に戻る
     private ClickBackButton(){
-        this.selectNode.active = true;
-        this.startNode.active = false;
+        if(this.selectNode.active){
+            QuizModalManager.Instance().ChangeModal(this.modalType);
+            this.isConfirm = false;
+            this.modalType = 'None';
+        }
+        else if(this.startNode.active){
+            this.selectNode.active = true;
+            this.startNode.active = false;
+            this.backButton.node.active = false;
+        }
+        else if(this.quistionListNode.active){
+            this.selectNode.active = true;
+            this.quistionListNode.active = false;
+        }
+
+    }
+
+    public SetConfirm(is : boolean){
+        this.isConfirm = is;
+    }
+
+    public SetModalType(type : ModalType){
+        this.modalType = type;
     }
 }
 
