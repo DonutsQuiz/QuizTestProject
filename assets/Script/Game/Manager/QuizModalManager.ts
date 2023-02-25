@@ -153,6 +153,7 @@ export class QuizModalManager extends Component {
         }
         else if(nextType === 'Genre'){
             this.genre.node.active = true;
+            this.genre.Initialize();
         }
         else if(nextType === 'Ranking'){
             this.ranking.node.active = true;
@@ -178,6 +179,12 @@ export class QuizModalManager extends Component {
         
     }
 
+    public GetNowType() : ModalType{
+        return this.nowType;
+    }
+    public GetGenreModal() : GenreChoiceModal{
+        return this.genre;
+    }
     public GetQuestionModal() : QuestionModal{
         return this.question;
     }

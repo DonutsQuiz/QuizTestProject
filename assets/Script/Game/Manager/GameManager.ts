@@ -7,6 +7,7 @@ import { QuizModalManager } from './QuizModalManager';
 import { AnimationManager } from './AnimationManager';
 import { RankTopThreeIcon } from '../../UI/RankTopThreeIcon';
 import { TimeUpModal } from '../Modal/TimeUpModal';
+import { GameMenu } from '../../UI/GameMenu';
 const { ccclass, property } = _decorator;
 
 const ClientMode = {
@@ -85,6 +86,7 @@ export class GameManager extends Component {
 
         this.gameMenu = instantiate(this.gameMenuPrefab);
         this.gameMenu.setParent(this.canvas);
+        this.gameMenu.getComponent(GameMenu).Constructor();
         this.gameMenu.active = false;
         this.comment = instantiate(this.commentPrefab);
         this.comment.setParent(this.canvas);
