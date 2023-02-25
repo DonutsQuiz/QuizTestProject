@@ -1687,7 +1687,7 @@
       "a": 255
     },
     "_spriteFrame": {
-      "__uuid__": "22860ced-7dc1-40c1-b671-c2800bd05d0e@f9941",
+      "__uuid__": "0d9d062f-dca0-4a6a-a604-fb00f54d43c0@f9941",
       "__expectedType__": "cc.SpriteFrame"
     },
     "_type": 0,
@@ -3991,8 +3991,8 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 185,
+      "x": 130,
+      "y": 170,
       "z": 0
     },
     "_lrot": {
@@ -4113,7 +4113,7 @@
       "b": 0,
       "a": 255
     },
-    "_string": "解答締切の10秒\nカウントダウン開始",
+    "_string": "締め切り",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 52,
@@ -4159,8 +4159,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 125,
-      "height": 40
+      "width": 62.5,
+      "height": 20
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -4195,7 +4195,7 @@
       "a": 255
     },
     "_spriteFrame": {
-      "__uuid__": "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+      "__uuid__": "68180b27-0b60-41f8-8542-e243d2885978@f9941",
       "__expectedType__": "cc.SpriteFrame"
     },
     "_type": 1,
@@ -4260,7 +4260,7 @@
       "a": 255
     },
     "_normalSprite": {
-      "__uuid__": "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+      "__uuid__": "68180b27-0b60-41f8-8542-e243d2885978@f9941",
       "__expectedType__": "cc.SpriteFrame"
     },
     "_hoverSprite": {
