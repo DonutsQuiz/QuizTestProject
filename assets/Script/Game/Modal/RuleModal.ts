@@ -18,10 +18,14 @@ export class RuleModal extends Component {
     private tutorialRule1 : Node = null;
     @property(Node) //初回のルール文２
     private tutorialRule2 : Node = null;
+    @property(Node) //初回のルール文
+    private tutorialRule: Node[] = [];
     @property(Button) // 初回用ボタン
     private tutorialButton : Button = null;
     @property(RichText) //初回用ボタンのテキスト
     private tutorialButtonText : RichText = null;
+    @property(Button) // ルール説明スキップボタン
+    private skipButton : Button = null;
     @property(Node) //見出しのノード
     private titleNode : Node = null;
 
@@ -44,6 +48,7 @@ export class RuleModal extends Component {
     public Constructor(){
         this.rankButton.node.on(Button.EventType.CLICK, this.NextModal, this);
         this.tutorialButton.node.on(Button.EventType.CLICK, this.ClickTutorialButton, this);
+        this.skipButton.node.on(Button.EventType.CLICK, this.NextModel02, this);
 
         this.debugIsFirst = GameManager.Instance().GetGameInfo().isFirstTime;
 
@@ -72,6 +77,8 @@ export class RuleModal extends Component {
         }
 
         //新仕様
+        this.ChengeRuleModal(this.modalChangeCount);
+
         if(this.modalChangeTime > 0.0){
             this.modalChangeTime -= deltaTime;
         }
@@ -102,6 +109,24 @@ export class RuleModal extends Component {
             this.ruleNumber = 0;
             this.tutorialButtonText.string = "<color=#000000>ルール<br/>説明２へ</color>";
         }
+    }
+
+    private ChengeRuleModal(currentModal: number)
+    {
+        for(let i = 0; i < this.tutorialRule.length; ++i)
+        {
+            if(i == currentModal){
+                this.tutorialRule[i].active = true;
+            }
+            else{
+                this.tutorialRule[i].active = false;
+            }
+        }
+    }
+
+    private NextModel02()
+    {
+        QuizModalManager.Instance().ChangeModal('Genre');
     }
 
     private NextModal(){

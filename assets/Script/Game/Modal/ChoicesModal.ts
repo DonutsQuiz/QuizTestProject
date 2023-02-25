@@ -67,6 +67,9 @@ export class ChoicesModal extends Component {
     @property(Timer)
     timer : Timer = null;
 
+    @property(Label)
+    private timeDisplay : Label = null;
+
     choiceNumber : number = -1;
     private tempNumber : number = 0;
     private debugClientMode : ClientMode = 'Liver';
@@ -144,6 +147,7 @@ export class ChoicesModal extends Component {
 
 
         // 新仕様
+        this.timeDisplay.string = (this.isThinkingEnd) ? "0.0秒" : Math.ceil(this.thinkingTime).toString() + "秒";
         if(this.thinkingTime > 0.0){
             this.thinkingTime -= deltaTime;
         }
@@ -263,7 +267,8 @@ export class ChoicesModal extends Component {
         this.choiceNumber = this.tempNumber;
         this.frameList[this.choiceNumber].spriteFrame = this.selectFrameSprite;
         this.iconLineupList[this.choiceNumber].AddIcon(GameManager.Instance().GetGameInfo().ranking[0].mSprite);
-        if(this.betModal.getIsPushedDecideButton()) AnimationManager.Instance().betAnim.Play(this.choiceNumber, this.betModal.GetBetValue());
+        // if(this.betModal.getIsPushedDecideButton()) AnimationManager.Instance().betAnim.Play(this.choiceNumber, this.betModal.GetBetValue());
+        if(this.betModal.getIsPushedDecideButton()) AnimationManager.Instance().answerAnim.Play(this.choiceNumber);
         this.betModal.SetIsDecide(false);
     }
 
@@ -289,6 +294,7 @@ export class ChoicesModal extends Component {
 
     // 回答締め切り処理
     private CloseUpFunction(){
+        this.thinkingTime = 0;
         this.resultButton.node.active = true;
         this.TitleFrameNode.active = true;
         this.TitleFrameLabel.string = "ボーナス倍率結果";
@@ -304,7 +310,8 @@ export class ChoicesModal extends Component {
         this.timer.Reset();
         AnimationManager.Instance().timeUpAnim.AnimationReset();
         AnimationManager.Instance().countDownAnim.AnimationReset();
-        AnimationManager.Instance().betAnim.AnimationReset();
+        // AnimationManager.Instance().betAnim.AnimationReset();
+        AnimationManager.Instance().answerAnim.AnimationReset();
         this.isCountDown = false;
         this.isToRanking = true;
         this.resultModal.node.active = false;

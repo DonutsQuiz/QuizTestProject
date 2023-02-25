@@ -33,6 +33,7 @@ export class AnimationManager extends Component {
     public timeUpAnim: TimeUpAnim = null;
     public countDownAnim: CountDownAnim = null;
     public stampAnim: StampAnim = null;
+    public answerAnim: StampAnim = null;
     public kumaHintAnim: KumaHintAnim = null;
 
     public userNode: Node = null;
@@ -53,6 +54,7 @@ export class AnimationManager extends Component {
         this.startAnim = this.allNode.getChildByName('StartAnimation').getComponent(StartControll);
         this.betAnim = this.userNode.getChildByName('BetAnimation').getComponent(ChipControll);
         this.resultAnim = this.userNode.getChildByName('ResultAnimation').getComponent(ResultAnimControll);
+        this.answerAnim = this.userNode.getChildByName('AnswerAnimation').getComponent(StampAnim);
         this.timeUpAnim = this.allNode.getChildByName('TimeUp').getComponent(TimeUpAnim);
         this.countDownAnim = this.liverNode.getChildByName('CountDown').getComponent(CountDownAnim);
         this.stampAnim = this.liverNode.getChildByName('SeikaiStamp').getComponent(StampAnim);
