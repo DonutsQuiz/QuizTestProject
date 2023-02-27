@@ -61,14 +61,15 @@ export class RankingModal extends Component {
     }
     private ClickBackButton(){
         QuizModalManager.Instance().ChangeModal(this.modalType);
+        GameManager.Instance().SetParticipantActive(true);
         this.modalType = 'None';
     }
     private ClickSwitchingButton(mode : number){
         if(mode === 0){ //今回のランキング
-            this.underbarTransform.position = new Vec3(-60, -15, 0);
+            this.underbarTransform.position = new Vec3(this.nowRankButton.node.position.x, this.nowRankButton.node.position.y - 15.0, this.nowRankButton.node.position.z);
         }
         else if(mode === 1){ //今月のランキング
-            this.underbarTransform.position = new Vec3(60, -15, 0);
+            this.underbarTransform.position = new Vec3(this.monthRankButton.node.position.x, this.monthRankButton.node.position.y - 15.0, this.monthRankButton.node.position.z);
         }
     }
 

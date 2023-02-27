@@ -1,4 +1,5 @@
 import { _decorator, Component, Node, Button } from 'cc';
+import { GameManager } from '../Game/Manager/GameManager';
 import { QuizModalManager } from '../Game/Manager/QuizModalManager';
 import { Ranking } from './Ranking';
 const { ccclass, property } = _decorator;
@@ -18,6 +19,7 @@ export class GameMenu extends Component {
     public Constructor(){
         this.rankButton.node.on(Button.EventType.CLICK, this.ClickRankButton, this);
         this.listButton.node.on(Button.EventType.CLICK, this.ClickListButton, this);
+        this.exitButton.node.on(Button.EventType.CLICK, this.ClickExitButton, this);
     }
 
     private ClickListButton(){
@@ -29,6 +31,11 @@ export class GameMenu extends Component {
     private ClickRankButton(){
         QuizModalManager.Instance().GetRankingModal().SetModalType(QuizModalManager.Instance().GetNowType());
         QuizModalManager.Instance().ChangeModal('Ranking');
+        GameManager.Instance().SetParticipantActive(false);
+    }
+
+    private ClickExitButton(){
+        GameManager.Instance().GetExitModal().active = true;
     }
 
     start() {

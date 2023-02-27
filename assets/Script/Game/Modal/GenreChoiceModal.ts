@@ -1,4 +1,5 @@
 import { _decorator, Component, Node, Button, Label, Vec3 } from 'cc';
+import { GameManager } from '../Manager/GameManager';
 import { ModalType, QuizModalManager } from '../Manager/QuizModalManager';
 const { ccclass, property } = _decorator;
 
@@ -60,6 +61,7 @@ export class GenreChoiceModal extends Component {
             this.backButton.node.active = true;
             this.titleLabel.string = "検定をコンプリートしよう！";
             this.genreRootNode.position = new Vec3(0, -25, 0);
+            GameManager.Instance().SetParticipantActive(false);
         }
         else{
             this.backButton.node.active = false;
@@ -92,6 +94,7 @@ export class GenreChoiceModal extends Component {
     private ClickBackButton(){
         if(this.selectNode.active){
             QuizModalManager.Instance().ChangeModal(this.modalType);
+            GameManager.Instance().SetParticipantActive(true);
             this.isConfirm = false;
             this.modalType = 'None';
         }

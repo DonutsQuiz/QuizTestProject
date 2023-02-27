@@ -47,7 +47,7 @@ export abstract class QuizComponent extends Component {
         }
         
         // 結果
-        QuizModalManager.Instance().GetChoicesModal().GetResultModal().SetAnswerLabel(GameManager.Instance().GetGameInfo().qCorNumber ,GameManager.Instance().GetGameInfo().qSentence[GameManager.Instance().GetGameInfo().qCorNumber]);    
+        QuizModalManager.Instance().GetChoicesModal().GetResultModal().SetAnswerLabel(GameManager.Instance().GetGameInfo().qCorNumber ,GameManager.Instance().GetGameInfo().qSentence[GameManager.Instance().GetGameInfo().qCorNumber]);
     }
 
     public Reset(){

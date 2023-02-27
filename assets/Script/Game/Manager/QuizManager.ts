@@ -31,6 +31,7 @@ export class QuizManager extends Component {
     quizType : QuizType = 'None';
     quizComponent : QuizComponent = null;
     answerData : QuizData = null;
+    private isLastQuestion : boolean = false;
 
     start(){
         QuizManager.instance = this;
@@ -40,6 +41,7 @@ export class QuizManager extends Component {
         this.startButton.node.on(Button.EventType.CLICK, function(){
             this.QuestionPhase();
             GameManager.Instance().SetMenuActive();
+            GameManager.Instance().SetParticipantActive(true);
             this.startButton.node.active = false;
         }, this);
     }
@@ -60,6 +62,9 @@ export class QuizManager extends Component {
             QuizModalManager.Instance().GetChoicesModal().GetTimer().Reset();
             GameManager.Instance().GetGameInfo().thinkTime = 600;
             this.quizComponent.SetQuiz();
+            if(GameManager.Instance().GetGameInfo().qNumber === this.raundMax){
+                this.isLastQuestion = true;
+            }
             QuizModalManager.Instance().GetOverallResultModal().SetIsNextQuestion(false);
         }
     }
@@ -102,6 +107,14 @@ export class QuizManager extends Component {
     // 選択肢の最大数
     public GetChoiceMax() : number{
         return this.CHOICE_MAX;
+    }
+
+    //最終問題か
+    public SetIsLast(is : boolean){
+        this.isLastQuestion = is;
+    }
+    public GetIsLast() : boolean{
+        return this.isLastQuestion;
     }
 }
 
