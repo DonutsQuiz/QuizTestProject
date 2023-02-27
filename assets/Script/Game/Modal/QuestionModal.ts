@@ -13,6 +13,8 @@ export class QuestionModal extends Component {
     private liverNode : Node = null;
     @property(Node) //ユーザー側のノード
     private userNode : Node = null;
+    @property(Node) //ライバーとユーザー共通のノード
+    private allSideNode : Node = null;
     @property(Label) //何問目か
     private qNumber : Label = null;
     @property(RichText) //問題文
@@ -53,7 +55,8 @@ export class QuestionModal extends Component {
     private isModelChange = false;
     private MODAL_CHANGE_COUNT = 3;     // モーダルが変わる回数(定数)
     private modalChangeCount = 0;       // モーダルが変わる回数(変数)
-
+    private questionScrean : Node = null;   // 選択前の画面（ライバーとユーザー共通のノードの子ノード）
+    private selectionScrean : Node = null;  // 選択時の画面（ライバーとユーザー共通のノードの子ノード）
 
     public Constructor(){
         this.qStartB.node.on(Button.EventType.CLICK, this.Next,this);
@@ -63,6 +66,8 @@ export class QuestionModal extends Component {
         this.qSelectB[3].node.on(Button.EventType.CLICK, function(){this.ClickSelectButton(3);},this);
         this.questionChangeButton.node.on(Button.EventType.CLICK, this.ClikeChangeButton, this);
 
+        this.questionScrean = this.allSideNode.getChildByName('QuestionScrean');
+        this.selectionScrean = this.allSideNode.getChildByName('SelectionScrean');
     }
 
     public OnUpdate(deltaTime: number){
@@ -94,12 +99,7 @@ export class QuestionModal extends Component {
 
         if(this.isNext){
             this.changeDelay -= deltaTime;
-            if(this.debugClientMode = 'Liver'){
-                AnimationManager.Instance().startAnim.SetQuizLabel("クイズ");
-            }
-            else{
-                AnimationManager.Instance().startAnim.SetQuizLabel("推し検定");
-            }
+            AnimationManager.Instance().startAnim.SetQuizLabel("回答");
             AnimationManager.Instance().startAnim.Play();
             if(this.changeDelay <= 0.0){
                 AnimationManager.Instance().startAnim.AnimationReset();
@@ -112,6 +112,16 @@ export class QuestionModal extends Component {
         }
 
         // 新仕様
+        // 選択前の画面を表示
+        if(this.modalChangeCount === 0)
+        {
+            this.questionScrean.getChildByName('QuestionNumber').getComponent(Label).string = this.qNumber.string;
+            this.questionScrean.getChildByName('QuestionSentence').getComponent(RichText).string = this.qSentence.string;
+            this.questionScrean.active = true;
+            this.selectionScrean.active = false;
+            this.userNode.active = false;
+            this.liverNode.active = false;
+        }
         if(this.isModelChange){
             if(this.modalChangeTime > 0.0){
                 this.modalChangeTime -= deltaTime;
@@ -121,6 +131,10 @@ export class QuestionModal extends Component {
                 this.isModelChange = false;
                 if(this.modalChangeCount === 0){
                     // 選択画面に移る
+                    this.questionScrean.active = false;
+                    this.selectionScrean.active = true;
+                    this.userNode.active = true;
+                    this.liverNode.active = true;
                 }
                 else if(this.modalChangeCount === 1){
                     this.Next();
