@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, PageView, Label, Button, labelAssembler, game, RichText, Vec3, Sprite, SpriteFrame, CameraComponent, Prefab, InstanceMaterialType, instantiate } from 'cc';
+import { _decorator, Component, Node, PageView, Label, Button, labelAssembler, game, RichText, Vec3, Sprite, SpriteFrame, CameraComponent, Prefab, InstanceMaterialType, instantiate, Game } from 'cc';
 import { ClientMode, GameManager } from '../Manager/GameManager';
 import { QuizManager } from '../Manager/QuizManager';
 import { QuizModalManager } from '../Manager/QuizModalManager';
@@ -56,11 +56,31 @@ export class OverallResultModal extends Component {
     @property(Prefab) //リトライモーダルのプレハブ
     private RetryModalPrefab : Prefab = null;
 
+    // 新仕様
+    @property(Node) //タイトルのノード
+    private titleNode : Node = null;
+    @property(Label)
+    private titleLabel : Label = null;
+    @property(Sprite)
+    private blessingSprite : Sprite = null;
+    @property(Node) //正解したリスナー
+    private listenerListNode : Node = null;
+    @property(Node) //ランキングリスナー
+    private listenerRankNode : Node = null;
+    @property(Button)
+    private advanceButton : Button = null;
+    @property(Label)
+    private advanceLabel : Label = null;
+
     private userList : Array<UserInfomation> = new Array<UserInfomation>();
     private nowRankMode : number = 0; //0:獲得点数　1:BET 2:総合
     private isRoundEnd : boolean = false; // ラウンドが終了したか
     private isNextQuiestion : boolean = false; // 次の問題に進むか
     private retryModal : RetryModal = null;
+
+    // 新仕様
+    private nowNode : number = 0; // 0:正解者　1:順位
+    private isRetry : boolean = false;
     
     private animationTime : number = 0.0;
     private ANIMATION_TIME : number = 8.0;
@@ -79,8 +99,8 @@ export class OverallResultModal extends Component {
         this.resultButton.node.active = false;
 
         this.rankChangeButton.node.on(Button.EventType.CLICK, this.ChangeRanking, this);    
-
-
+    
+        this.advanceButton.node.on(Button.EventType.CLICK, this.ClickAdvanceButton, this);
 
         this.ranking.Constructor();
     }
@@ -90,6 +110,7 @@ export class OverallResultModal extends Component {
             if(this.retryModal.GetIsRetry()){
                 QuizModalManager.Instance().ChangeModal('Genre');
                 QuizManager.Instance().quizComponent.SetQuiz();
+                GameManager.Instance().SetParticipantActive(true);
                 GameManager.Instance().GetGameInfo().qNumber = 0;
                 this.nowRankMode = 0;
                 this.ChangeRanking();
@@ -98,6 +119,16 @@ export class OverallResultModal extends Component {
                 QuizModalManager.Instance().node.active = false;
             }
             this.retryModal.Reset();
+        }
+
+        // 新仕様
+        if(QuizManager.Instance().GetIsLast() && this.isRetry){
+            QuizModalManager.Instance().ChangeModal('Genre');
+            QuizManager.Instance().quizComponent.SetQuiz();
+            GameManager.Instance().SetParticipantActive(true);
+            GameManager.Instance().GetGameInfo().qNumber = 0;
+            this.nowRankMode = 0;
+            this.ChangeRanking();
         }
 
         this.DebugModalUpdate();
@@ -149,7 +180,8 @@ export class OverallResultModal extends Component {
             this.userList.sort((a,b) => {return b.mBet - a.mBet})
             this.rankChangeText.string = "<color=#000000>獲得点数<br/>ランキングへ戻る</color>"
             this.rankChangeText.fontSize = 48;
-            this.rankChangeButton.node.position = new Vec3(-130,20,0);
+            // this.rankChangeButton.node.position = new Vec3(-130,20,0);
+            this.rankChangeButton.node.position = new Vec3(-530,20,0);
             this.compeLabel.string = "<color=#ff0000>BETメダルの多い<br/>参加者を褒めて下さい</color>";
             this.nowRankMode = 1;
         }
@@ -158,13 +190,54 @@ export class OverallResultModal extends Component {
             this.userList.sort((a,b) => {return b.mCoin - a.mCoin})
             this.rankChangeText.string = "<color=#000000>BETメダル<br/>ランキングへ</color>"
             this.rankChangeText.fontSize = 60;
-            this.rankChangeButton.node.position = new Vec3(0,20,0);
+            // this.rankChangeButton.node.position = new Vec3(0,20,0);
+            this.rankChangeButton.node.position = new Vec3(500,20,0);
             this.compeLabel.string = "<color=#ff0000>獲得点数の高い参加者を褒めて下さい</color>";
             this.nowRankMode = 0;
         }
 
         this.SetUI();
         this.animationTime = this.ANIMATION_TIME;
+    }
+
+    // 進むボタン(新仕様)
+    private ClickAdvanceButton(){
+        if(this.nowNode === 0){
+            this.titleNode.position = new Vec3(0, 125, 0);
+            this.blessingSprite.node.active = false;
+            this.listenerListNode.active = false;
+            this.listenerRankNode.active = true;
+            if(QuizManager.Instance().GetIsLast()){
+                this.titleLabel.string = "スポーツ検定36巻検定終了";
+                this.titleLabel.fontSize = 55;
+                this.advanceLabel.string = "もう一度遊ぶ";
+                this.advanceLabel.fontSize = 60;
+            }
+            else{
+                this.titleLabel.string = "現在の順位 (" + GameManager.Instance().GetGameInfo().qNumber + "/" + QuizManager.Instance().raundMax + "問)";
+                this.advanceLabel.string = "次の出題へ";
+            }
+            this.nowNode = 1;
+        }
+        else if(this.nowNode === 1){
+            this.titleLabel.string = "正解おめでとう！";
+            this.titleLabel.fontSize = 80;
+            this.titleNode.position = new Vec3(0, 110, 0);
+            this.advanceLabel.string = "次へ";
+            this.advanceLabel.fontSize = 80;
+            this.blessingSprite.node.active = true;
+            this.listenerListNode.active = true;
+            this.listenerRankNode.active = false;
+            if(QuizManager.Instance().GetIsLast()){
+                this.isRetry = true;
+            }
+            else{
+                this.ClickNextQuizButton();            
+                GameManager.Instance().SetParticipantActive(true);
+            }
+            this.nowNode = 0;
+        }
+
     }
 
     public Initialize(){
@@ -181,6 +254,8 @@ export class OverallResultModal extends Component {
             this.userList[i].mTotalPoint = GameManager.Instance().GetGameInfo().ranking[i].mTotalPoint;
             this.userList[i].mSprite = GameManager.Instance().GetGameInfo().ranking[i].mSprite;
         }
+
+        GameManager.Instance().SetParticipantActive(false);
 
         this.scrollAnim.Reset();
     }

@@ -8,6 +8,7 @@ import { AnimationManager } from './AnimationManager';
 import { RankTopThreeIcon } from '../../UI/RankTopThreeIcon';
 import { TimeUpModal } from '../Modal/TimeUpModal';
 import { GameMenu } from '../../UI/GameMenu';
+import { ExitModal } from '../../UI/ExitModal';
 const { ccclass, property } = _decorator;
 
 const ClientMode = {
@@ -51,6 +52,8 @@ export class GameManager extends Component {
     private commentPrefab : Prefab = null;
     @property(Prefab) //参加者
     private participantPrefab : Prefab = null;
+    @property(ExitModal)
+    private exitModal : ExitModal = null;
 
     @property(Button) // ライバーとユーザーを変えるボタン
     private clientButton : Button = null;
@@ -94,6 +97,8 @@ export class GameManager extends Component {
         this.participant = instantiate(this.participantPrefab);
         this.participant.setParent(this.canvas);
         this.participant.active = false;
+
+        this.exitModal.Constructor();
         
         this.animManager.Constructor();
 
@@ -141,6 +146,10 @@ export class GameManager extends Component {
 
     public GetTopThreeIcon() : RankTopThreeIcon{
         return this.topThreeIcon;
+    }
+
+    public GetExitModal() : Node{
+        return this.exitModal.node;
     }
 
     public SetMenuActive(){
