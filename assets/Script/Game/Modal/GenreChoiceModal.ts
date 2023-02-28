@@ -87,6 +87,7 @@ export class GenreChoiceModal extends Component {
         this.startNode.active = false;
         this.certStartNode.active = true;
         this.isNext = true;
+        this.backButton.node.active = false;
         this.animationTime = 3.0;
     }
 

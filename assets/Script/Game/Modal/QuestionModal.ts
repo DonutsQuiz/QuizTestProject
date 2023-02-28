@@ -189,6 +189,7 @@ export class QuestionModal extends Component {
             }
             else{
                 this.qSelectSprite[i].color = this.notSelectColor;
+                this.qSelectSent[i].color = new Color(144,144,144,255);
             }
         }
 
@@ -243,6 +244,7 @@ export class QuestionModal extends Component {
             for(var i = 0; i < QuizManager.Instance().GetChoiceMax(); i++){
                 this.qSelectB[i].node.active = true;
                 this.qSelectSprite[i].color = this.notSelectColor;
+                this.qSelectSent[i].color = new Color(0,0,0,255);
                 if(i === 0)sele = "A.";
                 if(i === 1)sele = "B.";
                 if(i === 2)sele = "C.";

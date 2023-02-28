@@ -9165,16 +9165,16 @@
     ],
     "notSelectColor": {
       "__type__": "cc.Color",
-      "r": 200,
-      "g": 200,
-      "b": 200,
+      "r": 217,
+      "g": 217,
+      "b": 217,
       "a": 255
     },
     "selectColor": {
       "__type__": "cc.Color",
-      "r": 71,
-      "g": 255,
-      "b": 0,
+      "r": 217,
+      "g": 217,
+      "b": 217,
       "a": 255
     },
     "questionChangeButton": {

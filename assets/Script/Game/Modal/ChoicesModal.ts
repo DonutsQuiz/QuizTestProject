@@ -60,6 +60,8 @@ export class ChoicesModal extends Component {
     private TitleFrameLabel : Label = null;
     @property(IconLineup)
     private iconLineupList : Array<IconLineup> = new Array<IconLineup>();
+    @property(Button)
+    private listenerListButton : Array<Button> = new Array<Button>();
 
     @property(ResultModal) // リザルトモーダル
     private resultModal : ResultModal = null;
@@ -116,7 +118,7 @@ export class ChoicesModal extends Component {
         if(this.timer.GetIsFinish()){
             AnimationManager.Instance().timeUpAnim.Play();
 
-            this.resultButton.node.active = true;
+            // this.resultButton.node.active = true;
             this.TitleFrameNode.active = true;
             this.TitleFrameLabel.string = "ボーナス倍率結果";
             for(var i = 0; i < QuizManager.Instance().GetChoiceMax(); i++){
@@ -203,7 +205,8 @@ export class ChoicesModal extends Component {
 
     // クリックした時
     private Choice(index : number) {
-        this.betModal.node.active = true;    // ベットモーダルを表示
+        // this.betModal.node.active = true;    // ベットモーダルを表示
+        this.DecideChoice();
         this.tempNumber = index;      // 選択した番号
     }
 
@@ -245,8 +248,8 @@ export class ChoicesModal extends Component {
             this.userNode.active = false;
             AnimationManager.Instance().liverNode.active = true;
             AnimationManager.Instance().userNode.active = false;
-            this.nextButton.node.active = false;
-            this.resultButton.node.active = false;
+            // this.nextButton.node.active = false;
+            // this.resultButton.node.active = false;
             this.frameList[GameManager.Instance().GetGameInfo().qCorNumber].spriteFrame = this.correctFrameSprite;
             this.hintLabel.string = GameManager.Instance().GetGameInfo().hintSentence[this.hintIndex];
             this.debugClientMode = 'Liver';
@@ -274,8 +277,8 @@ export class ChoicesModal extends Component {
 
     // 正解表示
     private ShowResult(){
-        this.resultButton.node.active = false;
-        this.nextButton.node.active = true;
+        // this.resultButton.node.active = false;
+        // this.nextButton.node.active = true;
         this.resultModal.node.active = true;
         this.resultModal.SetAnswerLabel(GameManager.Instance().GetGameInfo().qCorNumber,"");
         for(var i = 0; i < QuizManager.Instance().GetChoiceMax(); i++){
@@ -295,7 +298,7 @@ export class ChoicesModal extends Component {
     // 回答締め切り処理
     private CloseUpFunction(){
         this.thinkingTime = 0;
-        this.resultButton.node.active = true;
+        // this.resultButton.node.active = true;
         this.TitleFrameNode.active = true;
         this.TitleFrameLabel.string = "ボーナス倍率結果";
         for(var i = 0; i < QuizManager.Instance().GetChoiceMax(); i++){
@@ -367,10 +370,10 @@ export class ChoicesModal extends Component {
                 }
 
                 if(isResult){
-                    this.nextButton.node.active = true;
+                    // this.nextButton.node.active = true;
                 }
                 else{
-                    this.resultButton.node.active = true;
+                    // this.resultButton.node.active = true;
                 }
                 for(const odds of this.oddsLabelList){
                     odds.node.active = true;
