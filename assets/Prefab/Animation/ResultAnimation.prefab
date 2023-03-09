@@ -88,8 +88,8 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 150,
+      "x": 100,
+      "y": 100,
       "z": 0
     },
     "_lrot": {
@@ -143,7 +143,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": -200,
+      "y": 0,
       "z": 0
     },
     "_lrot": {
@@ -181,8 +181,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 200,
-      "height": 200
+      "width": 100,
+      "height": 100
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -217,7 +217,7 @@
       "a": 255
     },
     "_spriteFrame": {
-      "__uuid__": "a357ba04-c973-4167-b5ba-afac2859d639@f9941",
+      "__uuid__": "afbd37cc-bb5b-4012-897b-e60652a7c0b8@f9941",
       "__expectedType__": "cc.SpriteFrame"
     },
     "_type": 0,
@@ -355,8 +355,8 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 150,
+      "x": 100,
+      "y": 100,
       "z": 0
     },
     "_lrot": {
@@ -410,7 +410,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": -100,
+      "y": 0,
       "z": 0
     },
     "_lrot": {
@@ -449,7 +449,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 150,
-      "height": 150
+      "height": 159
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -484,7 +484,7 @@
       "a": 255
     },
     "_spriteFrame": {
-      "__uuid__": "e4498d26-fd8e-4fb7-9786-f966547e36de@f9941",
+      "__uuid__": "cafb3af4-9165-4ced-954c-7996e4d610e7@f9941",
       "__expectedType__": "cc.SpriteFrame"
     },
     "_type": 0,
@@ -538,19 +538,19 @@
     "playOnLoad": false,
     "_clips": [
       {
-        "__uuid__": "33a89dd8-489e-4919-bb7e-20c27491e456",
+        "__uuid__": "219a7a44-2d1a-4138-98ca-ff6f3fe7f146",
         "__expectedType__": "cc.AnimationClip"
       }
     ],
     "_defaultClip": {
-      "__uuid__": "33a89dd8-489e-4919-bb7e-20c27491e456",
+      "__uuid__": "219a7a44-2d1a-4138-98ca-ff6f3fe7f146",
       "__expectedType__": "cc.AnimationClip"
     },
     "_id": ""
   },
   {
     "__type__": "cc.CompPrefabInfo",
-    "fileId": "faw7E4J81F67TT0lIQobMb"
+    "fileId": "a5z2/EN5FALrY/pBoruK2Q"
   },
   {
     "__type__": "cc.PrefabInfo",

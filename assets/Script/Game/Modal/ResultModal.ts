@@ -21,7 +21,9 @@ export class ResultModal extends Component {
     private coinLabel : Label = null;
 
     @property(Label)
-    answerSentence : Label = null;
+    private answerBeforeSentence : Label = null;
+    @property(Label)
+    private answerSentence : Label = null;
     @property(Sprite)
     answerImage : Sprite = null;
 
@@ -29,7 +31,7 @@ export class ResultModal extends Component {
 
     private debugClientMode : ClientMode = 'Liver';
 
-    private answerResult : boolean = false;
+    private answerResult : string = 'Default';
 
     start() {
         this.nextButton.node.on(Button.EventType.CLICK, function(){
@@ -39,6 +41,30 @@ export class ResultModal extends Component {
 
     update(deltaTime : number){
         this.DebugModalUpdate();
+    }
+
+    public Init()
+    {
+        this.answerResult = 'Default';
+
+        this.answerBeforeSentence.node.active = false;
+        this.answerSentence.node.active = false;
+
+        AnimationManager.Instance().resultAnim.AnimationReset();
+    }
+
+    public SetAnswerLabelActive(sentence : string)
+    {
+        if(sentence === "Before")
+        {
+            this.answerBeforeSentence.node.active = true;
+            this.answerSentence.node.active = false;
+        }
+        else if(sentence === "After")
+        {
+            this.answerBeforeSentence.node.active = false;
+            this.answerSentence.node.active = true;
+        }
     }
 
     public SetInfo(choice : number, data : QuizData){
@@ -85,7 +111,7 @@ export class ResultModal extends Component {
         else if(ansnum === 3){
             this.answerSentence.string += "D";
         }
-        this.answerSentence.string += "!!!";
+        this.answerSentence.string += "!";
     }
 
     public SetCoinLabel(coin : string){
@@ -98,10 +124,10 @@ export class ResultModal extends Component {
         console.log("choice: " + choice);
         console.log("ansnum: " + ansnum);
         if(ansnum === choice){
-            this.answerResult = true;
+            this.answerResult = 'True';
         }
         else{
-            this.answerResult = false;
+            this.answerResult = 'False';
         }
     }
 
@@ -127,12 +153,13 @@ export class ResultModal extends Component {
         }
 
         // animation
-        if(this.debugClientMode=== 'User'){
-            if(this.answerResult)
+        if(this.debugClientMode === 'User'){
+            if(this.answerResult === 'True')
             {
                 AnimationManager.Instance().resultAnim.PlayCorrectAnim();
             }
-            else{
+            else if(this.answerResult === 'False')
+            {
                 AnimationManager.Instance().resultAnim.PlayIncorrectAnim();
             }
         }

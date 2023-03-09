@@ -145,17 +145,20 @@ export class QuestionModal extends Component {
     }
 
     private Next(){
-        AnimationManager.Instance().stampAnim.AnimationReset();
+        // AnimationManager.Instance().stampAnim.AnimationReset();
         // AnimationManager.Instance().kumaHintAnim.AnimationReset();
         this.isNext = true;
         this.changeDelay = this.delayMax;
         this.userNode.active = false;
         this.liverNode.active = false;
+        this.questionScrean.active = false;
+        this.selectionScrean.active = false;
         this.isSelect = -1;
     }
 
     public SetNumber(num : number){
-        this.qNumber.string = num.toString() + " / " + QuizManager.Instance().raundMax + "問";
+        // this.qNumber.string = num.toString() + " / " + QuizManager.Instance().raundMax + "問";
+        this.qNumber.string = "第" + num.toString() + "問:";
     }
 
     public SetSentence(sent : string){

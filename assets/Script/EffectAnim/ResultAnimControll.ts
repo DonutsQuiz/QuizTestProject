@@ -17,10 +17,10 @@ export class ResultAnimControll extends Component {
         this.correctAnim.node.active = false
         this.incorrectAnim.node.active = false
 
-        let animation = this.correctAnim.node.getComponent(Animation);
-        animation.on(Animation.EventType.FINISHED, this.onTriggered, this);
+        // let animation = this.correctAnim.node.getComponent(Animation);
+        // animation.on(Animation.EventType.FINISHED, this.onTriggered, this);
 
-        animation = this.incorrectAnim.node.getComponent(Animation);
+        let animation = this.incorrectAnim.node.getComponent(Animation);
         animation.on(Animation.EventType.FINISHED, this.onTriggered, this);
     }
 
@@ -32,12 +32,12 @@ export class ResultAnimControll extends Component {
     {
         if(this.correctAnim && !this.correctAnim.node.active)
         {
-            let posX = 30 * Math.floor(Math.random() * (3 - (-2)) + (-2));
-            let posY = 30 * Math.floor(Math.random() * (3 - (-2)) + (-2));
-            let pos = new Vec3(posX, posY, 0);
-            this.correctAnimNode.setPosition(pos);
+            // let posX = 30 * Math.floor(Math.random() * (3 - (-2)) + (-2));
+            // let posY = 30 * Math.floor(Math.random() * (3 - (-2)) + (-2));
+            // let pos = new Vec3(posX, posY, 0);
+            // this.correctAnimNode.setPosition(pos);
             this.correctAnim.node.active = true;
-            this.correctAnim.play('CorrectAnim');
+            this.correctAnim.play();
         }
     }   
 
@@ -46,13 +46,19 @@ export class ResultAnimControll extends Component {
         if(this.incorrectAnim && !this.incorrectAnim.node.active)
         {
             this.incorrectAnim.node.active = true;
-            this.incorrectAnim.play('IncorrectAnim');
+            this.incorrectAnim.play();
         }
-    }  
+    } 
+    
+    public AnimationReset()
+    {
+        this.correctAnim.node.active = false;
+        this.incorrectAnim.node.active = false;
+    }
     
     private onTriggered(arg: number)
     {
-        this.correctAnim.node.active = false;
+        // this.correctAnim.node.active = false;
         this.incorrectAnim.node.active = false;
     }
 }

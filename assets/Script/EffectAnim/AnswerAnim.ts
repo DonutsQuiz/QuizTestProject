@@ -1,33 +1,31 @@
 import { _decorator, Component, Node, Animation, Vec3 } from 'cc';
 const { ccclass, property } = _decorator;
 
-@ccclass('StampAnim')
-export class StampAnim extends Component {
+@ccclass('AnswerAnim')
+export class AnswerAnim extends Component {
     @property({type: Animation})
-    private StampAnim: Animation|null = null;
+    private AnswerAnim: Animation|null = null;
 
-    private posCenterX: number[] = [-160, -160, -160]; //[-95, 95, -95, 95];
+    private posCenterX: number[] = [100, 100, 100]; //[-95, 95, -95, 95];
     private posCenterY: number[] = [60, 15, -30]; //[27.5, 27.5, -27.5, -27.5];
 
     private offsetY: number = -163;
 
     start() {
-        this.StampAnim.node.active = false;
-        // let animation = this.StampAnim.node.getComponent(Animation);
+        this.AnswerAnim.node.active = false;
+        // let animation = this.AnswerAnim.node.getComponent(Animation);
         // animation.on(Animation.EventType.FINISHED, this.onTriggered, this);
     }
 
     public Play(selection: number)
     {
-        console.log('hoge');
         // let pos = new Vec3(this.posCenterX[selection] + 65, this.posCenterY[selection] + 20 + this.offsetY, 0);
         let pos = new Vec3(this.posCenterX[selection], this.posCenterY[selection] + this.offsetY, 0);
-        if(this.StampAnim && !this.StampAnim.node.active )
+        if(this.AnswerAnim && !this.AnswerAnim.node.active )
         {
-            console.log("stamp animation!" + pos);
             this.node.setPosition(pos);
-            this.StampAnim.node.active = true;
-            this.StampAnim.play();
+            this.AnswerAnim.node.active = true;
+            this.AnswerAnim.play();
         }
     }       
 
@@ -37,7 +35,7 @@ export class StampAnim extends Component {
 
     public AnimationReset()
     {
-        this.StampAnim.node.active = false;
+        this.AnswerAnim.node.active = false;
     }
 
     public onTriggered(arg: number)

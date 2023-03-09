@@ -1,10 +1,11 @@
-import { _decorator, Component, Node, Prefab, instantiate } from 'cc';
+import { _decorator, Component, Node, Prefab, instantiate, AmbientInfo } from 'cc';
 import { StartControll } from '../../EffectAnim/StartControll';
 import { ChipControll } from '../../EffectAnim/ChipControll';
 import { ResultAnimControll } from '../../EffectAnim/ResultAnimControll';
 import { TimeUpAnim } from '../../EffectAnim/TimeUpAnim';
 import { CountDownAnim } from '../../EffectAnim/CountDownAnim';
 import { StampAnim } from '../../EffectAnim/StampAnim';
+import { AnswerAnim } from '../../EffectAnim/AnswerAnim';
 import { KumaHintAnim } from '../../EffectAnim/KumaHintAnim';
 const { ccclass, property } = _decorator;
 
@@ -33,7 +34,7 @@ export class AnimationManager extends Component {
     public timeUpAnim: TimeUpAnim = null;
     public countDownAnim: CountDownAnim = null;
     public stampAnim: StampAnim = null;
-    public answerAnim: StampAnim = null;
+    public answerAnim: AnswerAnim = null;
     public kumaHintAnim: KumaHintAnim = null;
 
     public userNode: Node = null;
@@ -54,7 +55,7 @@ export class AnimationManager extends Component {
         this.startAnim = this.allNode.getChildByName('StartAnimation').getComponent(StartControll);
         this.betAnim = this.userNode.getChildByName('BetAnimation').getComponent(ChipControll);
         this.resultAnim = this.userNode.getChildByName('ResultAnimation').getComponent(ResultAnimControll);
-        this.answerAnim = this.userNode.getChildByName('AnswerAnimation').getComponent(StampAnim);
+        this.answerAnim = this.userNode.getChildByName('AnswerAnimation').getComponent(AnswerAnim);
         this.timeUpAnim = this.allNode.getChildByName('TimeUp').getComponent(TimeUpAnim);
         this.countDownAnim = this.liverNode.getChildByName('CountDown').getComponent(CountDownAnim);
         this.stampAnim = this.liverNode.getChildByName('SeikaiStamp').getComponent(StampAnim);
