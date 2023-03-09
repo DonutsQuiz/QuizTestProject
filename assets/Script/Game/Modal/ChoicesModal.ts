@@ -1,6 +1,7 @@
 import { _decorator, Component, Node, Button, Label, SpriteFrame, Sprite, Vec3,RichText, game, color, Game, ModelComponent, TERRAIN_SOUTH_INDEX } from 'cc';
 import { AnimationManager } from '../Manager/AnimationManager';
 import { Timer } from '../../UI/Timer';
+import { Timer2 } from '../../UI/Timer2';
 import { ClientMode, GameManager } from '../Manager/GameManager';
 import { QuizManager } from '../Manager/QuizManager';
 import { QuizModalManager } from '../Manager/QuizModalManager';
@@ -71,8 +72,8 @@ export class ChoicesModal extends Component {
     @property(Timer)
     timer : Timer = null;
 
-    @property(Label)
-    private timeDisplay : Label = null;
+    @property(Timer2)
+    timer2 : Timer2 = null;
 
     choiceNumber : number = -1;
     private tempNumber : number = 0;
@@ -154,13 +155,9 @@ export class ChoicesModal extends Component {
         }
 
         // 新仕様
-        this.timeDisplay.string = (this.isThinkingEnd) ? "0.0秒" : Math.ceil(this.thinkingTime).toString() + "秒";
-        if(this.debugClientMode === 'Liver'){
-            this.timeDisplay.node.setPosition(new Vec3(-130, -80, 0));
-        }
-        else{
-            this.timeDisplay.node.setPosition(new Vec3(130, 170, 0));
-        }
+        this.timer2.Display(this.thinkingTime, this.isThinkingEnd);
+        this.timer2.SetTimeDisplayPos(this.debugClientMode);
+
         if(this.thinkingTime > 0.0){
             this.thinkingTime -= deltaTime;
         }
@@ -245,7 +242,7 @@ export class ChoicesModal extends Component {
         else if(index === 1){tempstring = "B.";}
         else if(index === 2){tempstring = "C.";}
         else if(index === 3){tempstring = "D.";}
-        tempstring = tempstring + text;
+        tempstring = text;
         this.textList[index].string = "<color=#000000>" + tempstring + "</color>";
         this.labelList[index].string = tempstring;
         this.spriteList[index].spriteFrame = sprite;
@@ -347,6 +344,9 @@ export class ChoicesModal extends Component {
         // AnimationManager.Instance().betAnim.AnimationReset();
         AnimationManager.Instance().answerAnim.AnimationReset();
         AnimationManager.Instance().stampAnim.AnimationReset();
+
+        this.thinkingTime = 60.0;
+        this.isThinkingEnd = false;
 
         this.resultModal.Init();
 

@@ -40,6 +40,9 @@ export class QuestionModal extends Component {
     @property(Sprite) //選択時のマーク
     private decideSprite : Sprite = null;
 
+    @property(Label)
+    private ExplanationLabel : Label = null;
+
     private debugClientMode : ClientMode = 'Liver';
     private debugQuizMode : QuizType = 'None';
     private isSelect : number = -1; // 答えの番号
@@ -85,7 +88,24 @@ export class QuestionModal extends Component {
         //     AnimationManager.Instance().kumaHintAnim.Play();
         // }
 
+        if(this.isSelect < 0 && !this.isNext)
+        {
+            if(this.debugClientMode === 'Liver'){
+                this.ExplanationLabel.string = "この問題の正解を決めよう";
+            }
+            else{
+                this.ExplanationLabel.string = "ライバーが正解を決めています";
+            }
+        }
+
         if(this.isSelect >= 0){
+            if(this.debugClientMode === 'Liver'){
+                this.ExplanationLabel.string = "この問題の正解を決めよう";
+            }
+            else{
+                this.ExplanationLabel.string = "ライバーが正解を決定しました！";
+            }
+
             // if(!this.isNext && GameManager.Instance().GetGameInfo().isFirstTime)
             // {
             //     AnimationManager.Instance().kumaHintAnim.SetPos(0, -60);
@@ -224,7 +244,7 @@ export class QuestionModal extends Component {
 
         if(qtype === 'Gesture'){    // ジェスチャー
             if(GameManager.Instance().GetClientMode() === 'Liver'){
-                this.qSentence.node.setPosition(new Vec3(0,75,0));
+                // this.qSentence.node.setPosition(new Vec3(0,75,0));
                 this.qImageFrame.active = true;
                 this.qSpriteFrame.node.active = true;
                 this.qStartB.node.active = true;
@@ -237,11 +257,11 @@ export class QuestionModal extends Component {
             }
         }
         else if(qtype === 'Act'){   // アクト
-            this.qSentence.node.setPosition(new Vec3(0,35,0));
+            // this.qSentence.node.setPosition(new Vec3(0,35,0));
             this.qStartB.node.active = true;
         }
         else if(qtype === 'Personal'){   // クイズ
-            this.qSentence.node.setPosition(new Vec3(0,35,0));
+            // this.qSentence.node.setPosition(new Vec3(0,35,0));ss
             //this.qSelectB.forEach(element => {element.node.active = true;});
             var sele : string = "";
             for(var i = 0; i < QuizManager.Instance().GetChoiceMax(); i++){
@@ -252,7 +272,7 @@ export class QuestionModal extends Component {
                 if(i === 1)sele = "B.";
                 if(i === 2)sele = "C.";
                 if(i === 3)sele = "D.";
-                this.qSelectSent[i].string = sele + GameManager.Instance().GetGameInfo().qSentence[i];
+                this.qSelectSent[i].string = GameManager.Instance().GetGameInfo().qSentence[i];
             }
         }
     }
@@ -288,11 +308,11 @@ export class QuestionModal extends Component {
                     }
                 }
                 else if(this.debugQuizMode === 'Act'){   // アクト
-                    this.qSentence.node.setPosition(new Vec3(0,35,0));
+                    // this.qSentence.node.setPosition(new Vec3(0,35,0));
                     this.qStartB.node.active = true;
                 }
                 else if(this.debugQuizMode === 'Personal'){   // クイズ
-                    this.qSentence.node.setPosition(new Vec3(0,35,0));
+                    // this.qSentence.node.setPosition(new Vec3(0,35,0));
                     this.qSelectB.forEach(element => {element.node.active = true;});
                     var sele : string = "";
                     for(var i = 0; i < QuizManager.Instance().GetChoiceMax(); i++){
@@ -300,7 +320,7 @@ export class QuestionModal extends Component {
                         if(i === 1)sele = "B.";
                         if(i === 2)sele = "C.";
                         if(i === 3)sele = "D.";
-                        this.qSelectSent[i].string = sele + GameManager.Instance().GetGameInfo().qSentence[i];
+                        this.qSelectSent[i].string = GameManager.Instance().GetGameInfo().qSentence[i];
                     }
                 }
 
