@@ -50,7 +50,7 @@ export class ActQuiz extends QuizComponent {
         this.mData = QuizDataBase.Instance().GetData<ActData>('Act', this.DecisionAnswer());
         GameManager.Instance().GetGameInfo().qActTheme = "はぁ";
         GameManager.Instance().GetGameInfo().qType = this.mType;
-        GameManager.Instance().GetGameInfo().qSentenceLiver = "<color=#000000>" + GameManager.Instance().GetGameInfo().qSentence[GameManager.Instance().GetGameInfo().qCorNumber] + "の<br/>" + "「" + GameManager.Instance().GetGameInfo().qActTheme + "」" + "を演じてください" + "</color>";
+        GameManager.Instance().GetGameInfo().qSentence = "<color=#000000>" + GameManager.Instance().GetGameInfo().qSelectSent[GameManager.Instance().GetGameInfo().qCorNumber] + "の<br/>" + "「" + GameManager.Instance().GetGameInfo().qActTheme + "」" + "を演じてください" + "</color>";
         GameManager.Instance().GetGameInfo().qSentenceUser = "どの「" + GameManager.Instance().GetGameInfo().qActTheme + "」を演じている？";
         GameManager.Instance().GetGameInfo().qCorNumber = this.mData.mAnswer;
 
@@ -81,10 +81,10 @@ export class ActQuiz extends QuizComponent {
         var index : number = 0;
         for(var n = 0; n < QuizManager.Instance().GetChoiceMax(); n++){
             if(n === GameManager.Instance().GetGameInfo().qCorNumber){
-                GameManager.Instance().GetGameInfo().qSentence[n] = this.mData.mSentence;
+                GameManager.Instance().GetGameInfo().qSelectSent[n] = this.mData.mSentence;
             }
             else{
-                GameManager.Instance().GetGameInfo().qSentence[n] = tempind[index];
+                GameManager.Instance().GetGameInfo().qSelectSent[n] = tempind[index];
                 index++;
             }
         }

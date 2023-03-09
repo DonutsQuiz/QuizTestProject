@@ -1,5 +1,6 @@
-import { _decorator, Component, Node, Button, Label, Vec3 } from 'cc';
+import { _decorator, Component, Node, Button, Label, Vec3, SpriteFrame, spriteAssembler, Sprite } from 'cc';
 import { GameManager } from '../Manager/GameManager';
+import { QuizManager } from '../Manager/QuizManager';
 import { ModalType, QuizModalManager } from '../Manager/QuizModalManager';
 const { ccclass, property } = _decorator;
 
@@ -18,13 +19,28 @@ export class GenreChoiceModal extends Component {
     private backButton : Button = null;
     @property(Button)
     private genreButton : Array<Button> = new Array<Button>();
+    @property(SpriteFrame)
+    private genreIconSpriteList : Array<SpriteFrame> = new Array<SpriteFrame>();
     @property(Label)
     private titleLabel : Label = null;
     @property(Node)
     private genreRootNode : Node = null;
 
+    //スタート
+    @property(Sprite)
+    private genreIconSprite : Sprite = null;
+    @property(Label)
+    private genreLabel : Label = null;
+    //リスト
+    @property(Sprite)
+    private listGenreIconSprite : Sprite = null;
+    @property(Label)
+    private listGenreLabel : Label = null;
+
     @property(Node)
     private certStartNode : Node = null;
+
+    private genreName : string[] = ["日常生活", "スポーツ", "ゲーム", "料理", "仕事", "価値観"];
 
     private animationTime = 0.0;
     private isNext = false;
@@ -33,9 +49,12 @@ export class GenreChoiceModal extends Component {
 
 
     public Constructor(){
-        for(var i = 0; i < 6; i++){
-            this.genreButton[i].node.on(Button.EventType.CLICK, this.ClickGenreButton, this);
-        }
+        this.genreButton[0].node.on(Button.EventType.CLICK, function(){this.ClickGenreButton(0)}, this);
+        this.genreButton[1].node.on(Button.EventType.CLICK, function(){this.ClickGenreButton(1)}, this);
+        this.genreButton[2].node.on(Button.EventType.CLICK, function(){this.ClickGenreButton(2)}, this);
+        this.genreButton[3].node.on(Button.EventType.CLICK, function(){this.ClickGenreButton(3)}, this);
+        this.genreButton[4].node.on(Button.EventType.CLICK, function(){this.ClickGenreButton(4)}, this);
+        this.genreButton[5].node.on(Button.EventType.CLICK, function(){this.ClickGenreButton(5)}, this);
 
         this.startButton.node.on(Button.EventType.CLICK, this.ClickStartButton, this);
         this.backButton.node.on(Button.EventType.CLICK, this.ClickBackButton, this);
@@ -71,12 +90,17 @@ export class GenreChoiceModal extends Component {
     }
 
     // ジャンルを選択
-    private ClickGenreButton(){
-        if(this.isConfirm){
+    private ClickGenreButton(gen : number){
+        if(this.isConfirm){ //メニューから飛んだ場合
             this.quistionListNode.active = true;
+            this.listGenreIconSprite.spriteFrame = this.genreIconSpriteList[gen];
+            this.listGenreLabel.string = this.genreName[gen];
         }
-        else{
+        else{ //ゲーム最中
             this.startNode.active = true;
+            this.genreIconSprite.spriteFrame = this.genreIconSpriteList[gen];
+            this.genreLabel.string = this.genreName[gen];
+            QuizManager.Instance().quizComponent.SetQuiz();
         }
         this.selectNode.active = false;
         this.backButton.node.active = true;
@@ -89,14 +113,20 @@ export class GenreChoiceModal extends Component {
         this.isNext = true;
         this.backButton.node.active = false;
         this.animationTime = 3.0;
+        // QuizManager.Instance().get
     }
 
     // 選択に戻る
     private ClickBackButton(){
         if(this.selectNode.active){
-            QuizModalManager.Instance().ChangeModal(this.modalType);
-            GameManager.Instance().SetParticipantActive(true);
             this.isConfirm = false;
+            if(this.modalType === 'Genre'){
+                this.Initialize();
+            }
+            else{
+                QuizModalManager.Instance().ChangeModal(this.modalType);
+            }
+            GameManager.Instance().SetParticipantActive(true);
             this.modalType = 'None';
         }
         else if(this.startNode.active){

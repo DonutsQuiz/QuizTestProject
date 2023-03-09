@@ -1,5 +1,6 @@
 import { _decorator, Component, Node, Prefab, Button, instantiate, Vec3, UITransform } from 'cc';
 import { RankingInfo } from '../Game/Manager/GameInformation';
+import { ListenerNode } from './ListenerNode';
 import { RankingUser } from './RankingUser';
 const { ccclass, property } = _decorator;
 
@@ -14,21 +15,22 @@ export class Ranking extends Component {
     private GenerateButton : Button = null;
     @property(Prefab)
     private rankingUser : Prefab = null;
-    @property(RankingUser)
-    private firstMenber : Array<RankingUser> = new Array<RankingUser>();
+    @property(ListenerNode)
+    private firstMenber : Array<ListenerNode> = new Array<ListenerNode>();
 
     @property(Number)
     private rankingCount : number = 0;
     private rankingCountMax : number = 0;
-    private basePositionY : number = -217;
-    private INTERVAL : number = -26;
-    private rankingList : Array<RankingUser> = new Array<RankingUser>();
+    private basePositionY : number = -132.5;
+    private INTERVAL : number = -50;
+    // private rankingList : Array<RankingUser> = new Array<RankingUser>();
+    private rankingList : Array<ListenerNode> = new Array<ListenerNode>();
 
     private isConfirm : boolean = false; //メニューから飛んだかどうか
-    private modalType : ModalType = 'None';
+    private isRanking : boolean = false;
 
     public Constructor(){
-        this.GenerateButton.node.on(Button.EventType.CLICK, this.Generate, this);
+        // this.GenerateButton.node.on(Button.EventType.CLICK, this.Generate, this);
 
         for(var i = 0; i < this.firstMenber.length; i++){
             this.rankingList.push(this.firstMenber[i]);
@@ -62,8 +64,10 @@ export class Ranking extends Component {
             for(var i = 0; i < count; i++){
                 user = instantiate(this.rankingUser);
                 user.setParent(this.contentNode);
-                user.position = new Vec3(0, this.basePositionY + (this.INTERVAL * (this.rankingCountMax - 5 + i + 1)), 0);
-                this.rankingList.push(user.getComponent(RankingUser));
+                user.position = new Vec3(0, this.basePositionY + (this.INTERVAL * (this.rankingCountMax - 2 + i)), 0);
+                user.getComponent(ListenerNode).SetRankiOrList(this.isRanking);
+                user.getComponent(ListenerNode).SetAchieve(i + 4);
+                this.rankingList.push(user.getComponent(ListenerNode));
                 this.contentTransform.height += this.INTERVAL * -1;
             }
         }
@@ -75,12 +79,16 @@ export class Ranking extends Component {
         this.rankingCount = count;
     }
 
-    public GetRankignUser(index : number) : RankingUser{
+    public GetRankignUser(index : number) : ListenerNode{
         return this.rankingList[index];
     }
 
     public GetLength() : number{
         return this.rankingList.length;
     } 
+
+    public SetRankOrList(is : boolean){
+        this.isRanking = is;
+    }
 }
 

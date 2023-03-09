@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Label, Button, Vec2, Vec3, SpriteFrame, Sprite, RichText, Game, color, Color, nextPow2 } from 'cc';
+import { _decorator, Component, Node, Label, Button, Vec2, Vec3, SpriteFrame, Sprite, RichText, Game, color, Color, nextPow2, game } from 'cc';
 import { AnimationManager } from '../Manager/AnimationManager';
 import { ClientMode, GameManager } from '../Manager/GameManager';
 import { QuizManager } from '../Manager/QuizManager';
@@ -249,8 +249,17 @@ export class QuestionModal extends Component {
                 if(i === 1)sele = "B.";
                 if(i === 2)sele = "C.";
                 if(i === 3)sele = "D.";
-                this.qSelectSent[i].string = sele + GameManager.Instance().GetGameInfo().qSentence[i];
+                this.qSelectSent[i].string = sele + GameManager.Instance().GetGameInfo().qSelectSent[i];
             }
+        }
+    }
+
+    // 問題文などのセット
+    public SetQuizInfoUI(){
+        this.qNumber.string = GameManager.Instance().GetGameInfo().qNumber.toString() + " / " + QuizManager.Instance().raundMax + "問";
+        this.qSentence.string = "<color=#000000>" + GameManager.Instance().GetGameInfo().qSentence + "</color>";
+        for(var i = 0; i < QuizManager.Instance().GetChoiceMax(); i++){
+            this.qSelectSent[i].string = GameManager.Instance().GetGameInfo().qSelectSent[i];
         }
     }
 
@@ -297,7 +306,7 @@ export class QuestionModal extends Component {
                         if(i === 1)sele = "B.";
                         if(i === 2)sele = "C.";
                         if(i === 3)sele = "D.";
-                        this.qSelectSent[i].string = sele + GameManager.Instance().GetGameInfo().qSentence[i];
+                        this.qSelectSent[i].string = sele + GameManager.Instance().GetGameInfo().qSelectSent[i];
                     }
                 }
 
