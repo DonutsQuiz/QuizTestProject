@@ -103,6 +103,7 @@ export class OverallResultModal extends Component {
         this.advanceButton.node.on(Button.EventType.CLICK, this.ClickAdvanceButton, this);
 
         this.ranking.Constructor();
+        this.ranking.SetRankOrList(false);
     }
 
     public OnUpdate(deltaTime: number){
@@ -207,6 +208,7 @@ export class OverallResultModal extends Component {
             this.blessingSprite.node.active = false;
             this.listenerListNode.active = false;
             this.listenerRankNode.active = true;
+            this.ranking.SetRankOrList(true);
             if(QuizManager.Instance().GetIsLast()){
                 this.titleLabel.string = "スポーツ検定36巻検定終了";
                 this.titleLabel.fontSize = 55;
@@ -228,6 +230,7 @@ export class OverallResultModal extends Component {
             this.blessingSprite.node.active = true;
             this.listenerListNode.active = true;
             this.listenerRankNode.active = false;
+            this.ranking.SetRankOrList(false);
             if(QuizManager.Instance().GetIsLast()){
                 this.isRetry = true;
             }
@@ -296,15 +299,15 @@ export class OverallResultModal extends Component {
 
 
         for(var i = 0; i < this.ranking.GetLength(); i++){
-            this.ranking.GetRankignUser(i).SetInfomation((i + 1).toString() + "位 : " + this.userList[i].mName + "  ");
+            // this.ranking.GetRankignUser(i).SetInfomation((i + 1).toString() + "位 : " + this.userList[i].mName + "  ");
             if(this.nowRankMode === 0){
-                this.ranking.GetRankignUser(i).SetInfomation(this.ranking.GetRankignUser(i).GetInfomation() + this.userList[i].mCoin.toString() + "点");
+                // this.ranking.GetRankignUser(i).SetInfomation(this.ranking.GetRankignUser(i).GetInfomation() + this.userList[i].mCoin.toString() + "点");
             }
             else if(this.nowRankMode === 1){
-                this.ranking.GetRankignUser(i).SetInfomation(this.ranking.GetRankignUser(i).GetInfomation() + this.userList[i].mBet.toString() + "点");
+                // this.ranking.GetRankignUser(i).SetInfomation(this.ranking.GetRankignUser(i).GetInfomation() + this.userList[i].mBet.toString() + "点");
             }
             else if(this.nowRankMode === 2){
-                this.ranking.GetRankignUser(i).SetInfomation(this.ranking.GetRankignUser(i).GetInfomation() + this.userList[i].mTotalPoint.toString() + "点");
+                // this.ranking.GetRankignUser(i).SetInfomation(this.ranking.GetRankignUser(i).GetInfomation() + this.userList[i].mTotalPoint.toString() + "点");
             }
         }
 

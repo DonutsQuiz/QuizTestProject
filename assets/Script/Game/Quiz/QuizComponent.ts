@@ -27,27 +27,25 @@ export abstract class QuizComponent extends Component {
     //public abstract SetQuiz() : void;
 
     public SetQuiz(){
-        // 問題文
-        QuizModalManager.Instance().GetQuestionModal().SetNumber(++GameManager.Instance().GetGameInfo().qNumber);
-        QuizModalManager.Instance().GetQuestionModal().SetSentence(GameManager.Instance().GetGameInfo().qSentenceLiver);
+
+        // 何問目かをセット
+        GameManager.Instance().GetGameInfo().qNumber = (GameManager.Instance().GetGameInfo().qNumber + 1) % (QuizManager.Instance().raundMax);
+
+        // 問題生成をリクエスト
+        GameManager.Instance().GetApiConnection().createQuiz();
+
+        // // 問題文
+        // QuizModalManager.Instance().GetQuestionModal().SetNumber(++GameManager.Instance().GetGameInfo().qNumber);
+        // QuizModalManager.Instance().GetQuestionModal().SetSentence(GameManager.Instance().GetGameInfo().qSentence);
         
         // 選択肢
-        //var index : number = 0;
-        QuizModalManager.Instance().GetChoicesModal().SetQuestion(GameManager.Instance().GetGameInfo().qSentenceUser);
+        QuizModalManager.Instance().GetChoicesModal().SetQuestion(GameManager.Instance().GetGameInfo().qSentence);
         for(var i : number = 0; i < QuizManager.Instance().GetChoiceMax(); i++){
-            QuizModalManager.Instance().GetChoicesModal().SetChoices(i, GameManager.Instance().GetGameInfo().qSentence[i], GameManager.Instance().GetGameInfo().qSprite[i]);
-
-            // if(i === GameManager.Instance().GetGameInfo().qCorNumber){
-            //     QuizModalManager.Instance().GetChoicesModal().SetChoices(i, GameManager.Instance().GetGameInfo().qCorSent, GameManager.Instance().GetGameInfo().qCorSprite);
-            // }
-            // else{
-            //     QuizModalManager.Instance().GetChoicesModal().SetChoices(i, GameManager.Instance().GetGameInfo().qIncSent[index], GameManager.Instance().GetGameInfo().qIncSprite[index]);
-            //     index++;
-            // }
+            QuizModalManager.Instance().GetChoicesModal().SetChoices(i, GameManager.Instance().GetGameInfo().qSelectSent[i], GameManager.Instance().GetGameInfo().qSprite[i]);
         }
         
         // 結果
-        QuizModalManager.Instance().GetChoicesModal().GetResultModal().SetAnswerLabel(GameManager.Instance().GetGameInfo().qCorNumber ,GameManager.Instance().GetGameInfo().qSentence[GameManager.Instance().GetGameInfo().qCorNumber]);
+        QuizModalManager.Instance().GetChoicesModal().GetResultModal().SetAnswerLabel(GameManager.Instance().GetGameInfo().qCorNumber ,GameManager.Instance().GetGameInfo().qSelectSent[GameManager.Instance().GetGameInfo().qCorNumber]);
     }
 
     public Reset(){

@@ -21,7 +21,7 @@ export class QuizManager extends Component {
         return QuizManager.instance;
     }
 
-    private CHOICE_MAX : number = 4;
+    private CHOICE_MAX : number = 3;
 
     @property(Button)
     startButton : Button = null;
@@ -92,10 +92,9 @@ export class QuizManager extends Component {
 
     // 出題
     private QuestionPhase(){
-        console.log(this.quizComponent);
         QuizModalManager.Instance().ChangeModal('Title');
         this.quizComponent.Initialize();
-        this.quizComponent.SetQuiz();
+        // this.quizComponent.SetQuiz();
     }
     
     // 問題の再設定

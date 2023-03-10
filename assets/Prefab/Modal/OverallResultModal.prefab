@@ -4348,7 +4348,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": -116.474,
+      "y": -116.5,
       "z": 0
     },
     "_lrot": {
@@ -6716,7 +6716,7 @@
     "value": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": -74.583,
+      "y": -74.5,
       "z": 0
     }
   },
@@ -6738,7 +6738,7 @@
     "value": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": -116.474,
+      "y": -116.5,
       "z": 0
     }
   },
@@ -12756,39 +12756,6 @@
       },
       {
         "__id__": 667
-      },
-      {
-        "__id__": 669
-      },
-      {
-        "__id__": 671
-      },
-      {
-        "__id__": 673
-      },
-      {
-        "__id__": 675
-      },
-      {
-        "__id__": 677
-      },
-      {
-        "__id__": 679
-      },
-      {
-        "__id__": 681
-      },
-      {
-        "__id__": 683
-      },
-      {
-        "__id__": 685
-      },
-      {
-        "__id__": 687
-      },
-      {
-        "__id__": 689
       }
     ],
     "nestedPrefabInstanceRoots": [
@@ -12829,7 +12796,7 @@
     "source": null,
     "sourceInfo": null,
     "propertyPath": [
-      "rankingUser",
+      "firstMenber",
       "0"
     ],
     "target": {
@@ -12850,7 +12817,7 @@
     "source": null,
     "sourceInfo": null,
     "propertyPath": [
-      "rankingUser",
+      "firstMenber",
       "1"
     ],
     "target": {
@@ -12871,7 +12838,7 @@
     "source": null,
     "sourceInfo": null,
     "propertyPath": [
-      "rankingUser",
+      "firstMenber",
       "2"
     ],
     "target": {
@@ -12892,7 +12859,7 @@
     "source": null,
     "sourceInfo": null,
     "propertyPath": [
-      "rankingUser",
+      "firstMenber",
       "3"
     ],
     "target": {
@@ -12913,7 +12880,7 @@
     "source": null,
     "sourceInfo": null,
     "propertyPath": [
-      "rankingUser",
+      "firstMenber",
       "4"
     ],
     "target": {
@@ -12934,11 +12901,10 @@
     "source": null,
     "sourceInfo": null,
     "propertyPath": [
-      "scrollAnim",
-      "0"
+      "topThreeIcon"
     ],
     "target": {
-      "__id__": 53
+      "__id__": 198
     },
     "targetInfo": {
       "__id__": 660
@@ -12947,7 +12913,7 @@
   {
     "__type__": "cc.TargetInfo",
     "localID": [
-      "9b4LG8kslKfLiJVPCF8KLU"
+      "b7LTOtgftJ+JdieQ5OC2oF"
     ]
   },
   {
@@ -12955,11 +12921,10 @@
     "source": null,
     "sourceInfo": null,
     "propertyPath": [
-      "scrollAnim",
-      "1"
+      "contentNode"
     ],
     "target": {
-      "__id__": 73
+      "__id__": 207
     },
     "targetInfo": {
       "__id__": 662
@@ -12968,7 +12933,7 @@
   {
     "__type__": "cc.TargetInfo",
     "localID": [
-      "df7MTIjjlBRY8iB8nugjxF"
+      "6fmU3TMtdMTY8/x7KFmFzm"
     ]
   },
   {
@@ -12976,11 +12941,10 @@
     "source": null,
     "sourceInfo": null,
     "propertyPath": [
-      "scrollAnim",
-      "2"
+      "contentTransform"
     ],
     "target": {
-      "__id__": 93
+      "__id__": 207
     },
     "targetInfo": {
       "__id__": 664
@@ -12989,7 +12953,7 @@
   {
     "__type__": "cc.TargetInfo",
     "localID": [
-      "151ZBhsaZIs6ByGqiLxZ4M"
+      "43C1r7EnNGQqYzQobOm809"
     ]
   },
   {
@@ -12997,12 +12961,10 @@
     "source": null,
     "sourceInfo": null,
     "propertyPath": [
-      "scrollAnim",
-      "3"
+      "firstMenber",
+      "0"
     ],
-    "target": {
-      "__id__": 113
-    },
+    "target": null,
     "targetInfo": {
       "__id__": 666
     }
@@ -13010,7 +12972,7 @@
   {
     "__type__": "cc.TargetInfo",
     "localID": [
-      "87V52QaEtO17r9TntaM7qh"
+      "49MSGWvhtB8L8Ytb9o9qCS"
     ]
   },
   {
@@ -13018,11 +12980,11 @@
     "source": null,
     "sourceInfo": null,
     "propertyPath": [
-      "scrollAnim",
-      "4"
+      "firstMenber",
+      "1"
     ],
     "target": {
-      "__id__": 127
+      "__id__": 207
     },
     "targetInfo": {
       "__id__": 668
@@ -13031,249 +12993,8 @@
   {
     "__type__": "cc.TargetInfo",
     "localID": [
-      "eeuWMiAYRMRoQZcouNIoC6"
-    ]
-  },
-  {
-    "__type__": "cc.TargetOverrideInfo",
-    "source": null,
-    "sourceInfo": null,
-    "propertyPath": [
-      "firstMenber",
-      "0"
-    ],
-    "target": {
-      "__id__": 53
-    },
-    "targetInfo": {
-      "__id__": 670
-    }
-  },
-  {
-    "__type__": "cc.TargetInfo",
-    "localID": [
-      "42hMr5kllBc6FngMxqOvVo"
-    ]
-  },
-  {
-    "__type__": "cc.TargetOverrideInfo",
-    "source": null,
-    "sourceInfo": null,
-    "propertyPath": [
-      "firstMenber",
-      "1"
-    ],
-    "target": {
-      "__id__": 73
-    },
-    "targetInfo": {
-      "__id__": 672
-    }
-  },
-  {
-    "__type__": "cc.TargetInfo",
-    "localID": [
-      "42hMr5kllBc6FngMxqOvVo"
-    ]
-  },
-  {
-    "__type__": "cc.TargetOverrideInfo",
-    "source": null,
-    "sourceInfo": null,
-    "propertyPath": [
-      "firstMenber",
-      "2"
-    ],
-    "target": {
-      "__id__": 93
-    },
-    "targetInfo": {
-      "__id__": 674
-    }
-  },
-  {
-    "__type__": "cc.TargetInfo",
-    "localID": [
-      "42hMr5kllBc6FngMxqOvVo"
-    ]
-  },
-  {
-    "__type__": "cc.TargetOverrideInfo",
-    "source": null,
-    "sourceInfo": null,
-    "propertyPath": [
-      "firstMenber",
-      "3"
-    ],
-    "target": {
-      "__id__": 113
-    },
-    "targetInfo": {
-      "__id__": 676
-    }
-  },
-  {
-    "__type__": "cc.TargetInfo",
-    "localID": [
-      "42hMr5kllBc6FngMxqOvVo"
-    ]
-  },
-  {
-    "__type__": "cc.TargetOverrideInfo",
-    "source": null,
-    "sourceInfo": null,
-    "propertyPath": [
-      "firstMenber",
-      "4"
-    ],
-    "target": {
-      "__id__": 127
-    },
-    "targetInfo": {
-      "__id__": 678
-    }
-  },
-  {
-    "__type__": "cc.TargetInfo",
-    "localID": [
-      "42hMr5kllBc6FngMxqOvVo"
-    ]
-  },
-  {
-    "__type__": "cc.TargetOverrideInfo",
-    "source": {
-      "__id__": 151
-    },
-    "sourceInfo": null,
-    "propertyPath": [
-      "firstMenber",
-      "0"
-    ],
-    "target": {
-      "__id__": 53
-    },
-    "targetInfo": {
-      "__id__": 680
-    }
-  },
-  {
-    "__type__": "cc.TargetInfo",
-    "localID": [
-      "42hMr5kllBc6FngMxqOvVo"
-    ]
-  },
-  {
-    "__type__": "cc.TargetOverrideInfo",
-    "source": {
-      "__id__": 151
-    },
-    "sourceInfo": null,
-    "propertyPath": [
-      "firstMenber",
-      "1"
-    ],
-    "target": {
-      "__id__": 73
-    },
-    "targetInfo": {
-      "__id__": 682
-    }
-  },
-  {
-    "__type__": "cc.TargetInfo",
-    "localID": [
-      "42hMr5kllBc6FngMxqOvVo"
-    ]
-  },
-  {
-    "__type__": "cc.TargetOverrideInfo",
-    "source": {
-      "__id__": 151
-    },
-    "sourceInfo": null,
-    "propertyPath": [
-      "firstMenber",
-      "2"
-    ],
-    "target": {
-      "__id__": 93
-    },
-    "targetInfo": {
-      "__id__": 684
-    }
-  },
-  {
-    "__type__": "cc.TargetInfo",
-    "localID": [
-      "42hMr5kllBc6FngMxqOvVo"
-    ]
-  },
-  {
-    "__type__": "cc.TargetOverrideInfo",
-    "source": {
-      "__id__": 151
-    },
-    "sourceInfo": null,
-    "propertyPath": [
-      "firstMenber",
-      "3"
-    ],
-    "target": {
-      "__id__": 113
-    },
-    "targetInfo": {
-      "__id__": 686
-    }
-  },
-  {
-    "__type__": "cc.TargetInfo",
-    "localID": [
-      "42hMr5kllBc6FngMxqOvVo"
-    ]
-  },
-  {
-    "__type__": "cc.TargetOverrideInfo",
-    "source": {
-      "__id__": 151
-    },
-    "sourceInfo": null,
-    "propertyPath": [
-      "firstMenber",
-      "4"
-    ],
-    "target": {
-      "__id__": 127
-    },
-    "targetInfo": {
-      "__id__": 688
-    }
-  },
-  {
-    "__type__": "cc.TargetInfo",
-    "localID": [
-      "42hMr5kllBc6FngMxqOvVo"
-    ]
-  },
-  {
-    "__type__": "cc.TargetOverrideInfo",
-    "source": {
-      "__id__": 646
-    },
-    "sourceInfo": null,
-    "propertyPath": [
-      "topThreeIcon"
-    ],
-    "target": {
-      "__id__": 198
-    },
-    "targetInfo": {
-      "__id__": 690
-    }
-  },
-  {
-    "__type__": "cc.TargetInfo",
-    "localID": [
-      "b7LTOtgftJ+JdieQ5OC2oF"
+      "5bKp/5l5JBxbvLSx70HJYh",
+      "49MSGWvhtB8L8Ytb9o9qCS"
     ]
   }
 ]

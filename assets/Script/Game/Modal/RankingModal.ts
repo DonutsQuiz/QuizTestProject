@@ -1,4 +1,5 @@
 import { _decorator, Component, Node, Button, labelAssembler, Label, spriteAssembler, Sprite, game, UITransform, Vec3 } from 'cc';
+import { Ranking } from '../../UI/Ranking';
 import { ClientMode, GameManager } from '../Manager/GameManager';
 import { ModalType, QuizModalManager } from '../Manager/QuizModalManager';
 const { ccclass, property } = _decorator;
@@ -22,6 +23,8 @@ export class RankingModal extends Component {
     private nowRankButton : Button = null;
     @property(Button)
     private monthRankButton : Button = null;
+    @property(Ranking)
+    private ranking : Ranking = null;
 
     private rankingMode : number = 0; //今月：０　先月：１
 
@@ -35,6 +38,10 @@ export class RankingModal extends Component {
         this.backButton.node.on(Button.EventType.CLICK, this.ClickBackButton, this);
         this.nowRankButton.node.on(Button.EventType.CLICK, function(){this.ClickSwitchingButton(0);}, this);
         this.monthRankButton.node.on(Button.EventType.CLICK, function(){this.ClickSwitchingButton(1);}, this);
+
+        this.ranking.Constructor();
+        this.ranking.SetRankOrList(true);
+        this.ranking.Generate();
 
         this.SetUI();
     }
