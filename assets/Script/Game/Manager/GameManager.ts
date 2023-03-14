@@ -36,7 +36,7 @@ export class GameManager extends Component {
     @property(QuizModalManager) // モーダルマネージャー
     modalManager : QuizModalManager = null;
     @property(AnimationManager) // アニメーションマネージャー
-    animManager : QuizModalManager = null;
+    animManager : AnimationManager = null;
     @property(RankTopThreeIcon) //トップ３のアイコン
     private topThreeIcon : RankTopThreeIcon = null;
     @property(QuizDataBase) // データベース（デバッグ用）
@@ -68,6 +68,9 @@ export class GameManager extends Component {
     @property(TimeUpModal)
     debugTimeUpModal : TimeUpModal = null; 
 
+    @property(Button) // debug用
+    private debugButton : Button = null;
+
     private clientMode : ClientMode = 'Liver';
     private gameInformation : GameInformation = new GameInformation();
     private gameMenu = null;
@@ -79,6 +82,8 @@ export class GameManager extends Component {
 
         this.clientButton.node.on(Button.EventType.CLICK, this.ChangeClientMode, this);
         this.firstButton.node.on(Button.EventType.CLICK, this.ChangeFirstMode, this);
+
+        this.debugButton.node.on(Button.EventType.CLICK, this.ShowStatusUp, this);
 
         this.DebugConstractor();
 
@@ -100,6 +105,7 @@ export class GameManager extends Component {
 
         this.exitModal.Constructor();
         
+        console.log('hoge');
         this.animManager.Constructor();
 
         this.debugTimeUpModal.Constructor();
@@ -134,6 +140,10 @@ export class GameManager extends Component {
             this.gameInformation.isFirstTime = true;
             this.firstLabel.string = "初回";
         }
+    }
+
+    private ShowStatusUp(){
+        this.modalManager.ChangeModal('StatusUp');
     }
 
     public GetClientMode() : ClientMode{

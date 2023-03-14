@@ -42,6 +42,7 @@ export class AnimationManager extends Component {
     public allNode: Node = null;
 
     public Constructor() {
+        console.log('anim ');
         AnimationManager.instance = this;
 
         let temp = instantiate(this.AnimationPrefab);

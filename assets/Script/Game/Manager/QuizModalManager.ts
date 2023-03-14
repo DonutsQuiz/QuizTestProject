@@ -2,6 +2,7 @@ import { _decorator, Component, Node, instantiate, Prefab, Canvas, Button, Label
 import { ChoicesModal } from '../Modal/ChoicesModal';
 import { GenreChoiceModal } from '../Modal/GenreChoiceModal';
 import { OverallResultModal } from '../Modal/OverallResultModal';
+import { StatusUpModal } from '../Modal/StatusUpModal';
 import { QuestionModal } from '../Modal/QuestionModal';
 import { RankingModal } from '../Modal/RankingModal';
 import { RuleModal } from '../Modal/RuleModal';
@@ -18,6 +19,7 @@ const ModalType = {
     Question : 'Question',
     Choices  : 'Choices',
     Overall  : 'Overall',
+    StatusUp : 'StatusUp'
 } as const;
 
 export type ModalType = typeof ModalType[keyof typeof ModalType];
@@ -53,6 +55,8 @@ export class QuizModalManager extends Component {
     private choicesPrefab : Prefab = null;
     @property(Prefab)
     private overallPrefab : Prefab = null;
+    @property(Prefab)
+    private statusUpPrefab : Prefab = null;
 
     private title : TitleModal = null;
     private rule : RuleModal = null;
@@ -61,6 +65,7 @@ export class QuizModalManager extends Component {
     private question : QuestionModal = null;
     private choices : ChoicesModal = null;
     private overall : OverallResultModal = null;
+    private statusUp : StatusUpModal = null;
 
     private debugClientMode : ClientMode = 'Liver';
     private nowType : ModalType = 'None';
@@ -109,6 +114,12 @@ export class QuizModalManager extends Component {
         temp.active = false;
         this.overall = temp.getComponent(OverallResultModal);
         this.overall.Constructor();
+
+        temp = instantiate(this.statusUpPrefab);
+        temp.setParent(this.canvas);
+        temp.active = false;
+        this.statusUp = temp.getComponent(StatusUpModal);
+        this.statusUp.Constructor();
     }
 
     public OnUpdate(deltaTime : number){
@@ -133,6 +144,9 @@ export class QuizModalManager extends Component {
         else if(this.nowType === 'Overall'){
             this.overall.OnUpdate(deltaTime);
         }
+        else if(this.nowType === 'StatusUp'){
+            this.statusUp.OnUpdate(deltaTime);
+        }
     }
 
     public ChangeModal(nextType : ModalType){
@@ -143,6 +157,7 @@ export class QuizModalManager extends Component {
         this.question.node.active = false;
         this.choices.node.active = false;
         this.overall.node.active = false;
+        this.statusUp.node.active = false;
 
         if(nextType === 'Title'){
             this.title.node.active = true;
@@ -171,6 +186,9 @@ export class QuizModalManager extends Component {
             this.overall.Initialize();
             this.overall.SetUI();
         }
+        else if(nextType === 'StatusUp'){
+            this.statusUp.node.active = true;
+        }
 
         this.nowType = nextType;
     }
@@ -196,6 +214,9 @@ export class QuizModalManager extends Component {
     }
     public GetRankingModal() : RankingModal{
         return this.ranking;
+    }
+    public GetStatusUpModal() : StatusUpModal{
+        return this.statusUp;
     }
 }
 
