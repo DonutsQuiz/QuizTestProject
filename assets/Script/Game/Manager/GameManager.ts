@@ -82,7 +82,6 @@ export class GameManager extends Component {
 
     start() {
         GameManager.instance = this;
-
         this.clientButton.node.on(Button.EventType.CLICK, this.ChangeClientMode, this);
         this.firstButton.node.on(Button.EventType.CLICK, this.ChangeFirstMode, this);
 
@@ -90,7 +89,10 @@ export class GameManager extends Component {
 
         this.DebugConstractor();
 
+
         this.topThreeIcon.Constructor();
+        console.log('hoge');
+
 
         this.dataBase.Constructor();
         this.modalManager.Constructor();
@@ -108,7 +110,6 @@ export class GameManager extends Component {
 
         this.exitModal.Constructor();
         
-        console.log('hoge');
         this.animManager.Constructor();
 
         this.debugTimeUpModal.Constructor();
