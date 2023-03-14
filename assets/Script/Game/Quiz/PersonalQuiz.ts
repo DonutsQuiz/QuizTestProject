@@ -33,13 +33,13 @@ export class PersonalQuiz extends QuizComponent {
     private DebugChoiceQuestion(){
         this.mData = QuizDataBase.Instance().GetData<PersonalData>('Personal', this.DecisionAnswer());
         GameManager.Instance().GetGameInfo().qType = this.mData.mType;
-        GameManager.Instance().GetGameInfo().qSentenceLiver = this.mData.mSentence;
-        GameManager.Instance().GetGameInfo().qSentenceUser = this.mData.mSentence;
+        // GameManager.Instance().GetGameInfo().qSentence = this.mData.mSentence;
+        // GameManager.Instance().GetGameInfo().qSentenceUser = this.mData.mSentence;
 
-        for(var n = 0; n < QuizManager.Instance().GetChoiceMax(); n++){
-            GameManager.Instance().GetGameInfo().qSentence[n] = this.mData.mQuestionSent[n];
-            // GameManager.Instance().GetGameInfo().qParSelect[n] = this.mData.mQuestionSent[n];
-        }
+        // for(var n = 0; n < QuizManager.Instance().GetChoiceMax(); n++){
+        //     // GameManager.Instance().GetGameInfo().qSelectSent[n] = this.mData.mQuestionSent[n];
+        //     // GameManager.Instance().GetGameInfo().qParSelect[n] = this.mData.mQuestionSent[n];
+        // }
     }
 }
 

@@ -71,7 +71,7 @@ export class GestureQuiz extends QuizComponent {
 
         this.mData = QuizDataBase.Instance().GetData<GestureData>('Gesture', this.DecisionAnswer());
         GameManager.Instance().GetGameInfo().qType = this.mType;
-        GameManager.Instance().GetGameInfo().qSentenceLiver = "この顔を演じてください";
+        GameManager.Instance().GetGameInfo().qSentence = "この顔を演じてください";
         GameManager.Instance().GetGameInfo().qSentenceUser = "どの顔を演じている？";
         GameManager.Instance().GetGameInfo().qCorNumber = this.mData.mAnswer;
 

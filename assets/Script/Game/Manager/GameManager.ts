@@ -9,6 +9,7 @@ import { RankTopThreeIcon } from '../../UI/RankTopThreeIcon';
 import { TimeUpModal } from '../Modal/TimeUpModal';
 import { GameMenu } from '../../UI/GameMenu';
 import { ExitModal } from '../../UI/ExitModal';
+import { ApiConnection2 } from '../../API/ApiConnection2';
 const { ccclass, property } = _decorator;
 
 const ClientMode = {
@@ -54,6 +55,8 @@ export class GameManager extends Component {
     private participantPrefab : Prefab = null;
     @property(ExitModal)
     private exitModal : ExitModal = null;
+    @property(ApiConnection2)
+    private apiConnection : ApiConnection2 = null;
 
     @property(Button) // ライバーとユーザーを変えるボタン
     private clientButton : Button = null;
@@ -109,6 +112,14 @@ export class GameManager extends Component {
         this.animManager.Constructor();
 
         this.debugTimeUpModal.Constructor();
+
+        this.apiConnection.registerHost();
+        //const quiz = this.apiConnection.postCreateQuiz().then(alert);
+        //console.log(quiz);
+        // var pro : Promise<number> = this.apiConnection.getDailyRanking(1,2023,3,2);
+        // type todo = Awaited<ReturnType<typeof this.apiConnection.getDailyRanking>>;
+        // var test : todo = this.apiConnection.getDailyRanking(1,2023,3,2);
+        // console.log("test",test);
     }
 
     update(deltaTime: number) {
@@ -160,6 +171,10 @@ export class GameManager extends Component {
 
     public GetExitModal() : Node{
         return this.exitModal.node;
+    }
+
+    public GetApiConnection() :ApiConnection2{
+        return this.apiConnection;
     }
 
     public SetMenuActive(){
