@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Button, RichText, ButtonComponent } from 'cc';
+import { _decorator, Component, Node, Button, RichText, ButtonComponent, Sprite, Color } from 'cc';
 import { ClientMode, GameManager } from '../Manager/GameManager';
 import { QuizModalManager } from '../Manager/QuizModalManager';
 import { AnimationManager } from '../Manager/AnimationManager';
@@ -29,6 +29,21 @@ export class RuleModal extends Component {
     @property(Node) //見出しのノード
     private titleNode : Node = null;
 
+    @property(Node) // ユーザー用のノード
+    private UserNode : Node = null;
+    @property(Node) // ライバー用のノード
+    private LiverNode : Node = null;
+    @property(Button)   // 次の画面へすすむボタン
+    private forwardButton : Button = null;
+    @property(Button)   // 前の画面へ戻るボタン
+    private backButton : Button = null;
+    @property(Color)    // デフォルトのプログレスバーの色
+    private defaultPointColor : Color = null;
+    @property(Color)    // 現在地点のプログレスバーの色
+    private currentPointColor : Color = null;
+    @property(Sprite)   // プログレスバー
+    private progressPoint : Sprite[] = [];
+
     private ruleNumber : number = 0;
     private isNext : boolean = false;
 
@@ -50,12 +65,21 @@ export class RuleModal extends Component {
         this.tutorialButton.node.on(Button.EventType.CLICK, this.ClickTutorialButton, this);
         this.skipButton.node.on(Button.EventType.CLICK, this.NextModel02, this);
 
+        this.forwardButton.node.on(Button.EventType.CLICK, this.ForwardRuleModal, this);
+        this.backButton.node.on(Button.EventType.CLICK, this.BackRuleModal, this);
+
         this.debugIsFirst = GameManager.Instance().GetGameInfo().isFirstTime;
 
         //新仕様
         this.modalChangeTime = this.MODAL_CHANGE_TIME;
         this.modalChangeCount = 0;
 
+        this.progressPoint[0].color = this.currentPointColor;
+
+        this.skipButton.node.active = false;
+        this.backButton.node.active = false;
+        this.UserNode.active = false;
+        this.LiverNode.active = true;
     }
 
     public OnUpdate(deltaTime: number){
@@ -78,7 +102,7 @@ export class RuleModal extends Component {
 
         //新仕様
         this.ChengeRuleModal(this.modalChangeCount);
-
+        this.ShowButton(this.modalChangeCount);
         if(this.modalChangeTime > 0.0){
             this.modalChangeTime -= deltaTime;
         }
@@ -117,11 +141,47 @@ export class RuleModal extends Component {
         {
             if(i == currentModal){
                 this.tutorialRule[i].active = true;
+                this.progressPoint[i].color = this.currentPointColor;
             }
             else{
                 this.tutorialRule[i].active = false;
+                this.progressPoint[i].color = this.defaultPointColor;
             }
         }
+    }
+
+    private ShowButton(currentModal: number)
+    {
+        switch(currentModal){
+            case 0:
+                this.forwardButton.node.active = true;
+                this.backButton.node.active = false;
+                this.skipButton.node.active = false;
+                break;
+            case 1:
+            case 2:
+                this.forwardButton.node.active = true;
+                this.backButton.node.active = true;
+                this.skipButton.node.active = false;
+                break;
+            case 3:
+                this.forwardButton.node.active = false;
+                this.backButton.node.active = true;
+                this.skipButton.node.active = true;
+                break;
+            default:
+                break;
+        }
+    }
+
+    private ForwardRuleModal(){
+        this.modalChangeCount++;
+        this.modalChangeTime = this.MODAL_CHANGE_TIME;
+    }
+
+    private BackRuleModal(){
+        this.modalChangeCount--;
+        this.modalChangeTime = this.MODAL_CHANGE_TIME;
     }
 
     private NextModel02()
@@ -165,10 +225,14 @@ export class RuleModal extends Component {
             if(GameManager.Instance().GetClientMode() === 'Liver'){
                 this.rankButton.node.active = true;
                 this.debugClientMode = 'Liver';
+                this.LiverNode.active = true;
+                this.UserNode.active = false;
             }
             else if(GameManager.Instance().GetClientMode() === 'User'){
                 this.rankButton.node.active = false;
                 this.debugClientMode = 'User';
+                this.LiverNode.active = false;
+                this.UserNode.active = true;
             }
         }
 

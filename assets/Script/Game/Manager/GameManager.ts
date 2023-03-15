@@ -89,10 +89,7 @@ export class GameManager extends Component {
 
         this.DebugConstractor();
 
-
         this.topThreeIcon.Constructor();
-        console.log('hoge');
-
 
         this.dataBase.Constructor();
         this.modalManager.Constructor();
