@@ -19,7 +19,6 @@ export class StampAnim extends Component {
 
     public Play(selection: number)
     {
-        console.log('hoge');
         // let pos = new Vec3(this.posCenterX[selection] + 65, this.posCenterY[selection] + 20 + this.offsetY, 0);
         let pos = new Vec3(this.posCenterX[selection], this.posCenterY[selection] + this.offsetY, 0);
         if(this.StampAnim && !this.StampAnim.node.active )

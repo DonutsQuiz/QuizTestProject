@@ -108,7 +108,6 @@ export class ChoicesModal extends Component {
         for(const icon of this.iconLineupList){
             icon.Constructor();
         }
-
         this.questionScrean = this.allSideNode.getChildByName('QuestionScrean');
         this.answerScrean = this.allSideNode.getChildByName('AnswerScrean');
         this.explanationNode = this.answerScrean.getChildByName('Explanation');

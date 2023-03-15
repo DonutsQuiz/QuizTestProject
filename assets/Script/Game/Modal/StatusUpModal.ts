@@ -33,17 +33,18 @@ export class StatusUpModal extends Component {
 
     private participantsNum : number = 0;
     private participantsTotal : number = 0;
-    private progressCount : number = 0;
+    // private progressCount : number = 0;
     private currentStatus : number = 1;
-    private nextRequiredNum : number = 60;
+    private nextRequiredNum : number = 3;
     private testTotal : number = 0;
 
-    private doAnim : boolean = false;
+    // private doAnim : boolean = false;
 
     private _LEFT_END : number = -90;
     private _OVERALL_WIDTH : number = 180;
     private _MAX_STATUS : number = 6;
-    private _MAX_NUM : number = 300;
+    private _MAX_NUM : number = 15;
+    private _REQUIRED_NUM : number = 3;
 
     start(){
         this.progressButton.node.on(Button.EventType.CLICK, this.progressCounter, this);
@@ -88,20 +89,20 @@ export class StatusUpModal extends Component {
         this.bar.fill();
 
         this.bar.fillColor = this.pass_pointColor;
-        this.bar.rect(0, -5, (this._OVERALL_WIDTH / Math.min(this.currentStatus, this._MAX_STATUS - 1)) * (1 / 60.0) * Math.min(this.progressCount, this._MAX_NUM), 10);
+        this.bar.rect(0, -5, (this._OVERALL_WIDTH / Math.min(this.currentStatus, this._MAX_STATUS - 1)) * (1.0 / this._REQUIRED_NUM) * Math.min(this.testTotal, this._MAX_NUM), 10);
         this.bar.stroke();
         this.bar.fill();
 
         // check point
-        if(this.progressCount < this.participantsTotal && !this.doAnim){
-            ++this.progressCount;
-        }
-        if(this.progressCount >= this.nextRequiredNum && this.currentStatus < this._MAX_STATUS){
+        // if(this.progressCount < this.participantsTotal && !this.doAnim){
+        //     ++this.progressCount;
+        // }
+        if(this.testTotal >= this.nextRequiredNum && this.currentStatus < this._MAX_STATUS){
             this.checkPointSprite[5].color = this.pass_pointColor;
             this.checkSpriteNode[5].active = true;
             this.checkPointAnim[5].play();
-            this.doAnim = true;
-            this.nextRequiredNum += 60;
+            // this.doAnim = true;
+            this.nextRequiredNum += this._REQUIRED_NUM;
         }
     }
 
@@ -131,7 +132,7 @@ export class StatusUpModal extends Component {
             }
         }
 
-        this.doAnim = false;
+        // this.doAnim = false;
     }
 }
 

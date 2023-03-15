@@ -28,7 +28,7 @@ export class Timer2 extends Component {
     public SetTimeDisplayPos(mode : string)
     {
         if(mode === 'Liver'){
-            this.timeDisplay.node.setPosition(new Vec3(-130, -80, 0));
+            this.timeDisplay.node.setPosition(new Vec3(-158, -80, 0));
         }
         else if(mode === 'User'){
             this.timeDisplay.node.setPosition(new Vec3(130, 170, 0));
@@ -45,11 +45,17 @@ export class Timer2 extends Component {
 
     public Display(time : number, end : boolean)
     {
-        this.timeDisplay.string = (end) ? "0.0秒" : Math.ceil(time).toString() + "秒";
+        this.timeDisplay.string = (end) ? "0秒" : Math.ceil(time).toString() + "秒";
 
         if(time < this.timeMax){
             this.timeGauge.clear();
 
+            this.timeGauge.fillColor.fromHEX('#E63222');
+            this.timeGauge.rect(0, 0, 375, 10);
+            this.timeGauge.stroke();
+            this.timeGauge.fill();
+
+            this.timeGauge.fillColor.fromHEX('#F6FF8A');
             this.timeGauge.rect(0, 0, 375 * (time / this.timeMax), 10);
             this.timeGauge.stroke();
             this.timeGauge.fill();

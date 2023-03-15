@@ -108,7 +108,7 @@ export class QuizModalManager extends Component {
         temp.active = false;
         this.choices = temp.getComponent(ChoicesModal);
         this.choices.Constructor();
-
+        
         temp = instantiate(this.overallPrefab);
         temp.setParent(this.canvas);
         temp.active = false;
