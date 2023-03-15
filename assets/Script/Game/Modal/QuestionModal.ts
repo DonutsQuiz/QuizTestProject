@@ -71,6 +71,9 @@ export class QuestionModal extends Component {
 
         this.questionScrean = this.allSideNode.getChildByName('QuestionScrean');
         this.selectionScrean = this.allSideNode.getChildByName('SelectionScrean');
+
+        this.liverNode.active = true;
+        this.userNode.active = false;
     }
 
     public OnUpdate(deltaTime: number){
@@ -272,14 +275,15 @@ export class QuestionModal extends Component {
                 if(i === 1)sele = "B.";
                 if(i === 2)sele = "C.";
                 if(i === 3)sele = "D.";
-                this.qSelectSent[i].string = GameManager.Instance().GetGameInfo().qSentence[i];
+                this.qSelectSent[i].string = GameManager.Instance().GetGameInfo().qSelectSent[i];
             }
         }
     }
 
     // 問題文などのセット
     public SetQuizInfoUI(){
-        this.qNumber.string = GameManager.Instance().GetGameInfo().qNumber.toString() + " / " + QuizManager.Instance().raundMax + "問";
+        // this.qNumber.string = GameManager.Instance().GetGameInfo().qNumber.toString() + " / " + QuizManager.Instance().raundMax + "問";
+        this.qNumber.string = "第" + GameManager.Instance().GetGameInfo().qNumber.toString() + "問";
         this.qSentence.string = "<color=#000000>" + GameManager.Instance().GetGameInfo().qSentence + "</color>";
         for(var i = 0; i < QuizManager.Instance().GetChoiceMax(); i++){
             this.qSelectSent[i].string = GameManager.Instance().GetGameInfo().qSelectSent[i];
@@ -329,7 +333,7 @@ export class QuestionModal extends Component {
                         if(i === 1)sele = "B.";
                         if(i === 2)sele = "C.";
                         if(i === 3)sele = "D.";
-                        this.qSelectSent[i].string = GameManager.Instance().GetGameInfo().qSentence[i];
+                        this.qSelectSent[i].string = GameManager.Instance().GetGameInfo().qSelectSent[i];
                     }
                 }
 
