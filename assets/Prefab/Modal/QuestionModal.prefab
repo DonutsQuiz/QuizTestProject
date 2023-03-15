@@ -5781,7 +5781,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": -150,
-      "y": 0,
+      "y": 40,
       "z": 0
     },
     "_lrot": {
@@ -5820,12 +5820,12 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 188.53,
-      "height": 241.92
+      "height": 80.64
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
       "x": 0.5,
-      "y": 0.5
+      "y": 1
     },
     "_id": ""
   },
@@ -5860,7 +5860,7 @@
     "_actualFontSize": 64,
     "_fontSize": 64,
     "_fontFamily": "Arial",
-    "_lineHeight": 192,
+    "_lineHeight": 64,
     "_overflow": 0,
     "_enableWrapText": true,
     "_font": null,
@@ -5910,7 +5910,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": 0,
+      "y": 40,
       "z": 0
     },
     "_lrot": {
@@ -5949,12 +5949,12 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 1000,
-      "height": 241.92000000000002
+      "height": 80.64
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
       "x": 0.5,
-      "y": 0.5
+      "y": 1
     },
     "_id": ""
   },
@@ -5973,7 +5973,7 @@
     "__prefab": {
       "__id__": 257
     },
-    "_lineHeight": 192,
+    "_lineHeight": 64,
     "_string": "<color=#00ff00>何か</color>",
     "_horizontalAlign": 1,
     "_verticalAlign": 0,
@@ -6539,7 +6539,7 @@
         "__id__": 313
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 397
@@ -6599,7 +6599,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": -150,
-      "y": 40,
+      "y": 65,
       "z": 0
     },
     "_lrot": {
@@ -6638,12 +6638,12 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 141.4,
-      "height": 181.44
+      "height": 60.48
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
       "x": 0.5,
-      "y": 0.5
+      "y": 1
     },
     "_id": ""
   },
@@ -6678,7 +6678,7 @@
     "_actualFontSize": 48,
     "_fontSize": 48,
     "_fontFamily": "Arial",
-    "_lineHeight": 144,
+    "_lineHeight": 48,
     "_overflow": 0,
     "_enableWrapText": true,
     "_font": null,
@@ -6728,7 +6728,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": 40,
+      "y": 65,
       "z": 0
     },
     "_lrot": {
@@ -6767,12 +6767,12 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 1000,
-      "height": 181.44
+      "height": 60.480000000000004
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
       "x": 0.5,
-      "y": 0.5
+      "y": 1
     },
     "_id": ""
   },
@@ -6791,7 +6791,7 @@
     "__prefab": {
       "__id__": 295
     },
-    "_lineHeight": 144,
+    "_lineHeight": 48,
     "_string": "<color=#00ff00>何か</color>",
     "_horizontalAlign": 1,
     "_verticalAlign": 0,
@@ -8677,7 +8677,7 @@
         "__id__": 381
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 387
