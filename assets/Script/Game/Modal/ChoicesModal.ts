@@ -237,6 +237,7 @@ export class ChoicesModal extends Component {
 
     // 選択肢を設定
     public SetChoices(index : number, text : string, sprite : SpriteFrame){
+        console.log(('text: ' + text));
         var tempstring : string = "";
         if(index === 0){tempstring = "A.";}
         else if(index === 1){tempstring = "B.";}
