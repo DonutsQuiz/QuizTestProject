@@ -42,6 +42,13 @@ export class QuizManager extends Component {
             this.QuestionPhase();
             GameManager.Instance().SetMenuActive();
             GameManager.Instance().SetParticipantActive(true);
+            // GameManager.Instance().GetApiConnection().registerGuest();
+            GameManager.Instance().GetApiConnect().registerGuest(
+                GameManager.Instance().GetGameInfo().userId,
+                GameManager.Instance().GetGameInfo().token,
+                GameManager.Instance().GetGameInfo().gameId,
+                GameManager.Instance().GetGameInfo().hostId
+            );
             this.startButton.node.active = false;
         }, this);
     }

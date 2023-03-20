@@ -1,5 +1,6 @@
 import { _decorator, Component, Node, Prefab, Button, instantiate, Vec3, UITransform } from 'cc';
 import { RankingInfo } from '../Game/Manager/GameInformation';
+import { GameManager } from '../Game/Manager/GameManager';
 import { ListenerNode } from './ListenerNode';
 import { RankingUser } from './RankingUser';
 const { ccclass, property } = _decorator;
@@ -34,8 +35,9 @@ export class Ranking extends Component {
 
         for(var i = 0; i < this.firstMenber.length; i++){
             this.rankingList.push(this.firstMenber[i]);
-            this.rankingCountMax = this.firstMenber.length;
         }
+
+        this.rankingCountMax = this.firstMenber.length;
     }
 
     // start(){

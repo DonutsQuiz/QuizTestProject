@@ -41,6 +41,7 @@ export class RankingModal extends Component {
 
         this.ranking.Constructor();
         this.ranking.SetRankOrList(true);
+        // this.ranking.SetRankingCount()
         this.ranking.Generate();
 
         this.SetUI();
@@ -56,6 +57,9 @@ export class RankingModal extends Component {
             this.pointLabelList[i].string = GameManager.Instance().GetGameInfo().lastMonthRanking[i].mPoint.toString() + "点";
         }
         this.liverNameLabel.string = "「" + GameManager.Instance().GetGameInfo().liverName +  "」の推し検定";
+
+        this.ranking.SetRankingCount(GameManager.Instance().GetGameInfo().todayRankingList.length);
+        this.ranking.Generate();
     }
 
     private ClickFunction(){

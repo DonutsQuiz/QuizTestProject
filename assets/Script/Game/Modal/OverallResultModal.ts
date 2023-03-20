@@ -125,7 +125,7 @@ export class OverallResultModal extends Component {
         // 新仕様
         if(QuizManager.Instance().GetIsLast() && this.isRetry){
             QuizModalManager.Instance().ChangeModal('Genre');
-            QuizManager.Instance().quizComponent.SetQuiz();
+            // QuizManager.Instance().quizComponent.SetQuiz();
             GameManager.Instance().SetParticipantActive(true);
             GameManager.Instance().GetGameInfo().qNumber = 0;
             this.nowRankMode = 0;

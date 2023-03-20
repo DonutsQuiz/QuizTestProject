@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Label, Button, Vec2, Vec3, SpriteFrame, Sprite, RichText, Game, color, Color, nextPow2, game } from 'cc';
+import { _decorator, Component, Node, Label, Button, Vec2, Vec3, SpriteFrame, Sprite, RichText, Game, color, Color, nextPow2 } from 'cc';
 import { AnimationManager } from '../Manager/AnimationManager';
 import { ClientMode, GameManager } from '../Manager/GameManager';
 import { QuizManager } from '../Manager/QuizManager';
@@ -219,6 +219,8 @@ export class QuestionModal extends Component {
             }
         }
 
+        GameManager.Instance().GetApiConnection().setAnswer(this.isSelect + 1);
+
         // 新仕様
         if(!this.isModelChange){
             this.isModelChange = true;
@@ -289,6 +291,7 @@ export class QuestionModal extends Component {
             this.qSelectSent[i].string = GameManager.Instance().GetGameInfo().qSelectSent[i];
         }
     }
+
 
     private DebugModalUpdate(){
         if(GameManager.Instance().GetClientMode() != this.debugClientMode){

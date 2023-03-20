@@ -38,12 +38,19 @@ export class ListenerNode extends Component {
         }
     }
 
-    public SetInformation(icon : SpriteFrame, name : string, point : number, conte : number, achieve : number){
+    public SetInformation(icon : SpriteFrame, name : string, point : number, conte : number, grand : number, achieve : number){
         this.iconSprite.spriteFrame = icon;
         this.nameLabel.string = name;
         this.pointLabel.string = point.toString();
-        this.gradeLabel.string = "家族ナミにくわしい級";
         this.AchieveLabel.string = achieve.toString();
+        //階級
+        if(grand === 1){ 
+            this.gradeLabel.string = "家族ナミにくわしい級";
+        }
+        else {
+            this.gradeLabel.string = "家族ナミにくわしい級";
+        }
+        // 連続正解
         if(conte > 1){
             this.conteNode.active = true;
             this.conteLabel.string = conte.toString() + "問連続！";
@@ -57,6 +64,9 @@ export class ListenerNode extends Component {
 
     public SetAchieve(num : number){
         this.AchieveLabel.string = num.toString();
+    }
+    public SetScore(num : number){
+        this.pointLabel.string = num.toString();
     }
 }
 
