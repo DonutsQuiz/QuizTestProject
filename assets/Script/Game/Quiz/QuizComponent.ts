@@ -29,10 +29,15 @@ export abstract class QuizComponent extends Component {
     public SetQuiz(){
 
         // 何問目かをセット
-        GameManager.Instance().GetGameInfo().qNumber = (GameManager.Instance().GetGameInfo().qNumber + 1) % (QuizManager.Instance().raundMax);
+        GameManager.Instance().GetGameInfo().qNumber = (GameManager.Instance().GetGameInfo().qNumber + 1) % (QuizManager.Instance().raundMax + 1);
 
         // 問題生成をリクエスト
-        GameManager.Instance().GetApiConnection().createQuiz();
+        GameManager.Instance().GetApiConnect().createQuiz(
+            GameManager.Instance().GetGameInfo().hostId,
+            GameManager.Instance().GetGameInfo().token,
+            GameManager.Instance().GetGameInfo().gameId,
+            GameManager.Instance().GetGameInfo().genreId
+        );
 
         // // 問題文
         // QuizModalManager.Instance().GetQuestionModal().SetNumber(++GameManager.Instance().GetGameInfo().qNumber);

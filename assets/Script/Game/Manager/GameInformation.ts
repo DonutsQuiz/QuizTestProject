@@ -11,6 +11,25 @@ export class RankingInfo{
     mSprite : SpriteFrame = null;
 }
 
+export class rankingData{
+    userId :  number = -1;
+    score : number = -1;
+    rank : number = -1;
+}
+
+export class ReslutRankingData{
+    id : number = -1;
+    score : number = -1;
+    rank : number = -1;
+    conmbo : number = -1;
+    correct : boolean = false;
+}
+
+export class GenreSet{
+    GenreId : number = -1;
+    Genre : string = "";
+}
+
 @ccclass('GameInformation')
 export class GameInformation{
 
@@ -34,6 +53,28 @@ export class GameInformation{
     todayRanking : Array<RankingInfo> = new Array<RankingInfo>(); //今日のランキング
     ranking : Array<RankingInfo> = new Array<RankingInfo>(); //現在のランキング
     lastMonthRanking : Array<RankingInfo> = new Array<RankingInfo>(); // 先月のランキング
+
+    // ランキング(API)
+    todayRankingList : Array<rankingData> = new Array<rankingData>();
+    monthRankingList : Array<rankingData> = new Array<rankingData>();
+    prevMonthRankingList : Array<rankingData> = new Array<rankingData>();
+    nowRankingList : Array<ReslutRankingData> = new Array<ReslutRankingData>();
+
+
+    // グレード
+    playCount : number = 0;
+    grade : number  = 0;
+
+    // ジャンルセット
+    genreSetList : Array<GenreSet> = new Array<GenreSet>();
+    genreId : number = -1;
+
+    // ユーザー情報
+    hostId : number = 123456789;
+    userId : number = 987654321;
+    gameId : number = 12345678900987;
+    token : string = "asiodjioqwjoajsdjjsakmvbd";
+
 
     liverName : string = ""; //ライバーの名前
     subTitle : string = ""; // サブタイトル
