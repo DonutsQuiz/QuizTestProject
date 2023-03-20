@@ -25,9 +25,9 @@ export class ReslutRankingData{
     correct : boolean = false;
 }
 
-export class genreSet{
-    genreId : number = -1;
-    genre : string = "";
+export class GenreSet{
+    GenreId : number = -1;
+    Genre : string = "";
 }
 
 @ccclass('GameInformation')
@@ -66,7 +66,7 @@ export class GameInformation{
     grade : number  = 0;
 
     // ジャンルセット
-    genreSetList : Array<genreSet> = new Array<genreSet>();
+    genreSetList : Array<GenreSet> = new Array<GenreSet>();
     genreId : number = -1;
 
     // ユーザー情報

@@ -29,6 +29,7 @@ export class ApiConnection extends Component {
                 GameManager.Instance().GetGameInfo().genreSetList = data.GenreSet;
                 GameManager.Instance().GetGameInfo().todayRankingList = data.DailyRankings;
                 GameManager.Instance().GetGameInfo().prevMonthRankingList = data.PrevMonthlyRankings;
+                console.log(GameManager.Instance().GetGameInfo().genreSetList);
                 return data;
             })
             .catch((error)=>{
@@ -79,8 +80,8 @@ export class ApiConnection extends Component {
                 GameManager.Instance().GetGameInfo().qSelectSent = data.Choices;
                 GameManager.Instance().GetGameInfo().hintSentence = data.Hints;
                 GameManager.Instance().GetGameInfo().qGenre = data.Genre;
-                // QuizModalManager.Instance().GetQuestionModal().SetQuizInfoUI();
-                // QuizModalManager.Instance().GetChoicesModal().SetQuizInfoUI();
+                QuizModalManager.Instance().GetQuestionModal().SetQuizInfoUI();
+                QuizModalManager.Instance().GetChoicesModal().SetQuizInfoUI();
                 return data;
             })
             .catch((error)=>{
@@ -89,6 +90,31 @@ export class ApiConnection extends Component {
                 return error;
             });
     }
+
+
+    // /// ゲストの設定
+    // async registerGuest(userId:number,token:string,gameId:number,hostId:number){
+    //     let data = {userId:userId,token:token,gameId:gameId,hostUserId:hostId};
+    //     let config = {
+    //         headers:{
+    //             "Content-Type": "application/json"
+    //         }
+    //     };
+    
+    //     return await axios.post(this.apiURL + `game/registerGuest`,data,config)
+    //         .then((response)=>{
+    //             // let data = JSON.parse(atob(response.data));
+    //             // return data;
+    //             return response;
+    //         })
+    //         .catch((error)=>{
+    //             console.log("error");
+    //             console.log(error);
+    //             return error;
+    //         });
+    // }
+
+
 
     //test
     registerHost2(userId:number,token:string){

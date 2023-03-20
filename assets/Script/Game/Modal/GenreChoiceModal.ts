@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Button, Label, Vec3, SpriteFrame, spriteAssembler, Sprite } from 'cc';
+import { _decorator, Component, Node, Button, Label, Vec3, SpriteFrame, spriteAssembler, Sprite, ConstantForce } from 'cc';
 import { GameManager } from '../Manager/GameManager';
 import { QuizManager } from '../Manager/QuizManager';
 import { ModalType, QuizModalManager } from '../Manager/QuizModalManager';
@@ -49,12 +49,12 @@ export class GenreChoiceModal extends Component {
 
 
     public Constructor(){
-        this.genreButton[0].node.on(Button.EventType.CLICK, function(){this.ClickGenreButton(0)}, this);
-        this.genreButton[1].node.on(Button.EventType.CLICK, function(){this.ClickGenreButton(1)}, this);
-        this.genreButton[2].node.on(Button.EventType.CLICK, function(){this.ClickGenreButton(2)}, this);
-        this.genreButton[3].node.on(Button.EventType.CLICK, function(){this.ClickGenreButton(3)}, this);
-        this.genreButton[4].node.on(Button.EventType.CLICK, function(){this.ClickGenreButton(4)}, this);
-        this.genreButton[5].node.on(Button.EventType.CLICK, function(){this.ClickGenreButton(5)}, this);
+        this.genreButton[0].node.on(Button.EventType.CLICK, function(){this.ClickGenreButton(1)}, this);
+        this.genreButton[1].node.on(Button.EventType.CLICK, function(){this.ClickGenreButton(2)}, this);
+        this.genreButton[2].node.on(Button.EventType.CLICK, function(){this.ClickGenreButton(3)}, this);
+        this.genreButton[3].node.on(Button.EventType.CLICK, function(){this.ClickGenreButton(4)}, this);
+        this.genreButton[4].node.on(Button.EventType.CLICK, function(){this.ClickGenreButton(5)}, this);
+        this.genreButton[5].node.on(Button.EventType.CLICK, function(){this.ClickGenreButton(6)}, this);
 
         this.startButton.node.on(Button.EventType.CLICK, this.ClickStartButton, this);
         this.backButton.node.on(Button.EventType.CLICK, this.ClickBackButton, this);
@@ -99,7 +99,8 @@ export class GenreChoiceModal extends Component {
         else{ //ゲーム最中
             this.startNode.active = true;
             this.genreIconSprite.spriteFrame = this.genreIconSpriteList[gen];
-            this.genreLabel.string = this.genreName[gen];
+            this.genreLabel.string = GameManager.Instance().GetGameInfo().genreSetList[gen - 1].Genre;
+            GameManager.Instance().GetGameInfo().genreId = gen + 10000;
             QuizManager.Instance().quizComponent.SetQuiz();
         }
         this.selectNode.active = false;
