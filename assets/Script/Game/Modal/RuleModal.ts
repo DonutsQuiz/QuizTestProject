@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Button, RichText, ButtonComponent, Sprite, Color } from 'cc';
+import { _decorator, Component, Node, Button, RichText, ButtonComponent, Sprite, Color, input, Input, EventTouch, Vec2 } from 'cc';
 import { ClientMode, GameManager } from '../Manager/GameManager';
 import { QuizModalManager } from '../Manager/QuizModalManager';
 import { AnimationManager } from '../Manager/AnimationManager';
@@ -44,6 +44,12 @@ export class RuleModal extends Component {
     @property(Sprite)   // プログレスバー
     private progressPoint : Sprite[] = [];
 
+    @property(Node)
+    private modalBack : Node = null;
+
+    @property(Node)
+    private ruleNodes : Node = null;
+
     private ruleNumber : number = 0;
     private isNext : boolean = false;
 
@@ -60,6 +66,11 @@ export class RuleModal extends Component {
     private MODAL_CHANGE_COUNT = 3;     // モーダルが変わる回数(定数)
     private modalChangeCount = 0;       // モーダルが変わる回数(変数)
 
+    // フリック
+    private flickStartPoint : Vec2 = null;
+    private flickDistance : Vec2 = null;
+    private isFlick : boolean = false;
+
     public Constructor(){
         this.rankButton.node.on(Button.EventType.CLICK, this.NextModal, this);
         this.tutorialButton.node.on(Button.EventType.CLICK, this.ClickTutorialButton, this);
@@ -67,6 +78,10 @@ export class RuleModal extends Component {
 
         this.forwardButton.node.on(Button.EventType.CLICK, this.ForwardRuleModal, this);
         this.backButton.node.on(Button.EventType.CLICK, this.BackRuleModal, this);
+
+        this.modalBack.on(Input.EventType.TOUCH_START, this.onTouchStart, this);
+        this.modalBack.on(Input.EventType.TOUCH_MOVE, this.onTouchFlick, this);
+        this.modalBack.on(Input.EventType.TOUCH_END, this.onTouchEnd, this);
 
         this.debugIsFirst = GameManager.Instance().GetGameInfo().isFirstTime;
 
@@ -103,20 +118,48 @@ export class RuleModal extends Component {
         //新仕様
         this.ChengeRuleModal(this.modalChangeCount);
         this.ShowButton(this.modalChangeCount);
-        if(this.modalChangeTime > 0.0){
-            this.modalChangeTime -= deltaTime;
-        }
-        else{
-            if(this.modalChangeCount < this.MODAL_CHANGE_COUNT){
-                this.modalChangeCount++;
+        if(!this.isFlick){
+            if(this.modalChangeTime > 0.0){
+                this.modalChangeTime -= deltaTime;
             }
             else{
-                QuizModalManager.Instance().ChangeModal('Genre');
-                this.modalChangeCount = 0;
+                if(this.modalChangeCount < this.MODAL_CHANGE_COUNT){
+                    this.modalChangeCount++;
+                }
+                else{
+                    QuizModalManager.Instance().ChangeModal('Genre');
+                    this.modalChangeCount = 0;
+                }
+                this.modalChangeTime = this.MODAL_CHANGE_TIME;
+    
             }
-            this.modalChangeTime = this.MODAL_CHANGE_TIME;
-
         }
+    }
+
+    private onTouchStart(event: EventTouch){
+        this.flickStartPoint = event.getUILocation();
+        this.isFlick = true;
+    }
+
+    private onTouchFlick(event: EventTouch){
+        this.flickDistance = new Vec2(event.getUILocation().x - this.flickStartPoint.x, event.getUILocation().y - this.flickStartPoint.y);
+        let posX = -this.modalChangeCount * 375 + this.flickDistance.x;
+        posX = Math.min(posX, 0);
+        posX = Math.max(posX, -1125);
+        this.ruleNodes.setPosition(posX, 0, 0);
+    }
+
+    private onTouchEnd(event: EventTouch) {
+        if(this.flickDistance.x > 100.0){
+            this.BackRuleModal();
+        }
+        else if(this.flickDistance.x < -100.0)
+        {
+            this.ForwardRuleModal();
+        }
+        // this.ruleNodes.setPosition(-this.modalChangeCount * 375, 0, 0);
+        this.isFlick = false;
+        console.log('flick: ' + this.flickDistance);
     }
 
     private ClickTutorialButton(){
@@ -137,14 +180,18 @@ export class RuleModal extends Component {
 
     private ChengeRuleModal(currentModal: number)
     {
-        for(let i = 0; i < this.tutorialRule.length; ++i)
+        if(!this.isFlick){
+            this.ruleNodes.setPosition(-currentModal * 375, 0, 0);
+        }
+
+        for(let i = 0; i < this.progressPoint.length; ++i)
         {
             if(i == currentModal){
-                this.tutorialRule[i].active = true;
+                // this.tutorialRule[i].active = true;
                 this.progressPoint[i].color = this.currentPointColor;
             }
             else{
-                this.tutorialRule[i].active = false;
+                // this.tutorialRule[i].active = false;
                 this.progressPoint[i].color = this.defaultPointColor;
             }
         }
@@ -154,19 +201,19 @@ export class RuleModal extends Component {
     {
         switch(currentModal){
             case 0:
-                this.forwardButton.node.active = true;
-                this.backButton.node.active = false;
+                // this.forwardButton.node.active = true;
+                // this.backButton.node.active = false;
                 this.skipButton.node.active = false;
                 break;
             case 1:
             case 2:
-                this.forwardButton.node.active = true;
-                this.backButton.node.active = true;
+                // this.forwardButton.node.active = true;
+                // this.backButton.node.active = true;
                 this.skipButton.node.active = false;
                 break;
             case 3:
-                this.forwardButton.node.active = false;
-                this.backButton.node.active = true;
+                // this.forwardButton.node.active = false;
+                // this.backButton.node.active = true;
                 this.skipButton.node.active = true;
                 break;
             default:
@@ -175,13 +222,17 @@ export class RuleModal extends Component {
     }
 
     private ForwardRuleModal(){
-        this.modalChangeCount++;
-        this.modalChangeTime = this.MODAL_CHANGE_TIME;
+        if(this.modalChangeCount < 3){
+            this.modalChangeCount++;
+            this.modalChangeTime = this.MODAL_CHANGE_TIME;
+        }
     }
 
     private BackRuleModal(){
-        this.modalChangeCount--;
-        this.modalChangeTime = this.MODAL_CHANGE_TIME;
+        if(this.modalChangeCount > 0) {
+            this.modalChangeCount--;
+            this.modalChangeTime = this.MODAL_CHANGE_TIME;
+        }
     }
 
     private NextModel02()

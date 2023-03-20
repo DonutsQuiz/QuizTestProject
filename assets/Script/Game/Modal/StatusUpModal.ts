@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Color, Sprite, Graphics, Button, Animation, Vec3, math, Label } from 'cc';
+import { _decorator, Component, Node, Color, Sprite, Graphics, Button, Animation, Vec3, math, Label, Prefab, instantiate } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('StatusUpModal')
@@ -26,6 +26,11 @@ export class StatusUpModal extends Component {
 
     @property(Button)
     private progressButton : Button = null;
+
+    @property(Node)
+    private bookNodes : Node = null;
+    @property(Prefab)
+    private bookPrefab : Prefab = null;
 
     private checkPointSprite : Sprite[] = [];
     private checkSpriteNode : Node[] = [];
@@ -71,6 +76,11 @@ export class StatusUpModal extends Component {
         }
         this.checkPoint[5].active = true;
         this.checkPointSprite[0].color = this.pass_pointColor;
+
+        let testNode = instantiate(this.bookPrefab);
+        testNode.name = 'book1';
+
+        this.bookNodes.addChild(testNode);
     }
 
     OnUpdate(deltaTime: number) {
