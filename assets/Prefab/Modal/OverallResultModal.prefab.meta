@@ -1,9 +1,11 @@
 {
   "ver": "1.1.40",
   "importer": "prefab",
-  "imported": false,
+  "imported": true,
   "uuid": "daf8414a-5490-4197-81fa-5c82b35f7e1e",
-  "files": [],
+  "files": [
+    ".json"
+  ],
   "subMetas": {},
   "userData": {
     "syncNodeName": "OverallResultModal"

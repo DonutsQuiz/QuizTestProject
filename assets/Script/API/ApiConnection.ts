@@ -75,7 +75,6 @@ export class ApiConnection extends Component {
         return await axios.post(this.apiURL + `game/createQuiz`,data,config)
             .then((response)=>{
                 let data = JSON.parse(atob(response.data));
-                console.log(data);
                 GameManager.Instance().GetGameInfo().qSentence = data.Quiz;
                 GameManager.Instance().GetGameInfo().qSelectSent = data.Choices;
                 GameManager.Instance().GetGameInfo().hintSentence = data.Hints;
