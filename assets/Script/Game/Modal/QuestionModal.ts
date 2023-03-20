@@ -216,6 +216,8 @@ export class QuestionModal extends Component {
             }
         }
 
+        GameManager.Instance().GetApiConnection().setAnswer(this.isSelect + 1);
+
         // 新仕様
         if(!this.isModelChange){
             this.isModelChange = true;
@@ -272,10 +274,20 @@ export class QuestionModal extends Component {
                 if(i === 1)sele = "B.";
                 if(i === 2)sele = "C.";
                 if(i === 3)sele = "D.";
-                this.qSelectSent[i].string = GameManager.Instance().GetGameInfo().qSentence[i];
+                this.qSelectSent[i].string = GameManager.Instance().GetGameInfo().qSelectSent[i];
             }
         }
     }
+
+    // 問題文などのセット
+    public SetQuizInfoUI(){
+        this.qNumber.string = GameManager.Instance().GetGameInfo().qNumber.toString() + " / " + QuizManager.Instance().raundMax + "問";
+        this.qSentence.string = "<color=#000000>" + GameManager.Instance().GetGameInfo().qSentence + "</color>";
+        for(var i = 0; i < QuizManager.Instance().GetChoiceMax(); i++){
+            this.qSelectSent[i].string = GameManager.Instance().GetGameInfo().qSelectSent[i];
+        }
+    }
+
 
     private DebugModalUpdate(){
         if(GameManager.Instance().GetClientMode() != this.debugClientMode){
@@ -320,7 +332,7 @@ export class QuestionModal extends Component {
                         if(i === 1)sele = "B.";
                         if(i === 2)sele = "C.";
                         if(i === 3)sele = "D.";
-                        this.qSelectSent[i].string = GameManager.Instance().GetGameInfo().qSentence[i];
+                        this.qSelectSent[i].string = GameManager.Instance().GetGameInfo().qSelectSent[i];
                     }
                 }
 

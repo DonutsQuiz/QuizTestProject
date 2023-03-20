@@ -259,7 +259,7 @@ export class ChoicesModal extends Component {
 
     public SetUI(){
         this.timer.SetTimeLimit(GameManager.Instance().GetGameInfo().thinkTime);   // タイマーのセット
-        this.questionText.string ="<color=#000000>" +  GameManager.Instance().GetGameInfo().qSentenceUser + "</color>";
+        this.questionText.string ="<color=#000000>" +  GameManager.Instance().GetGameInfo().qSentence + "</color>";
         // this.numberLabel.string = GameManager.Instance().GetGameInfo().qNumber + "/" + QuizManager.Instance().raundMax + "問";
         this.numberLabel.string = "第" + GameManager.Instance().GetGameInfo().qNumber + "問:";
         this.betModal.node.active = false;
@@ -294,11 +294,23 @@ export class ChoicesModal extends Component {
         }
     }
 
+   // 問題文などのセット
+   public SetQuizInfoUI(){
+       this.numberLabel.string = GameManager.Instance().GetGameInfo().qNumber.toString() + " / " + QuizManager.Instance().raundMax + "問";
+       this.questionText.string = "<color=#000000>" + GameManager.Instance().GetGameInfo().qSentence + "</color>";
+       console.log(this.questionText.string);
+       for(var i = 0; i < QuizManager.Instance().GetChoiceMax(); i++){
+           this.labelList[i].string = GameManager.Instance().GetGameInfo().qSelectSent[i];
+       }
+   }
+    
+
     // 選択肢を決定
     private DecideChoice(){
         this.choiceNumber = this.tempNumber;
         this.frameList[this.choiceNumber].spriteFrame = this.selectFrameSprite;
         this.iconLineupList[this.choiceNumber].AddIcon(GameManager.Instance().GetGameInfo().ranking[0].mSprite);
+        GameManager.Instance().GetApiConnection().guestAnswer(this.choiceNumber + 1);
         // if(this.betModal.getIsPushedDecideButton()) AnimationManager.Instance().betAnim.Play(this.choiceNumber, this.betModal.GetBetValue());
         AnimationManager.Instance().answerAnim.Play(this.choiceNumber);
         this.betModal.SetIsDecide(false);
@@ -359,6 +371,7 @@ export class ChoicesModal extends Component {
         this.betModal.SetIsDecide(false);
         this.choiceNumber = -1;
         this.ResetUI();
+        GameManager.Instance().GetApiConnection().fixResult();
         QuizModalManager.Instance().ChangeModal('Overall');
     }
 

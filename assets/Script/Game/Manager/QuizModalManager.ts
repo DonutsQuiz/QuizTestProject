@@ -157,6 +157,7 @@ export class QuizModalManager extends Component {
         }
         else if(nextType === 'Ranking'){
             this.ranking.node.active = true;
+            this.ranking.SetUI();
         }
         else if(nextType === 'Question'){
             this.question.node.active = true;
