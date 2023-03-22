@@ -75,6 +75,8 @@ export class GameInformation{
     gameId : number = 12345678900987;
     token : string = "asiodjioqwjoajsdjjsakmvbd";
 
+    order : number = 0;
+
     rankInfo : FixReslutRankingData = null;
 
     liverName : string = ""; //ライバーの名前

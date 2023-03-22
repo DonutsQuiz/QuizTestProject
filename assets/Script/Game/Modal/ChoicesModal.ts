@@ -317,7 +317,7 @@ export class ChoicesModal extends Component {
             GameManager.Instance().GetGameInfo().token,
             GameManager.Instance().GetGameInfo().gameId,
             GameManager.Instance().GetGameInfo().hostId,
-            GameManager.Instance().GetGameInfo().qNumber,
+            GameManager.Instance().GetGameInfo().order,
             this.choiceNumber + 1
         )
         // if(this.betModal.getIsPushedDecideButton()) AnimationManager.Instance().betAnim.Play(this.choiceNumber, this.betModal.GetBetValue());
@@ -344,7 +344,7 @@ export class ChoicesModal extends Component {
             GameManager.Instance().GetGameInfo().hostId,
             GameManager.Instance().GetGameInfo().token,
             GameManager.Instance().GetGameInfo().gameId,
-            GameManager.Instance().GetGameInfo().qNumber
+            GameManager.Instance().GetGameInfo().order
         );
     }
 

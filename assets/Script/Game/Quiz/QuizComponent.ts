@@ -30,13 +30,14 @@ export abstract class QuizComponent extends Component {
 
         // 何問目かをセット
         GameManager.Instance().GetGameInfo().qNumber = (GameManager.Instance().GetGameInfo().qNumber + 1) % (QuizManager.Instance().raundMax + 1);
+        GameManager.Instance().GetGameInfo().order++;
 
         // 問題生成をリクエスト
         GameManager.Instance().GetApiConnect().createQuiz(
             GameManager.Instance().GetGameInfo().hostId,
             GameManager.Instance().GetGameInfo().token,
             GameManager.Instance().GetGameInfo().gameId,
-            GameManager.Instance().GetGameInfo().qNumber,
+            GameManager.Instance().GetGameInfo().order,
             GameManager.Instance().GetGameInfo().genreId
         );
 
