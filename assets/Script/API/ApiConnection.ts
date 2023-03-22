@@ -25,11 +25,11 @@ export class ApiConnection extends Component {
         return await axios.post(this.apiURL + `game/registerHost`,data,config)
             .then((response)=>{
                 let data = JSON.parse(atob(response.data));
+                console.log(data);
                 GameManager.Instance().GetGameInfo().gameId = data.GameId;
                 GameManager.Instance().GetGameInfo().genreSetList = data.GenreSet;
                 GameManager.Instance().GetGameInfo().todayRankingList = data.DailyRankings;
                 GameManager.Instance().GetGameInfo().prevMonthRankingList = data.PrevMonthlyRankings;
-                console.log(GameManager.Instance().GetGameInfo().genreSetList);
                 return data;
             })
             .catch((error)=>{
@@ -64,8 +64,8 @@ export class ApiConnection extends Component {
 
 
     // クイズの生成
-    async createQuiz(userId:number,token:string, gameId:number, genreId:number){
-        let data = {userId:userId,token:token,gameId:gameId,order:1,genreId:genreId};
+    async createQuiz(userId:number,token:string, gameId:number,order:number,genreId:number){
+        let data = {userId:userId,token:token,gameId:gameId,order:order,genreId:genreId};
         let config = {
             headers:{
                 "Content-Type": "application/json"
@@ -92,124 +92,150 @@ export class ApiConnection extends Component {
     }
 
 
-    // /// ゲストの設定
-    // async registerGuest(userId:number,token:string,gameId:number,hostId:number){
-    //     let data = {userId:userId,token:token,gameId:gameId,hostUserId:hostId};
-    //     let config = {
-    //         headers:{
-    //             "Content-Type": "application/json"
-    //         }
-    //     };
+    // 解答の設定(ライバー)
+    async setAnswer(userId:number,token:string,gameId:number,order:number,choice:number){
+        let data = {userId:userId,token:token,gameId:gameId,order:order,choiceId:choice};
+        let config = {
+            headers:{
+                "Content-Type": "application/json"
+            }
+        };
     
-    //     return await axios.post(this.apiURL + `game/registerGuest`,data,config)
-    //         .then((response)=>{
-    //             // let data = JSON.parse(atob(response.data));
-    //             // return data;
-    //             return response;
-    //         })
-    //         .catch((error)=>{
-    //             console.log("error");
-    //             console.log(error);
-    //             return error;
-    //         });
-    // }
-
-
-
-    //test
-    registerHost2(userId:number,token:string){
-        let xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = () => {
-            //通信が成功
-            if(xhr.readyState == 4 && (xhr.status >= 200 && xhr.status < 400)){
-                let res = atob(xhr.responseText); //base 64にエンコードされたレスポンスをデコードする
-                let jsonData = JSON.parse(res); //json化を行う
-                console.log("registerHost2");
-                console.log(res);
-                console.log(jsonData);
-            }
-        }
-        //通信が失敗
-        xhr.onerror = (err) => {
-            console.log("register 2 error");
-            console.log(err);
-        }
-
-        let postURL = this.apiURL + `game/registerHost`;
-        xhr.open("POST",postURL,true);
-        xhr.setRequestHeader("Content-Type","application/json");
-        let data = {
-            userId: userId,
-            token: token
-        };
-        xhr.send(JSON.stringify(data));
+        return await axios.post(this.apiURL + `game/setAnswer`,data,config)
+            .then((response)=>{
+                return response;
+            })
+            .catch((error)=>{
+                console.log("error");
+                console.log(error);
+                return error;
+            });
     }
 
-    // クイズ生成
-    createQuiz2(){
-        let xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = () => {
-            //通信が成功
-            if(xhr.readyState == 4 && (xhr.status >= 200 && xhr.status < 400)){
-                let res = atob(xhr.responseText); //base 64にエンコードされたレスポンスをデコードする
-                let jsonData = JSON.parse(res); //json化を行う
-                console.log(res);
-                console.log(jsonData);
-                // GameManager.Instance().GetGameInfo().qSentence = jsonData.Question;
-                // GameManager.Instance().GetGameInfo().qSelectSent = jsonData.Choices;
-                // GameManager.Instance().GetGameInfo().hintSentence = jsonData.Hints;
-                // GameManager.Instance().GetGameInfo().qGenre = jsonData.Genre;
-                // QuizModalManager.Instance().GetQuestionModal().SetQuizInfoUI();
-            }
-        }
-        //通信が失敗
-        xhr.onerror = (err) => {
-            console.log("error");
-            console.log(err);
-        }
 
-        let postURL = this.apiURL + `game/createQuiz`;
-        xhr.open("POST",postURL,true);
-        xhr.setRequestHeader("Content-Type","application/json");
-        let data = {
-            userId: 123456789,
-            token: "asiodjioqwjoajsdjjsakmvbd",
-            gameId: this.gameId,
-            order: 1,
-            genreId: 10001
+    // 解答の設定(ユーザー)
+    async guestAnswer(userId:number,token:string,gameId:number,hostId:number,order:number,choice:number){
+        let data = {userId:userId,token:token,gameId:gameId,hostUserId:hostId,order:order,choiceId:choice};
+        let config = {
+            headers:{
+                "Content-Type": "application/json"
+            }
         };
-        xhr.send(JSON.stringify(data));
+    
+        return await axios.post(this.apiURL + `game/guestAnswer`,data,config)
+            .then((response)=>{
+                return response;
+            })
+            .catch((error)=>{
+                console.log("error");
+                console.log(error);
+                return error;
+            });
     }
 
-    setAnswer(){
-        let xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = () => {
-            //通信が成功
-            if(xhr.readyState == 4 && (xhr.status >= 200 && xhr.status < 400)){
-                let res = atob(xhr.responseText); //base 64にエンコードされたレスポンスをデコードする
-                let jsonData = JSON.parse(res); //json化を行う
-                console.log(res);
-                console.log(jsonData);
+
+    // ゲーム復旧
+    async restoreGameProgress(userId:number,token:string,gameId:number,order:number){
+        let data = {userId:userId,token:token,gameId:gameId,order:order};
+        let config = {
+            headers:{
+                "Content-Type": "application/json"
             }
-        }
-        //通信が失敗
-        xhr.onerror = (err) => {
-            console.log("error");
-            console.log(err);
-        }
-
-        let postURL = this.apiURL + `game/setAnswer`;
-        xhr.open("POST",postURL,true);
-        xhr.setRequestHeader("Content-Type","application/json");
-        let data = {
-            userId: 123456789,
-            token: "asiodjioqwjoajsdjjsakmvbd",
-            gameId: this.gameId,
-            order: 2,
-            choiceId: 2
-
         };
-        xhr.send(JSON.stringify(data));
+    
+        return await axios.post(this.apiURL + `game/restoreGameProgress`,data,config)
+            .then((response)=>{
+                let data = JSON.parse(atob(response.data));
+                console.log(data);
+                return data;
+            })
+            .catch((error)=>{
+                console.log("error");
+                console.log(error);
+                return error;
+            });
+    }
+
+
+
+    // 結果の集計
+    async fixResult(userId:number,token:string,gameId:number,order:number){
+        let data = {userId:userId,token:token,gameId:gameId,order:order};
+        let config = {
+            headers:{
+                "Content-Type": "application/json"
+            }
+        };
+    
+        return await axios.post(this.apiURL + `game/fixResult`,data,config)
+            .then((response)=>{
+                let data = JSON.parse(atob(response.data));
+                GameManager.Instance().GetGameInfo().nowRankingList = data.QuizScoreRankings;
+                console.log(GameManager.Instance().GetGameInfo().nowRankingList);
+                return data;
+            })
+            .catch((error)=>{
+                console.log("error");
+                console.log(error);
+                return error;
+            });
+    }
+
+
+    // グレードの取得
+    async getGameGrade(userId:number,token:string, gameId:number,order:number){
+        let data = "?userId="+userId+"&token="+token+"&gameId="+gameId+"&order="+order;
+    
+        return await axios.get(this.apiURL + `game/getGameGrade` + data)
+            .then((response)=>{
+                let data = JSON.parse(atob(response.data));
+                GameManager.Instance().GetGameInfo().grade = data.Grade;
+                GameManager.Instance().GetGameInfo().playCount = data.PlayCount;
+                return data;
+            })
+            .catch((error)=>{
+                console.log("error");
+                console.log(error);
+                return error;
+            });
+    }
+
+
+    // 今日のランキング
+    async getDailyRanking(hostId:number,date:Date){
+        let data = "?hostUserId="+hostId+"&year="+date.getFullYear()+"&month="+(date.getMonth() + 1)+"&day="+date.getDate();
+    
+        return await axios.get(this.apiURL + `ranking/getDailyRanking` + data)
+            .then((response)=>{
+                let data = JSON.parse(atob(response.data));
+                GameManager.Instance().GetGameInfo().todayRankingList = data.Rankings;
+                console.log(GameManager.Instance().GetGameInfo().todayRankingList[0].Score);
+                return data;
+            })
+            .catch((error)=>{
+                console.log("error");
+                console.log(error);
+                return error;
+            });
+    }
+
+
+    // 今月のランキング
+    async getMonthlyRanking(hostId:number,date:Date){
+        let data = "?hostUserId="+hostId+"&year="+date.getFullYear()+"&month="+(date.getMonth() + 1);
+    
+        return await axios.get(this.apiURL + `ranking/getMonthlyRanking` + data)
+            .then((response)=>{
+                let data = JSON.parse(atob(response.data));
+                GameManager.Instance().GetGameInfo().monthRankingList = data.Rankings;
+                // console.log(GameManager.Instance().GetGameInfo().monthRankingList[0].Score);
+                return data;
+            })
+            .catch((error)=>{
+                console.log("error");
+                console.log(error);
+                return error;
+            });
     }
 }
 

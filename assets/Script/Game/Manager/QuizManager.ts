@@ -42,13 +42,6 @@ export class QuizManager extends Component {
             this.QuestionPhase();
             GameManager.Instance().SetMenuActive();
             GameManager.Instance().SetParticipantActive(true);
-            // GameManager.Instance().GetApiConnection().registerGuest();
-            GameManager.Instance().GetApiConnect().registerGuest(
-                GameManager.Instance().GetGameInfo().userId,
-                GameManager.Instance().GetGameInfo().token,
-                GameManager.Instance().GetGameInfo().gameId,
-                GameManager.Instance().GetGameInfo().hostId
-            );
             this.startButton.node.active = false;
         }, this);
     }
@@ -105,9 +98,15 @@ export class QuizManager extends Component {
     }
     
     // 問題の再設定
-    public ResettinQuiz(){
-        GameManager.Instance().GetGameInfo().qNumber--;
-        this.quizComponent.SetQuiz();
+    public RerollQuiz(){
+        // 問題生成をリクエスト
+        GameManager.Instance().GetApiConnect().createQuiz(
+            GameManager.Instance().GetGameInfo().hostId,
+            GameManager.Instance().GetGameInfo().token,
+            GameManager.Instance().GetGameInfo().gameId,
+            GameManager.Instance().GetGameInfo().qNumber,
+            GameManager.Instance().GetGameInfo().genreId
+        );
     }
 
     // 選択肢の最大数

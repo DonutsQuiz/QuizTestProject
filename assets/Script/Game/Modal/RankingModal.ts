@@ -1,5 +1,6 @@
-import { _decorator, Component, Node, Button, labelAssembler, Label, spriteAssembler, Sprite, game, UITransform, Vec3 } from 'cc';
+import { _decorator, Component, Node, Button, labelAssembler, Label, spriteAssembler, Sprite, game, UITransform, Vec3, Game } from 'cc';
 import { Ranking } from '../../UI/Ranking';
+import { Ranking2 } from '../../UI/Ranking2';
 import { ClientMode, GameManager } from '../Manager/GameManager';
 import { ModalType, QuizModalManager } from '../Manager/QuizModalManager';
 const { ccclass, property } = _decorator;
@@ -25,6 +26,8 @@ export class RankingModal extends Component {
     private monthRankButton : Button = null;
     @property(Ranking)
     private ranking : Ranking = null;
+    @property(Ranking2)
+    private ranking2 : Ranking2 = null;
 
     private rankingMode : number = 0; //今月：０　先月：１
 
@@ -58,8 +61,24 @@ export class RankingModal extends Component {
         }
         this.liverNameLabel.string = "「" + GameManager.Instance().GetGameInfo().liverName +  "」の推し検定";
 
+
+        GameManager.Instance().GetApiConnect().getDailyRanking(
+            GameManager.Instance().GetGameInfo().hostId,
+            new Date()
+        );
+        GameManager.Instance().GetApiConnect().getMonthlyRanking(
+            GameManager.Instance().GetGameInfo().hostId,
+            new Date()
+        );
+
+        
         this.ranking.SetRankingCount(GameManager.Instance().GetGameInfo().todayRankingList.length);
         this.ranking.Generate();
+
+        this.ranking2.SetRankOrList(0);
+        this.ClickSwitchingButton(0);
+        
+
     }
 
     private ClickFunction(){
@@ -73,14 +92,21 @@ export class RankingModal extends Component {
     private ClickBackButton(){
         QuizModalManager.Instance().ChangeModal(this.modalType);
         GameManager.Instance().SetParticipantActive(true);
+        this.ClickSwitchingButton(0);
         this.modalType = 'None';
     }
     private ClickSwitchingButton(mode : number){
         if(mode === 0){ //今回のランキング
             this.underbarTransform.position = new Vec3(this.nowRankButton.node.position.x, this.nowRankButton.node.position.y - 15.0, this.nowRankButton.node.position.z);
+            this.ranking2.SetMaxCount(GameManager.Instance().GetGameInfo().todayRankingList.length);
+            this.ranking2.SetRankingList(GameManager.Instance().GetGameInfo().todayRankingList);
+            this.ranking2.Generate();
         }
         else if(mode === 1){ //今月のランキング
             this.underbarTransform.position = new Vec3(this.monthRankButton.node.position.x, this.monthRankButton.node.position.y - 15.0, this.monthRankButton.node.position.z);
+            this.ranking2.SetMaxCount(GameManager.Instance().GetGameInfo().monthRankingList.length);
+            this.ranking2.SetRankingList(GameManager.Instance().GetGameInfo().monthRankingList);
+            this.ranking2.Generate();
         }
     }
 
