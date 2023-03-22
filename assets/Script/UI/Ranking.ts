@@ -67,8 +67,8 @@ export class Ranking extends Component {
                 user = instantiate(this.rankingUser);
                 user.setParent(this.contentNode);
                 user.position = new Vec3(0, this.basePositionY + (this.INTERVAL * (this.rankingCountMax - 2 + i)), 0);
-                user.getComponent(ListenerNode).SetRankiOrList(this.isRanking);
-                user.getComponent(ListenerNode).SetAchieve(i + 4);
+                // user.getComponent(ListenerNode).SetRankiOrList(this.isRanking);
+                // user.getComponent(ListenerNode).SetAchieve(i + 4);
                 this.rankingList.push(user.getComponent(ListenerNode));
                 this.contentTransform.height += this.INTERVAL * -1;
             }

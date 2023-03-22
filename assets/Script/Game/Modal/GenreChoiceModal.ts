@@ -1,5 +1,6 @@
-import { _decorator, Component, Node, Button, Label, Vec3, SpriteFrame, spriteAssembler, Sprite, ConstantForce } from 'cc';
-import { GameManager } from '../Manager/GameManager';
+import { _decorator, Component, Node, Button, Label, Vec3, SpriteFrame, spriteAssembler, Sprite, ConstantForce, labelAssembler } from 'cc';
+import { GameMenu } from '../../UI/GameMenu';
+import { ClientMode, GameManager } from '../Manager/GameManager';
 import { QuizManager } from '../Manager/QuizManager';
 import { ModalType, QuizModalManager } from '../Manager/QuizModalManager';
 const { ccclass, property } = _decorator;
@@ -22,9 +23,17 @@ export class GenreChoiceModal extends Component {
     @property(SpriteFrame)
     private genreIconSpriteList : Array<SpriteFrame> = new Array<SpriteFrame>();
     @property(Label)
+    private genreLabelList : Array<Label> = new Array<Label>();
+    @property(Label)
     private titleLabel : Label = null;
+    @property(Label)
+    private startTitleLabel : Label = null;
     @property(Node)
     private genreRootNode : Node = null;
+    @property(Node)
+    private countRoot : Node = null;
+    @property(Node)
+    private genreBook : Node = null;
 
     //スタート
     @property(Sprite)
@@ -47,6 +56,8 @@ export class GenreChoiceModal extends Component {
     private isConfirm : boolean = false; //メニューから飛んだかどうか
     private modalType : ModalType = 'None';
 
+    private debugClientMode : ClientMode = 'Liver';
+
 
     public Constructor(){
         this.genreButton[0].node.on(Button.EventType.CLICK, function(){this.ClickGenreButton(1)}, this);
@@ -61,6 +72,9 @@ export class GenreChoiceModal extends Component {
     }
 
     public OnUpdate(deltaTime: number){
+
+        this.DebugUpdate();
+
         if(!this.isNext) return;
 
         if(this.animationTime > 0.0){
@@ -87,6 +101,7 @@ export class GenreChoiceModal extends Component {
             this.titleLabel.string = "出題テーマをえらぼう";
             this.genreRootNode.position = new Vec3(0, -12, 0);
         }
+        this.SetUI();
     }
 
     // ジャンルを選択
@@ -114,6 +129,9 @@ export class GenreChoiceModal extends Component {
         this.isNext = true;
         this.backButton.node.active = false;
         this.animationTime = 3.0;
+        GameManager.Instance().GetParticipant().SetIsRecruitment(false);
+        GameManager.Instance().GetParticipant().SetUI();
+
         // QuizManager.Instance().get
     }
 
@@ -142,12 +160,41 @@ export class GenreChoiceModal extends Component {
 
     }
 
+    public SetUI(){
+        for(var i = 0; i < 4; i++){
+            this.genreLabelList[i].string = GameManager.Instance().GetGameInfo().genreSetList[i].Genre;
+        }
+
+        if(GameManager.Instance().GetClientMode() === 'Liver'){
+            this.titleLabel.string = "問題ジャンルを選ぼう";
+            this.startTitleLabel.node.active = false;
+            this.startButton.node.active = true;
+            this.genreBook.position = new Vec3(0, 12, 0);
+            this.countRoot.active = true;
+        }
+        else if(GameManager.Instance().GetClientMode() === 'User'){
+            this.titleLabel.string = "ライバーが出題テーマを選択中";
+            this.startButton.node.active = false;
+            this.startTitleLabel.node.active = true;
+            this.genreBook.position = new Vec3(0, -15, 0);
+            this.countRoot.active = false;
+        }
+    }
+
     public SetConfirm(is : boolean){
         this.isConfirm = is;
     }
 
     public SetModalType(type : ModalType){
         this.modalType = type;
+    }
+
+
+    private DebugUpdate(){
+        if(GameManager.Instance().GetClientMode() != this.debugClientMode){
+            this.SetUI();
+            this.debugClientMode = GameManager.Instance().GetClientMode();
+        }
     }
 }
 
