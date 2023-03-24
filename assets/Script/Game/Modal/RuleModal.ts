@@ -68,8 +68,11 @@ export class RuleModal extends Component {
 
     // フリック
     private flickStartPoint : Vec2 = null;
+    // private flickEndPoint : Vec2 = null;
     private flickDistance : Vec2 = null;
     private isFlick : boolean = false;
+    // private isTransition : boolean = false;
+    // private modalPosX : number = 0;
 
     public Constructor(){
         this.rankButton.node.on(Button.EventType.CLICK, this.NextModal, this);
@@ -82,6 +85,7 @@ export class RuleModal extends Component {
         this.modalBack.on(Input.EventType.TOUCH_START, this.onTouchStart, this);
         this.modalBack.on(Input.EventType.TOUCH_MOVE, this.onTouchFlick, this);
         this.modalBack.on(Input.EventType.TOUCH_END, this.onTouchEnd, this);
+        this.modalBack.on(Input.EventType.TOUCH_CANCEL, this.onTouchEnd, this);
 
         this.debugIsFirst = GameManager.Instance().GetGameInfo().isFirstTime;
 
@@ -116,9 +120,67 @@ export class RuleModal extends Component {
         }
 
         //新仕様
+        // if(!this.isFlick && this.isTransition){
+        //     switch(this.modalChangeCount){
+        //         case 0:
+        //             if(this.modalPosX < 0 && this.modalPosX > -100){
+        //                 let tmp = this.modalPosX + 10;
+        //                 this.modalPosX = Math.min(0, tmp);
+        //             }
+        //             else if(this.modalPosX <= -100 && this.modalPosX > -375){
+        //                 let tmp = this.modalPosX - 10;
+        //                 this.modalPosX = Math.max(-375, tmp);
+        //             }
+        //             else if(this.modalPosX === -375){
+        //                 this.ForwardRuleModal();
+        //                 this.isTransition = false;
+        //             }
+        //             else{
+        //                 this.isTransition = false;
+        //             }
+        //             console.log(this.modalPosX);
+        //             break;
+        //         case 1:
+        //             if(this.modalPosX < -275 && this.modalPosX > -375){
+        //                 let tmp = this.modalPosX - 10;
+        //                 this.modalPosX = Math.min(-375, tmp);
+        //             }
+        //             else if(this.modalPosX <= -275 && this.modalPosX > 0){
+        //                 let tmp = this.modalPosX + 10;
+        //                 this.modalPosX = Math.max(0, tmp);
+        //             }
+        //             else if(this.modalPosX === 0){
+        //                 this.BackRuleModal();
+        //                 this.isTransition = false;
+        //             }
+        //             else if(this.modalPosX < -375 && this.modalPosX > -475){
+        //                 let tmp = this.modalPosX + 10;
+        //                 this.modalPosX = Math.min(0, tmp);
+        //             }
+        //             else if(this.modalPosX <= -475 && this.modalPosX > -750){
+        //                 let tmp = this.modalPosX - 10;
+        //                 this.modalPosX = Math.max(-750, tmp);
+        //             }
+        //             else if(this.modalPosX === -750){
+        //                 this.ForwardRuleModal();
+        //                 this.isTransition = false;
+        //             }
+        //             else{
+        //                 this.isTransition = false;
+        //             }
+        //             break;
+        //         case 2:
+        //             break;
+        //         case 3:
+        //             break;
+        //         default:
+        //             break;
+        //     }
+        //     this.ruleNodes.setPosition(this.modalPosX, 0, 0);
+        // }
         this.ChengeRuleModal(this.modalChangeCount);
         this.ShowButton(this.modalChangeCount);
-        if(!this.isFlick){
+        if(!this.isFlick){ //  && !this.isTransition) {
             if(this.modalChangeTime > 0.0){
                 this.modalChangeTime -= deltaTime;
             }
@@ -142,11 +204,21 @@ export class RuleModal extends Component {
     }
 
     private onTouchFlick(event: EventTouch){
+        // this.flickEndPoint = event.getUILocation();
         this.flickDistance = new Vec2(event.getUILocation().x - this.flickStartPoint.x, event.getUILocation().y - this.flickStartPoint.y);
-        let posX = -this.modalChangeCount * 375 + this.flickDistance.x;
-        posX = Math.min(posX, 0);
-        posX = Math.max(posX, -1125);
-        this.ruleNodes.setPosition(posX, 0, 0);
+        let PosX = -this.modalChangeCount * 375 + this.flickDistance.x;
+        PosX = Math.min(PosX, 0);
+        PosX = Math.max(PosX, -1125);
+        this.ruleNodes.setPosition(PosX, 0, 0);
+
+        // this.isTransition = true;
+        // let flickDistance = new Vec2(this.flickEndPoint.x - this.flickStartPoint.x, this.flickEndPoint.y - this.flickStartPoint.y);
+        // this.modalPosX += flickDistance.x;
+        // this.modalPosX = Math.min(this.modalPosX, 0);
+        // this.modalPosX = Math.max(this.modalPosX, -1125);
+        // this.ruleNodes.setPosition(this.modalPosX, 0, 0);
+
+        // this.flickStartPoint = this.flickEndPoint;
     }
 
     private onTouchEnd(event: EventTouch) {
@@ -157,9 +229,9 @@ export class RuleModal extends Component {
         {
             this.ForwardRuleModal();
         }
-        // this.ruleNodes.setPosition(-this.modalChangeCount * 375, 0, 0);
+        this.ruleNodes.setPosition(-this.modalChangeCount * 375, 0, 0);
         this.isFlick = false;
-        console.log('flick: ' + this.flickDistance);
+        // console.log('flick: ' + this.flickDistance);
     }
 
     private ClickTutorialButton(){
@@ -180,7 +252,7 @@ export class RuleModal extends Component {
 
     private ChengeRuleModal(currentModal: number)
     {
-        if(!this.isFlick){
+        if(!this.isFlick){ // && !this.isTransition){
             this.ruleNodes.setPosition(-currentModal * 375, 0, 0);
         }
 

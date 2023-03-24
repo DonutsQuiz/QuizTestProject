@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Color, Sprite, Graphics, Button, Animation, Vec3, math, Label, Prefab, instantiate } from 'cc';
+import { _decorator, Component, Node, Color, Sprite, Graphics, Button, Animation, Vec3, math, Label, Prefab, instantiate, AnimationState } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('StatusUpModal')
@@ -14,8 +14,8 @@ export class StatusUpModal extends Component {
     @property(Graphics)
     private bar : Graphics = null;
 
-    @property(Animation)
-    private stage : Animation[] = [];
+    // @property(Animation)
+    // private stage : Animation[] = [];
 
     @property(Label)
     private participantsNumLabel : Label = null;
@@ -27,40 +27,47 @@ export class StatusUpModal extends Component {
     @property(Button)
     private progressButton : Button = null;
 
-    @property(Node)
-    private bookNodes : Node = null;
-    @property(Prefab)
-    private bookPrefab : Prefab = null;
+    // @property(Node)
+    // private bookParentNode : Node = null;
+    // @property(Prefab)
+    // private bookPrefab : Prefab = null;
+
+    @property(Animation)
+    private bookAnimation : Animation = null;
 
     private checkPointSprite : Sprite[] = [];
     private checkSpriteNode : Node[] = [];
     private checkPointAnim : Animation[] = [];
 
+    // private bookNode : Node[] = [];
+    // private bookAnim : Animation[] = [];
+
     private participantsNum : number = 0;
     private participantsTotal : number = 0;
-    // private progressCount : number = 0;
-    private currentStatus : number = 1;
-    private nextRequiredNum : number = 3;
+    private currentStatus : number = 0;
+    private nextRequiredNum : number = 0;
     private testTotal : number = 0;
-
-    // private doAnim : boolean = false;
 
     private _LEFT_END : number = -90;
     private _OVERALL_WIDTH : number = 180;
     private _MAX_STATUS : number = 6;
     private _MAX_NUM : number = 15;
-    private _REQUIRED_NUM : number = 3;
+
+    private _NUM_REQUIRED_NEXT_STATUS : number[] = [1, 3, 5, 9, 11, 11];
+    private _ANIM_DELAY : number[] = [0.2, 0.25];
+
+    private kkk : AnimationState = null;
 
     start(){
         this.progressButton.node.on(Button.EventType.CLICK, this.progressCounter, this);
     }
 
     Constructor() {
-        this.stage[0].node.active = true;
-        for(let i = 1; i < this.stage.length; ++i)
-        {
-            this.stage[i].node.active = false;
-        }
+        // this.stage[0].node.active = true;
+        // for(let i = 1; i < this.stage.length; ++i)
+        // {
+        //     this.stage[i].node.active = false;
+        // }
 
         for(let i = 0; i < this.checkPoint.length; ++i)
         {
@@ -77,11 +84,23 @@ export class StatusUpModal extends Component {
         this.checkPoint[5].active = true;
         this.checkPointSprite[0].color = this.pass_pointColor;
 
-        let testNode = instantiate(this.bookPrefab);
-        testNode.name = 'book1';
-
-        this.bookNodes.addChild(testNode);
+        // for(let i = 0; i < 20; ++i){
+        //     let tmpNode = instantiate(this.bookPrefab);
+        //     this.bookParentNode.addChild(tmpNode);
+        //     this.bookNode[i] = tmpNode;
+        //     this.bookAnim[i] = tmpNode.getComponent(Animation);
+        //     this.bookNode[i].active = false;
+        // }
     }
+
+    // BookUpdate(status : number) {
+    //     switch(status)
+    //     {
+    //         case 1:
+                
+    //         break;
+    //     }
+    // }
 
     OnUpdate(deltaTime: number) {
         // Label
@@ -99,7 +118,7 @@ export class StatusUpModal extends Component {
         this.bar.fill();
 
         this.bar.fillColor = this.pass_pointColor;
-        this.bar.rect(0, -5, (this._OVERALL_WIDTH / Math.min(this.currentStatus, this._MAX_STATUS - 1)) * (1.0 / this._REQUIRED_NUM) * Math.min(this.testTotal, this._MAX_NUM), 10);
+        this.bar.rect(0, -5, (this._OVERALL_WIDTH / Math.min(this.currentStatus, this._MAX_STATUS - 1)) * (1.0 / this._NUM_REQUIRED_NEXT_STATUS[this.currentStatus]) * Math.min(this.testTotal, this._MAX_NUM), 10);
         this.bar.stroke();
         this.bar.fill();
 
@@ -107,26 +126,32 @@ export class StatusUpModal extends Component {
         // if(this.progressCount < this.participantsTotal && !this.doAnim){
         //     ++this.progressCount;
         // }
-        if(this.testTotal >= this.nextRequiredNum && this.currentStatus < this._MAX_STATUS){
+        if(this.nextRequiredNum >= this._NUM_REQUIRED_NEXT_STATUS[this.currentStatus] && this.currentStatus < this._MAX_STATUS){
             this.checkPointSprite[5].color = this.pass_pointColor;
             this.checkSpriteNode[5].active = true;
             this.checkPointAnim[5].play();
-            // this.doAnim = true;
-            this.nextRequiredNum += this._REQUIRED_NUM;
         }
     }
 
     private progressCounter(){
         // this.participantsNum += 60;
+        let delay = this._ANIM_DELAY[0] + this.nextRequiredNum * this._ANIM_DELAY[1];
+
+        this.bookAnimation.play('BookAnim02');
+        this.scheduleOnce(function() {
+            this.bookAnimation.pause();
+        }, delay);
+
         this.participantsNum = Math.floor(Math.random() * (60 - 30) + 30);
         this.participantsTotal += this.participantsNum;
         ++this.testTotal;
+        ++this.nextRequiredNum;
     }
 
     private onTriggered() {
-        this.stage[this.currentStatus - 1].node.active = false;
-        this.stage[this.currentStatus].node.active = true;
-        this.stage[this.currentStatus].play();
+        // this.stage[this.currentStatus - 1].node.active = false;
+        // this.stage[this.currentStatus].node.active = true;
+        // this.stage[this.currentStatus].play();
 
         ++this.currentStatus;
         if(this.currentStatus < this._MAX_STATUS)
