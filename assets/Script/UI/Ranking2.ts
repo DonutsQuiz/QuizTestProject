@@ -66,7 +66,12 @@ export class Ranking2 extends Component {
         // 王冠(学帽)の追尾処理
         if(this.topNode === 0 && this.maxCount > 0){
             this.crownSprite.node.active = true;
-            this.crownSprite.node.position = new Vec3(-100, this.listenerNodeList[this.topIndex].node.position.y + 17.5, 0);
+            if(this.rankOrList === 0){
+                this.crownSprite.node.position = new Vec3(-100, this.listenerNodeList[this.topIndex].node.position.y + 17.5, 0);
+            }
+            else if(this.rankOrList === 1){
+                this.crownSprite.node.position = new Vec3(-140, this.listenerNodeList[this.topIndex].node.position.y + 17.5, 0);
+            }
         }
         else{
             this.crownSprite.node.active = false;

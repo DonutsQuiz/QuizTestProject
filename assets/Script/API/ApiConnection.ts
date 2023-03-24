@@ -8,7 +8,8 @@ const { ccclass, property } = _decorator;
 
 @ccclass('ApiConnection')
 export class ApiConnection extends Component {
-    apiURL:string = "http://mixch-live-game-quiz-dev-1389688123.ap-northeast-1.elb.amazonaws.com/api/";
+    // apiURL:string = "http://mixch-live-game-quiz-dev-1389688123.ap-northeast-1.elb.amazonaws.com/api/";
+    apiURL:string = "https://quiz-dev.mgmt.game.livegame.mixch.tv/api/";
 
     private gameId:number = 2;
 

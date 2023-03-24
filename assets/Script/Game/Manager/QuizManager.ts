@@ -104,7 +104,7 @@ export class QuizManager extends Component {
             GameManager.Instance().GetGameInfo().hostId,
             GameManager.Instance().GetGameInfo().token,
             GameManager.Instance().GetGameInfo().gameId,
-            GameManager.Instance().GetGameInfo().qNumber,
+            GameManager.Instance().GetGameInfo().order,
             GameManager.Instance().GetGameInfo().genreId
         );
     }
