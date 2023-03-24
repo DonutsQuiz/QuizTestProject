@@ -31,7 +31,7 @@ export class Timer2 extends Component {
             this.timeDisplay.node.setPosition(new Vec3(-158, -80, 0));
         }
         else if(mode === 'User'){
-            this.timeDisplay.node.setPosition(new Vec3(130, 170, 0));
+            this.timeDisplay.node.setPosition(new Vec3(-158, -80, 0));
         }
     }
 
@@ -62,6 +62,7 @@ export class Timer2 extends Component {
         }
         else{
             this.timeGauge.clear();
+            this.timeDisplay.string = "";
 
             if(!this.isEnd){
                 this.isEnd = true;

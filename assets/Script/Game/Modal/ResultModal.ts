@@ -33,6 +33,8 @@ export class ResultModal extends Component {
 
     private answerResult : string = 'Default';
 
+    private comboCount : number = -1;
+
     start() {
         this.nextButton.node.on(Button.EventType.CLICK, function(){
             this.isNext = true;
@@ -121,14 +123,22 @@ export class ResultModal extends Component {
     // クイズの回答があっているか
     public SetAnswerReslult(ansnum: number, choice: number)
     {
-        console.log("choice: " + choice);
-        console.log("ansnum: " + ansnum);
-        if(ansnum === choice){
-            this.answerResult = 'True';
+        for(var i = 0; i < GameManager.Instance().GetGameInfo().nowRankingList.length; i++){
+            if(GameManager.Instance().GetGameInfo().nowRankingList[i]['UserId'] === GameManager.Instance().GetGameInfo().userId){
+                this.comboCount = GameManager.Instance().GetGameInfo().nowRankingList[i].ComboCount;
+                this.answerResult = (GameManager.Instance().GetGameInfo().nowRankingList[i].IsCorrect) ? 'True' : 'False';
+
+            }
         }
-        else{
-            this.answerResult = 'False';
-        }
+
+        // console.log("choice: " + choice);
+        // console.log("ansnum: " + ansnum);
+        // if(ansnum === choice){
+        //     this.answerResult = 'True';
+        // }
+        // else{
+        //     this.answerResult = 'False';
+        // }
     }
 
     private DebugModalUpdate(){
@@ -156,7 +166,7 @@ export class ResultModal extends Component {
         if(this.debugClientMode === 'User'){
             if(this.answerResult === 'True')
             {
-                AnimationManager.Instance().resultAnim.PlayCorrectAnim();
+                AnimationManager.Instance().resultAnim.PlayCorrectAnim(this.comboCount);
             }
             else if(this.answerResult === 'False')
             {
