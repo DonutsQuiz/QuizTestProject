@@ -39,6 +39,9 @@ export class QuestionModal extends Component {
     private questionChangeButton : Button = null;
     @property(Sprite) //選択時のマーク
     private decideSprite : Sprite = null;
+    @property(Button)
+    private rerollButton : Button = null;
+
 
     @property(Label)
     private ExplanationLabel : Label = null;
@@ -68,6 +71,7 @@ export class QuestionModal extends Component {
         this.qSelectB[2].node.on(Button.EventType.CLICK, function(){this.ClickSelectButton(2);},this);
         this.qSelectB[3].node.on(Button.EventType.CLICK, function(){this.ClickSelectButton(3);},this);
         this.questionChangeButton.node.on(Button.EventType.CLICK, this.ClikeChangeButton, this);
+        this.rerollButton.node.on(Button.EventType.CLICK, this.ClickRerollButton, this);
 
         this.questionScrean = this.allSideNode.getChildByName('QuestionScrean');
         this.selectionScrean = this.allSideNode.getChildByName('SelectionScrean');
@@ -219,7 +223,16 @@ export class QuestionModal extends Component {
             }
         }
 
-        GameManager.Instance().GetApiConnection().setAnswer(this.isSelect + 1);
+        this.rerollButton.node.active = false;
+
+        // GameManager.Instance().GetApiConnection().setAnswer(this.isSelect + 1);
+        GameManager.Instance().GetApiConnect().setAnswer(
+            GameManager.Instance().GetGameInfo().hostId,
+            GameManager.Instance().GetGameInfo().token,
+            GameManager.Instance().GetGameInfo().gameId,
+            GameManager.Instance().GetGameInfo().qNumber,
+            this.isSelect + 1
+        )
 
         // 新仕様
         if(!this.isModelChange){
@@ -229,8 +242,12 @@ export class QuestionModal extends Component {
     }
 
     private ClikeChangeButton(){
-        QuizManager.Instance().ResettinQuiz();
+        QuizManager.Instance().RerollQuiz();
         QuizModalManager.Instance().GetQuestionModal().SetUI(GameManager.Instance().GetGameInfo().qType);
+    }
+
+    private ClickRerollButton(){
+        QuizManager.Instance().RerollQuiz();
     }
 
     public SetUI(qtype : QuizType){
@@ -285,8 +302,8 @@ export class QuestionModal extends Component {
     // 問題文などのセット
     public SetQuizInfoUI(){
         // this.qNumber.string = GameManager.Instance().GetGameInfo().qNumber.toString() + " / " + QuizManager.Instance().raundMax + "問";
-        this.qNumber.string = "第" + GameManager.Instance().GetGameInfo().qNumber.toString() + "問";
-        this.qSentence.string = "<color=#000000>" + GameManager.Instance().GetGameInfo().qSentence + "</color>";
+        // this.qNumber.string = "第" + GameManager.Instance().GetGameInfo().qNumber.toString() + "問";
+        this.qSentence.string = "<color=#000000>" + "第" + GameManager.Instance().GetGameInfo().qNumber.toString() + "問：" + GameManager.Instance().GetGameInfo().qSentence + "</color>";
         for(var i = 0; i < QuizManager.Instance().GetChoiceMax(); i++){
             this.qSelectSent[i].string = GameManager.Instance().GetGameInfo().qSelectSent[i];
         }
@@ -348,6 +365,11 @@ export class QuestionModal extends Component {
                 this.userNode.active = true;
                 this.debugClientMode = 'User';
                 AnimationManager.Instance().userNode.active = true;
+            }
+            else if(GameManager.Instance().GetClientMode() === 'Audience'){
+                this.liverNode.active = false;
+                this.userNode.active = false;
+                this.debugClientMode = 'Liver';
             }
         }
 

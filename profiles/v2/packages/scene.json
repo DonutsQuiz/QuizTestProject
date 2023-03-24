@@ -342,64 +342,10 @@
         "z": 0
       }
     },
-    "c8IpQsWsVNhZLd7Gt4W5NU": {
-      "position": {
-        "x": 187.5,
-        "y": 235.5,
-        "z": 959.4608799982384
-      },
-      "rotation": {
-        "x": 0,
-        "y": 0,
-        "z": 0,
-        "w": 1
-      },
-      "viewCenter": {
-        "x": 187.5,
-        "y": 235.5,
-        "z": 0
-      }
-    },
-    "27e7Giqr1CVp7/1C0A8I0D": {
+    "f7a5eb0d-17f4-4b7f-9f41-fb08330889f9": {
       "position": {
         "x": 187.5,
         "y": 333.5,
-        "z": 5000
-      },
-      "rotation": {
-        "x": 0,
-        "y": 0,
-        "z": 0,
-        "w": 1
-      },
-      "viewCenter": {
-        "x": 187.5,
-        "y": 195.5,
-        "z": 0
-      }
-    },
-    "1b7QYvHrFKfLkhqdmy0BXH": {
-      "position": {
-        "x": 216.09368699005466,
-        "y": 171.15270543018082,
-        "z": 5000
-      },
-      "rotation": {
-        "x": 0,
-        "y": 0,
-        "z": 0,
-        "w": 1
-      },
-      "viewCenter": {
-        "x": 0,
-        "y": 0,
-        "z": 0
-      }
-    },
-    "f7a5eb0d-17f4-4b7f-9f41-fb08330889f9": {
-      "position": {
-        "x": 434.0103304817094,
-        "y": -2498.416157025248,
         "z": 5000
       },
       "rotation": {
@@ -576,7 +522,8 @@
     }
   },
   "game-view": {
-    "scaleValue": 136,
-    "sliderValue": 56
+    "scaleValue": 178,
+    "sliderValue": 63,
+    "stats": false
   }
 }

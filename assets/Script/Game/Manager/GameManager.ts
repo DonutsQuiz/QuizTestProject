@@ -11,11 +11,13 @@ import { GameMenu } from '../../UI/GameMenu';
 import { ExitModal } from '../../UI/ExitModal';
 import { ApiConnection2 } from '../../API/ApiConnection2';
 import { ApiConnection } from '../../API/ApiConnection';
+import { Participant } from '../../UI/Participant';
 const { ccclass, property } = _decorator;
 
 const ClientMode = {
     Liver : 'Liver',
     User : 'User',
+    Audience : 'Audience'
 } as const;
 
 export type ClientMode = typeof ClientMode[keyof typeof ClientMode];
@@ -107,6 +109,8 @@ export class GameManager extends Component {
         this.comment.active = false;
         this.participant = instantiate(this.participantPrefab);
         this.participant.setParent(this.canvas);
+        this.participant.getComponent(Participant).Constructor();
+        this.participant.getComponent(Participant).SetUI();
         this.participant.active = false;
 
         this.exitModal.Constructor();
@@ -136,6 +140,10 @@ export class GameManager extends Component {
             this.clientLabel.string = "ユーザー";
         }
         else if(this.clientMode === 'User'){
+            this.clientMode = 'Audience';
+            this.clientLabel.string = "オーディエンス";
+        }
+        else if(this.clientMode === 'Audience'){
             this.clientMode = 'Liver';
             this.clientLabel.string = "ライバー";
         }
@@ -155,6 +163,9 @@ export class GameManager extends Component {
 
     private ShowStatusUp(){
         this.modalManager.ChangeModal('StatusUp');
+    }
+    public SetClientMode(mode:ClientMode){
+        this.clientMode = mode;
     }
 
     public GetClientMode() : ClientMode{
@@ -179,6 +190,9 @@ export class GameManager extends Component {
 
     public GetApiConnect() :ApiConnection{
         return this.apiConect;
+    }
+    public GetParticipant() : Participant{
+        return this.participant.getComponent(Participant);
     }
 
     public SetMenuActive(){

@@ -6,6 +6,8 @@ import { RetryModal } from './RetryModal';
 import { ScrollAnim } from '../../EffectAnim/ScrollAnim';
 import { Ranking } from '../../UI/Ranking';
 import { RankTopThreeIcon } from '../../UI/RankTopThreeIcon';
+import { Ranking2 } from '../../UI/Ranking2';
+import { FixReslutRankingData } from '../Manager/GameInformation';
 const { ccclass, property } = _decorator;
 
 export class UserInfomation{
@@ -55,6 +57,8 @@ export class OverallResultModal extends Component {
     private ranking : Ranking = null;
     @property(Prefab) //リトライモーダルのプレハブ
     private RetryModalPrefab : Prefab = null;
+    @property(Ranking2)
+    private ranking2 : Ranking2 = null;
 
     // 新仕様
     @property(Node) //タイトルのノード
@@ -110,7 +114,6 @@ export class OverallResultModal extends Component {
         if(this.retryModal.GetIsDecide()){
             if(this.retryModal.GetIsRetry()){
                 QuizModalManager.Instance().ChangeModal('Genre');
-                QuizManager.Instance().quizComponent.SetQuiz();
                 GameManager.Instance().SetParticipantActive(true);
                 GameManager.Instance().GetGameInfo().qNumber = 0;
                 this.nowRankMode = 0;
@@ -207,8 +210,13 @@ export class OverallResultModal extends Component {
             this.titleNode.position = new Vec3(0, 125, 0);
             this.blessingSprite.node.active = false;
             this.listenerListNode.active = false;
-            this.listenerRankNode.active = true;
+            this.listenerRankNode.active = false;
             this.ranking.SetRankOrList(true);
+            this.ranking2.SetRankOrList(0);
+            this.ranking2.SetResultRankingList(GameManager.Instance().GetGameInfo().nowRankingList);
+            this.ranking2.SetMaxCount(GameManager.Instance().GetGameInfo().nowRankingList.length);
+            this.ranking2.Generate();
+
             if(QuizManager.Instance().GetIsLast()){
                 this.titleLabel.string = "スポーツ検定36巻検定終了";
                 this.titleLabel.fontSize = 55;
@@ -259,6 +267,22 @@ export class OverallResultModal extends Component {
         }
 
         GameManager.Instance().SetParticipantActive(false);
+
+        // ランキングのセット
+        this.ranking2.SetIsResult(true);
+        this.ranking2.SetRankOrList(1);
+        let correctList : Array<FixReslutRankingData> = new Array<FixReslutRankingData>();
+        for(var i = 0; i < GameManager.Instance().GetGameInfo().nowRankingList.length; i++){
+            if(GameManager.Instance().GetGameInfo().nowRankingList[i].IsCorrect){
+                correctList.push(GameManager.Instance().GetGameInfo().nowRankingList[i]);
+            }
+            if(GameManager.Instance().GetGameInfo().nowRankingList[i].Id === GameManager.Instance().GetGameInfo().userId){
+                GameManager.Instance().GetGameInfo().rankInfo = GameManager.Instance().GetGameInfo().nowRankingList[i];
+            }
+        }
+        this.ranking2.SetResultRankingList(correctList);
+        this.ranking2.SetMaxCount(correctList.length);
+        this.ranking2.Generate();
 
         this.scrollAnim.Reset();
     }
@@ -317,6 +341,19 @@ export class OverallResultModal extends Component {
         this.topThreeIcon.SetFirstSprite(this.userList[0].mSprite);
         this.topThreeIcon.SetSecondSprite(this.userList[1].mSprite);
         this.topThreeIcon.SetThirdSprite(this.userList[2].mSprite);
+
+        // ランキング
+        this.ranking2.SetRankOrList(1);
+        this.ranking2.SetMaxCount(GameManager.Instance().GetGameInfo().nowRankingList.length);
+        // this.ranking2.SetRankingList(GameManager.Instance().GetGameInfo().nowRankingList)
+
+
+        GameManager.Instance().GetApiConnect().restoreGameProgress(
+            GameManager.Instance().GetGameInfo().hostId,
+            GameManager.Instance().GetGameInfo().token,
+            GameManager.Instance().GetGameInfo().gameId,
+            GameManager.Instance().GetGameInfo().qNumber
+        )
     }
 
     private DebugModalUpdate(){

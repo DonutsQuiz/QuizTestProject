@@ -17,16 +17,18 @@ export class ListenerNode extends Component {
     @property(Label)
     private conteLabel : Label = null;
     @property(Label)
-    private AchieveLabel : Label = null;
+    private achieveLabel : Label = null;
+    @property(Sprite)
+    private achieveSprite: Sprite = null;
 
-    public SetRankiOrList(is : boolean){
-        if(is){
+    public SetRankiOrList(is : number){
+        if(is === 0){
             this.iconSprite.node.position = new Vec3(-100, 0, 0);
             this.nameLabel.node.position = new Vec3(-60, 8, 0);
             this.gradeLabel.node.position = new Vec3(-60, -8, 0);
             this.pointLabel.node.position = new Vec3(105, 0, 0);
             this.conteNode.position = new Vec3(135, -8, 0);
-            this.AchieveLabel.node.active = true;
+            this.achieveLabel.node.active = true;
         }
         else{
             this.iconSprite.node.position = new Vec3(-140, 0, 0);
@@ -34,7 +36,7 @@ export class ListenerNode extends Component {
             this.gradeLabel.node.position = new Vec3(-100, -8, 0);
             this.pointLabel.node.position = new Vec3(85, 0, 0);
             this.conteNode.position = new Vec3(115, -8, 0);
-            this.AchieveLabel.node.active = false;
+            this.achieveLabel.node.active = false;
         }
     }
 
@@ -42,7 +44,7 @@ export class ListenerNode extends Component {
         this.iconSprite.spriteFrame = icon;
         this.nameLabel.string = name;
         this.pointLabel.string = point.toString();
-        this.AchieveLabel.string = achieve.toString();
+        this.achieveLabel.string = achieve.toString();
         //階級
         if(grand === 1){ 
             this.gradeLabel.string = "家族ナミにくわしい級";
@@ -62,11 +64,24 @@ export class ListenerNode extends Component {
         }
     }
 
-    public SetAchieve(num : number){
-        this.AchieveLabel.string = num.toString();
+    public SetAchieve(num:number, sprite:SpriteFrame){
+        this.achieveLabel.string = num.toString();
+        this.achieveSprite.spriteFrame = sprite;
+        
     }
     public SetScore(num : number){
         this.pointLabel.string = num.toString();
+    }
+    public SetCombo(combo:number){
+        if(combo > 1){
+            this.conteNode.active = true;
+            this.conteLabel.string = combo.toString() + "問連続！";
+            this.pointLabel.node.position = new Vec3(this.pointLabel.node.position.x, 8, 0);
+        }
+        else{
+            this.conteNode.active = false;
+            this.pointLabel.node.position = new Vec3(this.pointLabel.node.position.x, 0, 0);
+        }
     }
 }
 

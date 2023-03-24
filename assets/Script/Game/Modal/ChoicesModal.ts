@@ -219,6 +219,7 @@ export class ChoicesModal extends Component {
                 this.correctAnswerTime = -1.0;
                 this.correctAnswerCount = -1;
                 this.isModalChange = false;
+
                 this.Next();
             }
 
@@ -310,7 +311,15 @@ export class ChoicesModal extends Component {
         this.choiceNumber = this.tempNumber;
         this.frameList[this.choiceNumber].spriteFrame = this.selectFrameSprite;
         this.iconLineupList[this.choiceNumber].AddIcon(GameManager.Instance().GetGameInfo().ranking[0].mSprite);
-        GameManager.Instance().GetApiConnection().guestAnswer(this.choiceNumber + 1);
+        // GameManager.Instance().GetApiConnection().guestAnswer(this.choiceNumber + 1);
+        GameManager.Instance().GetApiConnect().guestAnswer(
+            GameManager.Instance().GetGameInfo().userId,
+            GameManager.Instance().GetGameInfo().token,
+            GameManager.Instance().GetGameInfo().gameId,
+            GameManager.Instance().GetGameInfo().hostId,
+            GameManager.Instance().GetGameInfo().qNumber,
+            this.choiceNumber + 1
+        )
         // if(this.betModal.getIsPushedDecideButton()) AnimationManager.Instance().betAnim.Play(this.choiceNumber, this.betModal.GetBetValue());
         AnimationManager.Instance().answerAnim.Play(this.choiceNumber);
         this.betModal.SetIsDecide(false);
@@ -329,6 +338,14 @@ export class ChoicesModal extends Component {
             }
         }
         this.TitleFrameLabel.string = "正解発表";
+
+        // リザルトの取得
+        GameManager.Instance().GetApiConnect().fixResult(
+            GameManager.Instance().GetGameInfo().hostId,
+            GameManager.Instance().GetGameInfo().token,
+            GameManager.Instance().GetGameInfo().gameId,
+            GameManager.Instance().GetGameInfo().qNumber
+        );
     }
 
     //カウントダウンボタン
@@ -371,7 +388,7 @@ export class ChoicesModal extends Component {
         this.betModal.SetIsDecide(false);
         this.choiceNumber = -1;
         this.ResetUI();
-        GameManager.Instance().GetApiConnection().fixResult();
+
         QuizModalManager.Instance().ChangeModal('Overall');
     }
 

@@ -11,18 +11,18 @@ export class RankingInfo{
     mSprite : SpriteFrame = null;
 }
 
-export class rankingData{
-    userId :  number = -1;
-    score : number = -1;
-    rank : number = -1;
+export class RankingData{
+    UserId :  number = -1;
+    Score : number = -1;
+    Rank : number = -1;
 }
 
-export class ReslutRankingData{
-    id : number = -1;
-    score : number = -1;
-    rank : number = -1;
-    conmbo : number = -1;
-    correct : boolean = false;
+export class FixReslutRankingData{
+    Id : number = -1;
+    Score : number = -1;
+    Rank : number = -1;
+    ComboCount : number = -1;
+    IsCorrect : boolean = false;
 }
 
 export class GenreSet{
@@ -55,10 +55,10 @@ export class GameInformation{
     lastMonthRanking : Array<RankingInfo> = new Array<RankingInfo>(); // 先月のランキング
 
     // ランキング(API)
-    todayRankingList : Array<rankingData> = new Array<rankingData>();
-    monthRankingList : Array<rankingData> = new Array<rankingData>();
-    prevMonthRankingList : Array<rankingData> = new Array<rankingData>();
-    nowRankingList : Array<ReslutRankingData> = new Array<ReslutRankingData>();
+    todayRankingList : Array<RankingData> = new Array<RankingData>();
+    monthRankingList : Array<RankingData> = new Array<RankingData>();
+    prevMonthRankingList : Array<RankingData> = new Array<RankingData>();
+    nowRankingList : Array<FixReslutRankingData> = new Array<FixReslutRankingData>();
 
 
     // グレード
@@ -75,6 +75,7 @@ export class GameInformation{
     gameId : number = 12345678900987;
     token : string = "asiodjioqwjoajsdjjsakmvbd";
 
+    rankInfo : FixReslutRankingData = null;
 
     liverName : string = ""; //ライバーの名前
     subTitle : string = ""; // サブタイトル

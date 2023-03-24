@@ -998,7 +998,7 @@
       "__id__": 1
     },
     "_children": [],
-    "_active": false,
+    "_active": true,
     "_components": [
       {
         "__id__": 45
@@ -1087,7 +1087,7 @@
       "a": 255
     },
     "_spriteFrame": {
-      "__uuid__": "57520716-48c8-4a19-8acf-41c9f8777fb0@f9941",
+      "__uuid__": "404cf2f7-b06d-4e0b-b5fb-911a6fd12af4@f9941",
       "__expectedType__": "cc.SpriteFrame"
     },
     "_type": 0,
@@ -1219,8 +1219,11 @@
     "conteLabel": {
       "__id__": 30
     },
-    "AchieveLabel": {
+    "achieveLabel": {
       "__id__": 41
+    },
+    "achieveSprite": {
+      "__id__": 47
     },
     "_id": ""
   },

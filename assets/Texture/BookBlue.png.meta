@@ -1,0 +1,134 @@
+{
+  "ver": "1.0.25",
+  "importer": "image",
+  "imported": true,
+  "uuid": "7b768e78-54a6-44dd-a6db-b19ab371724f",
+  "files": [
+    ".json",
+    ".png"
+  ],
+  "subMetas": {
+    "6c48a": {
+      "importer": "texture",
+      "uuid": "7b768e78-54a6-44dd-a6db-b19ab371724f@6c48a",
+      "displayName": "BookBlue",
+      "id": "6c48a",
+      "name": "texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "7b768e78-54a6-44dd-a6db-b19ab371724f",
+        "visible": false
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "f9941": {
+      "importer": "sprite-frame",
+      "uuid": "7b768e78-54a6-44dd-a6db-b19ab371724f@f9941",
+      "displayName": "BookBlue",
+      "id": "f9941",
+      "name": "spriteFrame",
+      "userData": {
+        "trimType": "auto",
+        "trimThreshold": 1,
+        "rotated": false,
+        "offsetX": -1,
+        "offsetY": 3,
+        "trimX": 34,
+        "trimY": 14,
+        "width": 263,
+        "height": 605,
+        "rawWidth": 333,
+        "rawHeight": 639,
+        "borderTop": 0,
+        "borderBottom": 0,
+        "borderLeft": 0,
+        "borderRight": 0,
+        "packable": true,
+        "pixelsToUnit": 100,
+        "pivotX": 0.5,
+        "pivotY": 0.5,
+        "meshType": 0,
+        "vertices": {
+          "rawPosition": [
+            -131.5,
+            -302.5,
+            0,
+            131.5,
+            -302.5,
+            0,
+            -131.5,
+            302.5,
+            0,
+            131.5,
+            302.5,
+            0
+          ],
+          "indexes": [
+            0,
+            1,
+            2,
+            2,
+            1,
+            3
+          ],
+          "uv": [
+            34,
+            625,
+            297,
+            625,
+            34,
+            20,
+            297,
+            20
+          ],
+          "nuv": [
+            0.1021021021021021,
+            0.03129890453834116,
+            0.8918918918918919,
+            0.03129890453834116,
+            0.1021021021021021,
+            0.9780907668231612,
+            0.8918918918918919,
+            0.9780907668231612
+          ],
+          "minPos": [
+            -131.5,
+            -302.5,
+            0
+          ],
+          "maxPos": [
+            131.5,
+            302.5,
+            0
+          ]
+        },
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "7b768e78-54a6-44dd-a6db-b19ab371724f@6c48a",
+        "atlasUuid": ""
+      },
+      "ver": "1.0.11",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "type": "sprite-frame",
+    "fixAlphaTransparencyArtifacts": true,
+    "hasAlpha": true,
+    "redirect": "7b768e78-54a6-44dd-a6db-b19ab371724f@f9941"
+  }
+}
