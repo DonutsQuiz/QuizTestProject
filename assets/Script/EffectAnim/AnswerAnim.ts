@@ -1,10 +1,12 @@
-import { _decorator, Component, Node, Animation, Vec3 } from 'cc';
+import { _decorator, Component, Node, Animation, Vec3, Sprite, SpriteFrame } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('AnswerAnim')
 export class AnswerAnim extends Component {
     @property({type: Animation})
     private AnswerAnim: Animation|null = null;
+    @property(Sprite)
+    private UserIcon: Sprite = null;
 
     private posCenterX: number[] = [100, 100, 100]; //[-95, 95, -95, 95];
     private posCenterY: number[] = [60, 15, -30]; //[27.5, 27.5, -27.5, -27.5];
@@ -17,9 +19,11 @@ export class AnswerAnim extends Component {
         // animation.on(Animation.EventType.FINISHED, this.onTriggered, this);
     }
 
-    public Play(selection: number)
+    public Play(selection: number, userIcon: SpriteFrame)
     {
-        // let pos = new Vec3(this.posCenterX[selection] + 65, this.posCenterY[selection] + 20 + this.offsetY, 0);
+        if(userIcon != null)
+            this.UserIcon.spriteFrame = userIcon;
+
         let pos = new Vec3(this.posCenterX[selection], this.posCenterY[selection] + this.offsetY, 0);
         if(this.AnswerAnim && !this.AnswerAnim.node.active )
         {

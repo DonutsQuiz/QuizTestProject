@@ -1,78 +1,79 @@
-import { _decorator, Component, Node, Graphics, Label, Vec3} from 'cc';
+import { _decorator, Component, Node, Graphics, Label, Vec3, Color} from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('Timer2')
 export class Timer2 extends Component {
     @property(Graphics)
     private timeGauge : Graphics = null;
-
     @property(Label)
-    private timeDisplay : Label = null;
-    
+    private timerLabel : Label = null;
+    @property(Node)
+    private timerDisplay : Node = null;
     @property(Number)
     private timeMax : number = 0;
-
-    private isFinish : boolean = false;
-    private isEnd : boolean = false;
+    @property(Color)
+    private baseColor : Color = null;
+    @property(Color)
+    private layeredColor : Color = null;
 
     start() {
 
     }
 
-    public Reset()
-    {
-        this.isEnd = false;
-        this.isFinish = false;
-    }
-
     public SetTimeDisplayPos(mode : string)
     {
-        if(mode === 'Liver'){
-            this.timeDisplay.node.setPosition(new Vec3(-158, -80, 0));
-        }
-        else if(mode === 'User'){
-            this.timeDisplay.node.setPosition(new Vec3(-158, -80, 0));
-        }
-    }
-
-    public GetIsFinish() : boolean{
-        return this.isFinish;
-    }
-
-    public GetIsEnd() : boolean{
-        return this.isEnd;
+        // if(mode === 'Liver'){
+        //     this.timerLabel.node.setPosition(new Vec3(-158, -80, 0));
+        // }
+        // else if(mode === 'User'){
+        //     this.timerLabel.node.setPosition(new Vec3(-158, -80, 0));
+        // }
     }
 
     public Display(time : number, end : boolean)
     {
-        this.timeDisplay.string = (end) ? "0秒" : Math.ceil(time).toString() + "秒";
+        if(!end){
+            this.timerDisplay.active = true;
+            this.timerLabel.string = Math.ceil(time).toString() + "秒";
 
-        if(time < this.timeMax){
-            this.timeGauge.clear();
-
-            this.timeGauge.fillColor.fromHEX('#E63222');
-            this.timeGauge.rect(0, 0, 375, 10);
-            this.timeGauge.stroke();
-            this.timeGauge.fill();
-
-            this.timeGauge.fillColor.fromHEX('#F6FF8A');
-            this.timeGauge.rect(0, 0, 375 * (time / this.timeMax), 10);
-            this.timeGauge.stroke();
-            this.timeGauge.fill();
+            if(time < this.timeMax){
+                this.timeGauge.clear();
+    
+                this.timeGauge.fillColor = this.baseColor;
+                this.timeGauge.rect(0, 0, 375, 10);
+                this.timeGauge.stroke();
+                this.timeGauge.fill();
+    
+                this.timeGauge.fillColor = this.layeredColor;
+                this.timeGauge.rect(0, 0, 375 * (time / this.timeMax), 10);
+                this.timeGauge.stroke();
+                this.timeGauge.fill();
+            }
+            else{
+                this.ClearDisplay();
+            }
         }
         else{
-            this.timeGauge.clear();
-            this.timeDisplay.string = "";
-
-            if(!this.isEnd){
-                this.isEnd = true;
-                this.isFinish = true;
-            }
+            this.ClearDisplay();
         }
     }
 
+    private ClearDisplay(){
+        this.timeGauge.clear();
+    
+        this.timeGauge.fillColor = this.baseColor;
+        this.timeGauge.rect(0, 0, 375, 10);
+        this.timeGauge.stroke();
+        this.timeGauge.fill();
+        this.timerLabel.string = "";
+        this.timerDisplay.active = false;
+    }
+
+    public SetIsActive(is : boolean){
+        this.node.active = is;
+    }
+
     update(deltaTime: number) {
-        
     }
 }
 
