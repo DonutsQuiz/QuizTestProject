@@ -40,12 +40,12 @@ export class Timer2 extends Component {
                 this.timeGauge.clear();
     
                 this.timeGauge.fillColor = this.baseColor;
-                this.timeGauge.rect(0, 0, 375, 10);
+                this.timeGauge.rect(0, 0, 375, 5);
                 this.timeGauge.stroke();
                 this.timeGauge.fill();
     
                 this.timeGauge.fillColor = this.layeredColor;
-                this.timeGauge.rect(0, 0, 375 * (time / this.timeMax), 10);
+                this.timeGauge.rect(0, 0, 375 * (time / this.timeMax), 5);
                 this.timeGauge.stroke();
                 this.timeGauge.fill();
             }
@@ -62,7 +62,7 @@ export class Timer2 extends Component {
         this.timeGauge.clear();
     
         this.timeGauge.fillColor = this.baseColor;
-        this.timeGauge.rect(0, 0, 375, 10);
+        this.timeGauge.rect(0, 0, 375, 5);
         this.timeGauge.stroke();
         this.timeGauge.fill();
         this.timerLabel.string = "";

@@ -4763,7 +4763,7 @@
       "__expectedType__": "cc.Prefab"
     },
     "overallPrefab": {
-      "__uuid__": "daf8414a-5490-4197-81fa-5c82b35f7e1e",
+      "__uuid__": "0046f4f3-7983-49a5-9836-d5b1cf0f0149",
       "__expectedType__": "cc.Prefab"
     },
     "statusUpPrefab": {
@@ -4836,7 +4836,6 @@
     "animManager": {
       "__id__": 187
     },
-    "topThreeIcon": null,
     "dataBase": {
       "__id__": 189
     },
