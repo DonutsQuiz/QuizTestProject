@@ -1,5 +1,7 @@
-import { _decorator, Component, Node, spriteAssembler, Sprite, Label, Root, UITransform, Vec3, game, Game, debug, Button, TERRAIN_MAX_LAYER_COUNT } from 'cc';
+import { _decorator, Component, Node, spriteAssembler, Sprite, Label, Root, UITransform, Vec3, game, Game, debug, Button, TERRAIN_MAX_LAYER_COUNT, SpriteFrame, tweenUtil } from 'cc';
+import { FixReslutRankingData } from '../Game/Manager/GameInformation';
 import { ClientMode, GameManager } from '../Game/Manager/GameManager';
+import { UserInfomation } from '../Game/Modal/OverallResultModal';
 const { ccclass, property } = _decorator;
 
 @ccclass('Participant')
@@ -45,13 +47,20 @@ export class Participant extends Component {
     private audienceNode : Node = null;
     @property(Node)
     private coinNode : Node = null;
+    @property(Node)
+    private recruitNode : Node = null;
+    @property(SpriteFrame)
+    private testIconSprite : SpriteFrame  =null;
+    @property(Button)
+    private debugButton : Button = null;
 
 
 
-
-    private maxCount : number = 20; //ランキングの最大数
+    private maxCount : number = 5; //ランキングの最大数
     private topNode : number = 0; //表示してるランキングの番号
     private topIndex : number = 0; //一番上のノードのインデックス
+    private nowIndex : number = 0;
+    private joinCount :number = 0;
 
     private ICON_MAX = 9;
     private INTERVAL = 50;
@@ -61,6 +70,7 @@ export class Participant extends Component {
 
     private isRecruitment : boolean = true;
     private isJoin : boolean = false;
+    private userInfo :Array<UserInfomation> = new Array<UserInfomation>();
 
     private debugClientMode : ClientMode = 'Liver';
 
@@ -109,26 +119,42 @@ export class Participant extends Component {
         }
 
         // もし参加しなかったら
-        if(!this.isRecruitment && !this.isJoin){
-            if(this.debugClientMode === 'User'){
+        if(!this.isRecruitment){
+            this.scoreNodeList.forEach(element => {element.active = true;});
+
+            if(this.debugClientMode === 'User' && !this.isJoin){
                 GameManager.Instance().SetClientMode('Audience');
                 this.SetUI();
             }
         }
     }
 
+    private SetInfo(index:number){
+        this.iconList[index].spriteFrame = this.testIconSprite;
+        this.scoreList[index].string = "0";
+    }
+
     public Generate(){
         this.content.height = this.INTERVAL * this.maxCount + this.MARGIN;
 
         // 5以下だったら非表示
-        if(this.maxCount < 6){
-            for(var i = this.maxCount; i < this.ICON_MAX; i++){
-                this.iconList[i].node.active = false;
+        if(this.maxCount < this.ICON_MAX){
+            for(var i = 0; i < this.ICON_MAX; i++){
+                if(i < this.maxCount){
+                    this.iconList[i].node.active = true;
+                }
+                else{
+                    this.iconList[i].node.active = false;
+                }
+
             }
         }
         else{
             for(var i = 0; i < this.ICON_MAX; i++){
                 this.iconList[i].node.active = true;
+                if(this.isRecruitment){
+                    this.scoreNodeList[i].active = false;
+                }
             }
         }
 
@@ -144,7 +170,8 @@ export class Participant extends Component {
             this.iconRootNode.active = true;
 
             if(this.isRecruitment){ //参加者募集中
-                this.joinCountLabel.string = "0" + "名";
+                this.recruitNode.active = true;
+                this.joinCountLabel.string = this.joinCount.toString() + "名";
                 this.iconRootNode.position = new Vec3(-2.5, 110, 0);
                 this.maxCount = 5;
                 this.Generate();
@@ -154,6 +181,7 @@ export class Participant extends Component {
             }
             else{
                 this.iconRootNode.position = new Vec3(-2.5, 90, 0);
+                this.recruitNode.active = false;
                 for(var i = 0; i < this.maxCount; i++){
                     this.scoreNodeList[i].active = false;
                 }
@@ -164,6 +192,9 @@ export class Participant extends Component {
         else if(GameManager.Instance().GetClientMode() === 'User'){ //ユーザー側
             this.liverNode.active = false;
             this.userNode.active = true;
+            this.coinNode.active = true;
+            this.joinButton.node.active = true;
+            this.audienceNode.active = false;
 
             // 未参加なら
             if(!this.isJoin){
@@ -213,7 +244,9 @@ export class Participant extends Component {
             GameManager.Instance().GetGameInfo().hostId
         );
         this.isJoin = true;
+        this.joinCount++;
         this.SetUI();
+        this.DebugClickJoin();
     }
 
     public SetMaxCount(max : number){
@@ -221,17 +254,29 @@ export class Participant extends Component {
     }
     public SetIsRecruitment(is:boolean){
         this.isRecruitment = is;
+        this.SetUI();
     }
 
 
     start() {
         this.Generate();
+        this.debugButton.node.on(Button.EventType.CLICK, this.DebugClickJoin, this);
     }
 
     update(deltaTime: number) {
         this.OnUpdate();
 
         this.DebugUpdate();
+    }
+
+    // スコアと順位の情報を入れる
+    public SetRankInfo(resultRanking : Array<FixReslutRankingData>){
+        for(var i = 0; i < resultRanking.length; i++){
+            this.scoreList[i].string = resultRanking[i].Score.toString();
+        }
+        console.log(GameManager.Instance().GetGameInfo().rankInfo);
+        this.scoreLabel.string = "スコア：" + GameManager.Instance().GetGameInfo().rankInfo.Score;
+        this.rankLabel.string = "順位：" + GameManager.Instance().GetGameInfo().rankInfo.Rank + "位"
     }
 
 
@@ -242,6 +287,19 @@ export class Participant extends Component {
             this.SetUI();
             this.debugClientMode = GameManager.Instance().GetClientMode();
         }
+    }
+
+    private DebugClickJoin(){
+        if(this.nowIndex < 5){
+            this.SetInfo(this.nowIndex);
+        }
+        else if(this.nowIndex < this.ICON_MAX){
+            this.maxCount = this.nowIndex + 1;
+            this.Generate();
+            this.SetInfo(this.nowIndex);
+        }
+        this.userInfo.push(new UserInfomation("",0,0,0,null));  //ユーザー情報を格納(現段階では仮)
+        this.nowIndex++;
     }
 }
 

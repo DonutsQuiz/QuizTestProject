@@ -26,16 +26,17 @@ export class ListenerNode extends Component {
             this.iconSprite.node.position = new Vec3(-100, 0, 0);
             this.nameLabel.node.position = new Vec3(-60, 8, 0);
             this.gradeLabel.node.position = new Vec3(-60, -8, 0);
-            this.pointLabel.node.position = new Vec3(105, 0, 0);
-            this.conteNode.position = new Vec3(135, -8, 0);
+            this.pointLabel.node.position = new Vec3(145, 0, 0);
+            this.conteNode.position = new Vec3(130, -8, 0);
             this.achieveLabel.node.active = true;
         }
         else{
             this.iconSprite.node.position = new Vec3(-140, 0, 0);
             this.nameLabel.node.position = new Vec3(-100, 8, 0);
             this.gradeLabel.node.position = new Vec3(-100, -8, 0);
-            this.pointLabel.node.position = new Vec3(85, 0, 0);
-            this.conteNode.position = new Vec3(115, -8, 0);
+            this.pointLabel.node.position = new Vec3(125, 0, 0);
+            this.conteNode.position = new Vec3(110, -8, 0);
+            this.achieveSprite.spriteFrame = null;
             this.achieveLabel.node.active = false;
         }
     }
@@ -67,10 +68,9 @@ export class ListenerNode extends Component {
     public SetAchieve(num:number, sprite:SpriteFrame){
         this.achieveLabel.string = num.toString();
         this.achieveSprite.spriteFrame = sprite;
-        
     }
     public SetScore(num : number){
-        this.pointLabel.string = num.toString();
+        this.pointLabel.string = num.toString() + "点";
     }
     public SetCombo(combo:number){
         if(combo > 1){

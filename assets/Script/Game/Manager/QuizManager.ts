@@ -61,7 +61,6 @@ export class QuizManager extends Component {
         if(QuizModalManager.Instance().GetOverallResultModal().GetIsNextQuestion()){
             // QuizModalManager.Instance().GetChoicesModal().GetTimer().Reset();
             GameManager.Instance().GetGameInfo().thinkTime = 600;
-            this.quizComponent.SetQuiz();
             if(GameManager.Instance().GetGameInfo().qNumber === this.raundMax){
                 this.isLastQuestion = true;
             }
@@ -120,6 +119,10 @@ export class QuizManager extends Component {
     }
     public GetIsLast() : boolean{
         return this.isLastQuestion;
+    }
+
+    public AddQuestionNumber(){
+
     }
 }
 

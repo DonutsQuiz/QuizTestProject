@@ -41,8 +41,8 @@ export class GameManager extends Component {
     modalManager : QuizModalManager = null;
     @property(AnimationManager) // アニメーションマネージャー
     animManager : AnimationManager = null;
-    @property(RankTopThreeIcon) //トップ３のアイコン
-    private topThreeIcon : RankTopThreeIcon = null;
+    // @property(RankTopThreeIcon) //トップ３のアイコン
+    // private topThreeIcon : RankTopThreeIcon = null;
     @property(QuizDataBase) // データベース（デバッグ用）
     dataBase : QuizDataBase = null;
     @property(SpriteFrame)
@@ -51,7 +51,7 @@ export class GameManager extends Component {
     @property(Node)
     private canvas : Node = null;
     @property(Prefab) //ゲームメニュー
-    private gameMenuPrefab : Prefab = null;
+    private gameMenuPrefab : Prefab = null; //いらない子になる
     @property(Prefab) //コメント
     private commentPrefab : Prefab = null;
     @property(Prefab) //参加者
@@ -95,7 +95,7 @@ export class GameManager extends Component {
 
         this.DebugConstractor();
 
-        this.topThreeIcon.Constructor();
+        // this.topThreeIcon.Constructor();
 
         this.dataBase.Constructor();
         this.modalManager.Constructor();
@@ -130,7 +130,7 @@ export class GameManager extends Component {
         this.quizManager.OnUpdate();
         this.modalManager.OnUpdate(deltaTime);
 
-        this.topThreeIcon.DebugUpdate();
+        // this.topThreeIcon.DebugUpdate();
     }
 
     // ライバーとユーザーの切り替え(デバッグ用)
@@ -176,9 +176,9 @@ export class GameManager extends Component {
         return this.gameInformation;
     }
 
-    public GetTopThreeIcon() : RankTopThreeIcon{
-        return this.topThreeIcon;
-    }
+    // public GetTopThreeIcon() : RankTopThreeIcon{
+    //     return this.topThreeIcon;
+    // }
 
     public GetExitModal() : Node{
         return this.exitModal.node;
@@ -196,7 +196,7 @@ export class GameManager extends Component {
     }
 
     public SetMenuActive(){
-        this.gameMenu.active = true;
+        // this.gameMenu.active = true;
         this.comment.active = true;
     }
 

@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Label, Button, Vec2, Vec3, SpriteFrame, Sprite, RichText, Game, color, Color, nextPow2 } from 'cc';
+import { _decorator, Component, Node, Label, Button, Vec2, Vec3, SpriteFrame, Sprite, RichText, Game, color, Color, nextPow2, lerp, UIOpacity, Root, spriteAssembler } from 'cc';
 import { AnimationManager } from '../Manager/AnimationManager';
 import { ClientMode, GameManager } from '../Manager/GameManager';
 import { QuizManager } from '../Manager/QuizManager';
@@ -15,36 +15,41 @@ export class QuestionModal extends Component {
     private userNode : Node = null;
     @property(Node) //ライバーとユーザー共通のノード
     private allSideNode : Node = null;
-    @property(Label) //何問目か
-    private qNumber : Label = null;
     @property(RichText) //問題文
     private qSentence : RichText = null;
-    @property(Node) //画像の枠(いらないかも)
-    private qImageFrame : Node = null;
-    @property(Sprite) //問題の画像(いらないかも)
-    private qSpriteFrame : Sprite = null;
-    @property(Button) //スタートボタン
-    private qStartB : Button = null;
     @property(Button) //選択肢のボタン
     private qSelectB : Array<Button> = new Array<Button>();
-    @property(Sprite) //選択肢の画像
-    private qSelectSprite : Array<Sprite> = new Array<Sprite>();
     @property(Label) //選択肢の文
     private qSelectSent : Array<Label> = new Array<Label>();
-    @property(Color) //非選択時のボタンの色
-    private notSelectColor : Color = null;
-    @property(Color) //選択時のボタンの色
-    private selectColor : Color = null;
-    @property(Button) //問題を変えるボタン
-    private questionChangeButton : Button = null;
-    @property(Sprite) //選択時のマーク
-    private decideSprite : Sprite = null;
-    @property(Button)
+    // @property(Sprite) //選択時のマーク
+    // private decideSprite : Sprite = null;
+    @property(Button) //リロールボタン
     private rerollButton : Button = null;
+    @property(Node) //選択肢の情報
+    private choiceInfoNode : Node = null; 
+
+    // @property(Label) //何問目か
+    // private qNumber : Label = null;
+    // @property(Node) //画像の枠(いらないかも)
+    // private qImageFrame : Node = null;
+    // @property(Sprite) //問題の画像(いらないかも)
+    // private qSpriteFrame : Sprite = null;
+    // @property(Button) //スタートボタン
+    // private qStartB : Button = null;
+    // @property(Sprite) //選択肢の画像
+    // private qSelectSprite : Array<Sprite> = new Array<Sprite>();
+    // @property(Color) //非選択時のボタンの色
+    // private notSelectColor : Color = null;
+    // @property(Color) //選択時のボタンの色
+    // private selectColor : Color = null;
 
 
-    @property(Label)
+    @property(Label) //状況説明文
     private ExplanationLabel : Label = null;
+    @property(Sprite)
+    private ExplanationIcon : Sprite = null;
+    @property(Label)
+    private ExPointLabel : Label = null;
 
     private debugClientMode : ClientMode = 'Liver';
     private debugQuizMode : QuizType = 'None';
@@ -65,12 +70,11 @@ export class QuestionModal extends Component {
     private selectionScrean : Node = null;  // 選択時の画面（ライバーとユーザー共通のノードの子ノード）
 
     public Constructor(){
-        this.qStartB.node.on(Button.EventType.CLICK, this.Next,this);
+        // this.qStartB.node.on(Button.EventType.CLICK, this.Next,this);
         this.qSelectB[0].node.on(Button.EventType.CLICK, function(){this.ClickSelectButton(0);},this);
         this.qSelectB[1].node.on(Button.EventType.CLICK, function(){this.ClickSelectButton(1);},this);
         this.qSelectB[2].node.on(Button.EventType.CLICK, function(){this.ClickSelectButton(2);},this);
         this.qSelectB[3].node.on(Button.EventType.CLICK, function(){this.ClickSelectButton(3);},this);
-        this.questionChangeButton.node.on(Button.EventType.CLICK, this.ClikeChangeButton, this);
         this.rerollButton.node.on(Button.EventType.CLICK, this.ClickRerollButton, this);
 
         this.questionScrean = this.allSideNode.getChildByName('QuestionScrean');
@@ -83,6 +87,7 @@ export class QuestionModal extends Component {
     public OnUpdate(deltaTime: number){
         this.DebugModalUpdate();
 
+        //　解答選択画面への遷移の準備
         if(!this.isModelChange && this.modalChangeCount === 0){
             this.isModelChange = true;
             this.modalChangeTime = this.MODAL_CHANGE_TIME;
@@ -95,22 +100,27 @@ export class QuestionModal extends Component {
         //     AnimationManager.Instance().kumaHintAnim.Play();
         // }
 
-        if(this.isSelect < 0 && !this.isNext)
+        if(this.isSelect < 0 && !this.isNext && this.modalChangeCount === 0)
         {
             if(this.debugClientMode === 'Liver'){
-                this.ExplanationLabel.string = "この問題の正解を決めよう";
+                this.ExplanationLabel.string = "出題";
+                this.ExplanationIcon.node.position = new Vec3(-35, 0, 0);
             }
             else{
                 this.ExplanationLabel.string = "ライバーが正解を決めています";
+                this.ExplanationIcon.node.position = new Vec3(-135, 0, 0);
             }
         }
 
+        // 回答を選択したら文字を変える
         if(this.isSelect >= 0){
-            if(this.debugClientMode === 'Liver'){
+            if(GameManager.Instance().GetClientMode() === 'Liver'){
                 this.ExplanationLabel.string = "この問題の正解を決めよう";
+                this.ExplanationIcon.node.position = new Vec3(-120, 0, 0);
             }
             else{
                 this.ExplanationLabel.string = "ライバーが正解を決定しました！";
+                this.ExplanationIcon.node.position = new Vec3(-145, 0, 0);
             }
 
             // if(!this.isNext && GameManager.Instance().GetGameInfo().isFirstTime)
@@ -120,8 +130,8 @@ export class QuestionModal extends Component {
             //     AnimationManager.Instance().kumaHintAnim.SetHintLabel('正解を決めたら\nスタートしましょう');
             //     AnimationManager.Instance().kumaHintAnim.Play();
             // }
-            GameManager.Instance().GetGameInfo().qCorNumber = this.isSelect;
-            this.qStartB.node.active = true;
+            GameManager.Instance().GetGameInfo().qCorNumber = this.isSelect; //正解の番号をセット
+            // this.qStartB.node.active = true;
         }
 
         if(this.isNext){
@@ -133,7 +143,7 @@ export class QuestionModal extends Component {
                 // AnimationManager.Instance().kumaHintAnim.AnimationReset();
                 QuizModalManager.Instance().ChangeModal('Choices');
                 this.isNext = false;
-                this.decideSprite.node.active = false;
+                // this.decideSprite.node.active = false;
                 this.modalChangeCount = 0;
             }
         }
@@ -142,28 +152,55 @@ export class QuestionModal extends Component {
         // 選択前の画面を表示
         if(this.modalChangeCount === 0)
         {
-            this.questionScrean.getChildByName('QuestionNumber').getComponent(Label).string = this.qNumber.string;
+            // this.questionScrean.getChildByName('QuestionNumber').getComponent(Label).string = this.qNumber.string;
             this.questionScrean.getChildByName('QuestionSentence').getComponent(RichText).string = this.qSentence.string;
-            this.questionScrean.active = true;
+            this.questionScrean.active = false;
             this.selectionScrean.active = false;
             this.userNode.active = false;
-            this.liverNode.active = false;
+            this.liverNode.active = true;
+            this.choiceInfoNode.active = false;
+            this.qSelectB.forEach(element =>{element.node.active = false;});
         }
         if(this.isModelChange){
             if(this.modalChangeTime > 0.0){
                 this.modalChangeTime -= deltaTime;
+                if(this.modalChangeCount === 1){
+                    let par = 1.0 - (this.modalChangeTime / (this.MODAL_CHANGE_TIME - 2.0));
+                    this.qSentence.node.position = new Vec3(0,0,0).lerp(new Vec3(0,42,0), par);
+                    this.qSentence.node.scale = new Vec3(0.35,0.35,0.35).lerp(new Vec3(0.25,0.25,0.25),par);
+                    this.choiceInfoNode.getComponent(UIOpacity).opacity = 255 * par;
+                    this.ExPointLabel.color = new Color(0,0,0, 255 * (1.0 - par));
+                }
             }
-            else{
+            else{ //解答選択画面
                 this.modalChangeTime = 0.0;
                 this.isModelChange = false;
                 if(this.modalChangeCount === 0){
-                    // 選択画面に移る
-                    this.questionScrean.active = false;
-                    this.selectionScrean.active = true;
-                    this.userNode.active = true;
-                    this.liverNode.active = true;
+                    this.modalChangeTime = this.MODAL_CHANGE_TIME - 2.0;
+                    this.isModelChange = true;
                 }
                 else if(this.modalChangeCount === 1){
+                    // 選択画面に移る
+                    this.questionScrean.active = false;
+                    this.selectionScrean.active = false;
+                    this.userNode.active = true;
+                    this.liverNode.active = true;
+                    this.choiceInfoNode.active = true;
+                    this.qSentence.node.position = new Vec3(0,42,0);
+                    this.qSentence.node.scale = new Vec3(0.25,0.25,0.25);
+                    this.choiceInfoNode.getComponent(UIOpacity).opacity = 255;
+                    this.ExPointLabel.color = new Color(0,0,0,0);
+                    this.ExplanationLabel.string = "この問題の正解を決めよう";
+                    this.ExplanationIcon.node.position = new Vec3(-120, 0, 0);
+                    this.qSelectB.forEach(element =>{element.node.active = true;});
+                }
+                else if(this.modalChangeCount === 2){
+                    this.qSentence.node.position = new Vec3(0,0,0);
+                    this.qSentence.node.scale = new Vec3(0.35,0.35,0.35);
+                    this.choiceInfoNode.getComponent(UIOpacity).opacity = 0;
+                    this.ExplanationLabel.string = "出題";
+                    this.ExplanationIcon.node.position = new Vec3(-35, 0, 0);
+                    this.ExPointLabel.color = new Color(0,0,0, 255);
                     this.Next();
                 }
                 this.modalChangeCount++;
@@ -183,10 +220,10 @@ export class QuestionModal extends Component {
         this.isSelect = -1;
     }
 
-    public SetNumber(num : number){
-        // this.qNumber.string = num.toString() + " / " + QuizManager.Instance().raundMax + "問";
-        this.qNumber.string = "第" + num.toString() + "問:";
-    }
+    // public SetNumber(num : number){
+    //     // this.qNumber.string = num.toString() + " / " + QuizManager.Instance().raundMax + "問";
+    //     // this.qNumber.string = "第" + num.toString() + "問:";
+    // }
 
     public SetSentence(sent : string){
         this.qSentence.string = "<color=#000000>" + sent + "</color>";
@@ -198,9 +235,9 @@ export class QuestionModal extends Component {
         }
     }
 
-    public SetSprite(sprite : SpriteFrame){
-        this.qSpriteFrame.spriteFrame = sprite;
-    }
+    // public SetSprite(sprite : SpriteFrame){
+    //     this.qSpriteFrame.spriteFrame = sprite;
+    // }
 
     // 選択肢をクリックした
     private ClickSelectButton(sele : number){
@@ -211,17 +248,21 @@ export class QuestionModal extends Component {
         this.isSelect = sele;
         for(var i = 0; i < QuizManager.Instance().GetChoiceMax(); i++){
             if(i === sele){
-                this.qSelectSprite[i].color = this.selectColor;
+                // this.qSelectSprite[i].color = this.selectColor;
                 AnimationManager.Instance().stampAnim.AnimationReset();
                 AnimationManager.Instance().stampAnim.Play(sele);
                 // this.decideSprite.node.active = true;
                 // this.decideSprite.node.position = new Vec3(75 + this.qSelectB[i].node.position.x, this.qSelectB[i].node.position.y - 40, 0);
             }
             else{
-                this.qSelectSprite[i].color = this.notSelectColor;
+                // this.qSelectSprite[i].color = this.notSelectColor;
                 this.qSelectSent[i].color = new Color(144,144,144,255);
             }
         }
+
+        // ボタンを押せないようにする
+        
+        this.qSelectB.forEach(element=>{element.node.active = false;});
 
         this.rerollButton.node.active = false;
 
@@ -255,21 +296,21 @@ export class QuestionModal extends Component {
         this.debugQuizMode = qtype;
 
         this.liverNode.active = true;
-        this.qNumber.node.active = true;
+        // this.qNumber.node.active = true;
         this.qSentence.node.active = true;
 
-        this.qImageFrame.active = false;
-        this.qSpriteFrame.node.active = false;
-        this.qStartB.node.active = false;
+        // this.qImageFrame.active = false;
+        // this.qSpriteFrame.node.active = false;
+        // this.qStartB.node.active = false;
         this.qSelectB.forEach(element => {element.node.active = false;});
         this.userNode.active = false;
 
         if(qtype === 'Gesture'){    // ジェスチャー
             if(GameManager.Instance().GetClientMode() === 'Liver'){
                 // this.qSentence.node.setPosition(new Vec3(0,75,0));
-                this.qImageFrame.active = true;
-                this.qSpriteFrame.node.active = true;
-                this.qStartB.node.active = true;
+                // this.qImageFrame.active = true;
+                // this.qSpriteFrame.node.active = true;
+                // this.qStartB.node.active = true;
                 this.debugClientMode = 'Liver';
             }
             else{
@@ -280,7 +321,7 @@ export class QuestionModal extends Component {
         }
         else if(qtype === 'Act'){   // アクト
             // this.qSentence.node.setPosition(new Vec3(0,35,0));
-            this.qStartB.node.active = true;
+            // this.qStartB.node.active = true;
         }
         else if(qtype === 'Personal'){   // クイズ
             // this.qSentence.node.setPosition(new Vec3(0,35,0));ss
@@ -288,13 +329,25 @@ export class QuestionModal extends Component {
             var sele : string = "";
             for(var i = 0; i < QuizManager.Instance().GetChoiceMax(); i++){
                 this.qSelectB[i].node.active = true;
-                this.qSelectSprite[i].color = this.notSelectColor;
+                // this.qSelectSprite[i].color = this.notSelectColor;
                 this.qSelectSent[i].color = new Color(0,0,0,255);
                 if(i === 0)sele = "A.";
                 if(i === 1)sele = "B.";
                 if(i === 2)sele = "C.";
                 if(i === 3)sele = "D.";
                 this.qSelectSent[i].string = GameManager.Instance().GetGameInfo().qSelectSent[i];
+                this.qSelectB.forEach(element => {element.node.active = true;});
+            }
+
+            if(this.modalChangeCount === 0)
+            {
+                // this.questionScrean.getChildByName('QuestionNumber').getComponent(Label).string = this.qNumber.string;
+                this.questionScrean.getChildByName('QuestionSentence').getComponent(RichText).string = this.qSentence.string;
+                this.questionScrean.active = false;
+                this.selectionScrean.active = false;
+                this.userNode.active = false;
+                this.liverNode.active = true;
+                this.choiceInfoNode.active = false;
             }
         }
     }
@@ -316,12 +369,12 @@ export class QuestionModal extends Component {
                 this.node.active = true;
                 this.liverNode.active = true;
                 AnimationManager.Instance().liverNode.active = true;
-                this.qNumber.node.active = true;
+                // this.qNumber.node.active = true;
                 this.qSentence.node.active = true;
     
-                this.qImageFrame.active = false;
-                this.qSpriteFrame.node.active = false;
-                this.qStartB.node.active = false;
+                // this.qImageFrame.active = false;
+                // this.qSpriteFrame.node.active = false;
+                // this.qStartB.node.active = false;
                 this.qSelectB.forEach(element => {element.node.active = false;});
                 this.userNode.active = false;
                 AnimationManager.Instance().userNode.active = false;
@@ -329,9 +382,9 @@ export class QuestionModal extends Component {
                 if(this.debugQuizMode === 'Gesture'){    // ジェスチャー
                     if(GameManager.Instance().GetClientMode() === 'Liver'){
                         this.qSentence.node.setPosition(new Vec3(0,75,0));
-                        this.qImageFrame.active = true;
-                        this.qSpriteFrame.node.active = true;
-                        this.qStartB.node.active = true;
+                        // this.qImageFrame.active = true;
+                        // this.qSpriteFrame.node.active = true;
+                        // this.qStartB.node.active = true;
                         this.debugClientMode = 'Liver';
                     }
                     else{
@@ -342,7 +395,7 @@ export class QuestionModal extends Component {
                 }
                 else if(this.debugQuizMode === 'Act'){   // アクト
                     // this.qSentence.node.setPosition(new Vec3(0,35,0));
-                    this.qStartB.node.active = true;
+                    // this.qStartB.node.active = true;
                 }
                 else if(this.debugQuizMode === 'Personal'){   // クイズ
                     // this.qSentence.node.setPosition(new Vec3(0,35,0));
@@ -356,6 +409,8 @@ export class QuestionModal extends Component {
                         this.qSelectSent[i].string = GameManager.Instance().GetGameInfo().qSelectSent[i];
                     }
                 }
+
+
 
                 this.debugClientMode = 'Liver';
             }

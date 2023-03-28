@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Button, Label, SpriteFrame, Sprite, Vec3,RichText, game, color, Game, ModelComponent, TERRAIN_SOUTH_INDEX } from 'cc';
+import { _decorator, Component, Node, Button, Label, SpriteFrame, Sprite, Vec3,RichText, game, color, Game, ModelComponent, TERRAIN_SOUTH_INDEX, Color, InstanceMaterialType } from 'cc';
 import { AnimationManager } from '../Manager/AnimationManager';
 import { Timer } from '../../UI/Timer';
 import { Timer2 } from '../../UI/Timer2';
@@ -23,24 +23,24 @@ export class ChoicesModal extends Component {
     private buttonList : Array<Button> = new Array<Button>();
     @property(Sprite) // 選択肢（枠）
     private frameList : Array<Sprite> = new Array<Sprite>();
-    @property(RichText) // 選択肢（文字　文章）
-    private textList : Array<RichText> = new Array<RichText>();
+    // @property(RichText) // 選択肢（文字　文章）
+    // private textList : Array<RichText> = new Array<RichText>();
     @property(Label) // 選択肢（文字　文章）
     private labelList : Array<Label> = new Array<Label>();
-    @property(Sprite)// 選択肢（画像）
-    private spriteList : Array<Sprite> = new Array<Sprite>();
-    @property(Label)// オッズ
-    private oddsLabelList : Array<Label> = new Array<Label>();
-    @property(Label)// 総ベット量
-    private betLabelList : Array<Label> = new Array<Label>();
-    @property(Label) // 問題数
-    private numberLabel : Label = null;
+    // @property(Sprite)// 選択肢（画像）
+    // private spriteList : Array<Sprite> = new Array<Sprite>();
+    // @property(Label)// オッズ
+    // private oddsLabelList : Array<Label> = new Array<Label>();
+    // @property(Label)// 総ベット量
+    // private betLabelList : Array<Label> = new Array<Label>();
+    // @property(Label) // 問題数
+    // private numberLabel : Label = null;
     @property(RichText)// 問題文
     private questionText : RichText = null;
-    @property(Label)// 所持コイン
-    private coinsLabel : Label = null;
-    @property(BetModal)// ベットモーダル
-    private betModal : BetModal = null; 
+    // @property(Label)// 所持コイン
+    // private coinsLabel : Label = null;
+    // @property(BetModal)// ベットモーダル
+    // private betModal : BetModal = null; 
     @property(Button)// 次に進むボタン
     private nextButton : Button = null;
     @property(Button)// 結果表示ボタン
@@ -141,17 +141,18 @@ export class ChoicesModal extends Component {
         //     }
         // }
 
-        // // ベットモーダルが出ている時は選択肢を押せないようにする
-        // if(this.betModal.node.active || this.timer.GetIsEnd() || this.choiceNumber >= 0){
-        //     this.DontClickButton(false);
-        // }
-        // else{
-        //     this.DontClickButton(true);
-        // }
 
-        if(this.betModal.GetIsDecide()){
-            this.DecideChoice();
+        // 解答締め切りthis.timer.GetIsEnd() ||  || 選択済み|| 視聴者なら押せないようにする
+        if(this.choiceNumber >= 0 || GameManager.Instance().GetClientMode() === "Audience"){
+            this.DontClickButton(false);
         }
+        else{
+            this.DontClickButton(true);
+        }
+
+        // if(this.betModal.GetIsDecide()){
+        //     this.DecideChoice();
+        // }
 
         // 新仕様
         this.timer2.Display(this.thinkingTime, this.isThinkingEnd);
@@ -233,8 +234,11 @@ export class ChoicesModal extends Component {
     // クリックした時
     private Choice(index : number) {
         // this.betModal.node.active = true;    // ベットモーダルを表示
-        this.DecideChoice();
         this.tempNumber = index;      // 選択した番号
+        this.DecideChoice();
+        this.buttonList.forEach(element => {element.node.active = false;});
+        this.frameList.forEach(element =>{element.node.active = true;});
+        this.frameList[index].spriteFrame = this.selectFrameSprite;
     }
 
     // 選択肢を設定
@@ -246,9 +250,8 @@ export class ChoicesModal extends Component {
         else if(index === 2){tempstring = "C.";}
         else if(index === 3){tempstring = "D.";}
         tempstring = text;
-        this.textList[index].string = "<color=#000000>" + tempstring + "</color>";
         this.labelList[index].string = tempstring;
-        this.spriteList[index].spriteFrame = sprite;
+        // this.spriteList[index].spriteFrame = sprite;
     }
 
     
@@ -257,21 +260,17 @@ export class ChoicesModal extends Component {
     }
 
     public SetQuestion(sent : string){
-        this.questionText.string = "<color=#000000>" + sent + "</color>";
+        this.questionText.string = "<color=#000000>" + "第" + GameManager.Instance().GetGameInfo().qNumber + "問：" + sent + "</color>";
     }
 
     public SetUI(){
         // this.timer.SetTimeLimit(GameManager.Instance().GetGameInfo().thinkTime);   // タイマーのセット
         this.timer2.SetIsActive(true);
-
-        this.questionText.string ="<color=#000000>" +  GameManager.Instance().GetGameInfo().qSentence + "</color>";
-        // this.numberLabel.string = GameManager.Instance().GetGameInfo().qNumber + "/" + QuizManager.Instance().raundMax + "問";
-        this.numberLabel.string = "第" + GameManager.Instance().GetGameInfo().qNumber + "問:";
-        this.betModal.node.active = false;
+        this.questionText.string = "<color=#000000>" + "第" + GameManager.Instance().GetGameInfo().qNumber + "問：" + GameManager.Instance().GetGameInfo().qSentence + "</color>"
         this.resultModal.node.active = false;
 
         this.questionScrean.getChildByName('QuestionSentence').getComponent(RichText).string = this.questionText.string;
-        this.questionScrean.getChildByName('QuestionNumber').getComponent(Label).string = this.numberLabel.string;
+        // this.questionScrean.getChildByName('QuestionNumber').getComponent(Label).string = this.numberLabel.string;
 
         for(var i = 0; i < QuizManager.Instance().GetChoiceMax(); i++){ //フレームをリセット
             this.frameList[i].spriteFrame = this.normalFrameSprite;
@@ -284,6 +283,14 @@ export class ChoicesModal extends Component {
             AnimationManager.Instance().userNode.active = false;
             // this.nextButton.node.active = false;
             // this.resultButton.node.active = false;
+            for(var i = 0; i < 4; i++){
+                if(i === GameManager.Instance().GetGameInfo().qCorNumber){
+                    this.labelList[i].color = new Color(0,0,0,255);
+                }
+                else{
+                    this.labelList[i]. color = new Color(148,148,148,255);
+                }
+            }
             this.frameList[GameManager.Instance().GetGameInfo().qCorNumber].spriteFrame = this.correctFrameSprite;
             this.hintLabel.string = GameManager.Instance().GetGameInfo().hintSentence[this.hintIndex];
             this.debugClientMode = 'Liver';
@@ -292,17 +299,20 @@ export class ChoicesModal extends Component {
         else{
             this.liverNode.active = false;
             this.userNode.active = true;
+            for(var i = 0; i < 4; i++){
+                this.labelList[i].color = new Color(0,0,0,255);
+            }
             AnimationManager.Instance().liverNode.active = false;
             AnimationManager.Instance().userNode.active = true;
-            this.coinsLabel.string = GameManager.Instance().GetGameInfo().coins.toString();
+            // this.coinsLabel.string = GameManager.Instance().GetGameInfo().coins.toString();
             this.debugClientMode = 'User';
         }
     }
 
    // 問題文などのセット
    public SetQuizInfoUI(){
-       this.numberLabel.string = GameManager.Instance().GetGameInfo().qNumber.toString() + " / " + QuizManager.Instance().raundMax + "問";
-       this.questionText.string = "<color=#000000>" + GameManager.Instance().GetGameInfo().qSentence + "</color>";
+    //    this.numberLabel.string = GameManager.Instance().GetGameInfo().qNumber.toString() + " / " + QuizManager.Instance().raundMax + "問";
+    this.questionText.string = "<color=#000000>" + "第" + GameManager.Instance().GetGameInfo().qNumber + "問：" + GameManager.Instance().GetGameInfo().qSentence + "</color>"
        console.log(this.questionText.string);
        for(var i = 0; i < QuizManager.Instance().GetChoiceMax(); i++){
            this.labelList[i].string = GameManager.Instance().GetGameInfo().qSelectSent[i];
@@ -326,7 +336,6 @@ export class ChoicesModal extends Component {
         )
         // if(this.betModal.getIsPushedDecideButton()) AnimationManager.Instance().betAnim.Play(this.choiceNumber, this.betModal.GetBetValue());
         AnimationManager.Instance().answerAnim.Play(this.choiceNumber, GameManager.Instance().GetGameInfo().ranking[0].mSprite);
-        this.betModal.SetIsDecide(false);
     }
 
     // 正解表示
@@ -337,8 +346,7 @@ export class ChoicesModal extends Component {
         this.resultModal.SetAnswerLabel(GameManager.Instance().GetGameInfo().qCorNumber,"");
         for(var i = 0; i < QuizManager.Instance().GetChoiceMax(); i++){
             if(i != GameManager.Instance().GetGameInfo().qCorNumber){
-                this.oddsLabelList[i].string = "x1.0";
-                this.oddsLabelList[i].color = color(255,255,255,255);
+
             }
         }
         this.TitleFrameLabel.string = "正解発表";
@@ -363,8 +371,8 @@ export class ChoicesModal extends Component {
         this.TitleFrameNode.active = true;
         this.TitleFrameLabel.string = "ボーナス倍率結果";
         for(var i = 0; i < QuizManager.Instance().GetChoiceMax(); i++){
-            this.oddsLabelList[i].node.active = true;
-            this.betLabelList[i].node.active = false;
+            // this.oddsLabelList[i].node.active = true;
+            // this.betLabelList[i].node.active = false;
             this.iconLineupList[i].Reset();
         }
     }
@@ -389,7 +397,7 @@ export class ChoicesModal extends Component {
         this.TitleFrameNode.active = false;
         this.TitleFrameLabel.string = "ボーナス倍率結果";
         this.countdownButton.node.active = true;
-        this.betModal.SetIsDecide(false);
+        // this.betModal.SetIsDecide(false);
         this.choiceNumber = -1;
         this.ResetUI();
 
@@ -427,41 +435,39 @@ export class ChoicesModal extends Component {
 
             // if(this.timer.GetIsEnd()){
 
-            //     if(this.debugClientMode === 'Liver'){
-            //         for(const odds of this.oddsLabelList){
-            //             odds.node.active = true;
-            //         }
-            //     }
-            //     else{
-            //         for(const odds of this.oddsLabelList){
-            //             odds.node.active = false;
-            //         }
-            //     }
+                // if(this.debugClientMode === 'Liver'){
+                //     for(const odds of this.oddsLabelList){
+                //         odds.node.active = true;
+                //     }
+                // }
+                // else{
+                //     for(const odds of this.oddsLabelList){
+                //         odds.node.active = false;
+                //     }
+                // }
 
-            //     if(isResult){
-            //         // this.nextButton.node.active = true;
-            //     }
-            //     else{
-            //         // this.resultButton.node.active = true;
-            //     }
-            //     for(const odds of this.oddsLabelList){
-            //         odds.node.active = true;
-            //     }
-            // }
+                // if(isResult){
+                //     // this.nextButton.node.active = true;
+                // }
+                // else{
+                //     // this.resultButton.node.active = true;
+                // }
+                // for(const odds of this.oddsLabelList){
+                //     odds.node.active = true;
+                // }
+        }
 
-
-            if(isResult){
-                this.resultModal.node.active = true;            
-                // this.liverAnswerFrameSprite.active = true;
-            }
+        if(isResult){
+            this.resultModal.node.active = true;            
+            // this.liverAnswerFrameSprite.active = true;
         }
     }
 
     private ResetUI(){
         for(var i = 0; i < QuizManager.Instance().GetChoiceMax(); i++){ //フレームをリセット
-            this.oddsLabelList[i].color = color(255,255,0,255);
-            this.oddsLabelList[i].node.active = false;
-            this.betLabelList[i].node.active = true;
+            // this.oddsLabelList[i].color = color(255,255,0,255);
+            // this.oddsLabelList[i].node.active = false;
+            // this.betLabelList[i].node.active = true;
             this.frameList[i].spriteFrame = this.normalFrameSprite;
         }
     }

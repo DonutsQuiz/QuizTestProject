@@ -34,6 +34,8 @@ export class GenreChoiceModal extends Component {
     private countRoot : Node = null;
     @property(Node)
     private genreBook : Node = null;
+    @property(Label)
+    private genreExplaLabel : Label = null;
 
     //スタート
     @property(Sprite)
@@ -60,12 +62,12 @@ export class GenreChoiceModal extends Component {
 
 
     public Constructor(){
-        this.genreButton[0].node.on(Button.EventType.CLICK, function(){this.ClickGenreButton(1)}, this);
-        this.genreButton[1].node.on(Button.EventType.CLICK, function(){this.ClickGenreButton(2)}, this);
-        this.genreButton[2].node.on(Button.EventType.CLICK, function(){this.ClickGenreButton(3)}, this);
-        this.genreButton[3].node.on(Button.EventType.CLICK, function(){this.ClickGenreButton(4)}, this);
-        this.genreButton[4].node.on(Button.EventType.CLICK, function(){this.ClickGenreButton(5)}, this);
-        this.genreButton[5].node.on(Button.EventType.CLICK, function(){this.ClickGenreButton(6)}, this);
+        this.genreButton[0].node.on(Button.EventType.CLICK, function(){this.ClickGenreButton(0)}, this);
+        this.genreButton[1].node.on(Button.EventType.CLICK, function(){this.ClickGenreButton(1)}, this);
+        this.genreButton[2].node.on(Button.EventType.CLICK, function(){this.ClickGenreButton(2)}, this);
+        this.genreButton[3].node.on(Button.EventType.CLICK, function(){this.ClickGenreButton(3)}, this);
+        this.genreButton[4].node.on(Button.EventType.CLICK, function(){this.ClickGenreButton(4)}, this);
+        this.genreButton[5].node.on(Button.EventType.CLICK, function(){this.ClickGenreButton(5)}, this);
 
         this.startButton.node.on(Button.EventType.CLICK, this.ClickStartButton, this);
         this.backButton.node.on(Button.EventType.CLICK, this.ClickBackButton, this);
@@ -114,9 +116,10 @@ export class GenreChoiceModal extends Component {
         else{ //ゲーム最中
             this.startNode.active = true;
             this.genreIconSprite.spriteFrame = this.genreIconSpriteList[gen];
-            this.genreLabel.string = GameManager.Instance().GetGameInfo().genreSetList[gen - 1].Genre;
-            GameManager.Instance().GetGameInfo().genreId = gen + 10000;
+            this.genreLabel.string = GameManager.Instance().GetGameInfo().genreSetList[gen].Genre;
+            GameManager.Instance().GetGameInfo().genreId = GameManager.Instance().GetGameInfo().genreSetList[gen].GenreId;
             QuizManager.Instance().quizComponent.SetQuiz();
+            this.genreExplaLabel.string = GameManager.Instance().GetGameInfo().genreSetList[gen].Description;
         }
         this.selectNode.active = false;
         this.backButton.node.active = true;
@@ -158,6 +161,9 @@ export class GenreChoiceModal extends Component {
             this.quistionListNode.active = false;
         }
 
+        //問題数とorderの減算処理
+        GameManager.Instance().GetGameInfo().qNumber = (GameManager.Instance().GetGameInfo().qNumber + QuizManager.Instance().raundMax - 1) % QuizManager.Instance().raundMax;
+        GameManager.Instance().GetGameInfo().order--;
     }
 
     public SetUI(){
@@ -169,8 +175,9 @@ export class GenreChoiceModal extends Component {
             this.titleLabel.string = "問題ジャンルを選ぼう";
             this.startTitleLabel.node.active = false;
             this.startButton.node.active = true;
-            this.genreBook.position = new Vec3(0, 12, 0);
+            this.genreBook.position = new Vec3(0, 30, 0);
             this.countRoot.active = true;
+            this.genreRootNode.active = true;
         }
         else if(GameManager.Instance().GetClientMode() === 'User'){
             this.titleLabel.string = "ライバーが出題テーマを選択中";
@@ -178,6 +185,7 @@ export class GenreChoiceModal extends Component {
             this.startTitleLabel.node.active = true;
             this.genreBook.position = new Vec3(0, -15, 0);
             this.countRoot.active = false;
+            this.genreRootNode.active = false;
         }
     }
 

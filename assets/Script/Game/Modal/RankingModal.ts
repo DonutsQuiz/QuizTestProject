@@ -77,8 +77,6 @@ export class RankingModal extends Component {
 
         this.ranking2.SetRankOrList(0);
         this.ClickSwitchingButton(0);
-        
-
     }
 
     private ClickFunction(){
