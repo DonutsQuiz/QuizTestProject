@@ -369,7 +369,7 @@ export class QuestionModal extends Component {
             else if(GameManager.Instance().GetClientMode() === 'Audience'){
                 this.liverNode.active = false;
                 this.userNode.active = false;
-                this.debugClientMode = 'Liver';
+                this.debugClientMode = 'Audience';
             }
         }
 

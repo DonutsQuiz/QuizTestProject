@@ -8,6 +8,7 @@ import { Ranking } from '../../UI/Ranking';
 import { RankTopThreeIcon } from '../../UI/RankTopThreeIcon';
 import { Ranking2 } from '../../UI/Ranking2';
 import { FixReslutRankingData } from '../Manager/GameInformation';
+import { AnimationManager } from '../Manager/AnimationManager';
 const { ccclass, property } = _decorator;
 
 export class UserInfomation{
@@ -139,6 +140,9 @@ export class OverallResultModal extends Component {
 
         this.scrollAnim.Play();
 
+        if(this.nowNode === 0){
+            AnimationManager.Instance().blessingAnim.Play();
+        }
 
         // ボタンとカンペ表示
         if(this.nowRankMode === 0){
@@ -152,6 +156,7 @@ export class OverallResultModal extends Component {
                 this.rankChangeButton.node.active = true;
                 this.compeLabel.node.active = false;
             }
+
         }
         else if(this.nowRankMode === 1){
             if(this.animationTime > 0.0){
@@ -217,6 +222,8 @@ export class OverallResultModal extends Component {
             this.ranking2.SetMaxCount(GameManager.Instance().GetGameInfo().nowRankingList.length);
             this.ranking2.Generate();
 
+            AnimationManager.Instance().blessingAnim.Reset();
+
             if(QuizManager.Instance().GetIsLast()){
                 this.titleLabel.string = "スポーツ検定36巻検定終了";
                 this.titleLabel.fontSize = 55;
@@ -235,7 +242,7 @@ export class OverallResultModal extends Component {
             this.titleNode.position = new Vec3(0, 110, 0);
             this.advanceLabel.string = "次へ";
             this.advanceLabel.fontSize = 80;
-            this.blessingSprite.node.active = true;
+            // this.blessingSprite.node.active = true;
             this.listenerListNode.active = true;
             this.listenerRankNode.active = false;
             this.ranking.SetRankOrList(false);
@@ -247,6 +254,7 @@ export class OverallResultModal extends Component {
                 GameManager.Instance().SetParticipantActive(true);
             }
             this.nowNode = 0;
+
         }
 
     }

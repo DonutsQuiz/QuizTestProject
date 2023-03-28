@@ -7,6 +7,7 @@ import { CountDownAnim } from '../../EffectAnim/CountDownAnim';
 import { StampAnim } from '../../EffectAnim/StampAnim';
 import { AnswerAnim } from '../../EffectAnim/AnswerAnim';
 import { KumaHintAnim } from '../../EffectAnim/KumaHintAnim';
+import { BlessingAnim } from '../../EffectAnim/BlessingAnim';
 const { ccclass, property } = _decorator;
 
 @ccclass('AnimationManager')
@@ -36,6 +37,7 @@ export class AnimationManager extends Component {
     public stampAnim: StampAnim = null;
     public answerAnim: AnswerAnim = null;
     public kumaHintAnim: KumaHintAnim = null;
+    public blessingAnim: BlessingAnim = null;
 
     public userNode: Node = null;
     public liverNode: Node = null;
@@ -53,6 +55,7 @@ export class AnimationManager extends Component {
         this.allNode = temp.getChildByName('AllSide');
 
         this.startAnim = this.allNode.getChildByName('StartAnimation').getComponent(StartControll);
+        this.blessingAnim = this.allNode.getChildByName('BlessingAnimation').getComponent(BlessingAnim);
         this.betAnim = this.userNode.getChildByName('BetAnimation').getComponent(ChipControll);
         this.resultAnim = this.userNode.getChildByName('ResultAnimation').getComponent(ResultAnimControll);
         this.answerAnim = this.userNode.getChildByName('AnswerAnimation').getComponent(AnswerAnim);
