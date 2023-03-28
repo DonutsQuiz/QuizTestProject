@@ -8,6 +8,7 @@ import { Ranking } from '../../UI/Ranking';
 import { RankTopThreeIcon } from '../../UI/RankTopThreeIcon';
 import { Ranking2 } from '../../UI/Ranking2';
 import { FixReslutRankingData } from '../Manager/GameInformation';
+import { GameMenu } from '../../UI/GameMenu';
 const { ccclass, property } = _decorator;
 
 export class UserInfomation{
@@ -47,8 +48,8 @@ export class OverallResultModal extends Component {
     private rankLabel : Label = null;
     @property(RichText) //カンペラベル
     private compeLabel : RichText = null;
-    @property(RankTopThreeIcon)
-    private topThreeIcon : RankTopThreeIcon = null;
+    // @property(RankTopThreeIcon)
+    // private topThreeIcon : RankTopThreeIcon = null;
     @property(Sprite) //一位の画像（モダール内）
     private topSprite : Sprite = null;
     @property(ScrollAnim) // ランキングのスクロールアニメーション
@@ -67,10 +68,10 @@ export class OverallResultModal extends Component {
     private titleLabel : Label = null;
     @property(Sprite)
     private blessingSprite : Sprite = null;
-    @property(Node) //正解したリスナー
-    private listenerListNode : Node = null;
-    @property(Node) //ランキングリスナー
-    private listenerRankNode : Node = null;
+    // @property(Node) //正解したリスナー
+    // private listenerListNode : Node = null;
+    // @property(Node) //ランキングリスナー
+    // private listenerRankNode : Node = null;
     @property(Button)
     private advanceButton : Button = null;
     @property(Label)
@@ -207,37 +208,36 @@ export class OverallResultModal extends Component {
     // 進むボタン(新仕様)
     private ClickAdvanceButton(){
         if(this.nowNode === 0){
-            this.titleNode.position = new Vec3(0, 125, 0);
+            this.titleNode.position = new Vec3(0, 90, 0);
             this.blessingSprite.node.active = false;
-            this.listenerListNode.active = false;
-            this.listenerRankNode.active = false;
             this.ranking.SetRankOrList(true);
             this.ranking2.SetRankOrList(0);
             this.ranking2.SetResultRankingList(GameManager.Instance().GetGameInfo().nowRankingList);
             this.ranking2.SetMaxCount(GameManager.Instance().GetGameInfo().nowRankingList.length);
             this.ranking2.Generate();
+            GameManager.Instance().GetParticipant().SetRankInfo(GameManager.Instance().GetGameInfo().nowRankingList);
 
             if(QuizManager.Instance().GetIsLast()){
-                this.titleLabel.string = "スポーツ検定36巻検定終了";
+                this.titleLabel.string = "結果発表！！";
                 this.titleLabel.fontSize = 55;
                 this.advanceLabel.string = "もう一度遊ぶ";
-                this.advanceLabel.fontSize = 60;
+                this.advanceLabel.fontSize = 50;
             }
             else{
                 this.titleLabel.string = "現在の順位 (" + GameManager.Instance().GetGameInfo().qNumber + "/" + QuizManager.Instance().raundMax + "問)";
                 this.advanceLabel.string = "次の出題へ";
+                this.advanceLabel.fontSize = 60;
             }
             this.nowNode = 1;
+            QuizManager.Instance().quizComponent.SetQuiz();
         }
         else if(this.nowNode === 1){
             this.titleLabel.string = "正解おめでとう！";
             this.titleLabel.fontSize = 80;
-            this.titleNode.position = new Vec3(0, 110, 0);
+            this.titleNode.position = new Vec3(0, 90, 0);
             this.advanceLabel.string = "次へ";
             this.advanceLabel.fontSize = 80;
             this.blessingSprite.node.active = true;
-            this.listenerListNode.active = true;
-            this.listenerRankNode.active = false;
             this.ranking.SetRankOrList(false);
             if(QuizManager.Instance().GetIsLast()){
                 this.isRetry = true;
@@ -336,15 +336,15 @@ export class OverallResultModal extends Component {
         }
 
 
-        // ランキング画像の設定
-        this.topSprite.spriteFrame = this.userList[0].mSprite;
-        this.topThreeIcon.SetFirstSprite(this.userList[0].mSprite);
-        this.topThreeIcon.SetSecondSprite(this.userList[1].mSprite);
-        this.topThreeIcon.SetThirdSprite(this.userList[2].mSprite);
+        // // ランキング画像の設定
+        // this.topSprite.spriteFrame = this.userList[0].mSprite;
+        // this.topThreeIcon.SetFirstSprite(this.userList[0].mSprite);
+        // this.topThreeIcon.SetSecondSprite(this.userList[1].mSprite);
+        // this.topThreeIcon.SetThirdSprite(this.userList[2].mSprite);
 
         // ランキング
-        this.ranking2.SetRankOrList(1);
-        this.ranking2.SetMaxCount(GameManager.Instance().GetGameInfo().nowRankingList.length);
+        // this.ranking2.SetRankOrList(1);
+        // this.ranking2.SetMaxCount(GameManager.Instance().GetGameInfo().nowRankingList.length);
         // this.ranking2.SetRankingList(GameManager.Instance().GetGameInfo().nowRankingList)
 
 

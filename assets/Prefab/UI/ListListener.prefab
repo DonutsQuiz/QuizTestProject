@@ -228,7 +228,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 85,
+      "x": 145,
       "y": 0,
       "z": 0
     },
@@ -272,7 +272,7 @@
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
-      "x": 0,
+      "x": 1,
       "y": 0.5
     },
     "_id": ""
@@ -605,7 +605,7 @@
         "__id__": 27
       }
     ],
-    "_active": false,
+    "_active": true,
     "_components": [
       {
         "__id__": 33
@@ -817,9 +817,9 @@
     "_dstBlendFactor": 4,
     "_color": {
       "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
+      "r": 179,
+      "g": 179,
+      "b": 179,
       "a": 255
     },
     "_spriteFrame": {
@@ -955,6 +955,8 @@
     "conteLabel": {
       "__id__": 30
     },
+    "achieveLabel": null,
+    "achieveSprite": null,
     "_id": ""
   },
   {

@@ -1,4 +1,5 @@
 import { _decorator, Component, Node, Label, SpriteFrame } from 'cc';
+import { GameMenu } from '../../UI/GameMenu';
 import { GameManager } from '../Manager/GameManager';
 import { QuizManager } from '../Manager/QuizManager';
 import { QuizModalManager } from '../Manager/QuizModalManager';
@@ -30,6 +31,7 @@ export abstract class QuizComponent extends Component {
 
         // 何問目かをセット
         GameManager.Instance().GetGameInfo().qNumber = (GameManager.Instance().GetGameInfo().qNumber + 1) % (QuizManager.Instance().raundMax + 1);
+        if(GameManager.Instance().GetGameInfo().qNumber === 0) GameManager.Instance().GetGameInfo().qNumber = 1;
         GameManager.Instance().GetGameInfo().order++;
 
         // 問題生成をリクエスト

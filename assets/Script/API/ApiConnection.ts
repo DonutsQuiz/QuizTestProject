@@ -2,6 +2,7 @@ import { _decorator, Component, Node,Label } from 'cc';
 import {axios} from "db://assets/Script/API/packages";
 import { GameManager } from '../Game/Manager/GameManager';
 import { QuizModalManager } from '../Game/Manager/QuizModalManager';
+import { GameMenu } from '../UI/GameMenu';
 // import { GameManager } from '../Game/Manager/GameManager';
 // import { QuizModalManager } from '../Game/Manager/QuizModalManager';
 const { ccclass, property } = _decorator;
@@ -172,7 +173,13 @@ export class ApiConnection extends Component {
             .then((response)=>{
                 let data = JSON.parse(atob(response.data));
                 GameManager.Instance().GetGameInfo().nowRankingList = data.QuizScoreRankings;
-                console.log(GameManager.Instance().GetGameInfo().nowRankingList);
+                for(var i  = 0; i < data.QuizScoreRankings.length; i++){
+                    if(data.QuizScoreRankings[i].UserId === GameManager.Instance().GetGameInfo().userId){
+                        GameManager.Instance().GetGameInfo().rankInfo = data.QuizScoreRankings[i];
+                    }
+                }
+                console.log(data);
+                console.log(GameManager.Instance().GetGameInfo().rankInfo);
                 return data;
             })
             .catch((error)=>{
@@ -210,7 +217,7 @@ export class ApiConnection extends Component {
             .then((response)=>{
                 let data = JSON.parse(atob(response.data));
                 GameManager.Instance().GetGameInfo().todayRankingList = data.Rankings;
-                console.log(GameManager.Instance().GetGameInfo().todayRankingList[0].Score);
+                // console.log(GameManager.Instance().GetGameInfo().todayRankingList);
                 return data;
             })
             .catch((error)=>{
@@ -229,7 +236,7 @@ export class ApiConnection extends Component {
             .then((response)=>{
                 let data = JSON.parse(atob(response.data));
                 GameManager.Instance().GetGameInfo().monthRankingList = data.Rankings;
-                // console.log(GameManager.Instance().GetGameInfo().monthRankingList[0].Score);
+                // console.log(GameManager.Instance().GetGameInfo().monthRankingList);
                 return data;
             })
             .catch((error)=>{

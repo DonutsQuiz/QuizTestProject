@@ -23,11 +23,14 @@ export class FixReslutRankingData{
     Rank : number = -1;
     ComboCount : number = -1;
     IsCorrect : boolean = false;
+    Title : string = "";
+    AnswereAt : any = 0;
 }
 
 export class GenreSet{
     GenreId : number = -1;
     Genre : string = "";
+    Description : string = "";
 }
 
 @ccclass('GameInformation')
@@ -71,7 +74,7 @@ export class GameInformation{
 
     // ユーザー情報
     hostId : number = 123456789;
-    userId : number = 987654321;
+    userId : number = 987654325;
     gameId : number = 12345678900987;
     token : string = "asiodjioqwjoajsdjjsakmvbd";
 
@@ -86,5 +89,7 @@ export class GameInformation{
     hintSentence : Array<string> = new Array<string>(); // ヒントの文章
 
     isFirstTime : boolean = false; //初プレイかどうか
+
+    debugUser : number = 99999999;
 }
 

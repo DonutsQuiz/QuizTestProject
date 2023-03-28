@@ -24,11 +24,9 @@ export class TitleModal extends Component {
     private tutorialNode : Node = null;
     @property(Label) //検定名(チュートリアル用)
     private certTitleLabel : Label = null;
-    @property(Button) //ランキング用ボタン
-    private rankingButton : Button = null;
 
     private debugClientMode : ClientMode = 'Liver';
-    private debugIsFirst : boolean = false;
+    private debugIsFirst : boolean = false; //初回かどうか（デバッグ）
 
     private isFirst : boolean = false;
 
@@ -43,13 +41,6 @@ export class TitleModal extends Component {
             this.isFirst = false;}, 
             this
         );
-
-        // this.rankingButton.node.on(Button.EventType.CLICK, 
-        //     function(){
-        //         QuizModalManager.Instance()
-        //     },
-        //     this
-        // );
         
         this.SetUI();
 
@@ -61,11 +52,6 @@ export class TitleModal extends Component {
     }
 
     public OnUpdate(deltaTime: number){
-        // if(this.isFirst){
-        //     // this.topHonoNode.position = new Vec3(this.topNameTrans.contentSize.width, 0,0);
-        //     this.isFirst = false;
-        // }
-
         //新仕様
         if(this.modalChangeTime > 0.0){
             this.modalChangeTime -= deltaTime;
