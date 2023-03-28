@@ -2,12 +2,12 @@
   "ver": "1.1.40",
   "importer": "prefab",
   "imported": true,
-  "uuid": "0046f4f3-7983-49a5-9836-d5b1cf0f0149",
+  "uuid": "ffc602ce-37a6-46f2-a0bf-fdf2e3b9da1d",
   "files": [
     ".json"
   ],
   "subMetas": {},
   "userData": {
-    "syncNodeName": "OverallResultModal"
+    "syncNodeName": "OverallResultModal-001"
   }
 }
