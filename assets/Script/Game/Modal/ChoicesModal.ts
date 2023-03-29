@@ -1,6 +1,5 @@
 import { _decorator, Component, Node, Button, Label, SpriteFrame, Sprite, Vec3,RichText, game, color, Game, ModelComponent, TERRAIN_SOUTH_INDEX, Color, InstanceMaterialType } from 'cc';
 import { AnimationManager } from '../Manager/AnimationManager';
-import { Timer } from '../../UI/Timer';
 import { Timer2 } from '../../UI/Timer2';
 import { ClientMode, GameManager } from '../Manager/GameManager';
 import { QuizManager } from '../Manager/QuizManager';
@@ -69,9 +68,6 @@ export class ChoicesModal extends Component {
     @property(ResultModal) // リザルトモーダル
     private resultModal : ResultModal = null;
 
-    // @property(Timer)
-    // timer : Timer = null;
-
     @property(Timer2)
     timer2 : Timer2 = null;
 
@@ -116,34 +112,8 @@ export class ChoicesModal extends Component {
     public OnUpdate(deltaTime: number){
         this.DebugModalUpdate();
 
-        // // カウントダウン処理
-        // if(this.isCountDown){
-        //     this.timer.Display();
-        //     AnimationManager.Instance().countDownAnim.Play(this.timer.GetTimeLeft());
-        // }
-
-        // // 時間切れの処理
-        // if(this.timer.GetIsFinish()){
-        //     // this.resultButton.node.active = true;
-        //     this.TitleFrameNode.active = true;
-        //     this.TitleFrameLabel.string = "ボーナス倍率結果";
-        //     for(var i = 0; i < QuizManager.Instance().GetChoiceMax(); i++){
-        //         this.oddsLabelList[i].node.active = true;
-        //         this.betLabelList[i].node.active = false;
-        //         this.iconLineupList[i].Reset();
-        //     }
-        // }
-
-        // if(!this.timer.GetIsEnd()){
-        //     for(var i = 0; i < QuizManager.Instance().GetChoiceMax(); i++){
-        //         this.oddsLabelList[i].string = "x" + GameManager.Instance().GetGameInfo().odds[i].toString();
-        //         this.betLabelList[i].string = GameManager.Instance().GetGameInfo().totalBet[i].toString() + "点";
-        //     }
-        // }
-
-
-        // 解答締め切りthis.timer.GetIsEnd() ||  || 選択済み|| 視聴者なら押せないようにする
-        if(this.choiceNumber >= 0 || GameManager.Instance().GetClientMode() === "Audience"){
+        // 解答締め切り || 選択済み|| 視聴者なら押せないようにする
+        if(this.isThinkingEnd || this.choiceNumber >= 0 || GameManager.Instance().GetClientMode() === "Audience"){
             this.DontClickButton(false);
         }
         else{
@@ -190,6 +160,8 @@ export class ChoicesModal extends Component {
 
             this.timer2.SetIsActive(false);
 
+            AnimationManager.Instance().stampAnim.SetIsActive(false);
+
             this.questionScrean.active = true;
             this.answerScrean.active = false;
             this.userNode.active = false;
@@ -208,6 +180,8 @@ export class ChoicesModal extends Component {
                 this.answerScrean.active = true;
                 this.userNode.active = true;
                 this.liverNode.active = true;
+
+                AnimationManager.Instance().stampAnim.SetIsActive(true);
                 
                 this.ShowResult();
                 this.resultModal.SetAnswerLabelActive("Before");
@@ -264,8 +238,6 @@ export class ChoicesModal extends Component {
     }
 
     public SetUI(){
-        // this.timer.SetTimeLimit(GameManager.Instance().GetGameInfo().thinkTime);   // タイマーのセット
-        this.timer2.SetIsActive(true);
         this.questionText.string = "<color=#000000>" + "第" + GameManager.Instance().GetGameInfo().qNumber + "問：" + GameManager.Instance().GetGameInfo().qSentence + "</color>"
         this.resultModal.node.active = false;
 
@@ -379,12 +351,11 @@ export class ChoicesModal extends Component {
 
     // 結果発表に進む
     private Next(){
-        // this.timer.Reset();
         AnimationManager.Instance().timeUpAnim.AnimationReset();
         AnimationManager.Instance().countDownAnim.AnimationReset();
         // AnimationManager.Instance().betAnim.AnimationReset();
         AnimationManager.Instance().answerAnim.AnimationReset();
-        AnimationManager.Instance().stampAnim.AnimationReset();
+        AnimationManager.Instance().stampAnim.SetIsActive(false);
 
         this.thinkingTime = 60.0;
         this.isThinkingEnd = false;
@@ -433,28 +404,6 @@ export class ChoicesModal extends Component {
                 }
             }
 
-            // if(this.timer.GetIsEnd()){
-
-                // if(this.debugClientMode === 'Liver'){
-                //     for(const odds of this.oddsLabelList){
-                //         odds.node.active = true;
-                //     }
-                // }
-                // else{
-                //     for(const odds of this.oddsLabelList){
-                //         odds.node.active = false;
-                //     }
-                // }
-
-                // if(isResult){
-                //     // this.nextButton.node.active = true;
-                // }
-                // else{
-                //     // this.resultButton.node.active = true;
-                // }
-                // for(const odds of this.oddsLabelList){
-                //     odds.node.active = true;
-                // }
         }
 
         if(isResult){
@@ -470,14 +419,13 @@ export class ChoicesModal extends Component {
             // this.betLabelList[i].node.active = true;
             this.frameList[i].spriteFrame = this.normalFrameSprite;
         }
+
+        this.timer2.SetIsActive(true);
+        this.explanationNode.active = true;
     }
 
     public GetResultModal() : ResultModal{
         return this.resultModal;
     }
-
-    // public GetTimer() : Timer{
-    //     return this.timer;
-    // }
 }
 
