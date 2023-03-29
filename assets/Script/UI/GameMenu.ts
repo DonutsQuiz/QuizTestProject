@@ -12,20 +12,20 @@ export class GameMenu extends Component {
     @property(Button)
     private rankButton : Button = null;
     @property(Button)
-    private listButton : Button = null;
+    private statusButton : Button = null;
     @property(Button)
     private exitButton : Button = null;
 
     public Constructor(){
         this.rankButton.node.on(Button.EventType.CLICK, this.ClickRankButton, this);
-        this.listButton.node.on(Button.EventType.CLICK, this.ClickListButton, this);
+        this.statusButton.node.on(Button.EventType.CLICK, this.ClickStatusButton, this);
         this.exitButton.node.on(Button.EventType.CLICK, this.ClickExitButton, this);
     }
 
-    private ClickListButton(){
+    private ClickStatusButton(){
         QuizModalManager.Instance().GetGenreModal().SetConfirm(true);
         QuizModalManager.Instance().GetGenreModal().SetModalType(QuizModalManager.Instance().GetNowType());
-        QuizModalManager.Instance().ChangeModal('Genre');
+        QuizModalManager.Instance().ChangeModal('StatusUp');
     }
 
     private ClickRankButton(){
@@ -36,6 +36,13 @@ export class GameMenu extends Component {
 
     private ClickExitButton(){
         GameManager.Instance().GetExitModal().active = true;
+    }
+
+    public DisplayButton(dis : boolean){
+        this.helpButton.node.active = dis;
+        this.rankButton.node.active = dis;
+        this.statusButton.node.active = dis;
+        this.exitButton.node.active = dis;
     }
 
     start() {

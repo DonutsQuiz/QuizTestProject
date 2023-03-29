@@ -82,6 +82,12 @@ export class Ranking2 extends Component {
 
         this.contentTransform.height = this.NODE_SIZE * this.maxCount;
 
+        this.contentTransform.node.position = new Vec3(this.contentTransform.node.position.x, 0, this.contentTransform.node.position.z)
+
+        for(var i = 0; i < this.NODE_MAX; i++){
+            this.listenerNodeList[i].node.position = new Vec3(0,-25 + (-50 * i),0);
+        }
+
         // 4以下だったら非表示
         if(this.maxCount < 4){
             for(var i = this.maxCount; i < this.NODE_MAX; i++){
@@ -124,18 +130,26 @@ export class Ranking2 extends Component {
                 if(this.isResult){
                     this.listenerNodeList[i].SetScore(this.resultRankingList[i].Score);
                     this.listenerNodeList[i].SetCombo(this.resultRankingList[i].ComboCount);
+                    // アチーブの画像
+                    if(this.rankOrList === 0){
+                        this.listenerNodeList[i].SetAchieve(this.resultRankingList[i].Rank, this.achiveSprite[this.resultRankingList[i].Rank - 1]);
+                    }
+                    else{
+                        this.listenerNodeList[i].SetAchieve(this.resultRankingList[i].Rank, null);
+                    }
                 }
                 else{
                     this.listenerNodeList[i].SetScore(this.rankingList[i].Score);
+                    // アチーブの画像
+                    if(this.rankOrList === 0){
+                        this.listenerNodeList[i].SetAchieve(this.rankingList[i].Rank, this.achiveSprite[this.rankingList[i].Rank - 1]);
+                    }
+                    else{
+                        this.listenerNodeList[i].SetAchieve(this.rankingList[i].Rank, null);
+                    }
                 }
 
-                // アチーブの画像
-                if(this.rankOrList === 0){
-                    this.listenerNodeList[i].SetAchieve(this.rankingList[i].Rank, this.achiveSprite[this.rankingList[i].Rank - 1]);
-                }
-                else{
-                    this.listenerNodeList[i].SetAchieve(this.rankingList[i].Rank, null);
-                }
+
             }
         }
 
@@ -155,16 +169,17 @@ export class Ranking2 extends Component {
         this.listenerNodeList[nodeIndex].SetRankiOrList(this.rankOrList);
 
         if(this.isResult){
-            if(this.topNode < 4 && this.rankOrList === 0){
+            if(this.resultRankingList[rankIndex].Rank < 4 && this.rankOrList === 0){
                 this.listenerNodeList[nodeIndex].SetAchieve(this.resultRankingList[rankIndex].Rank, this.achiveSprite[this.resultRankingList[rankIndex].Rank - 1]);
             }
             else{
                 this.listenerNodeList[nodeIndex].SetAchieve(this.resultRankingList[rankIndex].Rank, null);
             }
             this.listenerNodeList[nodeIndex].SetScore(this.resultRankingList[rankIndex].Score);
+            this.listenerNodeList[nodeIndex].SetCombo(this.resultRankingList[rankIndex].ComboCount);
         }
         else{
-            if(this.topNode < 4 && this.rankOrList === 0){
+            if(this.rankingList[rankIndex].Rank < 4 && this.rankOrList === 0){
                 this.listenerNodeList[nodeIndex].SetAchieve(this.rankingList[rankIndex].Rank, this.achiveSprite[this.rankingList[rankIndex].Rank - 1]);
             }
             else{

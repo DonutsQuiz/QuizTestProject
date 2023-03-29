@@ -73,8 +73,8 @@ export class GameInformation{
     genreId : number = -1;
 
     // ユーザー情報
-    hostId : number = 123456789;
-    userId : number = 987654325;
+    hostId : number = 123456780;
+    userId : number = 987654320;
     gameId : number = 12345678900987;
     token : string = "asiodjioqwjoajsdjjsakmvbd";
 

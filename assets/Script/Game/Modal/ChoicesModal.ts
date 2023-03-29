@@ -143,7 +143,7 @@ export class ChoicesModal extends Component {
 
 
         // 解答締め切り || 選択済み|| 視聴者なら押せないようにする
-        if(this.timer.GetIsEnd() || this.choiceNumber >= 0 || GameManager.Instance().GetClientMode() === "Audience"){
+        if(this.timer.GetIsEnd() || this.choiceNumber >= 0 || GameManager.Instance().GetClientMode() === "Audience" || this.isThinkingEnd){
             this.DontClickButton(false);
         }
         else{
@@ -193,6 +193,7 @@ export class ChoicesModal extends Component {
             this.userNode.active = false;
             this.liverNode.active = false;
             this.explanationNode.active = false;
+            this.buttonList.forEach(element => {element.node.active = false;});
         }
 
         // 正解発表

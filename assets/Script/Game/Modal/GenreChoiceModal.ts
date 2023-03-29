@@ -36,6 +36,8 @@ export class GenreChoiceModal extends Component {
     private genreBook : Node = null;
     @property(Label)
     private genreExplaLabel : Label = null;
+    @property(GameMenu)
+    private gameMenu : GameMenu = null;
 
     //スタート
     @property(Sprite)
@@ -71,6 +73,8 @@ export class GenreChoiceModal extends Component {
 
         this.startButton.node.on(Button.EventType.CLICK, this.ClickStartButton, this);
         this.backButton.node.on(Button.EventType.CLICK, this.ClickBackButton, this);
+
+        this.gameMenu.Constructor();
     }
 
     public OnUpdate(deltaTime: number){
@@ -131,6 +135,7 @@ export class GenreChoiceModal extends Component {
         this.certStartNode.active = true;
         this.isNext = true;
         this.backButton.node.active = false;
+        this.gameMenu.DisplayButton(false);
         this.animationTime = 3.0;
         GameManager.Instance().GetParticipant().SetIsRecruitment(false);
         GameManager.Instance().GetParticipant().SetUI();
@@ -186,6 +191,7 @@ export class GenreChoiceModal extends Component {
             this.genreBook.position = new Vec3(0, -15, 0);
             this.countRoot.active = false;
             this.genreRootNode.active = false;
+            this.gameMenu.DisplayButton(true);
         }
     }
 

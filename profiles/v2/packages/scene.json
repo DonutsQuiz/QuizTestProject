@@ -3,7 +3,7 @@
     "native": false
   },
   "gizmos-infos": {
-    "is2D": false,
+    "is2D": true,
     "is3DIcon": false,
     "iconSize": 2,
     "gridVisible": true,
@@ -56,9 +56,9 @@
     },
     "6d9866d9-a192-4526-a2a7-a9e7b61f341b": {
       "position": {
-        "x": 186.80596695136637,
-        "y": 328.1969666861494,
-        "z": 891.3891506815758
+        "x": 184.50672067276167,
+        "y": 566.9091662579038,
+        "z": 5000
       },
       "rotation": {
         "x": 0,
