@@ -55,6 +55,7 @@ export class ApiConnection extends Component {
             .then((response)=>{
                 // let data = JSON.parse(atob(response.data));
                 // return data;
+                console.log(userId + "が参加");
                 return response;
             })
             .catch((error)=>{
@@ -126,6 +127,7 @@ export class ApiConnection extends Component {
     
         return await axios.post(this.apiURL + `game/guestAnswer`,data,config)
             .then((response)=>{
+                console.log(userId + "が" + choice + "と回答");
                 return response;
             })
             .catch((error)=>{
@@ -191,14 +193,33 @@ export class ApiConnection extends Component {
 
 
     // グレードの取得
-    async getGameGrade(userId:number,token:string, gameId:number,order:number){
-        let data = "?userId="+userId+"&token="+token+"&gameId="+gameId+"&order="+order;
+    // async getGameGrade(userId:number,token:string, gameId:number,order:number){
+    //     let data = "?userId="+userId+"&token="+token+"&gameId="+gameId+"&order="+order;
     
-        return await axios.get(this.apiURL + `game/getGameGrade` + data)
+    //     return await axios.get(this.apiURL + `game/getGameGrade` + data)
+    //         .then((response)=>{
+    //             let data = JSON.parse(atob(response.data));
+    //             GameManager.Instance().GetGameInfo().grade = data.Grade;
+    //             GameManager.Instance().GetGameInfo().playCount = data.PlayCount;
+    //             return data;
+    //         })
+    //         .catch((error)=>{
+    //             console.log("error");
+    //             console.log(error);
+    //             return error;
+    //         });
+    // }
+
+
+    //グレードの取得
+    async getPlayCount(userId:number,token:string){
+        let data = "?userId="+userId+"&token="+token;
+    
+        return await axios.get(this.apiURL + `game/getPlayCount` + data)
             .then((response)=>{
                 let data = JSON.parse(atob(response.data));
-                GameManager.Instance().GetGameInfo().grade = data.Grade;
                 GameManager.Instance().GetGameInfo().playCount = data.PlayCount;
+                console.log(GameManager.Instance().GetGameInfo().playCount);
                 return data;
             })
             .catch((error)=>{

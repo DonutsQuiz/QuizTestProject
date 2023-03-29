@@ -5,7 +5,6 @@ import { GameInformation, RankingInfo } from './GameInformation';
 import { QuizManager } from './QuizManager';
 import { QuizModalManager } from './QuizModalManager';
 import { AnimationManager } from './AnimationManager';
-import { RankTopThreeIcon } from '../../UI/RankTopThreeIcon';
 import { TimeUpModal } from '../Modal/TimeUpModal';
 import { GameMenu } from '../../UI/GameMenu';
 import { ExitModal } from '../../UI/ExitModal';
@@ -50,8 +49,8 @@ export class GameManager extends Component {
 
     @property(Node)
     private canvas : Node = null;
-    @property(Prefab) //ゲームメニュー
-    private gameMenuPrefab : Prefab = null; //いらない子になる
+    // @property(Prefab) //ゲームメニュー
+    // private gameMenuPrefab : Prefab = null; //いらない子になる
     @property(Prefab) //コメント
     private commentPrefab : Prefab = null;
     @property(Prefab) //参加者
@@ -100,10 +99,10 @@ export class GameManager extends Component {
         this.dataBase.Constructor();
         this.modalManager.Constructor();
 
-        this.gameMenu = instantiate(this.gameMenuPrefab);
-        this.gameMenu.setParent(this.canvas);
-        this.gameMenu.getComponent(GameMenu).Constructor();
-        this.gameMenu.active = false;
+        // this.gameMenu = instantiate(this.gameMenuPrefab);
+        // this.gameMenu.setParent(this.canvas);
+        // this.gameMenu.getComponent(GameMenu).Constructor();
+        // this.gameMenu.active = false;
         this.comment = instantiate(this.commentPrefab);
         this.comment.setParent(this.canvas);
         this.comment.active = false;

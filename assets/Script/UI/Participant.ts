@@ -2,6 +2,7 @@ import { _decorator, Component, Node, spriteAssembler, Sprite, Label, Root, UITr
 import { FixReslutRankingData } from '../Game/Manager/GameInformation';
 import { ClientMode, GameManager } from '../Game/Manager/GameManager';
 import { UserInfomation } from '../Game/Modal/OverallResultModal';
+import { Ranking } from './Ranking';
 const { ccclass, property } = _decorator;
 
 @ccclass('Participant')
@@ -62,7 +63,7 @@ export class Participant extends Component {
     private nowIndex : number = 0;
     private joinCount :number = 0;
 
-    private ICON_MAX = 9;
+    private ICON_MAX = 5;
     private INTERVAL = 50;
     private TRANS_POS : number = 55;
     private POS_X : number = 0;
@@ -71,6 +72,7 @@ export class Participant extends Component {
     private isRecruitment : boolean = true;
     private isJoin : boolean = false;
     private userInfo :Array<UserInfomation> = new Array<UserInfomation>();
+    private rankInfo : Array<FixReslutRankingData> = new Array<FixReslutRankingData>();
 
     private debugClientMode : ClientMode = 'Liver';
 
@@ -78,7 +80,8 @@ export class Participant extends Component {
         let buttomNode : number = this.topNode + this.ICON_MAX - 1;
         let buttomIndex : number = (this.topIndex + this.ICON_MAX - 1) % this.ICON_MAX;
 
-        // 飛んだときの処理を入れる
+
+        // 見えなくなったら最後尾(先頭)に移動
         var temp = (this.content.node.position.y - this.TRANS_POS) / this.INTERVAL + 1;
         if(temp < 0) temp = 0;
         temp = Math.floor(temp);
@@ -88,6 +91,7 @@ export class Participant extends Component {
                 for(var i = 0; i < awayIndex; i++){
                     if(this.topNode > this.maxCount - this.ICON_MAX - 1) break;
                     this.iconList[this.topIndex].node.position = new Vec3(this.POS_X, this.iconList[this.topIndex].node.position.y - this.INTERVAL * this.ICON_MAX, 0);
+                    this.SetInformation(this.topIndex, this.topNode + this.ICON_MAX);
                     this.topIndex = (this.topIndex + 1) % this.ICON_MAX;
                     this.topNode++;
                 }
@@ -97,6 +101,7 @@ export class Participant extends Component {
                     buttomIndex = (this.topIndex + this.ICON_MAX - 1) % this.ICON_MAX;
                     buttomNode = this.topNode + this.ICON_MAX - 1;
                     this.iconList[buttomIndex].node.position = new Vec3(this.POS_X, this.iconList[buttomIndex].node.position.y + this.INTERVAL * this.ICON_MAX, 0);
+                    this.SetInformation(buttomIndex, buttomNode- this.ICON_MAX);
                     this.topIndex = (this.topIndex + this.ICON_MAX - 1) % this.ICON_MAX;
                     this.topNode--;
                 }
@@ -172,7 +177,7 @@ export class Participant extends Component {
             if(this.isRecruitment){ //参加者募集中
                 this.recruitNode.active = true;
                 this.joinCountLabel.string = this.joinCount.toString() + "名";
-                this.iconRootNode.position = new Vec3(-2.5, 110, 0);
+                this.iconRootNode.position = new Vec3(-2.5, 12.5, 0);
                 this.maxCount = 5;
                 this.Generate();
                 for(var i = 0; i < this.maxCount; i++){
@@ -180,9 +185,9 @@ export class Participant extends Component {
                 }
             }
             else{
-                this.iconRootNode.position = new Vec3(-2.5, 90, 0);
+                this.iconRootNode.position = new Vec3(-2.5, 12.5, 0);
                 this.recruitNode.active = false;
-                for(var i = 0; i < this.maxCount; i++){
+                for(var i = 0; i < this.ICON_MAX; i++){
                     this.scoreNodeList[i].active = false;
                 }
             }
@@ -271,12 +276,29 @@ export class Participant extends Component {
 
     // スコアと順位の情報を入れる
     public SetRankInfo(resultRanking : Array<FixReslutRankingData>){
-        for(var i = 0; i < resultRanking.length; i++){
-            this.scoreList[i].string = resultRanking[i].Score.toString();
+        if(resultRanking.length <= 0){
+            return;
         }
-        console.log(GameManager.Instance().GetGameInfo().rankInfo);
-        this.scoreLabel.string = "スコア：" + GameManager.Instance().GetGameInfo().rankInfo.Score;
-        this.rankLabel.string = "順位：" + GameManager.Instance().GetGameInfo().rankInfo.Rank + "位"
+
+        this.rankInfo = resultRanking;
+        this.maxCount = resultRanking.length;
+        this.Generate();
+
+        let formax = Math.min(this.maxCount, this.ICON_MAX);
+
+        for(var i = 0; i < formax; i++){
+            this.scoreList[i].string = this.rankInfo[i].Score.toString();
+        }
+
+        if(GameManager.Instance().GetGameInfo().rankInfo){
+            this.scoreLabel.string = "スコア：" + GameManager.Instance().GetGameInfo().rankInfo.Score;
+            this.rankLabel.string = "順位：" + GameManager.Instance().GetGameInfo().rankInfo.Rank + "位"
+        }
+    }
+
+    // nodeIndex:値を入れるノードの添字　rankIndex:値を取り出すリストの添字
+    private SetInformation(nodeIndex:number, rankIndex:number){
+        this.scoreList[nodeIndex].string = this.rankInfo[rankIndex].Score.toString();
     }
 
 
