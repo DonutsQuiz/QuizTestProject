@@ -3,13 +3,9 @@ import { ClientMode, GameManager } from '../Manager/GameManager';
 import { QuizManager } from '../Manager/QuizManager';
 import { QuizModalManager } from '../Manager/QuizModalManager';
 import { RetryModal } from './RetryModal';
-import { ScrollAnim } from '../../EffectAnim/ScrollAnim';
-import { Ranking } from '../../UI/Ranking';
-import { RankTopThreeIcon } from '../../UI/RankTopThreeIcon';
 import { Ranking2 } from '../../UI/Ranking2';
 import { FixReslutRankingData } from '../Manager/GameInformation';
 import { AnimationManager } from '../Manager/AnimationManager';
-import { GameMenu } from '../../UI/GameMenu';
 const { ccclass, property } = _decorator;
 
 export class UserInfomation{
@@ -33,30 +29,6 @@ export class OverallResultModal extends Component {
 
     @property(Node) // ライバー側のUI
     private liverNode : Node = null;
-    @property(Button) // 次のクイズへ
-    private nextRoundButton : Button = null;
-    @property(Button) // 次のラウンドへ
-    private nextQuizButton : Button = null;
-    @property(Button) // 総合結果へ
-    private resultButton : Button = null;
-    @property(Button) // ランキングチェンジ
-    private rankChangeButton : Button = null;
-    @property(RichText) // 次のランキンング
-    private rankChangeText : RichText = null;
-    @property(Label) // 問題数
-    private questionNumberLabel : Label = null;
-    @property(Label) // 今のランキング
-    private rankLabel : Label = null;
-    @property(RichText) //カンペラベル
-    private compeLabel : RichText = null;
-    // @property(RankTopThreeIcon)
-    // private topThreeIcon : RankTopThreeIcon = null;
-    @property(Sprite) //一位の画像（モダール内）
-    private topSprite : Sprite = null;
-    @property(ScrollAnim) // ランキングのスクロールアニメーション
-    private scrollAnim : ScrollAnim = null;
-    @property(Ranking) //ランキング部分
-    private ranking : Ranking = null;
     @property(Prefab) //リトライモーダルのプレハブ
     private RetryModalPrefab : Prefab = null;
     @property(Ranking2)
@@ -69,18 +41,11 @@ export class OverallResultModal extends Component {
     private titleLabel : Label = null;
     @property(Sprite)
     private blessingSprite : Sprite = null;
-    // @property(Node) //正解したリスナー
-    // private listenerListNode : Node = null;
-    // @property(Node) //ランキングリスナー
-    // private listenerRankNode : Node = null;
     @property(Button)
     private advanceButton : Button = null;
     @property(Label)
     private advanceLabel : Label = null;
 
-    private userList : Array<UserInfomation> = new Array<UserInfomation>();
-    private nowRankMode : number = 0; //0:獲得点数　1:BET 2:総合
-    private isRoundEnd : boolean = false; // ラウンドが終了したか
     private isNextQuiestion : boolean = false; // 次の問題に進むか
     private retryModal : RetryModal = null;
 
@@ -94,22 +59,13 @@ export class OverallResultModal extends Component {
     private debugClientMode : ClientMode = 'Liver';
 
     public Constructor(){
+        // リトライモーダルを生成
         var temp = instantiate(this.RetryModalPrefab);
         temp.setParent(QuizModalManager.Instance().frontCanvas);
         this.retryModal = temp.getComponent(RetryModal);
         this.retryModal.Constructor();
-
-        this.nextRoundButton.node.on(Button.EventType.CLICK, this.ClickRetryModal, this);
-        this.nextQuizButton.node.on(Button.EventType.CLICK, this.ClickNextQuizButton, this);
-        this.resultButton.node.on(Button.EventType.CLICK, this.ClickResultButton, this);
-        this.resultButton.node.active = false;
-
-        this.rankChangeButton.node.on(Button.EventType.CLICK, this.ChangeRanking, this);    
     
         this.advanceButton.node.on(Button.EventType.CLICK, this.ClickAdvanceButton, this);
-
-        this.ranking.Constructor();
-        this.ranking.SetRankOrList(false);
     }
 
     public OnUpdate(deltaTime: number){
@@ -118,8 +74,6 @@ export class OverallResultModal extends Component {
                 QuizModalManager.Instance().ChangeModal('Genre');
                 GameManager.Instance().SetParticipantActive(true);
                 GameManager.Instance().GetGameInfo().qNumber = 0;
-                this.nowRankMode = 0;
-                this.ChangeRanking();
             }
             else{
                 QuizModalManager.Instance().node.active = false;
@@ -130,84 +84,17 @@ export class OverallResultModal extends Component {
         // 新仕様
         if(QuizManager.Instance().GetIsLast() && this.isRetry){
             QuizModalManager.Instance().ChangeModal('Genre');
-            // QuizManager.Instance().quizComponent.SetQuiz();
             GameManager.Instance().SetParticipantActive(true);
             GameManager.Instance().GetGameInfo().qNumber = 0;
-            this.nowRankMode = 0;
-            this.ChangeRanking();
+            this.isRetry = false;
+            QuizManager.Instance().SetIsLast(false);
         }
 
         this.DebugModalUpdate();
 
-        this.scrollAnim.Play();
-
         if(this.nowNode === 0){
             AnimationManager.Instance().blessingAnim.Play();
         }
-
-        // ボタンとカンペ表示
-        if(this.nowRankMode === 0){
-            if(this.animationTime > 0.0){
-                this.animationTime -= deltaTime;
-                this.rankChangeButton.node.active = false;
-                this.compeLabel.node.active = true;
-            }
-            else{
-                this.animationTime = 0.0;
-                this.rankChangeButton.node.active = true;
-                this.compeLabel.node.active = false;
-            }
-
-        }
-        else if(this.nowRankMode === 1){
-            if(this.animationTime > 0.0){
-                this.animationTime -= deltaTime;
-                this.compeLabel.node.active = true;
-                this.resultButton.node.active = false;
-                this.nextQuizButton.node.active = false;
-                this.nextRoundButton.node.active = false;
-            }
-            else{
-                this.animationTime = 0.0;
-                this.compeLabel.node.active = false;
-                if(this.isRoundEnd){
-                    this.resultButton.node.active = true;
-                }
-                else{
-                    this.nextQuizButton.node.active = true;
-                }
-            }
-
-
-        }
-
-
-    }
-
-    private ChangeRanking(){
-        if(this.nowRankMode === 0){
-            this.rankLabel.string = "BETメダルランキング";
-            this.userList.sort((a,b) => {return b.mBet - a.mBet})
-            this.rankChangeText.string = "<color=#000000>獲得点数<br/>ランキングへ戻る</color>"
-            this.rankChangeText.fontSize = 48;
-            // this.rankChangeButton.node.position = new Vec3(-130,20,0);
-            this.rankChangeButton.node.position = new Vec3(-530,20,0);
-            this.compeLabel.string = "<color=#ff0000>BETメダルの多い<br/>参加者を褒めて下さい</color>";
-            this.nowRankMode = 1;
-        }
-        else{
-            this.rankLabel.string = "獲得点数ランキング";
-            this.userList.sort((a,b) => {return b.mCoin - a.mCoin})
-            this.rankChangeText.string = "<color=#000000>BETメダル<br/>ランキングへ</color>"
-            this.rankChangeText.fontSize = 60;
-            // this.rankChangeButton.node.position = new Vec3(0,20,0);
-            this.rankChangeButton.node.position = new Vec3(500,20,0);
-            this.compeLabel.string = "<color=#ff0000>獲得点数の高い参加者を褒めて下さい</color>";
-            this.nowRankMode = 0;
-        }
-
-        this.SetUI();
-        this.animationTime = this.ANIMATION_TIME;
     }
 
     // 進むボタン(新仕様)
@@ -215,7 +102,7 @@ export class OverallResultModal extends Component {
         if(this.nowNode === 0){
             this.titleNode.position = new Vec3(0, 90, 0);
             this.blessingSprite.node.active = false;
-            this.ranking.SetRankOrList(true);
+            // ポイントランキングのセット
             this.ranking2.SetRankOrList(0);
             this.ranking2.SetResultRankingList(GameManager.Instance().GetGameInfo().nowRankingList);
             this.ranking2.SetMaxCount(GameManager.Instance().GetGameInfo().nowRankingList.length);
@@ -244,10 +131,6 @@ export class OverallResultModal extends Component {
             this.titleNode.position = new Vec3(0, 90, 0);
             this.advanceLabel.string = "次へ";
             this.advanceLabel.fontSize = 80;
-            // this.blessingSprite.node.active = true;
-            // this.listenerListNode.active = true;
-            // this.listenerRankNode.active = false;
-            this.ranking.SetRankOrList(false);
             if(QuizManager.Instance().GetIsLast()){
                 this.isRetry = true;
             }
@@ -256,25 +139,13 @@ export class OverallResultModal extends Component {
                 GameManager.Instance().SetParticipantActive(true);
             }
             this.nowNode = 0;
-
         }
 
     }
 
     public Initialize(){
-        this.nowRankMode = 0;
-        this.isRoundEnd = false;
         this.debugClientMode = 'Liver';
         this.animationTime = this.ANIMATION_TIME;
-
-        for(var i = 0; i < GameManager.Instance().GetGameInfo().ranking.length; i++){
-            this.userList.push(new UserInfomation("",0,0,0,null));
-            this.userList[i].mName       = GameManager.Instance().GetGameInfo().ranking[i].mName;
-            this.userList[i].mBet        = GameManager.Instance().GetGameInfo().ranking[i].mBet;
-            this.userList[i].mCoin       = GameManager.Instance().GetGameInfo().ranking[i].mPoint;
-            this.userList[i].mTotalPoint = GameManager.Instance().GetGameInfo().ranking[i].mTotalPoint;
-            this.userList[i].mSprite = GameManager.Instance().GetGameInfo().ranking[i].mSprite;
-        }
 
         GameManager.Instance().SetParticipantActive(false);
 
@@ -294,12 +165,10 @@ export class OverallResultModal extends Component {
         this.ranking2.SetMaxCount(correctList.length);
         this.ranking2.Generate();
 
-        this.scrollAnim.Reset();
     }
 
     public SetUI(){
 
-        this.questionNumberLabel.string = GameManager.Instance().GetGameInfo().qNumber + "/" + QuizManager.Instance().raundMax + "問";
 
         if(GameManager.Instance().GetClientMode() === 'Liver'){
             this.liverNode.active = true;
@@ -309,54 +178,6 @@ export class OverallResultModal extends Component {
             this.liverNode.active = false;
             this.debugClientMode = 'User';
         }
-
-        if(this.nowRankMode === 0){
-            this.resultButton.node.active = false;
-            this.nextQuizButton.node.active = false;
-            this.nextRoundButton.node.active = false;
-        }
-        else if(this.nowRankMode === 1){
-            if(this.isRoundEnd){
-                this.resultButton.node.active = true;
-                this.nextQuizButton.node.active = false;
-                this.nextRoundButton.node.active = false;
-            }
-            else{
-                this.nextQuizButton.node.active = true;
-                this.resultButton.node.active = false;
-                this.nextRoundButton.node.active = false;
-            }
-        }
-        else if(this.nowRankMode === 2){
-            this.nextRoundButton.node.active = true;
-        }
-
-
-        for(var i = 0; i < this.ranking.GetLength(); i++){
-            // this.ranking.GetRankignUser(i).SetInfomation((i + 1).toString() + "位 : " + this.userList[i].mName + "  ");
-            if(this.nowRankMode === 0){
-                // this.ranking.GetRankignUser(i).SetInfomation(this.ranking.GetRankignUser(i).GetInfomation() + this.userList[i].mCoin.toString() + "点");
-            }
-            else if(this.nowRankMode === 1){
-                // this.ranking.GetRankignUser(i).SetInfomation(this.ranking.GetRankignUser(i).GetInfomation() + this.userList[i].mBet.toString() + "点");
-            }
-            else if(this.nowRankMode === 2){
-                // this.ranking.GetRankignUser(i).SetInfomation(this.ranking.GetRankignUser(i).GetInfomation() + this.userList[i].mTotalPoint.toString() + "点");
-            }
-        }
-
-
-        // // ランキング画像の設定
-        // this.topSprite.spriteFrame = this.userList[0].mSprite;
-        // this.topThreeIcon.SetFirstSprite(this.userList[0].mSprite);
-        // this.topThreeIcon.SetSecondSprite(this.userList[1].mSprite);
-        // this.topThreeIcon.SetThirdSprite(this.userList[2].mSprite);
-
-        // ランキング
-        // this.ranking2.SetRankOrList(1);
-        // this.ranking2.SetMaxCount(GameManager.Instance().GetGameInfo().nowRankingList.length);
-        // this.ranking2.SetRankingList(GameManager.Instance().GetGameInfo().nowRankingList)
-
 
         GameManager.Instance().GetApiConnect().restoreGameProgress(
             GameManager.Instance().GetGameInfo().hostId,
@@ -383,26 +204,11 @@ export class OverallResultModal extends Component {
     private ClickNextQuizButton(){
         QuizModalManager.Instance().ChangeModal('Question');
         this.isNextQuiestion = true;
-        this.ChangeRanking();
     }
 
     // リトライモーダルを表示
     private ClickRetryModal(){
         this.retryModal.SetActive();
-    }
-
-    private ClickResultButton(){
-        this.resultButton.node.active = false;
-        this.rankChangeButton.node.active = false;
-        this.rankLabel.string = "ランキング発表！";
-        this.userList.sort((a,b) => {return b.mTotalPoint - a.mTotalPoint});
-        this.nowRankMode = 2;
-        this.SetUI();
-    }
-
-    public SetIsRoundEnd(is : boolean){
-        this.isRoundEnd = is;
-        this.SetUI();
     }
 
     public SetIsNextQuestion(is : boolean){

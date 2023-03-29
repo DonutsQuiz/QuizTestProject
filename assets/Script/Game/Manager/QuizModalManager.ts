@@ -161,14 +161,13 @@ export class QuizModalManager extends Component {
 
         if(nextType === 'Title'){
             this.title.node.active = true;
-            this.title.SetIsFirst(true);
         }
         else if(nextType === 'Rule'){
             this.rule.node.active = true;
         }
         else if(nextType === 'Genre'){
             this.genre.node.active = true;
-            this.genre.Initialize();
+            this.genre.SetUI();
         }
         else if(nextType === 'Ranking'){
             this.ranking.node.active = true;

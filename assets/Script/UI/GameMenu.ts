@@ -23,8 +23,6 @@ export class GameMenu extends Component {
     }
 
     private ClickStatusButton(){
-        QuizModalManager.Instance().GetGenreModal().SetConfirm(true);
-        QuizModalManager.Instance().GetGenreModal().SetModalType(QuizModalManager.Instance().GetNowType());
         QuizModalManager.Instance().ChangeModal('StatusUp');
     }
 
