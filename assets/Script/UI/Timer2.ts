@@ -1,4 +1,6 @@
 import { _decorator, Component, Node, Graphics, Label, Vec3, Color} from 'cc';
+import { ClientMode } from '../Game/Manager/GameManager';
+
 const { ccclass, property } = _decorator;
 
 @ccclass('Timer2')
@@ -20,21 +22,15 @@ export class Timer2 extends Component {
 
     }
 
-    public SetTimeDisplayPos(mode : string)
-    {
-        // if(mode === 'Liver'){
-        //     this.timerLabel.node.setPosition(new Vec3(-158, -80, 0));
-        // }
-        // else if(mode === 'User'){
-        //     this.timerLabel.node.setPosition(new Vec3(-158, -80, 0));
-        // }
-    }
-
-    public Display(time : number, end : boolean)
+    public Display(time : number, end : boolean, mode : ClientMode)
     {
         if(!end){
-            this.timerDisplay.active = true;
-            this.timerLabel.string = Math.ceil(time).toString() + "秒";
+            if(mode != 'Audience'){
+                this.timerDisplay.active = true;
+                this.timerLabel.string = Math.ceil(time).toString() + "秒";
+            } else{
+                this.timerDisplay.active = false;
+            }
 
             if(time < this.timeMax){
                 this.timeGauge.clear();

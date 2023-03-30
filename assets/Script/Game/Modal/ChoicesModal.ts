@@ -125,8 +125,7 @@ export class ChoicesModal extends Component {
         // }
 
         // 新仕様
-        this.timer2.Display(this.thinkingTime, this.isThinkingEnd);
-        this.timer2.SetTimeDisplayPos(this.debugClientMode);
+        this.timer2.Display(this.thinkingTime, this.isThinkingEnd, this.debugClientMode);
 
         if(this.thinkingTime > 0.0){
             this.thinkingTime -= deltaTime;
