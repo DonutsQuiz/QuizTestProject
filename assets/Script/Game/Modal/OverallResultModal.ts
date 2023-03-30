@@ -234,9 +234,9 @@ export class OverallResultModal extends Component {
                 this.titleLabel.string = "現在の順位 (" + GameManager.Instance().GetGameInfo().qNumber + "/" + QuizManager.Instance().raundMax + "問)";
                 this.advanceLabel.string = "次の出題へ";
                 this.advanceLabel.fontSize = 60;
+                QuizManager.Instance().quizComponent.SetQuiz();
             }
             this.nowNode = 1;
-            QuizManager.Instance().quizComponent.SetQuiz();
         }
         else if(this.nowNode === 1){
             this.titleLabel.string = "正解おめでとう！";

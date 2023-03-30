@@ -196,7 +196,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 375,
+      "width": 251,
       "height": 200
     },
     "_anchorPoint": {
@@ -232,7 +232,7 @@
       "a": 255
     },
     "_spriteFrame": {
-      "__uuid__": "5278f14b-9559-4af8-92aa-0200288cab3a@f9941",
+      "__uuid__": "481a30f2-6428-4723-98d9-3f26eaf6e1c2@f9941",
       "__expectedType__": "cc.SpriteFrame"
     },
     "_type": 0,
@@ -3478,7 +3478,7 @@
     "_color": {
       "__type__": "cc.Color",
       "r": 255,
-      "g": 255,
+      "g": 204,
       "b": 255,
       "a": 255
     },
@@ -3688,7 +3688,6 @@
     "certTitleLabel": {
       "__id__": 136
     },
-    "rankingButton": null,
     "_id": ""
   },
   {

@@ -189,12 +189,10 @@ export class QuizModalManager extends Component {
         }
         else if(nextType === 'StatusUp'){
             this.statusUp.node.active = true;
-            GameManager.Instance().GetApiConnect().getGameGrade(
+            GameManager.Instance().GetApiConnect().getPlayCount(
                 GameManager.Instance().GetGameInfo().hostId,
-                GameManager.Instance().GetGameInfo().token,
-                GameManager.Instance().GetGameInfo().gameId,
-                GameManager.Instance().GetGameInfo().order
-            )
+                GameManager.Instance().GetGameInfo().token
+            );
         }
 
         this.nowType = nextType;
