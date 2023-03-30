@@ -8,6 +8,7 @@ import { RankingModal } from '../Modal/RankingModal';
 import { RuleModal } from '../Modal/RuleModal';
 import { TitleModal } from '../Modal/TitleModal';
 import { ClientMode, GameManager } from './GameManager';
+import { StatusModal } from '../Modal/StatusModal';
 const { ccclass, property } = _decorator;
 
 const ModalType = {

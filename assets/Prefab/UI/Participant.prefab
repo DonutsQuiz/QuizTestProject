@@ -724,7 +724,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": -2.5,
-      "y": 12.5,
+      "y": 197.323,
       "z": 0
     },
     "_lrot": {
@@ -763,7 +763,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 70,
-      "height": 277.5
+      "height": 375
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -7908,7 +7908,7 @@
       "__id__": 322
     },
     "recruitNode": {
-      "__id__": 225
+      "__id__": 224
     },
     "testIconSprite": {
       "__uuid__": "78921197-11c6-451a-9f27-631396e405e1@f9941",

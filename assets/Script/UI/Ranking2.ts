@@ -108,18 +108,27 @@ export class Ranking2 extends Component {
                 if(this.isResult){
                     this.listenerNodeList[n].SetScore(this.resultRankingList[n].Score);
                     this.listenerNodeList[n].SetCombo(this.resultRankingList[n].ComboCount); //連続正解
+                    // アチーブの画像
+                    if(this.rankOrList === 0){
+                        this.listenerNodeList[n].SetAchieve(this.resultRankingList[n].Rank, this.achiveSprite[this.resultRankingList[n].Rank - 1]);
+                    }
+                    else{
+                        this.listenerNodeList[n].SetAchieve(this.resultRankingList[n].Rank, null);
+                    }
                 }
                 else{
                     this.listenerNodeList[n].SetScore(this.rankingList[n].Score);
+
+                    // アチーブの画像
+                    if(this.rankOrList === 0){
+                        this.listenerNodeList[n].SetAchieve(this.rankingList[n].Rank, this.achiveSprite[this.rankingList[n].Rank - 1]);
+                    }
+                    else{
+                        this.listenerNodeList[n].SetAchieve(this.rankingList[n].Rank, null);
+                    }
                 }
 
-                // アチーブの画像
-                if(this.rankOrList === 0){
-                    this.listenerNodeList[n].SetAchieve(this.resultRankingList[n].Rank, this.achiveSprite[this.resultRankingList[n].Rank - 1]);
-                }
-                else{
-                    this.listenerNodeList[n].SetAchieve(this.resultRankingList[n].Rank, null);
-                }
+
             }
         }
         else{

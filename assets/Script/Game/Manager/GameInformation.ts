@@ -49,7 +49,7 @@ export class GameInformation{
     totalBet : number[] = [0, 0, 0, 0]; // 選択肢ごとのベット数
     odds : number[] = [0, 0, 0, 0]; // 選択肢ごとのオッズ
     coins : number = 0; // 所持コイン数
-    thinkTime : number = 0; // 制限時間
+    // thinkTime : number = 0; // 制限時間
     qGenre : string = "";
 
     // ランキング
@@ -77,6 +77,7 @@ export class GameInformation{
     userId : number = 987654320;
     gameId : number = 12345678900987;
     token : string = "asiodjioqwjoajsdjjsakmvbd";
+    status : number = 0;
 
     order : number = 0;
 

@@ -233,7 +233,7 @@ export class GameManager extends Component {
         GameManager.Instance().GetGameInfo().totalBet = [100, 100, 100, 100];
         GameManager.Instance().GetGameInfo().odds = [1, 1, 1, 1];
         GameManager.Instance().GetGameInfo().coins = 20000;
-        GameManager.Instance().GetGameInfo().thinkTime = 600;
+        // GameManager.Instance().GetGameInfo().thinkTime = 600;
 
 
         GameManager.Instance().GetGameInfo().liverName = "ライオン";
