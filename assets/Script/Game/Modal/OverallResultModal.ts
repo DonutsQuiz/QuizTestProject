@@ -100,7 +100,7 @@ export class OverallResultModal extends Component {
     // 進むボタン(新仕様)
     private ClickAdvanceButton(){
         if(this.nowNode === 0){
-            this.titleNode.position = new Vec3(0, 90, 0);
+            this.titleNode.position = new Vec3(0, 100, 0);
             this.blessingSprite.node.active = false;
             // ポイントランキングのセット
             this.ranking2.SetRankOrList(0);
@@ -113,14 +113,14 @@ export class OverallResultModal extends Component {
 
             if(QuizManager.Instance().GetIsLast()){
                 this.titleLabel.string = "結果発表！！";
-                this.titleLabel.fontSize = 55;
-                this.advanceLabel.string = "もう一度遊ぶ";
-                this.advanceLabel.fontSize = 50;
+                this.titleLabel.fontSize = 60;
+                this.advanceLabel.string = "次へ";
             }
             else{
                 this.titleLabel.string = "現在の順位 (" + GameManager.Instance().GetGameInfo().qNumber + "/" + QuizManager.Instance().raundMax + "問)";
                 this.advanceLabel.string = "次の出題へ";
-                this.advanceLabel.fontSize = 60;
+            this.advanceLabel.fontSize = 60;
+                this.titleLabel.fontSize = 55;
                 QuizManager.Instance().quizComponent.SetQuiz();
             }
             this.nowNode = 1;
@@ -128,11 +128,13 @@ export class OverallResultModal extends Component {
         else if(this.nowNode === 1){
             this.titleLabel.string = "正解おめでとう！";
             this.titleLabel.fontSize = 80;
-            this.titleNode.position = new Vec3(0, 90, 0);
+            this.titleNode.position = new Vec3(0, 100, 0);
             this.advanceLabel.string = "次へ";
             this.advanceLabel.fontSize = 80;
             if(QuizManager.Instance().GetIsLast()){
                 this.isRetry = true;
+                QuizModalManager.Instance().ChangeModal('StatusUp');
+
             }
             else{
                 this.ClickNextQuizButton();            

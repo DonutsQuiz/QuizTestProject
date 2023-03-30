@@ -76,6 +76,7 @@ export class RankingModal extends Component {
         this.ranking.Generate();
 
         this.ranking2.SetRankOrList(0);
+        this.ranking2.SetRankingList(GameManager.Instance().GetGameInfo().todayRankingList);
         this.ClickSwitchingButton(0);
     }
 

@@ -47,20 +47,9 @@ export class QuizManager extends Component {
     }
 
     public OnUpdate(){
-        // 全問題が終了したら総合結果に移行する
-        if(QuizModalManager.Instance().GetChoicesModal().isToRanking){
-            if(GameManager.Instance().GetGameInfo().qNumber >= this.raundMax){
-                QuizModalManager.Instance().GetOverallResultModal().SetIsRoundEnd(true);
-            }
-            else{
-                QuizModalManager.Instance().GetOverallResultModal().SetIsRoundEnd(false);
-            }
-            QuizModalManager.Instance().GetChoicesModal().isToRanking = false;
-        }
-
+        // 一問終わるたびに最終問題かをチェックする
         if(QuizModalManager.Instance().GetOverallResultModal().GetIsNextQuestion()){
-            // QuizModalManager.Instance().GetChoicesModal().GetTimer().Reset();
-            GameManager.Instance().GetGameInfo().thinkTime = 600;
+            // GameManager.Instance().GetGameInfo().thinkTime = 600;
             if(GameManager.Instance().GetGameInfo().qNumber === this.raundMax){
                 this.isLastQuestion = true;
             }

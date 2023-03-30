@@ -45,8 +45,6 @@ export class ChoicesModal extends Component {
     private tempNumber : number = 0;
     private debugClientMode : ClientMode = 'Liver';
 
-    isToRanking : boolean = false;
-
     private thinkingTime = 60.0;
     private isThinkingEnd : boolean = false;
     private MODAL_CHANGE_TIME :number = 3.0;
@@ -296,7 +294,6 @@ export class ChoicesModal extends Component {
 
         this.resultModal.Init();
 
-        this.isToRanking = true;
         this.resultModal.node.active = false;
         this.countdownButton.node.active = true;
         this.questionText.node.active = true;

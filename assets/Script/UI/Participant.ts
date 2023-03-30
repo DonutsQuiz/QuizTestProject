@@ -63,14 +63,17 @@ export class Participant extends Component {
     private nowIndex : number = 0;
     private joinCount :number = 0;
 
-    private ICON_MAX = 5;
-    private INTERVAL = 50;
+    private ICON_MAX :number = 9;
+    private RECRU_ICON_MAX : number = 4;
+    private INTERVAL : number = 50;
     private TRANS_POS : number = 55;
     private POS_X : number = 0;
     private MARGIN : number = 0;
+    private FIXED_POINT : number = -187.5;
 
     private isRecruitment : boolean = true;
     private isJoin : boolean = false;
+    private isFixedPoint : boolean = false;
     private userInfo :Array<UserInfomation> = new Array<UserInfomation>();
     private rankInfo : Array<FixReslutRankingData> = new Array<FixReslutRankingData>();
 
@@ -142,7 +145,7 @@ export class Participant extends Component {
     public Generate(){
         this.content.height = this.INTERVAL * this.maxCount + this.MARGIN;
 
-        // 5以下だったら非表示
+        // 9以下だったら非表示
         if(this.maxCount < this.ICON_MAX){
             for(var i = 0; i < this.ICON_MAX; i++){
                 if(i < this.maxCount){
@@ -151,8 +154,12 @@ export class Participant extends Component {
                 else{
                     this.iconList[i].node.active = false;
                 }
-
             }
+
+            if(!this.isRecruitment){
+                this.content.node.position = new Vec3(-2.5, -(375 - this.content.height), 0);
+            }
+
         }
         else{
             for(var i = 0; i < this.ICON_MAX; i++){
@@ -176,16 +183,17 @@ export class Participant extends Component {
 
             if(this.isRecruitment){ //参加者募集中
                 this.recruitNode.active = true;
+                this.joinCountLabel.node.active = true;
                 this.joinCountLabel.string = this.joinCount.toString() + "名";
                 this.iconRootNode.position = new Vec3(-2.5, 12.5, 0);
-                this.maxCount = 5;
+                this.maxCount = 4;
                 this.Generate();
                 for(var i = 0; i < this.maxCount; i++){
                     this.scoreNodeList[i].active = false;
                 }
             }
             else{
-                this.iconRootNode.position = new Vec3(-2.5, 12.5, 0);
+                this.iconRootNode.position = new Vec3(-2.5, 187.5, 0);
                 this.recruitNode.active = false;
                 for(var i = 0; i < this.ICON_MAX; i++){
                     this.scoreNodeList[i].active = false;
@@ -259,6 +267,7 @@ export class Participant extends Component {
     }
     public SetIsRecruitment(is:boolean){
         this.isRecruitment = is;
+        this.Generate();
         this.SetUI();
     }
 
@@ -312,15 +321,12 @@ export class Participant extends Component {
     }
 
     private DebugClickJoin(){
-        if(this.nowIndex < 5){
+        if(this.nowIndex < this.RECRU_ICON_MAX){
             this.SetInfo(this.nowIndex);
-        }
-        else if(this.nowIndex < this.ICON_MAX){
             this.maxCount = this.nowIndex + 1;
-            this.Generate();
-            this.SetInfo(this.nowIndex);
         }
         this.userInfo.push(new UserInfomation("",0,0,0,null));  //ユーザー情報を格納(現段階では仮)
+        this.maxCount = this.nowIndex + 1;
         this.nowIndex++;
     }
 }
