@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Color, Sprite, Graphics, Button, Animation, Vec3, math, Label, Prefab, instantiate, AnimationState } from 'cc';
+import { _decorator, Component, Node, Color, Sprite, Graphics, Button, Animation, Vec3, math, Label, Prefab, instantiate, AnimationState, UITransform, SpriteFrame } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('StatusUpModal')
@@ -8,15 +8,20 @@ export class StatusUpModal extends Component {
     private default_pointColor : Color = null;
     @property(Color)
     private pass_pointColor : Color = null;
-
     @property(Node)
-    private checkPoint : Node[] = [];
+    private checkPointParentNode : Node = null;
+    @property(Node)
+    private humanNode : Node = null;
+    @property(Prefab)
+    private checkPointPrefab : Prefab = null;
+    @property(Number)
+    private checkPointNum : number = 0;
     @property(Graphics)
     private bar : Graphics = null;
-
-    // @property(Animation)
-    // private stage : Animation[] = [];
-
+    @property(SpriteFrame)
+    private passSprite : SpriteFrame = null;
+    @property(UITransform)
+    private contentTransform : UITransform = null;
     @property(Label)
     private participantsNumLabel : Label = null;
     @property(Label)
@@ -27,19 +32,12 @@ export class StatusUpModal extends Component {
     @property(Button)
     private progressButton : Button = null;
 
-    // @property(Node)
-    // private bookParentNode : Node = null;
+
     // @property(Prefab)
     // private bookPrefab : Prefab = null;
 
-    @property(Animation)
-    private bookAnimation : Animation = null;
-
+    private checkPointNode : Node[] = [];
     private checkPointSprite : Sprite[] = [];
-    private checkSpriteNode : Node[] = [];
-    private checkPointAnim : Animation[] = [];
-
-    // private bookNode : Node[] = [];
     // private bookAnim : Animation[] = [];
 
     private participantsNum : number = 0;
@@ -56,51 +54,30 @@ export class StatusUpModal extends Component {
     private _NUM_REQUIRED_NEXT_STATUS : number[] = [1, 3, 5, 9, 11, 11];
     private _ANIM_DELAY : number[] = [0.2, 0.25];
 
-    private kkk : AnimationState = null;
+    private _CHECK_POINT_POS_X : number[] = [-100, 0, 100, 0];
+    private _CHECK_POINT_POS_Y : number = 40;
+    private _OFFSET_Y : number = 100;
+
+    private _ANIMATION_TIME : number = 60;
+    private animElapsed : number = 0;
 
     start(){
         this.progressButton.node.on(Button.EventType.CLICK, this.progressCounter, this);
     }
 
     Constructor() {
-        // this.stage[0].node.active = true;
-        // for(let i = 1; i < this.stage.length; ++i)
-        // {
-        //     this.stage[i].node.active = false;
-        // }
+        // チェックポイントを生成
+        for(let i = 0; i < this.checkPointNum; ++i){
+            let tmpNode = instantiate(this.checkPointPrefab);
+            this.checkPointParentNode.addChild(tmpNode);
+            this.checkPointNode[i] = tmpNode;
+            this.checkPointNode[i].setPosition(this._CHECK_POINT_POS_X[i % 4], this._CHECK_POINT_POS_Y * i, 0);
+            this.checkPointNode[i].active = true;
 
-        for(let i = 0; i < this.checkPoint.length; ++i)
-        {
-            this.checkPointAnim[i] = this.checkPoint[i].getComponent(Animation);
-            this.checkPointSprite[i] = this.checkPoint[i].getChildByName('CheckPointImage').getComponent(Sprite);
-            this.checkSpriteNode[i] = this.checkPoint[i].getChildByName('CheckImage');
+            this.checkPointSprite[i] = this.checkPointNode[i].getChildByName('CheckPointImage').getComponent(Sprite);
         }
-        this.checkPointAnim[5].on(Animation.EventType.FINISHED, this.onTriggered, this);
-
-        this.checkPoint[0].active = true;
-        for(let i = 1; i < 4; ++i) {
-            this.checkPoint[i].active = false;
-        }
-        this.checkPoint[5].active = true;
-        this.checkPointSprite[0].color = this.pass_pointColor;
-
-        // for(let i = 0; i < 20; ++i){
-        //     let tmpNode = instantiate(this.bookPrefab);
-        //     this.bookParentNode.addChild(tmpNode);
-        //     this.bookNode[i] = tmpNode;
-        //     this.bookAnim[i] = tmpNode.getComponent(Animation);
-        //     this.bookNode[i].active = false;
-        // }
+        this.checkPointSprite[0].spriteFrame = this.passSprite;
     }
-
-    // BookUpdate(status : number) {
-    //     switch(status)
-    //     {
-    //         case 1:
-                
-    //         break;
-    //     }
-    // }
 
     OnUpdate(deltaTime: number) {
         // Label
@@ -111,63 +88,66 @@ export class StatusUpModal extends Component {
         // bar
         this.bar.clear();
         
-        this.bar.lineWidth = 0;
-        this.bar.fillColor = this.default_pointColor; 
-        this.bar.rect(0, -5, this._OVERALL_WIDTH, 10);
-        this.bar.stroke();
-        this.bar.fill();
-
-        this.bar.fillColor = this.pass_pointColor;
-        this.bar.rect(0, -5, (this._OVERALL_WIDTH / Math.min(this.currentStatus, this._MAX_STATUS - 1)) * (1.0 / this._NUM_REQUIRED_NEXT_STATUS[this.currentStatus]) * Math.min(this.testTotal, this._MAX_NUM), 10);
-        this.bar.stroke();
-        this.bar.fill();
-
-        // check point
-        // if(this.progressCount < this.participantsTotal && !this.doAnim){
-        //     ++this.progressCount;
-        // }
-        if(this.nextRequiredNum >= this._NUM_REQUIRED_NEXT_STATUS[this.currentStatus] && this.currentStatus < this._MAX_STATUS){
-            this.checkPointSprite[5].color = this.pass_pointColor;
-            this.checkSpriteNode[5].active = true;
-            this.checkPointAnim[5].play();
+        this.bar.lineWidth = 10;
+        this.bar.strokeColor = this.default_pointColor; 
+        this.bar.moveTo(this._CHECK_POINT_POS_X[0], 0);
+        for(let i = 1; i < this.checkPointNum; ++i){
+            this.bar.lineTo(this._CHECK_POINT_POS_X[i % 4], this._CHECK_POINT_POS_Y * i);
         }
+        this.bar.stroke();
+
+        this.bar.strokeColor = this.pass_pointColor; 
+        this.bar.moveTo(this._CHECK_POINT_POS_X[0], 0);
+        for(let i = 1; i < Math.min(this.checkPointNum, this.testTotal + 1); ++i){
+            this.bar.lineTo(this._CHECK_POINT_POS_X[i % 4], this._CHECK_POINT_POS_Y * i);
+        }
+        this.bar.stroke();
+
+        if(this.testTotal < this.checkPointNum){
+            // human & scroll
+            var beforePosXId = (this.testTotal - 1) % 4;
+            var currentPosXId = this.testTotal % 4;
+            if(this.animElapsed === 0){
+                var tmp = Math.max(0, beforePosXId);
+                this.humanNode.setPosition(this._CHECK_POINT_POS_X[tmp], this._OFFSET_Y - this.contentTransform.node.position.y);
+                ++this.animElapsed;
+            }
+            else if(this.animElapsed < this._ANIMATION_TIME){
+                var tmpDisY = 0;
+                if(this.testTotal > 0){
+                    tmpDisY = -this._CHECK_POINT_POS_Y * (this.testTotal - 1) - this._CHECK_POINT_POS_Y * (this.animElapsed / 60.0);
+                }
+                this.contentTransform.node.setPosition(0, tmpDisY);
+    
+                var tmp = Math.max(0, beforePosXId);
+                var humanMoveDisX = this._CHECK_POINT_POS_X[currentPosXId] - this._CHECK_POINT_POS_X[tmp];
+                this.humanNode.setPosition(this._CHECK_POINT_POS_X[tmp] + humanMoveDisX * (this.animElapsed / 60.0), this._OFFSET_Y - tmpDisY);
+    
+                ++this.animElapsed;
+            }
+
+            // chenge sprite
+            if(this.animElapsed === this._ANIMATION_TIME){
+                this.checkPointSprite[this.testTotal].spriteFrame = this.passSprite;
+                ++this.animElapsed;
+            }
+        }
+    }
+
+    private Generate(){
+        this.contentTransform.height = 200 + this._CHECK_POINT_POS_Y * this.testTotal;
+        this.animElapsed = 0;
     }
 
     private progressCounter(){
-        // this.participantsNum += 60;
-        let delay = this._ANIM_DELAY[0] + this.nextRequiredNum * this._ANIM_DELAY[1];
-
-        this.bookAnimation.play('BookAnim02');
-        this.scheduleOnce(function() {
-            this.bookAnimation.pause();
-        }, delay);
-
-        this.participantsNum = Math.floor(Math.random() * (60 - 30) + 30);
-        this.participantsTotal += this.participantsNum;
+        this.participantsNum += 60;
         ++this.testTotal;
-        ++this.nextRequiredNum;
+
+        this.Generate();
     }
 
     private onTriggered() {
-        // this.stage[this.currentStatus - 1].node.active = false;
-        // this.stage[this.currentStatus].node.active = true;
-        // this.stage[this.currentStatus].play();
 
-        ++this.currentStatus;
-        if(this.currentStatus < this._MAX_STATUS)
-        {
-            this.checkPointSprite[5].color = this.default_pointColor;
-            this.checkSpriteNode[5].active = false;
-            for(let i = 1; i < this.currentStatus; ++ i) {
-                let pos = new Vec3(this._LEFT_END + i * this._OVERALL_WIDTH / this.currentStatus, 0, 0);
-                this.checkPoint[i].setPosition(pos);
-                this.checkPointSprite[i].color = this.pass_pointColor;
-                this.checkSpriteNode[i].active = true;
-                this.checkPoint[i].active = true;
-            }
-        }
-
-        // this.doAnim = false;
     }
 }
 

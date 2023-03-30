@@ -3,7 +3,7 @@
     "native": false
   },
   "gizmos-infos": {
-    "is2D": true,
+    "is2D": false,
     "is3DIcon": false,
     "iconSize": 2,
     "gridVisible": true,
@@ -38,9 +38,9 @@
   "camera-infos": {
     "f46876e4-e81b-4931-b493-6d367be385e7": {
       "position": {
-        "x": 187.5,
-        "y": 333.5,
-        "z": 5000
+        "x": 0,
+        "y": 0,
+        "z": 0
       },
       "rotation": {
         "x": 0,
@@ -56,8 +56,8 @@
     },
     "6d9866d9-a192-4526-a2a7-a9e7b61f341b": {
       "position": {
-        "x": 181.57789118864753,
-        "y": 334.3971711935569,
+        "x": 184.50672067276167,
+        "y": 566.9091662579038,
         "z": 5000
       },
       "rotation": {
@@ -67,8 +67,8 @@
         "w": 1
       },
       "viewCenter": {
-        "x": 187.5,
-        "y": 88,
+        "x": 0,
+        "y": 0,
         "z": 0
       }
     },
@@ -377,24 +377,6 @@
         "y": -8.485281374238582,
         "z": 20.409272989488272
       }
-    },
-    "13jOl25vdOboSytTrz8tcL": {
-      "position": {
-        "x": 187.5,
-        "y": -28.5,
-        "z": 5000
-      },
-      "rotation": {
-        "x": 0,
-        "y": 0,
-        "z": 0,
-        "w": 1
-      },
-      "viewCenter": {
-        "x": 0,
-        "y": 0,
-        "z": 0
-      }
     }
   },
   "camera-uuids": [
@@ -414,8 +396,8 @@
     }
   },
   "game-view": {
-    "scaleValue": 178,
-    "sliderValue": 63,
+    "scaleValue": 124,
+    "sliderValue": 54,
     "stats": false
   }
 }

@@ -2,12 +2,12 @@
   "ver": "1.1.40",
   "importer": "prefab",
   "imported": true,
-  "uuid": "9a2af9c9-890e-4c8a-92a4-7130386192a5",
+  "uuid": "692fe0b6-6a79-4768-8c2c-d6abd7a748cc",
   "files": [
     ".json"
   ],
   "subMetas": {},
   "userData": {
-    "syncNodeName": "Book"
+    "syncNodeName": "CheckPoint"
   }
 }
