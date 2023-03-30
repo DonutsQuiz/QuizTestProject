@@ -4,9 +4,7 @@ import { Timer2 } from '../../UI/Timer2';
 import { ClientMode, GameManager } from '../Manager/GameManager';
 import { QuizManager } from '../Manager/QuizManager';
 import { QuizModalManager } from '../Manager/QuizModalManager';
-import { BetModal } from './BetModal';
 import { ResultModal } from './ResultModal';
-import { IconLineup } from '../../UI/IconLineup';
 const { ccclass, property } = _decorator;
 
 @ccclass('ChoicesModal')
@@ -22,46 +20,18 @@ export class ChoicesModal extends Component {
     private buttonList : Array<Button> = new Array<Button>();
     @property(Sprite) // 選択肢（枠）
     private frameList : Array<Sprite> = new Array<Sprite>();
-    // @property(RichText) // 選択肢（文字　文章）
-    // private textList : Array<RichText> = new Array<RichText>();
     @property(Label) // 選択肢（文字　文章）
     private labelList : Array<Label> = new Array<Label>();
-    // @property(Sprite)// 選択肢（画像）
-    // private spriteList : Array<Sprite> = new Array<Sprite>();
-    // @property(Label)// オッズ
-    // private oddsLabelList : Array<Label> = new Array<Label>();
-    // @property(Label)// 総ベット量
-    // private betLabelList : Array<Label> = new Array<Label>();
-    // @property(Label) // 問題数
-    // private numberLabel : Label = null;
     @property(RichText)// 問題文
     private questionText : RichText = null;
-    // @property(Label)// 所持コイン
-    // private coinsLabel : Label = null;
-    // @property(BetModal)// ベットモーダル
-    // private betModal : BetModal = null; 
-    @property(Button)// 次に進むボタン
-    private nextButton : Button = null;
-    @property(Button)// 結果表示ボタン
-    private resultButton : Button = null;
     @property(Button)// カウントダウンボタン
     private countdownButton : Button = null;
-    @property(Label) //ヒント
-    private hintLabel : Label = null;
-    @property(Button)// ヒントボタン
-    private hintButton : Button = null;
     @property(SpriteFrame) //正解の枠
     private correctFrameSprite : SpriteFrame = null;
     @property(SpriteFrame) //選択した枠
     private selectFrameSprite : SpriteFrame = null;
     @property(SpriteFrame) //元々の枠
     private normalFrameSprite : SpriteFrame = null;
-    @property(Node)
-    private TitleFrameNode : Node = null;
-    @property(Label)
-    private TitleFrameLabel : Label = null;
-    @property(IconLineup)
-    private iconLineupList : Array<IconLineup> = new Array<IconLineup>();
     @property(Button)
     private listenerListButton : Array<Button> = new Array<Button>();
 
@@ -74,11 +44,8 @@ export class ChoicesModal extends Component {
     choiceNumber : number = -1;
     private tempNumber : number = 0;
     private debugClientMode : ClientMode = 'Liver';
-    private isCountDown : boolean = false;
 
     isToRanking : boolean = false;
-
-    private hintIndex : number = 0;
 
     private thinkingTime = 60.0;
     private isThinkingEnd : boolean = false;
@@ -96,14 +63,7 @@ export class ChoicesModal extends Component {
         this.buttonList[0].node.on(Button.EventType.CLICK, function(){this.Choice(0);}, this);
         this.buttonList[1].node.on(Button.EventType.CLICK, function(){this.Choice(1);}, this);
         this.buttonList[2].node.on(Button.EventType.CLICK, function(){this.Choice(2);}, this);
-        this.buttonList[3].node.on(Button.EventType.CLICK, function(){this.Choice(3);}, this);
-        this.nextButton.node.on( Button.EventType.CLICK, this.Next, this);
-        this.resultButton.node.on( Button.EventType.CLICK, this.ShowResult, this);
-        this.countdownButton.node.on(Button.EventType.CLICK, this.ClickCountDownButton /* function(){this.isCountDown = true; this.countdownButton.node.active = false;} */, this);
-        this.hintButton.node.on(Button.EventType.CLICK, function(){this.ChangeHint();}, this);
-        for(const icon of this.iconLineupList){
-            icon.Constructor();
-        }
+        this.countdownButton.node.on(Button.EventType.CLICK, this.ClickCountDownButton, this);
         this.questionScrean = this.allSideNode.getChildByName('QuestionScrean');
         this.answerScrean = this.allSideNode.getChildByName('AnswerScrean');
         this.explanationNode = this.answerScrean.getChildByName('Explanation');
@@ -120,9 +80,6 @@ export class ChoicesModal extends Component {
             this.DontClickButton(true);
         }
 
-        // if(this.betModal.GetIsDecide()){
-        //     this.DecideChoice();
-        // }
 
         // 新仕様
         this.timer2.Display(this.thinkingTime, this.isThinkingEnd, this.debugClientMode);
@@ -155,7 +112,6 @@ export class ChoicesModal extends Component {
             this.modalChangeTime = -1.0;
             this.correctAnswerTime = 3.0;
             this.isModalChange = true;
-            this.CloseUpFunction();
 
             this.timer2.SetIsActive(false);
 
@@ -179,6 +135,7 @@ export class ChoicesModal extends Component {
                 this.answerScrean.active = true;
                 this.userNode.active = true;
                 this.liverNode.active = true;
+                
 
                 AnimationManager.Instance().stampAnim.SetIsActive(true);
                 
@@ -241,7 +198,6 @@ export class ChoicesModal extends Component {
         this.resultModal.node.active = false;
 
         this.questionScrean.getChildByName('QuestionSentence').getComponent(RichText).string = this.questionText.string;
-        // this.questionScrean.getChildByName('QuestionNumber').getComponent(Label).string = this.numberLabel.string;
 
         for(var i = 0; i < QuizManager.Instance().GetChoiceMax(); i++){ //フレームをリセット
             this.frameList[i].spriteFrame = this.normalFrameSprite;
@@ -254,7 +210,7 @@ export class ChoicesModal extends Component {
             AnimationManager.Instance().userNode.active = false;
             // this.nextButton.node.active = false;
             // this.resultButton.node.active = false;
-            for(var i = 0; i < 4; i++){
+            for(var i = 0; i < QuizManager.Instance().GetChoiceMax(); i++){
                 if(i === GameManager.Instance().GetGameInfo().qCorNumber){
                     this.labelList[i].color = new Color(0,0,0,255);
                 }
@@ -263,14 +219,13 @@ export class ChoicesModal extends Component {
                 }
             }
             this.frameList[GameManager.Instance().GetGameInfo().qCorNumber].spriteFrame = this.correctFrameSprite;
-            this.hintLabel.string = GameManager.Instance().GetGameInfo().hintSentence[this.hintIndex];
             this.debugClientMode = 'Liver';
 
         }
         else{
             this.liverNode.active = false;
             this.userNode.active = true;
-            for(var i = 0; i < 4; i++){
+            for(var i = 0; i < QuizManager.Instance().GetChoiceMax(); i++){
                 this.labelList[i].color = new Color(0,0,0,255);
             }
             AnimationManager.Instance().liverNode.active = false;
@@ -295,8 +250,6 @@ export class ChoicesModal extends Component {
     private DecideChoice(){
         this.choiceNumber = this.tempNumber;
         this.frameList[this.choiceNumber].spriteFrame = this.selectFrameSprite;
-        this.iconLineupList[this.choiceNumber].AddIcon(GameManager.Instance().GetGameInfo().ranking[0].mSprite);
-        // GameManager.Instance().GetApiConnection().guestAnswer(this.choiceNumber + 1);
         GameManager.Instance().GetApiConnect().guestAnswer(
             GameManager.Instance().GetGameInfo().userId,
             GameManager.Instance().GetGameInfo().token,
@@ -311,16 +264,9 @@ export class ChoicesModal extends Component {
 
     // 正解表示
     private ShowResult(){
-        // this.resultButton.node.active = false;
-        // this.nextButton.node.active = true;
         this.resultModal.node.active = true;
         this.resultModal.SetAnswerLabel(GameManager.Instance().GetGameInfo().qCorNumber,"");
-        for(var i = 0; i < QuizManager.Instance().GetChoiceMax(); i++){
-            if(i != GameManager.Instance().GetGameInfo().qCorNumber){
-
-            }
-        }
-        this.TitleFrameLabel.string = "正解発表";
+        this.questionText.node.active = false;
 
         // リザルトの取得
         GameManager.Instance().GetApiConnect().fixResult(
@@ -336,18 +282,6 @@ export class ChoicesModal extends Component {
         GameManager.Instance().debugTimeUpModal.SetIsActive(true);
     }
 
-    // 回答締め切り処理
-    private CloseUpFunction(){
-        // this.resultButton.node.active = true;
-        this.TitleFrameNode.active = true;
-        this.TitleFrameLabel.string = "ボーナス倍率結果";
-        for(var i = 0; i < QuizManager.Instance().GetChoiceMax(); i++){
-            // this.oddsLabelList[i].node.active = true;
-            // this.betLabelList[i].node.active = false;
-            this.iconLineupList[i].Reset();
-        }
-    }
-
     // 結果発表に進む
     private Next(){
         AnimationManager.Instance().timeUpAnim.AnimationReset();
@@ -361,12 +295,10 @@ export class ChoicesModal extends Component {
 
         this.resultModal.Init();
 
-        this.isCountDown = false;
         this.isToRanking = true;
         this.resultModal.node.active = false;
-        this.TitleFrameNode.active = false;
-        this.TitleFrameLabel.string = "ボーナス倍率結果";
         this.countdownButton.node.active = true;
+        this.questionText.node.active = true;
         // this.betModal.SetIsDecide(false);
         this.choiceNumber = -1;
         this.ResetUI();
@@ -381,11 +313,6 @@ export class ChoicesModal extends Component {
         }
     }
 
-    // 次のヒントを表示する
-    private ChangeHint(){
-        this.hintIndex = (this.hintIndex + 1) % GameManager.Instance().GetGameInfo().hintSentence.length;
-        this.hintLabel.string = GameManager.Instance().GetGameInfo().hintSentence[this.hintIndex];
-    }
 
     private DebugModalUpdate(){
         if(GameManager.Instance().GetClientMode() != this.debugClientMode){

@@ -2,7 +2,7 @@ import { _decorator, Component, Node, Button, Label, Vec3, SpriteFrame, spriteAs
 import { GameMenu } from '../../UI/GameMenu';
 import { ClientMode, GameManager } from '../Manager/GameManager';
 import { QuizManager } from '../Manager/QuizManager';
-import { ModalType, QuizModalManager } from '../Manager/QuizModalManager';
+import { QuizModalManager } from '../Manager/QuizModalManager';
 const { ccclass, property } = _decorator;
 
 @ccclass('GenreChoiceModal')
@@ -12,53 +12,35 @@ export class GenreChoiceModal extends Component {
     private selectNode : Node = null;
     @property(Node) //確認ノード
     private startNode : Node = null;
-    @property(Node) //問題リストノード
-    private quistionListNode : Node = null;
     @property(Button) //出題スタートボタン
     private startButton : Button = null;
     @property(Button) //戻る
     private backButton : Button = null;
-    @property(Button)
+    @property(Button) // ジャンル選択ボタン
     private genreButton : Array<Button> = new Array<Button>();
-    @property(SpriteFrame)
-    private genreIconSpriteList : Array<SpriteFrame> = new Array<SpriteFrame>();
-    @property(Label)
+    @property(Label) // ジャンルの文字
     private genreLabelList : Array<Label> = new Array<Label>();
-    @property(Label)
+    @property(Label)// ジャンル選択前の見出し
     private titleLabel : Label = null;
-    @property(Label)
-    private startTitleLabel : Label = null;
-    @property(Node)
-    private genreRootNode : Node = null;
-    @property(Node)
+    @property(Label) // ジャンル選択後の見出し(見えるのはユーザーだけ)
+    private waitLabel : Label = null;
+    @property(Node) //出題回数のノード
     private countRoot : Node = null;
-    @property(Node)
+    @property(Node) // 並んだ本のノード
+    private booksNode : Node = null;
+    @property(Node) // 開いた本のノード
     private genreBook : Node = null;
-    @property(Label)
-    private genreExplaLabel : Label = null;
-    @property(GameMenu)
-    private gameMenu : GameMenu = null;
-
-    //スタート
-    @property(Sprite)
-    private genreIconSprite : Sprite = null;
-    @property(Label)
+    @property(Label)  //本に書いてあるジャンルの名前
     private genreLabel : Label = null;
-    //リスト
-    @property(Sprite)
-    private listGenreIconSprite : Sprite = null;
-    @property(Label)
-    private listGenreLabel : Label = null;
-
-    @property(Node)
+    @property(Label) //ジャンルの説明ラベル
+    private genreExplaLabel : Label = null;
+    @property(GameMenu) // ゲームメニュー
+    private gameMenu : GameMenu = null;
+    @property(Node) //次のモーダルにいく時の蓋絵
     private certStartNode : Node = null;
-
-    private genreName : string[] = ["日常生活", "スポーツ", "ゲーム", "料理", "仕事", "価値観"];
 
     private animationTime = 0.0;
     private isNext = false;
-    private isConfirm : boolean = false; //メニューから飛んだかどうか
-    private modalType : ModalType = 'None';
 
     private debugClientMode : ClientMode = 'Liver';
 
@@ -69,7 +51,6 @@ export class GenreChoiceModal extends Component {
         this.genreButton[2].node.on(Button.EventType.CLICK, function(){this.ClickGenreButton(2)}, this);
         this.genreButton[3].node.on(Button.EventType.CLICK, function(){this.ClickGenreButton(3)}, this);
         this.genreButton[4].node.on(Button.EventType.CLICK, function(){this.ClickGenreButton(4)}, this);
-        this.genreButton[5].node.on(Button.EventType.CLICK, function(){this.ClickGenreButton(5)}, this);
 
         this.startButton.node.on(Button.EventType.CLICK, this.ClickStartButton, this);
         this.backButton.node.on(Button.EventType.CLICK, this.ClickBackButton, this);
@@ -95,36 +76,13 @@ export class GenreChoiceModal extends Component {
         }
     }
 
-    public Initialize(){
-        if(this.isConfirm){
-            this.backButton.node.active = true;
-            this.titleLabel.string = "検定をコンプリートしよう！";
-            this.genreRootNode.position = new Vec3(0, -25, 0);
-            GameManager.Instance().SetParticipantActive(false);
-        }
-        else{
-            this.backButton.node.active = false;
-            this.titleLabel.string = "出題テーマをえらぼう";
-            this.genreRootNode.position = new Vec3(0, -12, 0);
-        }
-        this.SetUI();
-    }
-
     // ジャンルを選択
     private ClickGenreButton(gen : number){
-        if(this.isConfirm){ //メニューから飛んだ場合
-            this.quistionListNode.active = true;
-            this.listGenreIconSprite.spriteFrame = this.genreIconSpriteList[gen];
-            this.listGenreLabel.string = this.genreName[gen];
-        }
-        else{ //ゲーム最中
-            this.startNode.active = true;
-            this.genreIconSprite.spriteFrame = this.genreIconSpriteList[gen];
-            this.genreLabel.string = GameManager.Instance().GetGameInfo().genreSetList[gen].Genre;
-            GameManager.Instance().GetGameInfo().genreId = GameManager.Instance().GetGameInfo().genreSetList[gen].GenreId;
-            QuizManager.Instance().quizComponent.SetQuiz();
-            this.genreExplaLabel.string = GameManager.Instance().GetGameInfo().genreSetList[gen].Description;
-        }
+        this.startNode.active = true;
+        this.genreLabel.string = GameManager.Instance().GetGameInfo().genreSetList[gen].Genre;
+        GameManager.Instance().GetGameInfo().genreId = GameManager.Instance().GetGameInfo().genreSetList[gen].GenreId;
+        QuizManager.Instance().quizComponent.SetQuiz();
+        this.genreExplaLabel.string = GameManager.Instance().GetGameInfo().genreSetList[gen].Description;
         this.selectNode.active = false;
         this.backButton.node.active = true;
     }
@@ -137,35 +95,17 @@ export class GenreChoiceModal extends Component {
         this.backButton.node.active = false;
         this.gameMenu.DisplayButton(false);
         this.animationTime = 3.0;
+
         GameManager.Instance().GetParticipant().SetIsRecruitment(false);
         GameManager.Instance().GetParticipant().SetUI();
-
-        // QuizManager.Instance().get
     }
 
     // 選択に戻る
     private ClickBackButton(){
-        if(this.selectNode.active){
-            this.isConfirm = false;
-            if(this.modalType === 'Genre'){
-                this.Initialize();
-            }
-            else{
-                QuizModalManager.Instance().ChangeModal(this.modalType);
-            }
-            GameManager.Instance().SetParticipantActive(true);
-            this.modalType = 'None';
-        }
-        else if(this.startNode.active){
-            this.selectNode.active = true;
-            this.startNode.active = false;
-            this.backButton.node.active = false;
-        }
-        else if(this.quistionListNode.active){
-            this.selectNode.active = true;
-            this.quistionListNode.active = false;
-        }
-
+        this.selectNode.active = true;
+        this.startNode.active = false;
+        this.backButton.node.active = false;
+        
         //問題数とorderの減算処理
         GameManager.Instance().GetGameInfo().qNumber = (GameManager.Instance().GetGameInfo().qNumber + QuizManager.Instance().raundMax - 1) % QuizManager.Instance().raundMax;
         GameManager.Instance().GetGameInfo().order--;
@@ -178,29 +118,26 @@ export class GenreChoiceModal extends Component {
 
         if(GameManager.Instance().GetClientMode() === 'Liver'){
             this.titleLabel.string = "問題ジャンルを選ぼう";
-            this.startTitleLabel.node.active = false;
+            this.waitLabel.node.active = false;
             this.startButton.node.active = true;
+            this.booksNode.scale = new Vec3(1,1,1);
             this.genreBook.position = new Vec3(0, 30, 0);
+            this.genreBook.scale = new Vec3(1, 1, 1);
             this.countRoot.active = true;
-            this.genreRootNode.active = true;
+            this.gameMenu.DisplayButton(true);
+            this.genreButton.forEach(element => {element.node.active = true;});
         }
         else if(GameManager.Instance().GetClientMode() === 'User'){
             this.titleLabel.string = "ライバーが出題テーマを選択中";
+            this.waitLabel.node.active = true;
             this.startButton.node.active = false;
-            this.startTitleLabel.node.active = true;
+            this.booksNode.scale = new Vec3(1.1,1.1,1.1);
             this.genreBook.position = new Vec3(0, -15, 0);
+            this.genreBook.scale = new Vec3(1.1, 1.1, 1.1);
             this.countRoot.active = false;
-            this.genreRootNode.active = false;
-            this.gameMenu.DisplayButton(true);
+            this.gameMenu.DisplayButton(false);
+            this.genreButton.forEach(element => {element.node.active = false;});
         }
-    }
-
-    public SetConfirm(is : boolean){
-        this.isConfirm = is;
-    }
-
-    public SetModalType(type : ModalType){
-        this.modalType = type;
     }
 
 

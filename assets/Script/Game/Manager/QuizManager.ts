@@ -64,6 +64,9 @@ export class QuizManager extends Component {
             if(GameManager.Instance().GetGameInfo().qNumber === this.raundMax){
                 this.isLastQuestion = true;
             }
+            else{
+                this.isLastQuestion = false;
+            }
             QuizModalManager.Instance().GetOverallResultModal().SetIsNextQuestion(false);
         }
     }
